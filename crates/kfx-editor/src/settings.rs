@@ -393,12 +393,8 @@ pub struct Settings {
     /// Natural terrain (earth, rock, gold, liquids) takes the painted owner
     /// (Map > Ownable natural terrain); else it stays neutral.
     pub ownable_natural: bool,
-    /// Check a configured release URL for a newer version at start (off by default; nothing
-    /// is downloaded).
-    pub update_check: bool,
-    /// The release URL for the update check (a GitHub "latest release" API URL or any URL that
-    /// answers with JSON holding a `tag_name`); empty = no check.
-    pub update_url: String,
+    /// Update checks and installs (Preferences > Updates).
+    pub updates: crate::updates::UpdateSettings,
     /// Rounded corners (one option per terrain pair).
     pub rounding: crate::rounding::Rounding,
     /// Wall art of Fortify: the game's rule (grouped) or random.
@@ -481,8 +477,7 @@ impl Default for Settings {
             save_formats: vec![],
             place_anywhere: false,
             ownable_natural: false,
-            update_check: false,
-            update_url: String::new(),
+            updates: Default::default(),
             rnc_notice: true,
             wall_art: Default::default(),
             rounding: Default::default(),
@@ -527,6 +522,7 @@ impl Settings {
             self.recent_names.clone(),
             self.layout.window_w,
             self.layout.window_h,
+            self.updates.notice_acknowledged,
         );
         *self = Settings::default();
         self.install = keep.0;
@@ -534,6 +530,8 @@ impl Settings {
         self.recent_names = keep.2;
         self.layout.window_w = keep.3;
         self.layout.window_h = keep.4;
+        // the first-run notice about update checks is not shown again
+        self.updates.notice_acknowledged = keep.5;
     }
 
     /// Display name of a recent map, when known.

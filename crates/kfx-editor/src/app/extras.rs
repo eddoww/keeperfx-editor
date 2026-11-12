@@ -1,6 +1,6 @@
 //! Random doodads (Map > Random doodads), the door lock toggle, the script wizard menu, toasts,
-//! the changelog, install checks, the optional release check and the remembered window
-//! positions.
+//! the changelog, install checks and the remembered window positions (update checks are in
+//! `update_ui.rs`).
 use super::*;
 use kfx_prefab::i18n::{trd, trf};
 
@@ -147,56 +147,6 @@ pub struct Toast {
     pub at: f64,
 }
 
-/// Compare dotted versions (`0.2.10` > `0.2.9`); a leading `v` is ignored.
-pub fn newer(remote: &str, local: &str) -> bool {
-    let parse = |s: &str| -> Vec<u64> {
-        s.trim()
-            .trim_start_matches(['v', 'V'])
-            .split(['.', '-', '+'])
-            .map_while(|p| p.parse().ok())
-            .collect()
-    };
-    parse(remote) > parse(local)
-}
-
-/// Ask `url` (a GitHub "latest release" API URL or anything answering JSON with `tag_name` and
-/// `html_url`) for the latest release, with the system's `curl` and a short timeout. Returns
-/// (tag, page) when it is newer than this build.
-pub fn check_release(url: &str) -> Result<Option<(String, String)>, String> {
-    let out = std::process::Command::new("curl")
-        .args([
-            "-fsSL",
-            "--max-time",
-            "8",
-            "-H",
-            "Accept: application/json",
-            "-A",
-            "kfx-editor",
-            url,
-        ])
-        .output()
-        .map_err(|e| format!("curl: {e}"))?;
-    if !out.status.success() {
-        return Err(format!(
-            "{url}: {}",
-            String::from_utf8_lossy(&out.stderr).trim()
-        ));
-    }
-    let v: serde_json::Value =
-        serde_json::from_slice(&out.stdout).map_err(|e| format!("{url}: {e}"))?;
-    let tag = v
-        .get("tag_name")
-        .or_else(|| v.get("name"))
-        .and_then(|t| t.as_str())
-        .ok_or("no tag_name in the answer")?
-        .to_string();
-    let page = v
-        .get("html_url")
-        .and_then(|t| t.as_str())
-        .unwrap_or(url)
-        .to_string();
-    Ok(newer(&tag, env!("CARGO_PKG_VERSION")).then_some((tag, page)))
-}
 use crate::doodads::{self, DoodadKind, DoodadRule, Doodads};
 
 /// The open doodad dialog: an editable copy of the map's rules.
@@ -227,7 +177,7 @@ impl EditorApp {
     }
 
     /// Start-up work of a persistent session: restore the window positions, the "what's new"
-    /// note, the optional release check (in the background).
+    /// note, update checks and the crash notice.
     pub(super) fn startup_extras(&mut self) {
         if !self.persist {
             return;
@@ -248,17 +198,7 @@ impl EditorApp {
             }
             self.settings.last_seen_version = v.to_string();
         }
-        if self.settings.update_check && !self.settings.update_url.trim().is_empty() {
-            let url = self.settings.update_url.trim().to_string();
-            let slot = self.release_note.clone();
-            std::thread::spawn(move || {
-                if let Ok(Some(r)) = check_release(&url) {
-                    if let Ok(mut s) = slot.lock() {
-                        *s = Some(r);
-                    }
-                }
-            });
-        }
+        self.updates_startup();
     }
 
     /// Keep the window positions and sizes (egui memory) for the next start.
@@ -273,15 +213,6 @@ impl EditorApp {
     /// (the same text within 3 s is shown once).
     pub(super) fn toasts_ui(&mut self, ctx: &egui::Context) {
         let now = ctx.input(|i| i.time);
-        if let Ok(mut r) = self.release_note.lock() {
-            if let Some((tag, page)) = r.take() {
-                self.status = trf(
-                    "kfx_editor.a_newer_kfx_editor_release_is_available_tag_page",
-                    "A newer kfx-editor release is available: {tag} ({page})",
-                    &[("tag", &tag), ("page", &page)],
-                );
-            }
-        }
         if self.status != self.last_status {
             self.last_status = self.status.clone();
             if !self.status.is_empty() {

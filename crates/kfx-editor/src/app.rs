@@ -52,6 +52,7 @@ mod testsupport;
 mod texts;
 mod things;
 mod toolbar;
+mod update_ui;
 mod viewport;
 mod workshop;
 mod workshop_win;
@@ -253,6 +254,8 @@ enum Pending {
     New,
     Reload,
     Exit,
+    /// Install the downloaded update or roll back, then start the editor again.
+    Restart(update_ui::RestartFor),
 }
 
 /// A tool interaction in progress (left button held).
@@ -350,8 +353,8 @@ pub struct EditorApp {
     packet_mode: Option<bool>,
     last_status: String,
     show_changelog: bool,
-    /// A newer release found by the optional release check (tag, page).
-    release_note: Arc<std::sync::Mutex<Option<(String, String)>>>,
+    /// Update checks, the Updates dialog and the crash notice (`app/update_ui.rs`).
+    pub updates: update_ui::UpdateUi,
     /// Saved `.dat` column indices for the grid data overlay (recomputed after changes).
     grid_cols: Option<Vec<u16>>,
     /// Fly view: the mouse is captured for mouse-look (the tools act at the crosshair).
@@ -580,7 +583,7 @@ impl EditorApp {
             fortify: false,
             last_status: String::new(),
             show_changelog: false,
-            release_note: Default::default(),
+            updates: Default::default(),
             texture_sets: vec![],
             sprites: None,
             sprite_atlas: SpriteAtlas::default(),
@@ -976,6 +979,7 @@ impl EditorApp {
         self.notice_ui(&ctx);
         self.changelog_ui(&ctx);
         self.campaign_ui(&ctx);
+        self.updates_ui(&ctx);
         self.toasts_ui(&ctx);
         self.analysis_window(&ctx);
         self.gen_patch_window(&ctx);
@@ -1046,6 +1050,7 @@ impl EditorApp {
     }
 
     pub fn on_exit(&mut self) {
+        self.updates_on_exit();
         self.remember_ui_memory();
         self.settings.shortcuts = self.keymap.overrides();
         self.settings.place = self.place_defaults.clone();

@@ -337,6 +337,7 @@ impl EditorApp {
                 self.allow_close = true;
                 self.quit_requested = true;
             }
+            Pending::Restart(what) => self.restart_for(what),
         }
     }
 

@@ -1170,7 +1170,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:526"]
 
 [strings."kfx_editor.0_off_only_while_there_are_unsaved_changes"]
 text = "(0 = off; only while there are unsaved changes)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1527"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1506"]
 
 [strings."kfx_editor.12_12_f_5_cube_id_or_name"]
 text = "12, #12, f:5, cube ID or name"
@@ -1178,11 +1178,11 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:498"]
 
 [strings."kfx_editor.2d"]
 text = "2D"
-src = ["crates/kfx-editor/src/app/toolbar.rs:383", "crates/kfx-editor/src/app/toolbar.rs:987"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:383", "crates/kfx-editor/src/app/toolbar.rs:990"]
 
 [strings."kfx_editor.2d_3d"]
 text = "2D + 3D"
-src = ["crates/kfx-editor/src/app/toolbar.rs:990"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:993"]
 
 [strings."kfx_editor.2d_and_3d_side_by_side"]
 text = "2D and 3D side by side"
@@ -1206,7 +1206,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:342"]
 
 [strings."kfx_editor.4_way"]
 text = "4-way"
-src = ["crates/kfx-editor/src/app/dialogs.rs:105", "crates/kfx-editor/src/app/map_dialogs.rs:790"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:106", "crates/kfx-editor/src/app/map_dialogs.rs:790"]
 
 [strings."kfx_editor.4_way_mirror"]
 text = "4-way mirror"
@@ -1218,7 +1218,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1061"]
 
 [strings."kfx_editor.a_constrained_random_map_every_keeper_gets_a_rea"]
 text = "A constrained random map: every keeper gets a reachable portal and gold, routes to the others, and a fair share."
-src = ["crates/kfx-editor/src/app/dialogs.rs:464"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:465"]
 
 [strings."kfx_editor.a_custom_slab_with_the_nine_columns_of_the_first"]
 text = "A custom slab with the nine columns of the first selected slab"
@@ -1238,7 +1238,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1284"]
 
 [strings."kfx_editor.a_map_and_level_script_editor_for_keeperfx"]
 text = "A map and level script editor for KeeperFX, the open-source engine for Dungeon Keeper 1."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2250"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2229"]
 
 [strings."kfx_editor.a_multiplayer_map_the_game_ignores_mods_in_multi"]
 text = "A multiplayer map: the game ignores mods in multiplayer games (only single-player tests use them)."
@@ -1247,10 +1247,6 @@ src = ["crates/kfx-editor/src/app/config.rs:788"]
 [strings."kfx_editor.a_new_string_of_this_level_type_its_text_in_the"]
 text = "A new string of this level; type its text in the Strings window"
 src = ["crates/kfx-editor/src/app/logic.rs:704"]
-
-[strings."kfx_editor.a_newer_kfx_editor_release_is_available_tag_page"]
-text = "A newer kfx-editor release is available: {tag} ({page})"
-src = ["crates/kfx-editor/src/app/extras.rs:278"]
 
 [strings."kfx_editor.a_party_holds_at_most_30_creatures"]
 text = "a party holds at most 30 creatures"
@@ -1278,11 +1274,11 @@ src = ["crates/kfx-editor/src/newmap.rs:189"]
 
 [strings."kfx_editor.about"]
 text = "About"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2229", "crates/kfx-editor/src/app/menu_bar.rs:1285"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2208", "crates/kfx-editor/src/app/menu_bar.rs:1292"]
 
 [strings."kfx_editor.about_w_x_h_pixels_rendered_in_tiles_when_larger"]
 text = "About {w} x {h} pixels; rendered in tiles when larger than the GPU allows."
-src = ["crates/kfx-editor/src/app/dialogs.rs:1082"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1083"]
 
 [strings."kfx_editor.action.brush.larger"]
 text = "Larger brush"
@@ -1554,7 +1550,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:1101"]
 
 [strings."kfx_editor.action_point_range"]
 text = "Action point range"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1813"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1792"]
 
 [strings."kfx_editor.action_point_range_in_subtiles_0_255"]
 text = "action point range in subtiles 0..255"
@@ -1566,7 +1562,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:23", "crates/kfx-editor/src/app/pane
 
 [strings."kfx_editor.action_points_62bd"]
 text = "⚑ Action points"
-src = ["crates/kfx-editor/src/app.rs:136"]
+src = ["crates/kfx-editor/src/app.rs:137"]
 
 [strings."kfx_editor.active_configuration_layers_load_order_later_win"]
 text = "Active configuration layers (load order, later wins)"
@@ -1574,7 +1570,7 @@ src = ["crates/kfx-editor/src/app/config.rs:832"]
 
 [strings."kfx_editor.active_owner_active_owner"]
 text = "Active owner: {active_owner}"
-src = ["crates/kfx-editor/src/app/toolbar.rs:792"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:795"]
 
 [strings."kfx_editor.add"]
 text = "Add"
@@ -1606,7 +1602,7 @@ src = ["crates/kfx-editor/src/app/custom.rs:859"]
 
 [strings."kfx_editor.add_rule"]
 text = "➕ Add rule"
-src = ["crates/kfx-editor/src/app/extras.rs:730"]
+src = ["crates/kfx-editor/src/app/extras.rs:661"]
 
 [strings."kfx_editor.add_the_open_level_map_level_as_its_first_level"]
 text = "Add the open level (map{level}) as its first level"
@@ -1659,7 +1655,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:777"]
 
 [strings."kfx_editor.allow_things_inside_walls_and_rock_columns_of_5_9caa"]
 text = "Allow things inside walls and rock (columns of 5 cubes or more); lights, action points and doors are always allowed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1764"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1743"]
 
 [strings."kfx_editor.an_action_point"]
 text = "an action point"
@@ -1703,7 +1699,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1163"]
 
 [strings."kfx_editor.animate_sprites"]
 text = "Animate sprites"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1966", "crates/kfx-editor/src/app/panels.rs:1230"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1945", "crates/kfx-editor/src/app/panels.rs:1230"]
 
 [strings."kfx_editor.answers_are_kept_in_a_cache_so_items_you_have_se"]
 text = "Answers are kept in a cache, so items you have seen also work offline."
@@ -1711,7 +1707,7 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:373"]
 
 [strings."kfx_editor.anti_aliasing_4x_msaa"]
 text = "Anti-aliasing (4x MSAA)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1950"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1929"]
 
 [strings."kfx_editor.any_owner"]
 text = "Any owner"
@@ -1731,7 +1727,7 @@ src = ["crates/kfx-editor/src/app/custom.rs:753", "crates/kfx-editor/src/app/cus
 
 [strings."kfx_editor.apply_one_undo_step"]
 text = "Apply (one undo step)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:971"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:972"]
 
 [strings."kfx_editor.apply_to_all_uses"]
 text = "Apply to all uses"
@@ -1739,7 +1735,7 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:846"]
 
 [strings."kfx_editor.apply_to_the_whole_map"]
 text = "Apply to the whole map"
-src = ["crates/kfx-editor/src/app/extras.rs:759"]
+src = ["crates/kfx-editor/src/app/extras.rs:690"]
 
 [strings."kfx_editor.area"]
 text = "Area"
@@ -1803,11 +1799,11 @@ src = ["crates/kfx-editor/src/app/audio.rs:274"]
 
 [strings."kfx_editor.billboards_sprites_things_ms_ms_sprite_zips_spri"]
 text = "{billboards} sprites ({things_ms} ms) · {sprite_zips} sprite zips"
-src = ["crates/kfx-editor/src/app/toolbar.rs:948"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:951"]
 
 [strings."kfx_editor.border"]
 text = "Border"
-src = ["crates/kfx-editor/src/app/dialogs.rs:493", "crates/kfx-editor/src/app/toolbar.rs:496"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:494", "crates/kfx-editor/src/app/toolbar.rs:496"]
 
 [strings."kfx_editor.box"]
 text = "☐ Box"
@@ -1843,7 +1839,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:426"]
 
 [strings."kfx_editor.browse"]
 text = "Browse…"
-src = ["crates/kfx-editor/src/app/dialogs.rs:406", "crates/kfx-editor/src/app/dialogs.rs:832", "crates/kfx-editor/src/app/dialogs.rs:1046", "crates/kfx-editor/src/app/dialogs.rs:1579", "crates/kfx-editor/src/app/prompts.rs:72", "crates/kfx-editor/src/app/prompts.rs:227"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:407", "crates/kfx-editor/src/app/dialogs.rs:833", "crates/kfx-editor/src/app/dialogs.rs:1047", "crates/kfx-editor/src/app/dialogs.rs:1558", "crates/kfx-editor/src/app/prompts.rs:72", "crates/kfx-editor/src/app/prompts.rs:227"]
 
 [strings."kfx_editor.browse_install_and_package_keeperfx_workshop_ite"]
 text = "Browse, install and package KeeperFX Workshop items."
@@ -1879,11 +1875,11 @@ src = ["crates/kfx-editor/src/app/safety.rs:559"]
 
 [strings."kfx_editor.c_changes_c2_kib"]
 text = "{c} changes, ~{c2} KiB"
-src = ["crates/kfx-editor/src/app/toolbar.rs:881"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:884"]
 
 [strings."kfx_editor.camera"]
 text = "Camera"
-src = ["crates/kfx-editor/src/app/dialogs.rs:64", "crates/kfx-editor/src/app/dialogs.rs:1888"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:64", "crates/kfx-editor/src/app/dialogs.rs:1867"]
 
 [strings."kfx_editor.camera_to_label"]
 text = "camera to {label}"
@@ -1903,7 +1899,7 @@ src = ["crates/kfx-editor/src/app/strings.rs:580"]
 
 [strings."kfx_editor.campaign_and_map_pack_files"]
 text = "Campaign and map pack files"
-src = ["crates/kfx-editor/src/app/dialogs.rs:84"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:85"]
 
 [strings."kfx_editor.campaign_editor"]
 text = "Campaign editor"
@@ -1951,7 +1947,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:897"]
 
 [strings."kfx_editor.cancel"]
 text = "Cancel"
-src = ["crates/kfx-editor/src/app/campaign.rs:710", "crates/kfx-editor/src/app/campaign.rs:1222", "crates/kfx-editor/src/app/custom.rs:567", "crates/kfx-editor/src/app/custom.rs:756", "crates/kfx-editor/src/app/custom.rs:934", "crates/kfx-editor/src/app/custom.rs:1276", "crates/kfx-editor/src/app/dialogs.rs:716", "crates/kfx-editor/src/app/landview.rs:539", "crates/kfx-editor/src/app/map_dialogs.rs:425", "crates/kfx-editor/src/app/map_dialogs.rs:627", "crates/kfx-editor/src/app/map_dialogs.rs:748", "crates/kfx-editor/src/app/play.rs:512", "crates/kfx-editor/src/app/prefab.rs:1100", "crates/kfx-editor/src/app/prompts.rs:115", "crates/kfx-editor/src/app/prompts.rs:169", "crates/kfx-editor/src/app/prompts.rs:324"]
+src = ["crates/kfx-editor/src/app/campaign.rs:710", "crates/kfx-editor/src/app/campaign.rs:1222", "crates/kfx-editor/src/app/custom.rs:567", "crates/kfx-editor/src/app/custom.rs:756", "crates/kfx-editor/src/app/custom.rs:934", "crates/kfx-editor/src/app/custom.rs:1276", "crates/kfx-editor/src/app/dialogs.rs:717", "crates/kfx-editor/src/app/landview.rs:539", "crates/kfx-editor/src/app/map_dialogs.rs:425", "crates/kfx-editor/src/app/map_dialogs.rs:627", "crates/kfx-editor/src/app/map_dialogs.rs:748", "crates/kfx-editor/src/app/play.rs:512", "crates/kfx-editor/src/app/prefab.rs:1100", "crates/kfx-editor/src/app/prompts.rs:115", "crates/kfx-editor/src/app/prompts.rs:169", "crates/kfx-editor/src/app/prompts.rs:324", "crates/kfx-editor/src/app/update_ui.rs:621"]
 
 [strings."kfx_editor.cancelled"]
 text = "Cancelled"
@@ -1975,7 +1971,7 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:269"]
 
 [strings."kfx_editor.cfg_ingame_res_wxhw32"]
 text = "(-cfg INGAME_RES=WxHw32)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1652"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1631"]
 
 [strings."kfx_editor.cfg_is_not_in_a_campgns_levels_or_multiplayer_fo"]
 text = "{cfg} is not in a campgns, levels or multiplayer folder"
@@ -1991,27 +1987,51 @@ src = ["crates/kfx-editor/src/newmap.rs:164"]
 
 [strings."kfx_editor.chance"]
 text = "Chance %"
-src = ["crates/kfx-editor/src/app/extras.rs:586"]
+src = ["crates/kfx-editor/src/app/extras.rs:517"]
 
 [strings."kfx_editor.chance_per_subtile_nine_per_slab"]
 text = "Chance per subtile (nine per slab)"
-src = ["crates/kfx-editor/src/app/extras.rs:690"]
+src = ["crates/kfx-editor/src/app/extras.rs:621"]
 
 [strings."kfx_editor.change"]
 text = "Change…"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1449"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1451"]
 
 [strings."kfx_editor.changelog"]
 text = "Changelog"
-src = ["crates/kfx-editor/src/app/extras.rs:351", "crates/kfx-editor/src/app/menu_bar.rs:1280"]
+src = ["crates/kfx-editor/src/app/extras.rs:282", "crates/kfx-editor/src/app/menu_bar.rs:1280"]
+
+[strings."kfx_editor.channel"]
+text = "Channel"
+src = ["crates/kfx-editor/src/app/update_ui.rs:838"]
+
+[strings."kfx_editor.channel_pre_release"]
+text = "pre-release"
+src = ["crates/kfx-editor/src/app/update_ui.rs:923"]
+
+[strings."kfx_editor.channel_stable"]
+text = "stable"
+src = ["crates/kfx-editor/src/app/update_ui.rs:924"]
 
 [strings."kfx_editor.cheats_alex"]
 text = "Cheats (-alex)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1662"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1641"]
 
-[strings."kfx_editor.check_for_a_newer_release_at_start"]
-text = "Check for a newer release at start"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1495"]
+[strings."kfx_editor.check_for_updates"]
+text = "Check for updates…"
+src = ["crates/kfx-editor/src/app/menu_bar.rs:1286"]
+
+[strings."kfx_editor.check_for_updates_automatically"]
+text = "Check for updates automatically"
+src = ["crates/kfx-editor/src/app/update_ui.rs:828"]
+
+[strings."kfx_editor.check_for_updates_once_a_day"]
+text = "Check for updates once a day"
+src = ["crates/kfx-editor/src/app/update_ui.rs:422"]
+
+[strings."kfx_editor.check_now"]
+text = "Check now"
+src = ["crates/kfx-editor/src/app/update_ui.rs:711", "crates/kfx-editor/src/app/update_ui.rs:883"]
 
 [strings."kfx_editor.check_the_map_and_its_scripts"]
 text = "Check the map and its scripts"
@@ -2021,9 +2041,13 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:363"]
 text = "Checked before every save: what cannot be written is listed, errors block the save"
 src = ["crates/kfx-editor/src/app/menu_bar.rs:185"]
 
+[strings."kfx_editor.checking"]
+text = "Checking…"
+src = ["crates/kfx-editor/src/app/update_ui.rs:687"]
+
 [strings."kfx_editor.choose"]
 text = "(choose)"
-src = ["crates/kfx-editor/src/app/extras.rs:667"]
+src = ["crates/kfx-editor/src/app/extras.rs:598"]
 
 [strings."kfx_editor.choose_a_campaign_or_map_pack"]
 text = "Choose a campaign or map pack"
@@ -2071,7 +2095,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:924"]
 
 [strings."kfx_editor.click_a_shortcut_then_press_the_new_key_combinat"]
 text = "Click a shortcut, then press the new key combination (Esc cancels, Backspace removes it)."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2047"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2026"]
 
 [strings."kfx_editor.click_or_drag_to_move_the_view"]
 text = "Click or drag to move the view"
@@ -2095,7 +2119,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:846", "crates/kfx-editor/src
 
 [strings."kfx_editor.close"]
 text = "Close"
-src = ["crates/kfx-editor/src/app/config.rs:417", "crates/kfx-editor/src/app/dialogs.rs:980", "crates/kfx-editor/src/app/dialogs.rs:1098", "crates/kfx-editor/src/app/extras.rs:774", "crates/kfx-editor/src/app/prefab.rs:332"]
+src = ["crates/kfx-editor/src/app/config.rs:417", "crates/kfx-editor/src/app/dialogs.rs:981", "crates/kfx-editor/src/app/dialogs.rs:1099", "crates/kfx-editor/src/app/extras.rs:705", "crates/kfx-editor/src/app/prefab.rs:332", "crates/kfx-editor/src/app/update_ui.rs:809", "crates/kfx-editor/src/console.rs:140"]
 
 [strings."kfx_editor.close_pack"]
 text = "Close pack"
@@ -2111,7 +2135,7 @@ src = ["crates/kfx-editor/src/app/custom.rs:548"]
 
 [strings."kfx_editor.colour"]
 text = "+ Colour"
-src = ["crates/kfx-editor/src/app/dialogs.rs:922"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:923"]
 
 [strings."kfx_editor.column_0_stays_empty_the_game_s_default_column"]
 text = "Column 0 stays empty (the game's default column)."
@@ -2171,11 +2195,11 @@ src = ["crates/kfx-editor/src/app/prefab.rs:1038"]
 
 [strings."kfx_editor.command_for_the_open_map"]
 text = "Command for the open map:"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1698"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1677"]
 
 [strings."kfx_editor.command_line_options"]
 text = "Command line options"
-src = ["crates/kfx-editor/src/app/dialogs.rs:95"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:96"]
 
 [strings."kfx_editor.comment_out_n_references"]
 text = "Comment out {n} references"
@@ -2195,7 +2219,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1066"]
 
 [strings."kfx_editor.configuration_layers_and_mods_click_for_the_deta"]
 text = "Configuration layers and mods (click for the details)"
-src = ["crates/kfx-editor/src/app/toolbar.rs:938"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:941"]
 
 [strings."kfx_editor.configuration_map_level"]
 text = "Configuration - map{level}"
@@ -2203,7 +2227,7 @@ src = ["crates/kfx-editor/src/app/config.rs:337"]
 
 [strings."kfx_editor.conflict_a_is_used_by_la_and_lb"]
 text = "Conflict: {key} is used by \"{la}\" and \"{lb}\""
-src = ["crates/kfx-editor/src/app/dialogs.rs:2085"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2064"]
 
 [strings."kfx_editor.connect"]
 text = "Connect"
@@ -2231,7 +2255,7 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:388"]
 
 [strings."kfx_editor.controls"]
 text = "Controls"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2171", "crates/kfx-editor/src/app/menu_bar.rs:1265"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2150", "crates/kfx-editor/src/app/menu_bar.rs:1265"]
 
 [strings."kfx_editor.copied_items_items"]
 text = "Copied {items} items"
@@ -2295,7 +2319,7 @@ src = ["crates/kfx-editor/src/app/script_panel.rs:105"]
 
 [strings."kfx_editor.could_not_save_settings_e"]
 text = "Could not save settings: {e}"
-src = ["crates/kfx-editor/src/app.rs:731"]
+src = ["crates/kfx-editor/src/app.rs:734"]
 
 [strings."kfx_editor.could_not_save_tab_error"]
 text = "Could not save {tab}: {error}"
@@ -2307,11 +2331,11 @@ src = ["crates/kfx-editor/src/app/play.rs:216"]
 
 [strings."kfx_editor.crash_recovery_autosave_every"]
 text = "Crash-recovery autosave every"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1517"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1496"]
 
 [strings."kfx_editor.create"]
 text = "Create"
-src = ["crates/kfx-editor/src/app/campaign.rs:1216", "crates/kfx-editor/src/app/custom.rs:564", "crates/kfx-editor/src/app/dialogs.rs:710"]
+src = ["crates/kfx-editor/src/app/campaign.rs:1216", "crates/kfx-editor/src/app/custom.rs:564", "crates/kfx-editor/src/app/dialogs.rs:711"]
 
 [strings."kfx_editor.creature"]
 text = "Creature"
@@ -2319,15 +2343,15 @@ src = ["crates/kfx-editor/src/app/things.rs:708"]
 
 [strings."kfx_editor.creature_gold"]
 text = "Creature gold"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1783"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1762"]
 
 [strings."kfx_editor.creature_health"]
 text = "Creature health %"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1786"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1765"]
 
 [strings."kfx_editor.creature_level"]
 text = "Creature level"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1777"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1756"]
 
 [strings."kfx_editor.creature_level_1_10"]
 text = "creature level 1..10"
@@ -2363,7 +2387,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1074"]
 
 [strings."kfx_editor.creatures_bd20"]
 text = "👹 Creatures"
-src = ["crates/kfx-editor/src/app.rs:121"]
+src = ["crates/kfx-editor/src/app.rs:122"]
 
 [strings."kfx_editor.creatures_f8b1"]
 text = "Creatures"
@@ -2435,7 +2459,7 @@ src = ["crates/kfx-editor/src/app/custom.rs:364"]
 
 [strings."kfx_editor.custom_slabs"]
 text = "⬛ Custom slabs"
-src = ["crates/kfx-editor/src/app.rs:140"]
+src = ["crates/kfx-editor/src/app.rs:141"]
 
 [strings."kfx_editor.custom_slabs_keep_their_nine_columns_when_the_ma"]
 text = "Custom slabs keep their nine columns when the map around them is regenerated; the game sees their \"recognized as\" kind."
@@ -2455,11 +2479,11 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:141"]
 
 [strings."kfx_editor.d_new_unsaved"]
 text = "{d} (new, unsaved)"
-src = ["crates/kfx-editor/src/app.rs:797"]
+src = ["crates/kfx-editor/src/app.rs:800"]
 
 [strings."kfx_editor.dark"]
 text = "Dark"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1858"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1837"]
 
 [strings."kfx_editor.date"]
 text = "Date"
@@ -2475,11 +2499,11 @@ src = ["crates/kfx-editor/src/app/custom.rs:1223"]
 
 [strings."kfx_editor.decorate_placed_slabs"]
 text = "Decorate placed slabs"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1994"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1973"]
 
 [strings."kfx_editor.decoration"]
 text = "Decoration"
-src = ["crates/kfx-editor/src/app/dialogs.rs:66", "crates/kfx-editor/src/app/dialogs.rs:1985"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:66", "crates/kfx-editor/src/app/dialogs.rs:1964"]
 
 [strings."kfx_editor.decoration_of_this_map"]
 text = "Decoration of this map"
@@ -2503,11 +2527,11 @@ src = ["crates/kfx-editor/src/app/panels.rs:30"]
 
 [strings."kfx_editor.default"]
 text = "Default"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2135"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2114"]
 
 [strings."kfx_editor.default_effects"]
 text = "Default effects"
-src = ["crates/kfx-editor/src/app/extras.rs:739"]
+src = ["crates/kfx-editor/src/app/extras.rs:670"]
 
 [strings."kfx_editor.delete"]
 text = "🗑 Delete"
@@ -2541,9 +2565,13 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:789"]
 text = "Description"
 src = ["crates/kfx-editor/src/app/map_dialogs.rs:231", "crates/kfx-editor/src/app/prefab.rs:1032"]
 
+[strings."kfx_editor.details"]
+text = "Details…"
+src = ["crates/kfx-editor/src/app/update_ui.rs:487"]
+
 [strings."kfx_editor.detected_d"]
 text = "Detected {d}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1595"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1574"]
 
 [strings."kfx_editor.differs_from_its_image"]
 text = "differs from its image"
@@ -2563,11 +2591,11 @@ src = ["crates/kfx-editor/src/analysis_view.rs:410"]
 
 [strings."kfx_editor.dir_has_no_missing"]
 text = "{dir} has no {missing}"
-src = ["crates/kfx-editor/src/settings.rs:599"]
+src = ["crates/kfx-editor/src/settings.rs:597"]
 
 [strings."kfx_editor.dir_is_not_a_folder"]
 text = "{dir} is not a folder"
-src = ["crates/kfx-editor/src/settings.rs:584"]
+src = ["crates/kfx-editor/src/settings.rs:582"]
 
 [strings."kfx_editor.directly_in_first_put_the_level_in_a_map_pack_fo"]
 text = "directly in {first}: put the level in a map pack folder below it (e.g. levels/personal)"
@@ -2599,7 +2627,7 @@ src = ["crates/kfx-editor/src/app/logic.rs:630"]
 
 [strings."kfx_editor.dk_script"]
 text = "DK script"
-src = ["crates/kfx-editor/src/app/dialogs.rs:606", "crates/kfx-editor/src/app/prefab.rs:1041", "crates/kfx-editor/src/browser.rs:608"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:607", "crates/kfx-editor/src/app/prefab.rs:1041", "crates/kfx-editor/src/browser.rs:608"]
 
 [strings."kfx_editor.dk_script_and_lua"]
 text = "DK script and Lua"
@@ -2611,7 +2639,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:655"]
 
 [strings."kfx_editor.do_not_grab_the_mouse"]
 text = "Do not grab the mouse"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1677"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1656"]
 
 [strings."kfx_editor.dock"]
 text = "⬅ Dock"
@@ -2627,7 +2655,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:246"]
 
 [strings."kfx_editor.door_at_slab_x_y_locked"]
 text = "door at slab ({x},{y}) {locked}"
-src = ["crates/kfx-editor/src/app/extras.rs:456"]
+src = ["crates/kfx-editor/src/app/extras.rs:387"]
 
 [strings."kfx_editor.door_locked_true_false"]
 text = "door locked: true or false"
@@ -2643,7 +2671,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:19", "crates/kfx-editor/src/app/pane
 
 [strings."kfx_editor.doors_3efd"]
 text = "🚪 Doors"
-src = ["crates/kfx-editor/src/app.rs:128"]
+src = ["crates/kfx-editor/src/app.rs:129"]
 
 [strings."kfx_editor.doors_cannot_be_picked_as_slabs"]
 text = "Doors cannot be picked as slabs"
@@ -2651,7 +2679,23 @@ src = ["crates/kfx-editor/src/app/editing.rs:460"]
 
 [strings."kfx_editor.doors_locked"]
 text = "Doors locked"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1792"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1771"]
+
+[strings."kfx_editor.download_and_install_automatically"]
+text = "Download and install automatically"
+src = ["crates/kfx-editor/src/app/update_ui.rs:857"]
+
+[strings."kfx_editor.download_cancelled"]
+text = "Download cancelled"
+src = ["crates/kfx-editor/src/app/update_ui.rs:384"]
+
+[strings."kfx_editor.downloads_are_checked_against_the_sha_256_sums"]
+text = "Downloads are checked against the SHA-256 sums published with the release on GitHub. They are not signed: see the manual, Updates."
+src = ["crates/kfx-editor/src/app/update_ui.rs:725"]
+
+[strings."kfx_editor.downloads_checks_and_installs_the_new_version"]
+text = "Downloads, checks and installs the new version, then starts it again on the open map (unsaved changes are asked about first)"
+src = ["crates/kfx-editor/src/app/update_ui.rs:660"]
 
 [strings."kfx_editor.draw"]
 text = "Draw"
@@ -2675,7 +2719,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1002"]
 
 [strings."kfx_editor.dungeon_keeper_is_a_trademark_of_electronic_arts"]
 text = "Dungeon Keeper is a trademark of Electronic Arts. The editor ships no game data: it reads your KeeperFX install."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2269"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2248"]
 
 [strings."kfx_editor.duplicate"]
 text = "Duplicate"
@@ -2695,7 +2739,7 @@ src = ["crates/kfx-editor/src/app/things.rs:444"]
 
 [strings."kfx_editor.e_does_not_exist"]
 text = "{e} does not exist"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1590"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1569"]
 
 [strings."kfx_editor.e_errors"]
 text = "{e} errors"
@@ -2703,11 +2747,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:1258"]
 
 [strings."kfx_editor.e_errors_w_warnings"]
 text = "✖ {e} errors, {w} warnings"
-src = ["crates/kfx-editor/src/app/toolbar.rs:904"]
-
-[strings."kfx_editor.e_g_https_api_github_com_repos_owner_repo_releas"]
-text = "e.g. https://api.github.com/repos/OWNER/REPO/releases/latest"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1510"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:907"]
 
 [strings."kfx_editor.e_w"]
 text = "E-W"
@@ -2727,7 +2767,7 @@ src = ["crates/kfx-editor/src/rounding.rs:47"]
 
 [strings."kfx_editor.earth_rock_gold_and_liquids_take_the_painted_own"]
 text = "Earth, rock, gold and liquids take the painted owner (else they stay neutral)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1721", "crates/kfx-editor/src/app/menu_bar.rs:768"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1700", "crates/kfx-editor/src/app/menu_bar.rs:768"]
 
 [strings."kfx_editor.earth_with_rock_outcrops_gold_veins_pools_and_op"]
 text = "Earth with rock outcrops, gold veins, pools and open caverns."
@@ -2739,7 +2779,7 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:592"]
 
 [strings."kfx_editor.east_west"]
 text = "East-west"
-src = ["crates/kfx-editor/src/app/dialogs.rs:104"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:105"]
 
 [strings."kfx_editor.east_west_mirror"]
 text = "East-west mirror"
@@ -2751,7 +2791,7 @@ src = ["crates/kfx-editor/src/analysis_view.rs:178"]
 
 [strings."kfx_editor.edge_panning"]
 text = "Edge panning"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1930"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1909"]
 
 [strings."kfx_editor.edit"]
 text = "Edit"
@@ -2803,7 +2843,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:755", "crates/kfx-editor/src/app/t
 
 [strings."kfx_editor.editable_border_this_session"]
 text = "Editable border (this session)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1833"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1812"]
 
 [strings."kfx_editor.effect"]
 text = "effect"
@@ -2811,11 +2851,11 @@ src = ["crates/kfx-editor/src/doodads.rs:261"]
 
 [strings."kfx_editor.effect_generator"]
 text = "Effect generator"
-src = ["crates/kfx-editor/src/app/extras.rs:611", "crates/kfx-editor/src/app/extras.rs:626", "crates/kfx-editor/src/app/things.rs:709"]
+src = ["crates/kfx-editor/src/app/extras.rs:542", "crates/kfx-editor/src/app/extras.rs:557", "crates/kfx-editor/src/app/things.rs:709"]
 
 [strings."kfx_editor.effect_generator_range"]
 text = "Effect generator range"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1820"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1799"]
 
 [strings."kfx_editor.effect_generators"]
 text = "Effect generators"
@@ -2831,11 +2871,11 @@ src = ["crates/kfx-editor/src/app/panels.rs:20", "crates/kfx-editor/src/app/pane
 
 [strings."kfx_editor.effects_bd87"]
 text = "✨ Effects"
-src = ["crates/kfx-editor/src/app.rs:131"]
+src = ["crates/kfx-editor/src/app.rs:132"]
 
 [strings."kfx_editor.empty_derived_from_the_level_number"]
 text = "Empty: derived from the level number"
-src = ["crates/kfx-editor/src/app/extras.rs:556"]
+src = ["crates/kfx-editor/src/app/extras.rs:487"]
 
 [strings."kfx_editor.enable_the_game_api_when_playing"]
 text = "Enable the game API when playing"
@@ -2889,13 +2929,17 @@ src = ["crates/kfx-editor/src/app/live.rs:470"]
 text = "Every file of the level with its role"
 src = ["crates/kfx-editor/src/app/menu_bar.rs:152"]
 
+[strings."kfx_editor.every_release_so_far_is_a_pre_release_on_the_stable"]
+text = "Every release so far is a pre-release: on the stable channel no update is offered until a release is marked stable."
+src = ["crates/kfx-editor/src/app/update_ui.rs:847"]
+
 [strings."kfx_editor.every_text_of_this_level_in_every_language_side"]
 text = "Every text of this level in every language side by side, with CSV and .po exchange"
 src = ["crates/kfx-editor/src/app/strings.rs:513"]
 
 [strings."kfx_editor.everything_except_the_install_folder_the_recent"]
 text = "Everything except the install folder, the recent maps and the window size"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1339"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1341"]
 
 [strings."kfx_editor.evil"]
 text = "Evil"
@@ -2911,15 +2955,15 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:223"]
 
 [strings."kfx_editor.export"]
 text = "Export"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1095"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1096"]
 
 [strings."kfx_editor.export_failed_e"]
 text = "Export failed: {e}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1126"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1127"]
 
 [strings."kfx_editor.export_image"]
 text = "Export image"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1038"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1039"]
 
 [strings."kfx_editor.export_image_de3e"]
 text = "Export image…"
@@ -2931,11 +2975,11 @@ src = ["crates/kfx-editor/src/app/texts.rs:191", "crates/kfx-editor/src/app/text
 
 [strings."kfx_editor.exported_path_w_x_h"]
 text = "Exported {path} ({w} x {h})"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1291"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1292"]
 
 [strings."kfx_editor.extra_arguments"]
 text = "Extra arguments"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1624"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1603"]
 
 [strings."kfx_editor.extras"]
 text = "Extras"
@@ -2955,7 +2999,7 @@ src = ["crates/kfx-editor/src/app/things.rs:504"]
 
 [strings."kfx_editor.facing"]
 text = "Facing"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1780", "crates/kfx-editor/src/app/panels.rs:437"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1759", "crates/kfx-editor/src/app/panels.rs:437"]
 
 [strings."kfx_editor.fairness"]
 text = "Fairness"
@@ -2967,7 +3011,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1411"]
 
 [strings."kfx_editor.families_from_cubes_cfg"]
 text = "Families (from cubes.cfg)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2007"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1986"]
 
 [strings."kfx_editor.families_switched_off_for_this_map"]
 text = "Families switched off for this map"
@@ -2979,7 +3023,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:816"]
 
 [strings."kfx_editor.file"]
 text = "File"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1043", "crates/kfx-editor/src/app/menu_bar.rs:10", "crates/kfx-editor/src/app/toolbar.rs:66"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1044", "crates/kfx-editor/src/app/menu_bar.rs:10", "crates/kfx-editor/src/app/toolbar.rs:66"]
 
 [strings."kfx_editor.file_name"]
 text = "File name"
@@ -2991,11 +3035,11 @@ src = ["crates/kfx-editor/src/app/campaign.rs:153"]
 
 [strings."kfx_editor.files"]
 text = "Files"
-src = ["crates/kfx-editor/src/app/dialogs.rs:60", "crates/kfx-editor/src/app/dialogs.rs:1438", "crates/kfx-editor/src/app/panels.rs:569"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:60", "crates/kfx-editor/src/app/dialogs.rs:1440", "crates/kfx-editor/src/app/panels.rs:569"]
 
 [strings."kfx_editor.fill"]
 text = "Fill"
-src = ["crates/kfx-editor/src/app/dialogs.rs:452", "crates/kfx-editor/src/app/dialogs.rs:507", "crates/kfx-editor/src/tools.rs:39"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:453", "crates/kfx-editor/src/app/dialogs.rs:508", "crates/kfx-editor/src/tools.rs:39"]
 
 [strings."kfx_editor.fill_a33f"]
 text = "🎨 Fill"
@@ -3075,7 +3119,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:212"]
 
 [strings."kfx_editor.fix_the_file_in_a_text_editor_and_reopen_the_map"]
 text = "Fix the file in a text editor and reopen the map to keep its content (Troubleshooting in the manual)."
-src = ["crates/kfx-editor/src/app/documents.rs:669"]
+src = ["crates/kfx-editor/src/app/documents.rs:670"]
 
 [strings."kfx_editor.flags_flg"]
 text = "Flags (.flg)"
@@ -3115,7 +3159,7 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:770", "crates/kfx-editor/src/app
 
 [strings."kfx_editor.floors_and_liquids"]
 text = "Floors and liquids"
-src = ["crates/kfx-editor/src/app.rs:192"]
+src = ["crates/kfx-editor/src/app.rs:193"]
 
 [strings."kfx_editor.fly"]
 text = "✈ Fly"
@@ -3123,11 +3167,11 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:418"]
 
 [strings."kfx_editor.fly_view_collision"]
 text = "Fly view collision"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1921", "crates/kfx-editor/src/app/menu_bar.rs:399"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1900", "crates/kfx-editor/src/app/menu_bar.rs:399"]
 
 [strings."kfx_editor.fly_view_speed"]
 text = "Fly view speed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1915"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1894"]
 
 [strings."kfx_editor.fly_wasd_move_q_e_down_up_shift_faster_look_v_le"]
 text = "Fly: WASD move · Q/E down/up · Shift faster · {look} · V leaves"
@@ -3135,15 +3179,19 @@ src = ["crates/kfx-editor/src/app/pane.rs:457"]
 
 [strings."kfx_editor.folder"]
 text = "Folder"
-src = ["crates/kfx-editor/src/app/dialogs.rs:400", "crates/kfx-editor/src/app/prompts.rs:219"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:401", "crates/kfx-editor/src/app/prompts.rs:219"]
 
 [strings."kfx_editor.font_size"]
 text = "Font size"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1847"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1826"]
 
 [strings."kfx_editor.food_8329"]
 text = "Food"
 src = ["crates/kfx-editor/src/app/panels.rs:42"]
+
+[strings."kfx_editor.forget"]
+text = "Forget"
+src = ["crates/kfx-editor/src/app/update_ui.rs:875"]
 
 [strings."kfx_editor.format"]
 text = "Format"
@@ -3151,11 +3199,11 @@ src = ["crates/kfx-editor/src/browser.rs:614"]
 
 [strings."kfx_editor.formats_slab_generation_and_rules_follow_the_kee"]
 text = "Formats, slab generation and rules follow the KeeperFX source code. Thanks to the KeeperFX project and the authors of its wiki."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2255"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2234"]
 
 [strings."kfx_editor.fortified_walls"]
 text = "Fortified walls"
-src = ["crates/kfx-editor/src/app.rs:188"]
+src = ["crates/kfx-editor/src/app.rs:189"]
 
 [strings."kfx_editor.fortify"]
 text = "Fortify"
@@ -3163,7 +3211,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:448", "crates/kfx-editor/src/app/to
 
 [strings."kfx_editor.fortify_wall_art"]
 text = "Fortify wall art"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1726"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1705"]
 
 [strings."kfx_editor.fortress"]
 text = "Fortress"
@@ -3171,7 +3219,7 @@ src = ["crates/kfx-editor/src/newmap.rs:167"]
 
 [strings."kfx_editor.fps_30_nomods"]
 text = "-fps 30 -nomods"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1628"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1607"]
 
 [strings."kfx_editor.free_play_levels_picked_from_a_list_levels"]
 text = "Free play levels picked from a list (levels/)."
@@ -3203,7 +3251,7 @@ src = ["crates/kfx-editor/src/app/custom.rs:168"]
 
 [strings."kfx_editor.from_the_level_number"]
 text = "from the level number"
-src = ["crates/kfx-editor/src/app/extras.rs:551"]
+src = ["crates/kfx-editor/src/app/extras.rs:482"]
 
 [strings."kfx_editor.from_the_level_number_level_seed"]
 text = "from the level number ({level_seed})"
@@ -3251,11 +3299,11 @@ src = ["crates/kfx-editor/src/app/live.rs:507"]
 
 [strings."kfx_editor.game_configuration_e"]
 text = "game configuration: {e}"
-src = ["crates/kfx-editor/src/app/config.rs:187", "crates/kfx-editor/src/app.rs:776"]
+src = ["crates/kfx-editor/src/app/config.rs:187", "crates/kfx-editor/src/app.rs:779"]
 
 [strings."kfx_editor.game_executable"]
 text = "Game executable"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1558"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1537"]
 
 [strings."kfx_editor.game_log"]
 text = "Game log"
@@ -3299,11 +3347,11 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:937"]
 
 [strings."kfx_editor.generate"]
 text = "Generate"
-src = ["crates/kfx-editor/src/app/dialogs.rs:462", "crates/kfx-editor/src/app/generator.rs:622"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:463", "crates/kfx-editor/src/app/generator.rs:622"]
 
 [strings."kfx_editor.generate_again_with_a_new_seed"]
 text = "Generate again with a new seed."
-src = ["crates/kfx-editor/src/app/dialogs.rs:481"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:482"]
 
 [strings."kfx_editor.generate_into_selection"]
 text = "Generate into selection"
@@ -3315,7 +3363,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:869"]
 
 [strings."kfx_editor.generated_maps_are_20_170_slabs_each_way"]
 text = "generated maps are 20..170 slabs each way"
-src = ["crates/kfx-editor/src/app/dialogs.rs:234"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:235"]
 
 [strings."kfx_editor.generated_x0_x_y0_slabs_in_attempts_attempt_s_ti"]
 one = "Generated {x0}x{y0} slabs in {n} attempt, {time_us} ms."
@@ -3360,7 +3408,7 @@ src = ["crates/kfx-editor/src/app/generator.rs:268"]
 
 [strings."kfx_editor.gold_near_each_heart"]
 text = "Gold near each heart"
-src = ["crates/kfx-editor/src/app/dialogs.rs:553"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:554"]
 
 [strings."kfx_editor.gold_next_to_path"]
 text = "Gold next to path"
@@ -3380,7 +3428,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:892"]
 
 [strings."kfx_editor.gold_value"]
 text = "Gold value"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1789", "crates/kfx-editor/src/app/panels.rs:429"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1768", "crates/kfx-editor/src/app/panels.rs:429"]
 
 [strings."kfx_editor.gold_value_0_1000000000"]
 text = "gold value 0..1000000000"
@@ -3396,7 +3444,7 @@ src = ["crates/kfx-editor/src/assets.rs:40"]
 
 [strings."kfx_editor.graphics"]
 text = "Graphics"
-src = ["crates/kfx-editor/src/app/dialogs.rs:65", "crates/kfx-editor/src/app/dialogs.rs:1946"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:65", "crates/kfx-editor/src/app/dialogs.rs:1925"]
 
 [strings."kfx_editor.grid"]
 text = "Grid"
@@ -3421,7 +3469,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1262"]
 
 [strings."kfx_editor.grouped_the_game_s_rule"]
 text = "Grouped (the game's rule)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1730"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1709"]
 
 [strings."kfx_editor.gui"]
 text = "GUI"
@@ -3485,7 +3533,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:1219"]
 
 [strings."kfx_editor.hero_gates"]
 text = "Hero gates"
-src = ["crates/kfx-editor/src/app/dialogs.rs:560", "crates/kfx-editor/src/app/generator.rs:249", "crates/kfx-editor/src/app/panels.rs:44"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:561", "crates/kfx-editor/src/app/generator.rs:249", "crates/kfx-editor/src/app/panels.rs:44"]
 
 [strings."kfx_editor.hero_gates_d2ad"]
 text = "hero gates"
@@ -3525,7 +3573,7 @@ src = ["crates/kfx-editor/src/app/script_panel.rs:828"]
 
 [strings."kfx_editor.history"]
 text = "History"
-src = ["crates/kfx-editor/src/app/panels.rs:563", "crates/kfx-editor/src/app/toolbar.rs:848"]
+src = ["crates/kfx-editor/src/app/panels.rs:563", "crates/kfx-editor/src/app/toolbar.rs:851"]
 
 [strings."kfx_editor.history_inspector_things_layers_validate_notes_a"]
 text = "History, Inspector, Things, Layers, Validate, Notes and Files as tabs of the left panel (else in a right panel)"
@@ -3549,7 +3597,7 @@ src = ["crates/kfx-editor/src/app/config.rs:761", "crates/kfx-editor/src/app/men
 
 [strings."kfx_editor.image_to_map"]
 text = "Image to map"
-src = ["crates/kfx-editor/src/app/dialogs.rs:784", "crates/kfx-editor/src/app/dialogs.rs:825"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:785", "crates/kfx-editor/src/app/dialogs.rs:826"]
 
 [strings."kfx_editor.image_to_map_8f3b"]
 text = "Image to map…"
@@ -3557,11 +3605,11 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:207"]
 
 [strings."kfx_editor.image_to_map_n_slabs_changed_one_undo_step"]
 text = "Image to map: {n} slabs changed (one undo step)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:785"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:786"]
 
 [strings."kfx_editor.imbalance_i"]
 text = ", imbalance {i}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:284"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:285"]
 
 [strings."kfx_editor.imbalance_i_0_is_perfectly_even"]
 text = "Imbalance {i} (0 is perfectly even)"
@@ -3573,11 +3621,11 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1427"]
 
 [strings."kfx_editor.impenetrable_rock"]
 text = "Impenetrable rock"
-src = ["crates/kfx-editor/src/app/dialogs.rs:498"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:499"]
 
 [strings."kfx_editor.imps_each"]
 text = "imps each"
-src = ["crates/kfx-editor/src/app/dialogs.rs:537"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:538"]
 
 [strings."kfx_editor.include_things_action_points_and_lights"]
 text = "Include things, action points and lights"
@@ -3605,7 +3653,11 @@ src = ["crates/kfx-editor/src/app/panels.rs:564"]
 
 [strings."kfx_editor.install_p"]
 text = "Install: {p}"
-src = ["crates/kfx-editor/src/app.rs:754"]
+src = ["crates/kfx-editor/src/app.rs:757"]
+
+[strings."kfx_editor.installed_but_could_not_start_it_e_start_the_editor"]
+text = "Installed, but could not start it ({e}); start the editor again"
+src = ["crates/kfx-editor/src/app/update_ui.rs:225"]
 
 [strings."kfx_editor.intensity"]
 text = "Intensity"
@@ -3613,19 +3665,19 @@ src = ["crates/kfx-editor/src/app/panels.rs:403"]
 
 [strings."kfx_editor.intensity_967e"]
 text = "intensity "
-src = ["crates/kfx-editor/src/app/extras.rs:652"]
+src = ["crates/kfx-editor/src/app/extras.rs:583"]
 
 [strings."kfx_editor.interface"]
 text = "Interface"
-src = ["crates/kfx-editor/src/app/dialogs.rs:63", "crates/kfx-editor/src/app/dialogs.rs:1841"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:63", "crates/kfx-editor/src/app/dialogs.rs:1820"]
 
 [strings."kfx_editor.interface_scale"]
 text = "Interface scale"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1844"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1823"]
 
 [strings."kfx_editor.invert"]
 text = "Invert"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1906"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1885"]
 
 [strings."kfx_editor.islands"]
 text = "Islands"
@@ -3633,15 +3685,19 @@ src = ["crates/kfx-editor/src/newmap.rs:165"]
 
 [strings."kfx_editor.isometric"]
 text = "isometric"
-src = ["crates/kfx-editor/src/app/toolbar.rs:995"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:998"]
 
 [strings."kfx_editor.isometric_game_view"]
 text = "Isometric (game view)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1061"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1062"]
 
 [strings."kfx_editor.it_can_be_copied_into_the_personal_levels_pack_l"]
 text = "It can be copied into the \"Personal levels\" pack (levels/personal) with a .lof file, and played from there. Your map stays where it is; edits are not copied back."
 src = ["crates/kfx-editor/src/app/play.rs:488"]
+
+[strings."kfx_editor.it_is_installed_when_you_close_the_editor"]
+text = "It is installed when you close the editor."
+src = ["crates/kfx-editor/src/app/update_ui.rs:479"]
 
 [strings."kfx_editor.items_selected"]
 text = "{items} selected"
@@ -3653,7 +3709,7 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:864"]
 
 [strings."kfx_editor.keep_backups_up_to"]
 text = "Keep backups up to"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1536"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1515"]
 
 [strings."kfx_editor.keep_my_version"]
 text = "Keep my version"
@@ -3705,7 +3761,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1160"]
 
 [strings."kfx_editor.keeperfx_folder_e6ff"]
 text = "KeeperFX folder:"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1440"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1442"]
 
 [strings."kfx_editor.keeperfx_format_name"]
 text = "KeeperFX"
@@ -3713,11 +3769,11 @@ src = ["crates/kfx-editor/src/app/prompts.rs:403"]
 
 [strings."kfx_editor.keeperfx_map_editor"]
 text = "KeeperFX Map Editor"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2235"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2214"]
 
 [strings."kfx_editor.keeperfx_map_editor_2ec4"]
 text = "KeeperFX Map Editor"
-src = ["crates/kfx-editor/src/app.rs:809"]
+src = ["crates/kfx-editor/src/app.rs:812"]
 
 [strings."kfx_editor.keeperfx_map_map_slb"]
 text = "KeeperFX map (map*.slb)"
@@ -3725,7 +3781,7 @@ src = ["crates/kfx-editor/src/app/prompts.rs:8"]
 
 [strings."kfx_editor.keeperfx_project"]
 text = "KeeperFX project"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2265"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2244"]
 
 [strings."kfx_editor.keeperfx_tngfx_aptfx_lgtfx"]
 text = "KeeperFX (.tngfx / .aptfx / .lgtfx)"
@@ -3741,7 +3797,7 @@ src = ["crates/kfx-editor/src/app/extras.rs:24"]
 
 [strings."kfx_editor.keeperfx_wiki"]
 text = "KeeperFX wiki"
-src = ["crates/kfx-editor/src/app/dialogs.rs:72", "crates/kfx-editor/src/app/menu_bar.rs:1272"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:73", "crates/kfx-editor/src/app/menu_bar.rs:1272"]
 
 [strings."kfx_editor.keeperfx_workshop"]
 text = "KeeperFX Workshop"
@@ -3749,7 +3805,7 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:359"]
 
 [strings."kfx_editor.keepers"]
 text = "Keepers"
-src = ["crates/kfx-editor/src/app/dialogs.rs:534", "crates/kfx-editor/src/app/generator.rs:581", "crates/kfx-editor/src/browser.rs:567"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:535", "crates/kfx-editor/src/app/generator.rs:581", "crates/kfx-editor/src/browser.rs:567"]
 
 [strings."kfx_editor.keepers_on_islands_in_a_lava_or_water_sea_joined"]
 text = "Keepers on islands in a lava or water sea, joined by earth causeways."
@@ -3761,19 +3817,27 @@ src = ["crates/kfx-editor/src/app/generator.rs:583"]
 
 [strings."kfx_editor.keyboard_configuration_keyboard_shortcuts_to_cha"]
 text = "Keyboard (Configuration > Keyboard shortcuts to change)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2196"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2175"]
 
 [strings."kfx_editor.keyboard_shortcuts"]
 text = "Keyboard shortcuts"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2044", "crates/kfx-editor/src/app/dialogs.rs:2153"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2023", "crates/kfx-editor/src/app/dialogs.rs:2132"]
 
 [strings."kfx_editor.keyboard_shortcuts_baa1"]
 text = "Keyboard shortcuts…"
 src = ["crates/kfx-editor/src/app/menu_bar.rs:1176"]
 
+[strings."kfx_editor.kfx_editor_cli_exe_is_missing_from_dir"]
+text = "kfx-editor-cli.exe is missing from {dir}: the command line needs it. Reinstall the editor or download the release archive again."
+src = ["crates/kfx-editor/src/console.rs:82"]
+
+[strings."kfx_editor.kfx_editor_exe_is_the_windowed_program_and_cannot"]
+text = "kfx-editor.exe is the windowed program and cannot print to a terminal. The command \"{cmd}\" ran through kfx-editor-cli.exe (exit code {code}). Use kfx-editor-cli.exe for the command line."
+src = ["crates/kfx-editor/src/console.rs:110"]
+
 [strings."kfx_editor.kind"]
 text = "Kind"
-src = ["crates/kfx-editor/src/app/campaign.rs:1047", "crates/kfx-editor/src/app/dialogs.rs:564", "crates/kfx-editor/src/app/map_dialogs.rs:236"]
+src = ["crates/kfx-editor/src/app/campaign.rs:1047", "crates/kfx-editor/src/app/dialogs.rs:565", "crates/kfx-editor/src/app/map_dialogs.rs:236"]
 
 [strings."kfx_editor.kind_name_cfg_already_exists"]
 text = "{kind}/{name}.cfg already exists."
@@ -3801,11 +3865,11 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:342"]
 
 [strings."kfx_editor.language"]
 text = "Language"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1862"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1841"]
 
 [strings."kfx_editor.language_hint"]
 text = "Catalogues are read from data/i18n next to the editor and from the i18n folder of the editor's settings folder; texts a catalogue lacks stay in English."
-src = ["crates/kfx-editor/src/app/dialogs.rs:1877"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1856"]
 
 [strings."kfx_editor.language_lang"]
 text = "Language {lang}"
@@ -3822,6 +3886,18 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1484"]
 [strings."kfx_editor.largest_fairness_imbalance_accepted_0_is_perfect"]
 text = "Largest fairness imbalance accepted (0 is perfectly even)."
 src = ["crates/kfx-editor/src/app/generator.rs:279"]
+
+[strings."kfx_editor.last_check_n_minutes_ago"]
+text = "Last check: {n} minutes ago"
+src = ["crates/kfx-editor/src/app/update_ui.rs:905"]
+
+[strings."kfx_editor.last_time_the_editor_stopped_because_of_an_error"]
+text = "Last time, the editor stopped because of an error. Unsaved work may be in the crash recovery (it is offered when a map is opened). A crash log was written to:"
+src = ["crates/kfx-editor/src/app/update_ui.rs:784"]
+
+[strings."kfx_editor.later"]
+text = "Later"
+src = ["crates/kfx-editor/src/app/update_ui.rs:490", "crates/kfx-editor/src/app/update_ui.rs:670"]
 
 [strings."kfx_editor.layers"]
 text = "Layers"
@@ -3885,11 +3961,11 @@ src = ["crates/kfx-editor/src/app/campaign.rs:498"]
 
 [strings."kfx_editor.level_name_lof"]
 text = "level name (.lof)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:589"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:590"]
 
 [strings."kfx_editor.level_number"]
 text = "Level number"
-src = ["crates/kfx-editor/src/app/dialogs.rs:413", "crates/kfx-editor/src/app/prompts.rs:235"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:414", "crates/kfx-editor/src/app/prompts.rs:235"]
 
 [strings."kfx_editor.level_number_in_levels_personal"]
 text = "Level number in levels/personal"
@@ -3905,7 +3981,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:595"]
 
 [strings."kfx_editor.level_script_commands"]
 text = "Level script commands"
-src = ["crates/kfx-editor/src/app/dialogs.rs:76"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:77"]
 
 [strings."kfx_editor.levels_land_view_texts_and_checks_in_the_campaig"]
 text = "Levels, land view, texts and checks in the campaign editor"
@@ -3917,11 +3993,11 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1054"]
 
 [strings."kfx_editor.licence_gpl_2_0_or_later"]
 text = "Licence: GPL-2.0-or-later"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2245"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2224"]
 
 [strings."kfx_editor.light"]
 text = "Light"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1859", "crates/kfx-editor/src/app/extras.rs:615", "crates/kfx-editor/src/app/extras.rs:634", "crates/kfx-editor/src/app/panels.rs:338", "crates/kfx-editor/src/app/things.rs:110", "crates/kfx-editor/src/app/toolbar.rs:567"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1838", "crates/kfx-editor/src/app/extras.rs:546", "crates/kfx-editor/src/app/extras.rs:565", "crates/kfx-editor/src/app/panels.rs:338", "crates/kfx-editor/src/app/things.rs:110", "crates/kfx-editor/src/app/toolbar.rs:567"]
 
 [strings."kfx_editor.light_i"]
 text = "Light #{i}"
@@ -3941,11 +4017,11 @@ src = ["crates/kfx-editor/src/app/things.rs:433"]
 
 [strings."kfx_editor.light_range_intensity_height"]
 text = "Light range / intensity / height"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1795"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1774"]
 
 [strings."kfx_editor.lighting"]
 text = "Lighting"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1963", "crates/kfx-editor/src/app/menu_bar.rs:455", "crates/kfx-editor/src/app/panels.rs:1247", "crates/kfx-editor/src/app/toolbar.rs:551"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1942", "crates/kfx-editor/src/app/menu_bar.rs:455", "crates/kfx-editor/src/app/panels.rs:1247", "crates/kfx-editor/src/app/toolbar.rs:551"]
 
 [strings."kfx_editor.lights"]
 text = "Lights"
@@ -3953,7 +4029,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:25", "crates/kfx-editor/src/app/pane
 
 [strings."kfx_editor.lights_eb5e"]
 text = "💡 Lights"
-src = ["crates/kfx-editor/src/app.rs:133"]
+src = ["crates/kfx-editor/src/app.rs:134"]
 
 [strings."kfx_editor.line"]
 text = "📏 Line"
@@ -3985,11 +4061,11 @@ src = ["crates/kfx-editor/src/app/config.rs:424"]
 
 [strings."kfx_editor.load"]
 text = "Load"
-src = ["crates/kfx-editor/src/app/dialogs.rs:841"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:842"]
 
 [strings."kfx_editor.load_a_png"]
 text = "Load a PNG"
-src = ["crates/kfx-editor/src/app/dialogs.rs:959"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:960"]
 
 [strings."kfx_editor.loading_the_game_s_sounds"]
 text = "Loading the game's sounds…"
@@ -3997,7 +4073,7 @@ src = ["crates/kfx-editor/src/app/audio.rs:229", "crates/kfx-editor/src/app/audi
 
 [strings."kfx_editor.lock_door"]
 text = "Lock door"
-src = ["crates/kfx-editor/src/app/extras.rs:451"]
+src = ["crates/kfx-editor/src/app/extras.rs:382"]
 
 [strings."kfx_editor.lock_region"]
 text = "Lock region"
@@ -4013,7 +4089,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:386"]
 
 [strings."kfx_editor.locked_ecb3"]
 text = "locked"
-src = ["crates/kfx-editor/src/app/extras.rs:467"]
+src = ["crates/kfx-editor/src/app/extras.rs:398"]
 
 [strings."kfx_editor.locked_regions"]
 text = "Locked regions"
@@ -4029,11 +4105,11 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:923"]
 
 [strings."kfx_editor.lua"]
 text = "Lua"
-src = ["crates/kfx-editor/src/app/dialogs.rs:611", "crates/kfx-editor/src/browser.rs:610"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:612", "crates/kfx-editor/src/browser.rs:610"]
 
 [strings."kfx_editor.lua_level_scripts"]
 text = "Lua level scripts"
-src = ["crates/kfx-editor/src/app/dialogs.rs:80"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:81"]
 
 [strings."kfx_editor.lua_script_lua"]
 text = "Lua script (.lua)"
@@ -4065,7 +4141,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1195"]
 
 [strings."kfx_editor.making_maps"]
 text = "Making maps"
-src = ["crates/kfx-editor/src/app/dialogs.rs:91"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:92"]
 
 [strings."kfx_editor.map"]
 text = "Map"
@@ -4097,7 +4173,7 @@ src = ["crates/kfx-editor/src/app/safety.rs:544"]
 
 [strings."kfx_editor.map_level_already_exists_in_that_folder_saving_w"]
 text = "map{level} already exists in that folder; saving will overwrite it (a backup is made first)."
-src = ["crates/kfx-editor/src/app/dialogs.rs:694"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:695"]
 
 [strings."kfx_editor.map_level_already_exists_there_and_will_be_overw"]
 text = "map{level} already exists there and will be overwritten (a backup is made first)."
@@ -4117,7 +4193,7 @@ src = ["crates/kfx-editor/src/app/prompts.rs:420"]
 
 [strings."kfx_editor.map_level_lof_written_in_folder_save_or_discard"]
 text = "map{level}.lof written in {folder}; save or discard the open map, then File > New map"
-src = ["crates/kfx-editor/src/app.rs:1017"]
+src = ["crates/kfx-editor/src/app.rs:1021"]
 
 [strings."kfx_editor.map_level_saves_in_the_legacy_format"]
 text = "map{level} saves in the {legacy} format"
@@ -4157,7 +4233,7 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:363"]
 
 [strings."kfx_editor.map_size_must_be_1_170_slabs_each_way"]
 text = "map size must be 1..170 slabs each way"
-src = ["crates/kfx-editor/src/app/dialogs.rs:151"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:152"]
 
 [strings."kfx_editor.mapnnnnn_lang_dat_read_before_the_campaign_strin"]
 text = "mapNNNNN.<lang>.dat: read before the campaign strings"
@@ -4193,7 +4269,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:532"]
 
 [strings."kfx_editor.mib"]
 text = " MiB"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1540"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1519"]
 
 [strings."kfx_editor.min_gold"]
 text = "min gold"
@@ -4201,7 +4277,7 @@ src = ["crates/kfx-editor/src/app/generator.rs:262"]
 
 [strings."kfx_editor.minimap"]
 text = "Minimap"
-src = ["crates/kfx-editor/src/app/menu_bar.rs:456", "crates/kfx-editor/src/app/menu_bar.rs:1208", "crates/kfx-editor/src/app/toolbar.rs:803"]
+src = ["crates/kfx-editor/src/app/menu_bar.rs:456", "crates/kfx-editor/src/app/menu_bar.rs:1208", "crates/kfx-editor/src/app/toolbar.rs:806"]
 
 [strings."kfx_editor.mixed"]
 text = "(mixed)"
@@ -4237,7 +4313,7 @@ src = ["crates/kfx-editor/src/app/config.rs:689"]
 
 [strings."kfx_editor.mouse"]
 text = "Mouse"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2179"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2158"]
 
 [strings."kfx_editor.move_n_items"]
 text = "Move {n} items"
@@ -4257,7 +4333,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1072"]
 
 [strings."kfx_editor.multiplayer_maps_computer_keepers_for_the_other"]
 text = "Multiplayer maps: computer keepers for the other players (-1player)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1670"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1649"]
 
 [strings."kfx_editor.multiplayer_pack"]
 text = "Multiplayer pack"
@@ -4286,11 +4362,11 @@ src = ["crates/kfx-editor/src/app/config.rs:886"]
 
 [strings."kfx_editor.n_doodads_scattered"]
 text = "{n} doodads scattered"
-src = ["crates/kfx-editor/src/app/extras.rs:490"]
+src = ["crates/kfx-editor/src/app/extras.rs:421"]
 
 [strings."kfx_editor.n_doodads_scattered_skipped_problems"]
 text = "{n} doodads scattered; skipped: {problems}"
-src = ["crates/kfx-editor/src/app/extras.rs:496"]
+src = ["crates/kfx-editor/src/app/extras.rs:427"]
 
 [strings."kfx_editor.n_locked_region_s_removed"]
 one = "{n} locked region removed"
@@ -4299,7 +4375,7 @@ src = ["crates/kfx-editor/src/app/custom.rs:835"]
 
 [strings."kfx_editor.n_maps_in_p_opening_the_first_use_the_map_browse"]
 text = "{n} maps in {p}: opening the first; use the map browser for the others"
-src = ["crates/kfx-editor/src/app.rs:835"]
+src = ["crates/kfx-editor/src/app.rs:838"]
 
 [strings."kfx_editor.n_members_places"]
 text = "📜 {n} ({members} places)"
@@ -4324,7 +4400,7 @@ src = ["crates/kfx-editor/src/newmap.rs:516"]
 
 [strings."kfx_editor.name"]
 text = "Name"
-src = ["crates/kfx-editor/src/app/custom.rs:490", "crates/kfx-editor/src/app/dialogs.rs:585", "crates/kfx-editor/src/app/extras.rs:585", "crates/kfx-editor/src/app/map_dialogs.rs:209", "crates/kfx-editor/src/app/play.rs:501", "crates/kfx-editor/src/app/prefab.rs:1026"]
+src = ["crates/kfx-editor/src/app/custom.rs:490", "crates/kfx-editor/src/app/dialogs.rs:586", "crates/kfx-editor/src/app/extras.rs:516", "crates/kfx-editor/src/app/map_dialogs.rs:209", "crates/kfx-editor/src/app/play.rs:501", "crates/kfx-editor/src/app/prefab.rs:1026"]
 
 [strings."kfx_editor.name_changed_on_disk_and_has_unsaved_edits_see_t"]
 text = "{name} changed on disk and has unsaved edits: see the script panel"
@@ -4453,7 +4529,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:985"]
 
 [strings."kfx_editor.new_generated_map_level_w_x_h_keepers_keepers_st"]
 text = "New generated map{level} ({w}x{h}, {keepers} keepers, {style} style, seed {seed}{imb}) in {folder}: not saved yet"
-src = ["crates/kfx-editor/src/app/dialogs.rs:291"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:292"]
 
 [strings."kfx_editor.new_level_in_this_pack"]
 text = "➕ New level in this pack"
@@ -4469,7 +4545,7 @@ src = ["crates/kfx-editor/src/app/strings.rs:503"]
 
 [strings."kfx_editor.new_map"]
 text = "New map"
-src = ["crates/kfx-editor/src/app/dialogs.rs:378", "crates/kfx-editor/src/app/toolbar.rs:72"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:379", "crates/kfx-editor/src/app/toolbar.rs:72"]
 
 [strings."kfx_editor.new_map_4b6d"]
 text = "New map…"
@@ -4477,7 +4553,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:54"]
 
 [strings."kfx_editor.new_map_level_w_x_h_bases_keepers_in_folder_not"]
 text = "New map{level} ({w}x{h}, {bases} keepers) in {folder}: not saved yet{warnings}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:202"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:203"]
 
 [strings."kfx_editor.new_seed"]
 text = "New seed"
@@ -4485,11 +4561,15 @@ src = ["crates/kfx-editor/src/app/generator.rs:574"]
 
 [strings."kfx_editor.new_seed_def3"]
 text = "🎲 New seed"
-src = ["crates/kfx-editor/src/app/extras.rs:561"]
+src = ["crates/kfx-editor/src/app/extras.rs:492"]
+
+[strings."kfx_editor.new_version_v"]
+text = "New version: {v}"
+src = ["crates/kfx-editor/src/app/update_ui.rs:591"]
 
 [strings."kfx_editor.next_free"]
 text = "Next free"
-src = ["crates/kfx-editor/src/app/dialogs.rs:417"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:418"]
 
 [strings."kfx_editor.next_free_number"]
 text = "Next free number"
@@ -4533,11 +4613,15 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:701"]
 
 [strings."kfx_editor.no_config_directory_for_backups_not_saved"]
 text = "no config directory for backups: not saved"
-src = ["crates/kfx-editor/src/app/documents.rs:550"]
+src = ["crates/kfx-editor/src/app/documents.rs:551"]
 
 [strings."kfx_editor.no_config_directory_for_backups_the_files_are_ke"]
 text = "no config directory for backups: the files are kept"
-src = ["crates/kfx-editor/src/app/documents.rs:599"]
+src = ["crates/kfx-editor/src/app/documents.rs:600"]
+
+[strings."kfx_editor.no_configuration_folder"]
+text = "no configuration folder"
+src = ["crates/kfx-editor/src/app/update_ui.rs:260"]
 
 [strings."kfx_editor.no_creature_cfg"]
 text = "no creature cfg"
@@ -4569,7 +4653,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1179"]
 
 [strings."kfx_editor.no_install_folder"]
 text = "no install folder"
-src = ["crates/kfx-editor/src/app/dialogs.rs:148"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:149"]
 
 [strings."kfx_editor.no_install_folder_configured"]
 text = "No install folder configured."
@@ -4593,7 +4677,7 @@ src = ["crates/kfx-editor/src/app/extras.rs:73"]
 
 [strings."kfx_editor.no_keeperfx_keeperfx_exe_in_the_install"]
 text = "No keeperfx / keeperfx.exe in the install"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1600"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1579"]
 
 [strings."kfx_editor.no_keeperfx_log_in_dir"]
 text = "no keeperfx.log in {dir}"
@@ -4605,7 +4689,7 @@ src = ["crates/kfx-editor/src/analysis_view.rs:80"]
 
 [strings."kfx_editor.no_map"]
 text = "no map"
-src = ["crates/kfx-editor/src/app/documents.rs:346", "crates/kfx-editor/src/app/documents.rs:382", "crates/kfx-editor/src/app/documents.rs:594"]
+src = ["crates/kfx-editor/src/app/documents.rs:347", "crates/kfx-editor/src/app/documents.rs:383", "crates/kfx-editor/src/app/documents.rs:595"]
 
 [strings."kfx_editor.no_map_is_open"]
 text = "No map is open"
@@ -4613,7 +4697,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:431"]
 
 [strings."kfx_editor.no_map_level_slb_in_dir"]
 text = "no map{level}.slb in {dir}"
-src = ["crates/kfx-editor/src/app/extras.rs:213"]
+src = ["crates/kfx-editor/src/app/extras.rs:163"]
 
 [strings."kfx_editor.no_map_met_every_constraint_try_another_seed_few"]
 text = "No map met every constraint. Try another seed, fewer keepers, more gold or more attempts."
@@ -4621,7 +4705,7 @@ src = ["crates/kfx-editor/src/app/generator.rs:353"]
 
 [strings."kfx_editor.no_map_open"]
 text = "No map open"
-src = ["crates/kfx-editor/src/app/config.rs:1023", "crates/kfx-editor/src/app/config.rs:1108", "crates/kfx-editor/src/app/custom.rs:953", "crates/kfx-editor/src/app/panels.rs:611", "crates/kfx-editor/src/app/panels.rs:997", "crates/kfx-editor/src/app/panels.rs:1252", "crates/kfx-editor/src/app/toolbar.rs:713", "crates/kfx-editor/src/app/toolbar.rs:854"]
+src = ["crates/kfx-editor/src/app/config.rs:1023", "crates/kfx-editor/src/app/config.rs:1108", "crates/kfx-editor/src/app/custom.rs:953", "crates/kfx-editor/src/app/panels.rs:611", "crates/kfx-editor/src/app/panels.rs:997", "crates/kfx-editor/src/app/panels.rs:1252", "crates/kfx-editor/src/app/toolbar.rs:713", "crates/kfx-editor/src/app/toolbar.rs:857"]
 
 [strings."kfx_editor.no_map_see_below"]
 text = "No map: see below."
@@ -4630,6 +4714,10 @@ src = ["crates/kfx-editor/src/app/generator.rs:322"]
 [strings."kfx_editor.no_mods_load_order_cfg_in_the_install_no_mods_ar"]
 text = "No mods/load_order.cfg in the install: no mods are loaded."
 src = ["crates/kfx-editor/src/app/config.rs:799"]
+
+[strings."kfx_editor.no_newer_version_is_known"]
+text = "No newer version is known."
+src = ["crates/kfx-editor/src/app/update_ui.rs:689"]
 
 [strings."kfx_editor.no_notes_map_add_note_pins_one_to_the_selected_s"]
 text = "No notes. Map > Add note pins one to the selected slab."
@@ -4661,7 +4749,7 @@ src = ["crates/kfx-editor/src/browser.rs:351"]
 
 [strings."kfx_editor.no_sound_nosound"]
 text = "No sound (-nosound)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1666"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1645"]
 
 [strings."kfx_editor.no_speech_file_set"]
 text = "No speech file set"
@@ -4681,7 +4769,7 @@ src = ["crates/kfx-editor/src/analysis_view.rs:469"]
 
 [strings."kfx_editor.none"]
 text = "(none)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1445", "crates/kfx-editor/src/app/dialogs.rs:2116", "crates/kfx-editor/src/app/editing.rs:141", "crates/kfx-editor/src/app/menu_bar.rs:83"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1447", "crates/kfx-editor/src/app/dialogs.rs:2095", "crates/kfx-editor/src/app/editing.rs:141", "crates/kfx-editor/src/app/menu_bar.rs:83"]
 
 [strings."kfx_editor.none_557b"]
 text = "none"
@@ -4693,7 +4781,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1119", "crates/kfx-editor/src/app/
 
 [strings."kfx_editor.none_c95b"]
 text = "None"
-src = ["crates/kfx-editor/src/app/dialogs.rs:102", "crates/kfx-editor/src/app/dialogs.rs:503", "crates/kfx-editor/src/app/dialogs.rs:601", "crates/kfx-editor/src/app/generator.rs:171"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:103", "crates/kfx-editor/src/app/dialogs.rs:504", "crates/kfx-editor/src/app/dialogs.rs:602", "crates/kfx-editor/src/app/generator.rs:171"]
 
 [strings."kfx_editor.none_every_keeper_has_the_same"]
 text = "None: every keeper has the same."
@@ -4709,7 +4797,7 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:591"]
 
 [strings."kfx_editor.north_south"]
 text = "North-south"
-src = ["crates/kfx-editor/src/app/dialogs.rs:103"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:104"]
 
 [strings."kfx_editor.north_south_mirror"]
 text = "North-south mirror"
@@ -4725,7 +4813,7 @@ src = ["crates/kfx-editor/src/app/live.rs:539"]
 
 [strings."kfx_editor.not_found"]
 text = "not found"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1572"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1551"]
 
 [strings."kfx_editor.not_found_for_this_level_e"]
 text = "Not found for this level: {e}"
@@ -4741,19 +4829,19 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:391"]
 
 [strings."kfx_editor.not_saved_e"]
 text = "Not saved: {e}"
-src = ["crates/kfx-editor/src/app/documents.rs:472"]
+src = ["crates/kfx-editor/src/app/documents.rs:473"]
 
 [strings."kfx_editor.not_saved_the_map_is_why"]
 text = "Not saved: the map is {why}"
-src = ["crates/kfx-editor/src/app/documents.rs:385", "crates/kfx-editor/src/app/documents.rs:390"]
+src = ["crates/kfx-editor/src/app/documents.rs:386", "crates/kfx-editor/src/app/documents.rs:391"]
 
 [strings."kfx_editor.not_saved_the_original_dk_format_cannot_hold_thi"]
 text = "Not saved: the original DK format cannot hold this map: {errors}"
-src = ["crates/kfx-editor/src/app/documents.rs:453"]
+src = ["crates/kfx-editor/src/app/documents.rs:454"]
 
 [strings."kfx_editor.not_set"]
 text = "(not set)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:570", "crates/kfx-editor/src/app/dialogs.rs:577"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:571", "crates/kfx-editor/src/app/dialogs.rs:578"]
 
 [strings."kfx_editor.not_written_e"]
 text = "not written: {e}"
@@ -4782,6 +4870,10 @@ src = ["crates/kfx-editor/src/app/generator.rs:429"]
 [strings."kfx_editor.notes"]
 text = "Notes"
 src = ["crates/kfx-editor/src/app/menu_bar.rs:1252", "crates/kfx-editor/src/app/panels.rs:568"]
+
+[strings."kfx_editor.nothing_downloaded"]
+text = "nothing downloaded"
+src = ["crates/kfx-editor/src/app/update_ui.rs:257"]
 
 [strings."kfx_editor.nothing_is_lost"]
 text = "Nothing is lost."
@@ -4821,7 +4913,7 @@ src = ["crates/kfx-editor/src/app/prefab.rs:763"]
 
 [strings."kfx_editor.object"]
 text = "Object"
-src = ["crates/kfx-editor/src/app/extras.rs:609", "crates/kfx-editor/src/app/extras.rs:621", "crates/kfx-editor/src/app/things.rs:707"]
+src = ["crates/kfx-editor/src/app/extras.rs:540", "crates/kfx-editor/src/app/extras.rs:552", "crates/kfx-editor/src/app/things.rs:707"]
 
 [strings."kfx_editor.object_0ffa"]
 text = "object"
@@ -4837,19 +4929,19 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1077"]
 
 [strings."kfx_editor.objects_c265"]
 text = "📦 Objects"
-src = ["crates/kfx-editor/src/app.rs:125"]
+src = ["crates/kfx-editor/src/app.rs:126"]
 
 [strings."kfx_editor.off"]
 text = "Off"
 src = ["crates/kfx-editor/src/app/map_dialogs.rs:786", "crates/kfx-editor/src/griddata.rs:52"]
 
-[strings."kfx_editor.off_by_default_only_asks_the_url_below_for_the_l"]
-text = "Off by default. Only asks the URL below for the latest release and shows a note; nothing is downloaded or installed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1500"]
-
 [strings."kfx_editor.off_things_snap_to_the_subtile_centre"]
 text = "Off: things snap to the subtile centre"
 src = ["crates/kfx-editor/src/app/panels.rs:443"]
+
+[strings."kfx_editor.off_you_are_asked_first_on_a_new_version_is_downloaded"]
+text = "Off: you are asked first. On: a new version is downloaded in the background and installed when you close the editor"
+src = ["crates/kfx-editor/src/app/update_ui.rs:862"]
 
 [strings."kfx_editor.offline_use_only_the_cache_never_the_network"]
 text = "Offline: use only the cache, never the network."
@@ -4861,11 +4953,15 @@ src = ["crates/kfx-editor/src/app/custom.rs:1302", "crates/kfx-editor/src/app/pr
 
 [strings."kfx_editor.oldest_removed_first_0_keep_all"]
 text = "(oldest removed first; 0 = keep all)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1543"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1522"]
 
 [strings."kfx_editor.on"]
 text = "On"
-src = ["crates/kfx-editor/src/app/extras.rs:582"]
+src = ["crates/kfx-editor/src/app/extras.rs:513"]
+
+[strings."kfx_editor.once_a_day_the_editor_asks_github_for_its_releases"]
+text = "Once a day the editor asks GitHub (api.github.com) for its list of releases"
+src = ["crates/kfx-editor/src/app/update_ui.rs:833"]
 
 [strings."kfx_editor.one_list_in_slab_id_order_instead_of_the_groups"]
 text = "One list in slab ID order instead of the groups"
@@ -4877,7 +4973,7 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:482"]
 
 [strings."kfx_editor.one_slab_kind_everywhere_with_keepers_placed_on"]
 text = "One slab kind everywhere, with keepers placed on a ring."
-src = ["crates/kfx-editor/src/app/dialogs.rs:454"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:455"]
 
 [strings."kfx_editor.only_flags_and_a_few_counters_can_be_written_oth"]
 text = "Only flags and a few counters can be written; other script variables are read-only."
@@ -4961,7 +5057,7 @@ src = ["crates/kfx-editor/src/app/prefab.rs:367"]
 
 [strings."kfx_editor.open_a_map_to_see_its_decoration_families"]
 text = "Open a map to see its decoration families"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2031"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2010"]
 
 [strings."kfx_editor.open_a_map_to_see_its_palette"]
 text = "Open a map to see its palette"
@@ -4977,7 +5073,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:462"]
 
 [strings."kfx_editor.open_and_discard_the_unreadable_things_a_backup"]
 text = "Open and discard the unreadable things (a backup is kept)"
-src = ["crates/kfx-editor/src/app/documents.rs:685"]
+src = ["crates/kfx-editor/src/app/documents.rs:686"]
 
 [strings."kfx_editor.open_backups_folder"]
 text = "Open backups folder"
@@ -5009,7 +5105,7 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:194"]
 
 [strings."kfx_editor.open_read_only"]
 text = "Open read-only"
-src = ["crates/kfx-editor/src/app/documents.rs:679"]
+src = ["crates/kfx-editor/src/app/documents.rs:680"]
 
 [strings."kfx_editor.open_the_backup_folder"]
 text = "Open the backup folder"
@@ -5018,6 +5114,14 @@ src = ["crates/kfx-editor/src/app/safety.rs:598"]
 [strings."kfx_editor.open_the_configuration_editor_with_this_mod_fold"]
 text = "Open the configuration editor with this mod folder as the target layer"
 src = ["crates/kfx-editor/src/app/config.rs:1048"]
+
+[strings."kfx_editor.open_the_download_page"]
+text = "Open the download page"
+src = ["crates/kfx-editor/src/app/update_ui.rs:635"]
+
+[strings."kfx_editor.open_the_folder"]
+text = "Open the folder"
+src = ["crates/kfx-editor/src/app/update_ui.rs:800"]
 
 [strings."kfx_editor.open_this_backup_without_restoring_it_save_as_on"]
 text = "Open this backup without restoring it (Save as only)"
@@ -5029,7 +5133,7 @@ src = ["crates/kfx-editor/src/app/config.rs:1152"]
 
 [strings."kfx_editor.opened"]
 text = "(opened)"
-src = ["crates/kfx-editor/src/app/toolbar.rs:866"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:869"]
 
 [strings."kfx_editor.opened_path_pack_config_layers_texture_sets_text"]
 text = "Opened {path} [{pack}; config {layers}; texture sets {texture_sets}]{warn}"
@@ -5037,7 +5141,7 @@ src = ["crates/kfx-editor/src/app/documents.rs:88"]
 
 [strings."kfx_editor.opened_the_backup_in_dir_read_only_file_save_as"]
 text = "Opened the backup in {dir} (read-only: File > Save as saves it elsewhere)"
-src = ["crates/kfx-editor/src/app/extras.rs:221"]
+src = ["crates/kfx-editor/src/app/extras.rs:171"]
 
 [strings."kfx_editor.optional_script_lines_that_use_the_selection_s_a"]
 text = "optional script lines that use the selection's action points"
@@ -5049,11 +5153,11 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:436"]
 
 [strings."kfx_editor.orbit"]
 text = "orbit"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1908"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1887"]
 
 [strings."kfx_editor.orbit_speed"]
 text = "Orbit speed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1903"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1882"]
 
 [strings."kfx_editor.orient"]
 text = "orient"
@@ -5061,7 +5165,7 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:547"]
 
 [strings."kfx_editor.orientation"]
 text = "Orientation"
-src = ["crates/kfx-editor/src/app/clm_editor.rs:548", "crates/kfx-editor/src/app/clm_editor.rs:773", "crates/kfx-editor/src/app/extras.rs:587"]
+src = ["crates/kfx-editor/src/app/clm_editor.rs:548", "crates/kfx-editor/src/app/clm_editor.rs:773", "crates/kfx-editor/src/app/extras.rs:518"]
 
 [strings."kfx_editor.orientation_follows_the_walls_around_the_slab"]
 text = "Orientation follows the walls around the slab"
@@ -5077,7 +5181,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:180"]
 
 [strings."kfx_editor.other"]
 text = "Other"
-src = ["crates/kfx-editor/src/app.rs:201"]
+src = ["crates/kfx-editor/src/app.rs:202"]
 
 [strings."kfx_editor.others"]
 text = "Others"
@@ -5117,7 +5221,7 @@ src = ["crates/kfx-editor/src/app/config.rs:406", "crates/kfx-editor/src/app/pre
 
 [strings."kfx_editor.ownable_natural_terrain"]
 text = "Ownable natural terrain"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1716", "crates/kfx-editor/src/app/menu_bar.rs:763"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1695", "crates/kfx-editor/src/app/menu_bar.rs:763"]
 
 [strings."kfx_editor.owner_0_8"]
 text = "owner 0..8"
@@ -5153,7 +5257,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1053", "crates/kfx-editor/src/app/
 
 [strings."kfx_editor.ownership_tint"]
 text = "Ownership tint"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1075", "crates/kfx-editor/src/app/dialogs.rs:1971", "crates/kfx-editor/src/app/menu_bar.rs:452", "crates/kfx-editor/src/app/toolbar.rs:548"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1076", "crates/kfx-editor/src/app/dialogs.rs:1950", "crates/kfx-editor/src/app/menu_bar.rs:452", "crates/kfx-editor/src/app/toolbar.rs:548"]
 
 [strings."kfx_editor.ownership_tint_grid_lighting"]
 text = "Ownership tint, grid, lighting"
@@ -5177,7 +5281,7 @@ src = ["crates/kfx-editor/src/files.rs:505"]
 
 [strings."kfx_editor.p_does_not_exist_yet"]
 text = "{p} does not exist yet"
-src = ["crates/kfx-editor/src/app/extras.rs:411"]
+src = ["crates/kfx-editor/src/app/extras.rs:342"]
 
 [strings."kfx_editor.p_heart"]
 text = "{p} heart"
@@ -5185,7 +5289,7 @@ src = ["crates/kfx-editor/src/app/live.rs:284"]
 
 [strings."kfx_editor.p_no_mapnnnnn_slb_there"]
 text = "{p}: no mapNNNNN.slb there"
-src = ["crates/kfx-editor/src/app.rs:845"]
+src = ["crates/kfx-editor/src/app.rs:848"]
 
 [strings."kfx_editor.pack"]
 text = "Pack:"
@@ -5226,11 +5330,11 @@ src = ["crates/kfx-editor/src/assets.rs:195"]
 
 [strings."kfx_editor.pan_speed_keys_edges"]
 text = "Pan speed (keys, edges)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1891"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1870"]
 
 [strings."kfx_editor.pan_when_the_pointer_is_at_the_edge_of_the_view"]
 text = "Pan when the pointer is at the edge of the view"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1933"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1912"]
 
 [strings."kfx_editor.panels_as_tabs_beside_the_tree"]
 text = "Panels as tabs beside the tree"
@@ -5302,7 +5406,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:419"]
 
 [strings."kfx_editor.perspective_2cb5"]
 text = "perspective"
-src = ["crates/kfx-editor/src/app/toolbar.rs:993"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:996"]
 
 [strings."kfx_editor.pick"]
 text = "💧 Pick"
@@ -5310,7 +5414,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:263"]
 
 [strings."kfx_editor.pick_a_random_seed"]
 text = "Pick a random seed"
-src = ["crates/kfx-editor/src/app/extras.rs:562"]
+src = ["crates/kfx-editor/src/app/extras.rs:493"]
 
 [strings."kfx_editor.pick_a_string"]
 text = "Pick a string"
@@ -5362,7 +5466,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:934"]
 
 [strings."kfx_editor.pixels_per_slab"]
 text = "Pixels per slab"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1066"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1067"]
 
 [strings."kfx_editor.place"]
 text = "⊞ Place"
@@ -5386,11 +5490,11 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:300"]
 
 [strings."kfx_editor.place_things_anywhere"]
 text = "Place things anywhere"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1762", "crates/kfx-editor/src/app/menu_bar.rs:775"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1741", "crates/kfx-editor/src/app/menu_bar.rs:775"]
 
 [strings."kfx_editor.placed_and_regenerated_slabs_get_random_cube_var"]
 text = "Placed and regenerated slabs get random cube variants (earth, path stones, gold, gems, bricks…), deterministic per map."
-src = ["crates/kfx-editor/src/app/dialogs.rs:1986"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1965"]
 
 [strings."kfx_editor.placed_prefab_name_at_at_at2_slabs_written_slabs"]
 text = "Placed prefab {name} at ({at}, {at2}): {slabs_written} slabs, {things_added} things{aps}{script_lua}.{warn}"
@@ -5402,11 +5506,11 @@ src = ["crates/kfx-editor/src/app/dialogs.rs:62"]
 
 [strings."kfx_editor.placement_defaults"]
 text = "Placement defaults"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1771"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1750"]
 
 [strings."kfx_editor.placement_rules"]
 text = "Placement rules"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1713"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1692"]
 
 [strings."kfx_editor.placing_a_keeper_s_ground_claimed_rooms_turns_th"]
 text = "Placing a keeper's ground (claimed, rooms) turns the earth around it into that keeper's walls (art: Preferences > Placement)"
@@ -5446,11 +5550,11 @@ src = ["crates/kfx-editor/src/app/dialogs.rs:61"]
 
 [strings."kfx_editor.play_f5_saves_unsaved_changes_first"]
 text = "Play (F5) saves unsaved changes first"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1691"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1670"]
 
 [strings."kfx_editor.play_testing"]
 text = "Play-testing"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1554"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1533"]
 
 [strings."kfx_editor.play_the_level_in_keeperfx_sc_sc2_saves_first_ri"]
 text = "Play the level in KeeperFX ({key}; {key2} saves first; right-click: record / replay)"
@@ -5504,13 +5608,17 @@ src = ["crates/kfx-editor/src/app/audio.rs:543"]
 text = "Plays the file from the campaign's speech folder, like the land view does"
 src = ["crates/kfx-editor/src/app/map_dialogs.rs:315"]
 
+[strings."kfx_editor.please_attach_it_to_a_bug_report"]
+text = "Please attach it to a bug report (Help > About lists where to report)."
+src = ["crates/kfx-editor/src/app/update_ui.rs:794"]
+
 [strings."kfx_editor.png"]
 text = "PNG"
-src = ["crates/kfx-editor/src/app/dialogs.rs:830"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:831"]
 
 [strings."kfx_editor.png_image"]
 text = "PNG image"
-src = ["crates/kfx-editor/src/app/dialogs.rs:834", "crates/kfx-editor/src/app/dialogs.rs:1048"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:835", "crates/kfx-editor/src/app/dialogs.rs:1049"]
 
 [strings."kfx_editor.pocket_k_cells_slabs_around_c_c2_things_thing_s"]
 one = "Pocket {k}: {cells} slabs around ({c},{c2}), {n} thing"
@@ -5527,7 +5635,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:925"]
 
 [strings."kfx_editor.portal_near_each_heart"]
 text = "Portal near each heart"
-src = ["crates/kfx-editor/src/app/dialogs.rs:546"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:547"]
 
 [strings."kfx_editor.portals"]
 text = "Portals"
@@ -5559,11 +5667,15 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1242", "crates/kfx-editor/src/app/
 
 [strings."kfx_editor.preferences"]
 text = "Preferences"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1309"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1310"]
 
 [strings."kfx_editor.preferences_c063"]
 text = "Preferences…"
 src = ["crates/kfx-editor/src/app/menu_bar.rs:1170"]
+
+[strings."kfx_editor.preferences_d"]
+text = "Preferences…"
+src = ["crates/kfx-editor/src/app/update_ui.rs:718"]
 
 [strings."kfx_editor.presets"]
 text = "Presets"
@@ -5571,11 +5683,11 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:200"]
 
 [strings."kfx_editor.press_keys"]
 text = "Press keys…"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2111"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2090"]
 
 [strings."kfx_editor.preview"]
 text = "Preview"
-src = ["crates/kfx-editor/src/app/dialogs.rs:621"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:622"]
 
 [strings."kfx_editor.preview_e"]
 text = "preview: {e}"
@@ -5593,9 +5705,13 @@ src = ["crates/kfx-editor/src/app/config.rs:900"]
 text = "Put these files back (the current files are backed up first)"
 src = ["crates/kfx-editor/src/app/safety.rs:476"]
 
+[strings."kfx_editor.puts_the_previous_version_back_and_starts_it"]
+text = "Puts the previous version back and starts it"
+src = ["crates/kfx-editor/src/app/update_ui.rs:578"]
+
 [strings."kfx_editor.px_s"]
 text = " px/s"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1897"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1876"]
 
 [strings."kfx_editor.quarter_turn"]
 text = "Quarter turn"
@@ -5611,15 +5727,15 @@ src = ["crates/kfx-editor/src/app/generator.rs:173"]
 
 [strings."kfx_editor.random"]
 text = "Random"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1743"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1722"]
 
 [strings."kfx_editor.random_7a82"]
 text = "random"
-src = ["crates/kfx-editor/src/app/extras.rs:699"]
+src = ["crates/kfx-editor/src/app/extras.rs:630"]
 
 [strings."kfx_editor.random_doodads"]
 text = "Random doodads"
-src = ["crates/kfx-editor/src/app/extras.rs:530"]
+src = ["crates/kfx-editor/src/app/extras.rs:461"]
 
 [strings."kfx_editor.random_doodads_85ba"]
 text = "Random doodads…"
@@ -5639,7 +5755,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:397", "crates/kfx-editor/src/app/pan
 
 [strings."kfx_editor.range_4c16"]
 text = "range "
-src = ["crates/kfx-editor/src/app/extras.rs:644"]
+src = ["crates/kfx-editor/src/app/extras.rs:575"]
 
 [strings."kfx_editor.raw_door"]
 text = "Raw door"
@@ -5675,7 +5791,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1191"]
 
 [strings."kfx_editor.read_only_the_map_has_files_the_editor_could_not"]
 text = "Read-only: the map has files the editor could not read (File > Save is refused)"
-src = ["crates/kfx-editor/src/app/documents.rs:697"]
+src = ["crates/kfx-editor/src/app/documents.rs:698"]
 
 [strings."kfx_editor.read_the_library_folders_again"]
 text = "Read the library folders again"
@@ -5751,7 +5867,7 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:738"]
 
 [strings."kfx_editor.regenerate_792e"]
 text = "🎲 Regenerate"
-src = ["crates/kfx-editor/src/app/dialogs.rs:480"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:481"]
 
 [strings."kfx_editor.regenerate_all_slabs"]
 text = "Regenerate all slabs"
@@ -5785,9 +5901,9 @@ src = ["crates/kfx-editor/src/app/config.rs:429"]
 text = "Regenerate them all"
 src = ["crates/kfx-editor/src/app/config.rs:473"]
 
-[strings."kfx_editor.release_url"]
-text = "Release URL"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1506"]
+[strings."kfx_editor.release_notes"]
+text = "Release notes"
+src = ["crates/kfx-editor/src/app/update_ui.rs:605"]
 
 [strings."kfx_editor.reload"]
 text = "Reload"
@@ -5823,11 +5939,11 @@ src = ["crates/kfx-editor/src/app/custom.rs:872"]
 
 [strings."kfx_editor.remove_the_doodads_of_these_rules_and_scatter_th"]
 text = "Remove the doodads of these rules and scatter them again (one undo step)"
-src = ["crates/kfx-editor/src/app/extras.rs:765"]
+src = ["crates/kfx-editor/src/app/extras.rs:696"]
 
 [strings."kfx_editor.remove_this_rule"]
 text = "Remove this rule"
-src = ["crates/kfx-editor/src/app/extras.rs:713"]
+src = ["crates/kfx-editor/src/app/extras.rs:644"]
 
 [strings."kfx_editor.removed_path"]
 text = "Removed {path}"
@@ -5859,11 +5975,11 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:545"]
 
 [strings."kfx_editor.reset_table"]
 text = "Reset table"
-src = ["crates/kfx-editor/src/app/dialogs.rs:931"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:932"]
 
 [strings."kfx_editor.reset_to_defaults"]
 text = "Reset to defaults"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1338"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1340"]
 
 [strings."kfx_editor.resize"]
 text = "Resize"
@@ -5895,7 +6011,7 @@ src = ["crates/kfx-editor/src/app/safety.rs:449"]
 
 [strings."kfx_editor.result"]
 text = "Result"
-src = ["crates/kfx-editor/src/app/dialogs.rs:940"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:941"]
 
 [strings."kfx_editor.reveal"]
 text = "Reveal"
@@ -5923,7 +6039,7 @@ src = ["crates/kfx-editor/src/newmap.rs:185"]
 
 [strings."kfx_editor.rock_earth_and_gold"]
 text = "Rock, earth and gold"
-src = ["crates/kfx-editor/src/app.rs:184"]
+src = ["crates/kfx-editor/src/app.rs:185"]
 
 [strings."kfx_editor.rock_heavy_with_pre_dug_chambers_joined_by_corri"]
 text = "Rock-heavy, with pre-dug chambers joined by corridors."
@@ -5937,13 +6053,17 @@ src = ["crates/kfx-editor/src/rounding.rs:75"]
 text = "Rock next to water / lava"
 src = ["crates/kfx-editor/src/rounding.rs:40"]
 
+[strings."kfx_editor.roll_back_to_p"]
+text = "Roll back to {p}"
+src = ["crates/kfx-editor/src/app/update_ui.rs:573"]
+
 [strings."kfx_editor.room_walls_normally_drawn_automatically_next_to"]
 text = "Room walls (normally drawn automatically next to rooms)"
-src = ["crates/kfx-editor/src/app.rs:196"]
+src = ["crates/kfx-editor/src/app.rs:197"]
 
 [strings."kfx_editor.rooms"]
 text = "🏠 Rooms"
-src = ["crates/kfx-editor/src/app.rs:118"]
+src = ["crates/kfx-editor/src/app.rs:119"]
 
 [strings."kfx_editor.rooms_108b"]
 text = "Rooms"
@@ -5979,11 +6099,11 @@ src = ["crates/kfx-editor/src/app/things.rs:1283", "crates/kfx-editor/src/app/th
 
 [strings."kfx_editor.rotational_2"]
 text = "Rotational 2"
-src = ["crates/kfx-editor/src/app/dialogs.rs:106", "crates/kfx-editor/src/app/map_dialogs.rs:793"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:107", "crates/kfx-editor/src/app/map_dialogs.rs:793"]
 
 [strings."kfx_editor.rotational_4"]
 text = "Rotational 4"
-src = ["crates/kfx-editor/src/app/dialogs.rs:107", "crates/kfx-editor/src/app/map_dialogs.rs:797"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:108", "crates/kfx-editor/src/app/map_dialogs.rs:797"]
 
 [strings."kfx_editor.rotational_4_symmetry_needs_a_square_map_s_x_s"]
 text = "rotational 4 symmetry needs a square map: {s}x{s}"
@@ -5995,7 +6115,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:338"]
 
 [strings."kfx_editor.rounded_corners_a_corner_of_a_block_between_two"]
 text = "Rounded corners (a corner of a block between two sides of another terrain takes that terrain; decoration only)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1747"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1726"]
 
 [strings."kfx_editor.routes"]
 text = "Routes"
@@ -6027,7 +6147,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1072"]
 
 [strings."kfx_editor.s"]
 text = " s"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1524"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1503"]
 
 [strings."kfx_editor.same_as_the_position"]
 text = "same as the position"
@@ -6139,20 +6259,20 @@ src = ["crates/kfx-editor/src/app/prefab.rs:1073"]
 
 [strings."kfx_editor.saved_in_p"]
 text = "Saved in {p}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1352"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1354"]
 
 [strings."kfx_editor.saved_n_script_s_note"]
 one = "Saved {n} script{note}"
 other = "Saved {n} scripts{note}"
-src = ["crates/kfx-editor/src/app/documents.rs:420"]
+src = ["crates/kfx-editor/src/app/documents.rs:421"]
 
 [strings."kfx_editor.saved_p_but_the_scripts_failed_e_note"]
 text = "Saved {p} but the scripts failed: {e}{note}"
-src = ["crates/kfx-editor/src/app/documents.rs:523"]
+src = ["crates/kfx-editor/src/app/documents.rs:524"]
 
 [strings."kfx_editor.saved_p_note"]
 text = "Saved {p}{note}"
-src = ["crates/kfx-editor/src/app/documents.rs:518"]
+src = ["crates/kfx-editor/src/app/documents.rs:519"]
 
 [strings."kfx_editor.saved_path"]
 text = "Saved {path}"
@@ -6173,15 +6293,15 @@ src = ["crates/kfx-editor/src/app/texts.rs:129", "crates/kfx-editor/src/app/text
 
 [strings."kfx_editor.script"]
 text = "Script"
-src = ["crates/kfx-editor/src/app/dialogs.rs:596"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:597"]
 
 [strings."kfx_editor.script_editor_font_size"]
 text = "Script editor font size"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1850"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1829"]
 
 [strings."kfx_editor.script_editor_theme"]
 text = "Script editor theme"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1856"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1835"]
 
 [strings."kfx_editor.script_fragment_added"]
 text = ", script fragment added (Ctrl+Z takes it out again with the map change)"
@@ -6209,7 +6329,7 @@ src = ["crates/kfx-editor/src/app/script_panel.rs:213"]
 
 [strings."kfx_editor.script_save_failed_e"]
 text = "Script save failed: {e}"
-src = ["crates/kfx-editor/src/app/documents.rs:428"]
+src = ["crates/kfx-editor/src/app/documents.rs:429"]
 
 [strings."kfx_editor.script_wizard"]
 text = "Script wizard…"
@@ -6253,7 +6373,7 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:815"]
 
 [strings."kfx_editor.seed"]
 text = "Seed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:473", "crates/kfx-editor/src/app/extras.rs:547", "crates/kfx-editor/src/app/generator.rs:569"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:474", "crates/kfx-editor/src/app/extras.rs:478", "crates/kfx-editor/src/app/generator.rs:569"]
 
 [strings."kfx_editor.select"]
 text = "🔲 Select"
@@ -6353,7 +6473,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:327"]
 
 [strings."kfx_editor.settings_backups_and_autosaves_d"]
 text = "Settings, backups and autosaves: {d}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1469"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1471"]
 
 [strings."kfx_editor.shared_tie"]
 text = "shared (tie)"
@@ -6369,7 +6489,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:777"]
 
 [strings."kfx_editor.show"]
 text = "Show"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1069", "crates/kfx-editor/src/app/toolbar.rs:543"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1070", "crates/kfx-editor/src/app/toolbar.rs:543"]
 
 [strings."kfx_editor.show_all_ranges"]
 text = "Show all ranges"
@@ -6409,7 +6529,7 @@ src = ["crates/kfx-editor/src/app/config.rs:1138"]
 
 [strings."kfx_editor.size_slabs"]
 text = "Size (slabs)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:387"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:388"]
 
 [strings."kfx_editor.size_x_size2"]
 text = "{size}x{size2}"
@@ -6417,11 +6537,19 @@ src = ["crates/kfx-editor/src/browser.rs:510"]
 
 [strings."kfx_editor.skip_the_heart_zoom_skipheartzoom"]
 text = "Skip the heart zoom (-skipheartzoom)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1640"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1619"]
 
 [strings."kfx_editor.skip_the_intro_nointro"]
 text = "Skip the intro (-nointro)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1633"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1612"]
+
+[strings."kfx_editor.skip_this_version"]
+text = "Skip this version"
+src = ["crates/kfx-editor/src/app/update_ui.rs:494", "crates/kfx-editor/src/app/update_ui.rs:644", "crates/kfx-editor/src/app/update_ui.rs:674"]
+
+[strings."kfx_editor.skipped_versions_v"]
+text = "Skipped versions: {v}"
+src = ["crates/kfx-editor/src/app/update_ui.rs:869"]
 
 [strings."kfx_editor.slab"]
 text = " (slab)"
@@ -6441,11 +6569,11 @@ src = ["crates/kfx-editor/src/app/panels.rs:1192"]
 
 [strings."kfx_editor.slab_grid"]
 text = "Slab grid"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1072", "crates/kfx-editor/src/app/dialogs.rs:1968", "crates/kfx-editor/src/app/menu_bar.rs:454", "crates/kfx-editor/src/app/panels.rs:1246", "crates/kfx-editor/src/app/toolbar.rs:550", "crates/kfx-editor/src/app/toolbar.rs:566"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1073", "crates/kfx-editor/src/app/dialogs.rs:1947", "crates/kfx-editor/src/app/menu_bar.rs:454", "crates/kfx-editor/src/app/panels.rs:1246", "crates/kfx-editor/src/app/toolbar.rs:550", "crates/kfx-editor/src/app/toolbar.rs:566"]
 
 [strings."kfx_editor.slab_kind"]
 text = "Slab kind"
-src = ["crates/kfx-editor/src/app/extras.rs:583"]
+src = ["crates/kfx-editor/src/app/extras.rs:514"]
 
 [strings."kfx_editor.slab_kind_id_slb"]
 text = "Slab kind ID (.slb)"
@@ -6501,15 +6629,15 @@ src = ["crates/kfx-editor/src/app/custom.rs:804"]
 
 [strings."kfx_editor.smooth_scaling_of_the_view_and_palette_icons_lin"]
 text = "Smooth scaling of the view and palette icons (linear filtering)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1957"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1936"]
 
 [strings."kfx_editor.smoothing"]
 text = "Smoothing"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1939"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1918"]
 
 [strings."kfx_editor.some_files_of_this_map_could_not_be_read"]
 text = "Some files of this map could not be read"
-src = ["crates/kfx-editor/src/app/documents.rs:647"]
+src = ["crates/kfx-editor/src/app/documents.rs:648"]
 
 [strings."kfx_editor.sort"]
 text = "Sort"
@@ -6537,7 +6665,7 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:593"]
 
 [strings."kfx_editor.space_toggles_the_lock_of_the_door_under_the_poi"]
 text = "Space toggles the lock of the door under the pointer: no door there"
-src = ["crates/kfx-editor/src/app/extras.rs:437"]
+src = ["crates/kfx-editor/src/app/extras.rs:368"]
 
 [strings."kfx_editor.specials"]
 text = "Specials"
@@ -6573,7 +6701,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:336"]
 
 [strings."kfx_editor.star_keeperfx_map_editor_where"]
 text = "{star}KeeperFX Map Editor - [{where_}]"
-src = ["crates/kfx-editor/src/app.rs:803"]
+src = ["crates/kfx-editor/src/app.rs:806"]
 
 [strings."kfx_editor.start_gold_creatures_rooms_powers_traps_doors_co"]
 text = "Start gold, creatures, rooms, powers, traps, doors, computer players, alliances and win / lose conditions, written as one marked block of the DK script"
@@ -6581,7 +6709,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:630"]
 
 [strings."kfx_editor.start_without_mods"]
 text = "Start without mods"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1687"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1666"]
 
 [strings."kfx_editor.static_light"]
 text = "Static light"
@@ -6597,11 +6725,11 @@ src = ["crates/kfx-editor/src/app/campaign.rs:877"]
 
 [strings."kfx_editor.still_read_only_e"]
 text = "Still read-only: {e}"
-src = ["crates/kfx-editor/src/app/documents.rs:705"]
+src = ["crates/kfx-editor/src/app/documents.rs:706"]
 
 [strings."kfx_editor.stop_at_walls_stay_above_the_floor"]
 text = "Stop at walls, stay above the floor"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1924"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1903"]
 
 [strings."kfx_editor.stored_with_the_map_mapnnnnn_kfxed_toml_the_pref"]
 text = "Stored with the map (mapNNNNN.kfxed.toml); the Preferences hold the editor-wide defaults."
@@ -6669,7 +6797,7 @@ src = ["crates/kfx-editor/src/app/things.rs:351"]
 
 [strings."kfx_editor.subtiles_s"]
 text = " subtiles/s"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1918"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1897"]
 
 [strings."kfx_editor.symmetric_painting_and_placement"]
 text = "Symmetric painting and placement"
@@ -6677,7 +6805,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:350"]
 
 [strings."kfx_editor.symmetry"]
 text = "Symmetry"
-src = ["crates/kfx-editor/src/analysis_view.rs:180", "crates/kfx-editor/src/app/dialogs.rs:517", "crates/kfx-editor/src/app/generator.rs:201", "crates/kfx-editor/src/app/map_dialogs.rs:781"]
+src = ["crates/kfx-editor/src/analysis_view.rs:180", "crates/kfx-editor/src/app/dialogs.rs:518", "crates/kfx-editor/src/app/generator.rs:201", "crates/kfx-editor/src/app/map_dialogs.rs:781"]
 
 [strings."kfx_editor.symmetry_87ed"]
 text = "Symmetry…"
@@ -6697,7 +6825,7 @@ src = ["crates/kfx-editor/src/app/custom.rs:1155"]
 
 [strings."kfx_editor.system_clipboard_keys"]
 text = "System clipboard keys"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2123"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2102"]
 
 [strings."kfx_editor.t_is_not_on_the_map"]
 text = "{t} is not on the map"
@@ -6757,11 +6885,11 @@ src = ["crates/kfx-editor/src/app/script_panel.rs:512"]
 
 [strings."kfx_editor.tell_me_when_a_map_has_rnc_compressed_files"]
 text = "Tell me when a map has RNC-compressed files"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1484"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1486"]
 
 [strings."kfx_editor.terrain"]
 text = "Terrain"
-src = ["crates/kfx-editor/src/app/dialogs.rs:447", "crates/kfx-editor/src/app/panels.rs:1181"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:448", "crates/kfx-editor/src/app/panels.rs:1181"]
 
 [strings."kfx_editor.terrain_309e"]
 text = "Terrain…"
@@ -6769,7 +6897,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1083"]
 
 [strings."kfx_editor.terrain_962f"]
 text = "🗻 Terrain"
-src = ["crates/kfx-editor/src/app.rs:116"]
+src = ["crates/kfx-editor/src/app.rs:117"]
 
 [strings."kfx_editor.terrain_exact_things_differ"]
 text = "terrain exact, things differ"
@@ -6781,7 +6909,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:1241"]
 
 [strings."kfx_editor.terrain_textures_are_read_texel_by_texel_like_th"]
 text = "Terrain textures are read texel by texel like the game (no filtering)."
-src = ["crates/kfx-editor/src/app/dialogs.rs:1974"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1953"]
 
 [strings."kfx_editor.territory"]
 text = "Territory"
@@ -6801,7 +6929,7 @@ src = ["crates/kfx-editor/src/app/strings.rs:486"]
 
 [strings."kfx_editor.texture_set"]
 text = "Texture set"
-src = ["crates/kfx-editor/src/app/dialogs.rs:427", "crates/kfx-editor/src/app/map_dialogs.rs:147", "crates/kfx-editor/src/app/map_dialogs.rs:378"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:428", "crates/kfx-editor/src/app/map_dialogs.rs:147", "crates/kfx-editor/src/app/map_dialogs.rs:378"]
 
 [strings."kfx_editor.texture_set_set_e"]
 text = "texture set {set}: {e}"
@@ -6829,11 +6957,11 @@ src = ["crates/kfx-editor/src/app/safety.rs:431"]
 
 [strings."kfx_editor.the_backup_failed_so_nothing_was_written_e"]
 text = "the backup failed, so nothing was written: {e}"
-src = ["crates/kfx-editor/src/app/documents.rs:555"]
+src = ["crates/kfx-editor/src/app/documents.rs:556"]
 
 [strings."kfx_editor.the_backup_failed_so_the_files_are_kept_e"]
 text = "the backup failed, so the files are kept: {e}"
-src = ["crates/kfx-editor/src/app/documents.rs:604"]
+src = ["crates/kfx-editor/src/app/documents.rs:605"]
 
 [strings."kfx_editor.the_campaign_has_unsaved_changes_in_the_campaign"]
 text = "the campaign has unsaved changes in the campaign editor: the package holds the files on disk"
@@ -6861,7 +6989,7 @@ src = ["crates/kfx-editor/src/app/config.rs:217"]
 
 [strings."kfx_editor.the_current_files_are_backed_up_in_b"]
 text = " (the current files are backed up in {b})"
-src = ["crates/kfx-editor/src/app/documents.rs:612"]
+src = ["crates/kfx-editor/src/app/documents.rs:613"]
 
 [strings."kfx_editor.the_distinct_columns_the_save_writes_to_the_clm"]
 text = "The distinct columns the save writes to the .clm: use counts, edit one everywhere it is used"
@@ -6871,13 +6999,21 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:973"]
 text = "The DK script is read-only: the Events change was not written."
 src = ["crates/kfx-editor/src/app/logic.rs:376"]
 
+[strings."kfx_editor.the_editor_can_look_for_new_versions_by_itself"]
+text = "The editor can look for new versions by itself: once a day it asks GitHub (api.github.com) for the list of releases of the editor. The request carries no personal data beyond what any web request has (your IP address and the editor's version). Nothing has been sent yet."
+src = ["crates/kfx-editor/src/app/update_ui.rs:404"]
+
+[strings."kfx_editor.the_editor_closed_unexpectedly"]
+text = "The editor closed unexpectedly"
+src = ["crates/kfx-editor/src/app/update_ui.rs:776"]
+
 [strings."kfx_editor.the_editor_did_not_close_normally_these_maps_had"]
 text = "The editor did not close normally. These maps had unsaved changes:"
 src = ["crates/kfx-editor/src/app/safety.rs:192"]
 
 [strings."kfx_editor.the_editor_shows_the_map_without_what_these_file"]
 text = "The editor shows the map without what these files hold. Saving would replace them, so the map is open read-only."
-src = ["crates/kfx-editor/src/app/documents.rs:653"]
+src = ["crates/kfx-editor/src/app/documents.rs:654"]
 
 [strings."kfx_editor.the_eye_stops_at_walls_and_stays_above_the_floor"]
 text = "The eye stops at walls and stays above the floor"
@@ -6921,7 +7057,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:378"]
 
 [strings."kfx_editor.the_image_is_scaled_to_the_map_w_x_h_slabs_one_s"]
 text = "The image is scaled to the map ({w}x{h} slabs, one sample per slab); every sample takes the slab and owner of the nearest colour below. Transparent pixels keep the map."
-src = ["crates/kfx-editor/src/app/dialogs.rs:849"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:850"]
 
 [strings."kfx_editor.the_keeper_whose_imps_reach_each_slab_first_pale"]
 text = "The keeper whose imps reach each slab first; pale where another keeper is almost as close."
@@ -6941,7 +7077,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:521"]
 
 [strings."kfx_editor.the_level_s_scripts_are_not_loaded"]
 text = "the level's scripts are not loaded"
-src = ["crates/kfx-editor/src/app/extras.rs:389"]
+src = ["crates/kfx-editor/src/app/extras.rs:320"]
 
 [strings."kfx_editor.the_lof"]
 text = "the .lof"
@@ -6994,6 +7130,10 @@ src = ["crates/kfx-editor/src/app/campaign.rs:317"]
 [strings."kfx_editor.the_open_pack_has_unsaved_changes_switch_to_to"]
 text = "The open pack has unsaved changes. Switch to {to}?"
 src = ["crates/kfx-editor/src/app/campaign.rs:859"]
+
+[strings."kfx_editor.the_output_is_also_in_path"]
+text = "The output is also in {path}."
+src = ["crates/kfx-editor/src/console.rs:97"]
 
 [strings."kfx_editor.the_output_opens_on_the_first_play"]
 text = "the output opens on the first play"
@@ -7065,7 +7205,11 @@ src = ["crates/kfx-editor/src/app/strings.rs:234"]
 
 [strings."kfx_editor.the_unreadable_files_will_be_replaced_when_the_m"]
 text = "The unreadable files will be replaced when the map is saved{note}"
-src = ["crates/kfx-editor/src/app/documents.rs:630"]
+src = ["crates/kfx-editor/src/app/documents.rs:631"]
+
+[strings."kfx_editor.the_update_failed_e_this_version_keeps_working"]
+text = "The update failed: {e}. This version keeps working."
+src = ["crates/kfx-editor/src/app/update_ui.rs:239"]
 
 [strings."kfx_editor.the_wizard_is_not_open"]
 text = "the wizard is not open"
@@ -7077,15 +7221,15 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:362"]
 
 [strings."kfx_editor.they_are_always_read_saving_writes_them_uncompre"]
 text = "They are always read; saving writes them uncompressed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1489"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1491"]
 
 [strings."kfx_editor.thing"]
 text = "Thing"
-src = ["crates/kfx-editor/src/app/extras.rs:584"]
+src = ["crates/kfx-editor/src/app/extras.rs:515"]
 
 [strings."kfx_editor.things"]
 text = "Things"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1071", "crates/kfx-editor/src/app/panels.rs:565", "crates/kfx-editor/src/browser.rs:598", "crates/kfx-editor/src/tools.rs:43"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1072", "crates/kfx-editor/src/app/panels.rs:565", "crates/kfx-editor/src/browser.rs:598", "crates/kfx-editor/src/tools.rs:43"]
 
 [strings."kfx_editor.things_4b5c"]
 text = "👆 Things"
@@ -7109,7 +7253,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:893"]
 
 [strings."kfx_editor.things_scattered_on_slabs_of_a_kind_each_subtile"]
 text = "Things scattered on slabs of a kind: each subtile of such a slab gets the thing with the chance given. They are attached to their slab, so placing or regenerating the slab scatters them again (seeded: the same slab gets the same doodads). Saved with the map."
-src = ["crates/kfx-editor/src/app/extras.rs:536"]
+src = ["crates/kfx-editor/src/app/extras.rs:467"]
 
 [strings."kfx_editor.things_t_validate_creatures_creatures_validate2"]
 text = "Things {t}/{max_map_things} · creatures {creatures}/{max_creatures} · action points {items}/{max_action_points} · lights {items2}/{max_lights}"
@@ -7119,6 +7263,10 @@ src = ["crates/kfx-editor/src/app/panels.rs:1007"]
 one = "{n} thing in a closed pocket of {cells} slabs around ({c},{c2}) that no keeper or hero reaches."
 other = "{n} things in a closed pocket of {cells} slabs around ({c},{c2}) that no keeper or hero reaches."
 src = ["crates/kfx-editor/src/analysis_view.rs:899"]
+
+[strings."kfx_editor.this_copy_cannot_update_itself_b"]
+text = "This copy cannot update itself: {b}"
+src = ["crates/kfx-editor/src/app/update_ui.rs:627", "crates/kfx-editor/src/app/update_ui.rs:891"]
 
 [strings."kfx_editor.this_folder_is_read_only_save_maps_elsewhere_fil"]
 text = "this folder is read-only: save maps elsewhere (File > Save as)"
@@ -7166,15 +7314,27 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:760"]
 
 [strings."kfx_editor.this_map_was_opened_from_a_backup_choose_another"]
 text = "This map was opened from a backup: choose another folder (the backups folder is not a place to save maps)"
-src = ["crates/kfx-editor/src/app/documents.rs:368"]
+src = ["crates/kfx-editor/src/app/documents.rs:369"]
 
 [strings."kfx_editor.this_map_was_opened_from_a_backup_save_it_with_f"]
 text = "This map was opened from a backup: save it with File > Save as (or restore the backup from File > Backups)"
-src = ["crates/kfx-editor/src/app/documents.rs:350"]
+src = ["crates/kfx-editor/src/app/documents.rs:351"]
 
 [strings."kfx_editor.this_replaces_what_the_map_has_for_those_aspects"]
 text = "This replaces what the map has for those aspects. It can be undone."
 src = ["crates/kfx-editor/src/app/map_dialogs.rs:728"]
+
+[strings."kfx_editor.this_version_did_not_start_properly_n_times"]
+text = "This version did not start properly {n} times since the update."
+src = ["crates/kfx-editor/src/app/update_ui.rs:556"]
+
+[strings."kfx_editor.this_version_v_channel_c"]
+text = "This version: {v} · channel: {c}"
+src = ["crates/kfx-editor/src/app/update_ui.rs:544"]
+
+[strings."kfx_editor.this_version_v_is_the_newest_channel_c"]
+text = "This version ({v}) is the newest on the {c} channel"
+src = ["crates/kfx-editor/src/app/update_ui.rs:353"]
 
 [strings."kfx_editor.tile_size"]
 text = "Tile size"
@@ -7242,7 +7402,7 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:428"]
 
 [strings."kfx_editor.top_down"]
 text = "Top-down"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1063"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1064"]
 
 [strings."kfx_editor.top_down_view"]
 text = "Top-down view"
@@ -7250,7 +7410,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:384"]
 
 [strings."kfx_editor.torch_walls_every_fifth_slab_drapes_beside_claim"]
 text = "Torch walls every fifth slab, drapes beside claimed ground, then bands of twins / woman / pair walls by the distance from the heart"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1735"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1714"]
 
 [strings."kfx_editor.translation"]
 text = "translation"
@@ -7282,7 +7442,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:18", "crates/kfx-editor/src/app/pane
 
 [strings."kfx_editor.traps_3293"]
 text = "⚠ Traps"
-src = ["crates/kfx-editor/src/app.rs:127"]
+src = ["crates/kfx-editor/src/app.rs:128"]
 
 [strings."kfx_editor.traps_doors"]
 text = "Traps & doors…"
@@ -7298,7 +7458,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:562", "crates/kfx-editor/src/app/too
 
 [strings."kfx_editor.triangles_tris_chunks_chunks_last_mesh_mesh_ms_m"]
 text = "{triangles} triangles · {chunks} chunks · last mesh {mesh_ms} ms · zoom {zoom}% · {_}"
-src = ["crates/kfx-editor/src/app/toolbar.rs:962"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:965"]
 
 [strings."kfx_editor.turn_left"]
 text = "⟲ Turn left"
@@ -7307,6 +7467,10 @@ src = ["crates/kfx-editor/src/app/panels.rs:967"]
 [strings."kfx_editor.turn_right"]
 text = "⟳ Turn right"
 src = ["crates/kfx-editor/src/app/panels.rs:973"]
+
+[strings."kfx_editor.turn_update_checks_off"]
+text = "Turn update checks off"
+src = ["crates/kfx-editor/src/app/update_ui.rs:431"]
 
 [strings."kfx_editor.undo"]
 text = "⟲ Undo"
@@ -7346,7 +7510,7 @@ src = ["crates/kfx-editor/src/app/generator.rs:664"]
 
 [strings."kfx_editor.unlock_door"]
 text = "Unlock door"
-src = ["crates/kfx-editor/src/app/extras.rs:449"]
+src = ["crates/kfx-editor/src/app/extras.rs:380"]
 
 [strings."kfx_editor.unlock_region"]
 text = "Unlock region"
@@ -7358,7 +7522,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:921"]
 
 [strings."kfx_editor.unlocked"]
 text = "unlocked"
-src = ["crates/kfx-editor/src/app/extras.rs:465"]
+src = ["crates/kfx-editor/src/app/extras.rs:396"]
 
 [strings."kfx_editor.unreachable_portals_keepers_without_gold_isolate"]
 text = "Unreachable portals, keepers without gold, isolated hero gates and closed pockets with things."
@@ -7380,9 +7544,25 @@ src = ["crates/kfx-editor/src/app/prompts.rs:151"]
 text = "Unsaved changes in {name}. Save them first?"
 src = ["crates/kfx-editor/src/app/prompts.rs:153"]
 
+[strings."kfx_editor.update_check_failed_e"]
+text = "Update check failed: {e}"
+src = ["crates/kfx-editor/src/app/update_ui.rs:369"]
+
+[strings."kfx_editor.update_checks"]
+text = "Update checks"
+src = ["crates/kfx-editor/src/app/update_ui.rs:398"]
+
 [strings."kfx_editor.update_n_references"]
 text = "Update {n} references"
 src = ["crates/kfx-editor/src/app/script_panel.rs:252"]
+
+[strings."kfx_editor.update_now"]
+text = "Update now"
+src = ["crates/kfx-editor/src/app/update_ui.rs:657"]
+
+[strings."kfx_editor.updated_from_p_the_previous_version_is_kept_until"]
+text = "Updated from {p}. The previous version is kept until this one has run for a moment."
+src = ["crates/kfx-editor/src/app/update_ui.rs:563"]
 
 [strings."kfx_editor.updated_n_script_references_undo_in_the_script_e"]
 text = "Updated {n} script references (undo in the script editor)"
@@ -7390,11 +7570,19 @@ src = ["crates/kfx-editor/src/app/script_panel.rs:199"]
 
 [strings."kfx_editor.updated_to_kfx_editor_v_help_changelog_lists_wha"]
 text = "Updated to kfx-editor {v}: Help > Changelog lists what changed"
-src = ["crates/kfx-editor/src/app/extras.rs:243"]
+src = ["crates/kfx-editor/src/app/extras.rs:193"]
 
 [strings."kfx_editor.updated_updated_unchanged_unchanged_unknown_unkn"]
 text = "{updated} updated, {unchanged} unchanged, {unknown} unknown, {errors} errors"
 src = ["crates/kfx-editor/src/app/texts.rs:278"]
+
+[strings."kfx_editor.updates"]
+text = "Updates"
+src = ["crates/kfx-editor/src/app/dialogs.rs:68", "crates/kfx-editor/src/app/update_ui.rs:539", "crates/kfx-editor/src/app/update_ui.rs:824"]
+
+[strings."kfx_editor.updates_are_only_installed_when_you_say_so_this"]
+text = "Updates are only installed when you say so. This can be changed at any time in Preferences > Updates."
+src = ["crates/kfx-editor/src/app/update_ui.rs:412"]
 
 [strings."kfx_editor.updating_after_the_edit"]
 text = ", updating after the edit"
@@ -7410,7 +7598,7 @@ src = ["crates/kfx-editor/src/app/prompts.rs:109"]
 
 [strings."kfx_editor.use_this_rule"]
 text = "Use this rule"
-src = ["crates/kfx-editor/src/app/extras.rs:594"]
+src = ["crates/kfx-editor/src/app/extras.rs:525"]
 
 [strings."kfx_editor.used_by_uses_subtiles"]
 text = "used by {uses} subtiles"
@@ -7430,7 +7618,7 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:542"]
 
 [strings."kfx_editor.using_e"]
 text = "Using {e}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1588"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1567"]
 
 [strings."kfx_editor.v_is_not_a_number"]
 text = "{v} is not a number"
@@ -7446,7 +7634,7 @@ src = ["crates/kfx-editor/src/app/things.rs:469"]
 
 [strings."kfx_editor.valid"]
 text = "✔ valid"
-src = ["crates/kfx-editor/src/app/toolbar.rs:918"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:921"]
 
 [strings."kfx_editor.validate"]
 text = "Validate"
@@ -7458,7 +7646,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:361"]
 
 [strings."kfx_editor.validation_click_for_the_list"]
 text = "Validation (click for the list)"
-src = ["crates/kfx-editor/src/app/toolbar.rs:923"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:926"]
 
 [strings."kfx_editor.variants_variants_the_game_picks_one_at_random"]
 text = "{variants} variants, the game picks one at random"
@@ -7466,11 +7654,23 @@ src = ["crates/kfx-editor/src/app/audio.rs:299"]
 
 [strings."kfx_editor.version_env"]
 text = "Version {env}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2240"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2219"]
+
+[strings."kfx_editor.version_v_is_ready_it_is_installed_when_you_close"]
+text = "Version {v} is ready: it is installed when you close the editor"
+src = ["crates/kfx-editor/src/app/update_ui.rs:176"]
+
+[strings."kfx_editor.version_v_of_the_editor_is_available"]
+text = "Version {v} of the editor is available"
+src = ["crates/kfx-editor/src/app/update_ui.rs:470"]
+
+[strings."kfx_editor.version_v_of_the_editor_is_available_help_updates"]
+text = "Version {v} of the editor is available (Help > Updates)"
+src = ["crates/kfx-editor/src/app/update_ui.rs:343"]
 
 [strings."kfx_editor.view"]
 text = "View"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1056", "crates/kfx-editor/src/app/menu_bar.rs:16", "crates/kfx-editor/src/app/toolbar.rs:372"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1057", "crates/kfx-editor/src/app/menu_bar.rs:16", "crates/kfx-editor/src/app/toolbar.rs:372"]
 
 [strings."kfx_editor.w_warnings"]
 text = "{w} warnings"
@@ -7478,11 +7678,11 @@ src = ["crates/kfx-editor/src/app/panels.rs:1262"]
 
 [strings."kfx_editor.w_warnings_6e7f"]
 text = "⚠ {w} warnings"
-src = ["crates/kfx-editor/src/app/toolbar.rs:911"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:914"]
 
 [strings."kfx_editor.w_x_h_bases_keepers_gates_hero_gates_hearts_ring"]
 text = "{w}x{h} · {bases} keepers · {gates} hero gates · hearts ringed in the keeper colour, portals boxed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:668"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:669"]
 
 [strings."kfx_editor.w_x_h_keepers_keeper_s_symmetry_sym_attempts_att"]
 text = "{w}x{h}, {keepers} keeper(s), symmetry {sym}, {attempts} attempt(s), {time_us} ms"
@@ -7498,7 +7698,7 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:609"]
 
 [strings."kfx_editor.w_x_h_pixels_is_too_large"]
 text = "{w} x {h} pixels is too large"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1189"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1190"]
 
 [strings."kfx_editor.w_x_h_slabs"]
 text = "{w} x {h} slabs"
@@ -7526,7 +7726,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:388"]
 
 [strings."kfx_editor.water_and_lava_effect_generators_at_0_25"]
 text = "Water and lava effect generators at 0.25%"
-src = ["crates/kfx-editor/src/app/extras.rs:740"]
+src = ["crates/kfx-editor/src/app/extras.rs:671"]
 
 [strings."kfx_editor.water_lava"]
 text = "Water / lava"
@@ -7574,7 +7774,7 @@ src = ["crates/kfx-editor/src/app/live.rs:522"]
 
 [strings."kfx_editor.wheel_zoom"]
 text = "wheel zoom"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1911"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1890"]
 
 [strings."kfx_editor.when"]
 text = "When"
@@ -7618,11 +7818,11 @@ src = ["crates/kfx-editor/src/app/landview.rs:485"]
 
 [strings."kfx_editor.windowed"]
 text = "Windowed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1646"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1625"]
 
 [strings."kfx_editor.wine_automatic_for_exe"]
 text = "wine (automatic for .exe)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1616"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1595"]
 
 [strings."kfx_editor.with_a_tunneller"]
 text = ", with a tunneller"
@@ -7654,7 +7854,7 @@ src = ["crates/kfx-editor/src/app/workshop_win.rs:453"]
 
 [strings."kfx_editor.wrapper_command"]
 text = "Wrapper command"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1609"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1588"]
 
 [strings."kfx_editor.written_to_the_campaign_file_p_map_block"]
 text = "Written to the campaign file {p} [map block]"
@@ -7666,11 +7866,11 @@ src = ["crates/kfx-editor/src/app/map_dialogs.rs:185"]
 
 [strings."kfx_editor.written_to_the_level_s_lof_with_the_first_save_s"]
 text = "Written to the level's .lof with the first save (SINGLE campaign level, MULTI multiplayer, FREE free play…)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:371"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:372"]
 
 [strings."kfx_editor.wrote_path_w_x_h_tiles_tiles"]
 text = "Wrote {path} ({w} x {h}, {tiles} tiles)"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1116"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1117"]
 
 [strings."kfx_editor.yes_regenerate"]
 text = "Yes, regenerate"
@@ -7690,7 +7890,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:209"]
 
 [strings."kfx_editor.zoom_speed"]
 text = "Zoom speed"
-src = ["crates/kfx-editor/src/app/dialogs.rs:1900"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:1879"]
 
 [strings."kfx_live.add_creature_at_heart"]
 text = "Add creature at heart"

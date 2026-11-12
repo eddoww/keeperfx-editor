@@ -56,7 +56,7 @@ pub struct ExportDialog {
 }
 
 /// Preferences tabs.
-const PREF_TABS: [(&str, Tx); 8] = [
+const PREF_TABS: [(&str, Tx); 9] = [
     ("Files", tx("kfx_editor.files", "Files")),
     ("Play", tx("kfx_editor.play_d3fa", "Play")),
     ("Placement", tx("kfx_editor.placement", "Placement")),
@@ -65,6 +65,7 @@ const PREF_TABS: [(&str, Tx); 8] = [
     ("Graphics", tx("kfx_editor.graphics", "Graphics")),
     ("Decoration", tx("kfx_editor.decoration", "Decoration")),
     ("Shortcuts", tx("kfx_editor.shortcuts", "Shortcuts")),
+    ("Updates", tx("kfx_editor.updates", "Updates")),
 ];
 
 pub const WIKI: &[(Tx, &str)] = &[
@@ -1330,6 +1331,7 @@ impl EditorApp {
                         "Graphics" => self.prefs_graphics(ui),
                         "Decoration" => changed |= self.prefs_decoration(ui),
                         "Shortcuts" => self.shortcuts_editor(ui),
+                        "Updates" => self.prefs_updates(ui),
                         _ => self.prefs_files(ui),
                     });
                 ui.separator();
@@ -1490,29 +1492,6 @@ impl EditorApp {
             "kfx_editor.they_are_always_read_saving_writes_them_uncompre",
             "They are always read; saving writes them uncompressed",
         ));
-        ui.checkbox(
-            &mut s.update_check,
-            trd(
-                "kfx_editor.check_for_a_newer_release_at_start",
-                "Check for a newer release at start",
-            ),
-        )
-        .on_hover_text(trd(
-            "kfx_editor.off_by_default_only_asks_the_url_below_for_the_l",
-            "Off by default. Only asks the URL below for the latest release and \
-            shows a note; nothing is downloaded or installed",
-        ));
-        ui.horizontal(|ui| {
-            ui.label(trd("kfx_editor.release_url", "Release URL"));
-            ui.add(
-                egui::TextEdit::singleline(&mut s.update_url)
-                    .desired_width(380.0)
-                    .hint_text(trd(
-                        "kfx_editor.e_g_https_api_github_com_repos_owner_repo_releas",
-                        "e.g. https://api.github.com/repos/OWNER/REPO/releases/latest",
-                    )),
-            );
-        });
         ui.horizontal(|ui| {
             ui.label(trd(
                 "kfx_editor.crash_recovery_autosave_every",

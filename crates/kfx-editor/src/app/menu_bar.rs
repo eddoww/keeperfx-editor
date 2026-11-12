@@ -1282,6 +1282,13 @@ impl EditorApp {
         {
             self.show_changelog = true;
         }
+        if ui
+            .button(trd("kfx_editor.check_for_updates", "Check for updates…"))
+            .clicked()
+        {
+            self.updates.dialog = true;
+            self.check_updates(true);
+        }
         if ui.button(trd("kfx_editor.about", "About")).clicked() {
             self.show_about = true;
         }
