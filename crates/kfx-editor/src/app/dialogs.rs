@@ -2242,6 +2242,31 @@ impl EditorApp {
                     "Version {env}",
                     &[("env", &env!("CARGO_PKG_VERSION"))],
                 ));
+                let rev = kfx_script::DataRevision::get();
+                ui.horizontal_wrapped(|ui| {
+                    ui.label(trf(
+                        "kfx_editor.about_data_revision",
+                        "Script, configuration and Lua data generated from KeeperFX {commit} \
+                        ({date})",
+                        &[
+                            ("commit", &rev.keeperfx_short()),
+                            ("date", &rev.keeperfx_day()),
+                        ],
+                    ));
+                    if let Some(u) = rev.keeperfx_url() {
+                        ui.hyperlink_to(trd("kfx_editor.about_data_revision_link", "commit"), u);
+                    }
+                });
+                ui.label(
+                    RichText::new(trd(
+                        "kfx_editor.about_data_revision_note",
+                        "Commands, configuration keys and Lua functions added to KeeperFX \
+                        after that date are unknown to this build; a newer editor build may \
+                        know them.",
+                    ))
+                    .small()
+                    .color(TEXT_DIM),
+                );
                 ui.label(trd(
                     "kfx_editor.licence_gpl_2_0_or_later",
                     "Licence: GPL-2.0-or-later",

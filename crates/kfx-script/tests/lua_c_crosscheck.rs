@@ -246,9 +246,11 @@ fn lua_c_crosscheck() {
 
     // sanity of the extractor: most stubs must match a C registration
     assert!(c_live.len() > 100, "extractor lost registrations");
+    // A hook new upstream is listed by the sync report and only printed here (the editor works
+    // without knowing it); a hook the editor offers that the game no longer calls is an error.
     assert!(
-        missing.is_empty() && extra.is_empty(),
-        "hook table out of sync with src/lua_triggers.c"
+        extra.is_empty(),
+        "hooks.rs offers hooks src/lua_triggers.c no longer calls: {extra:?}"
     );
     assert!(
         no_c.len() * 4 < stub_names.len().max(1),

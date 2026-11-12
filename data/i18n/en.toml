@@ -1178,11 +1178,11 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:498"]
 
 [strings."kfx_editor.2d"]
 text = "2D"
-src = ["crates/kfx-editor/src/app/toolbar.rs:383", "crates/kfx-editor/src/app/toolbar.rs:987"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:383", "crates/kfx-editor/src/app/toolbar.rs:990"]
 
 [strings."kfx_editor.2d_3d"]
 text = "2D + 3D"
-src = ["crates/kfx-editor/src/app/toolbar.rs:990"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:993"]
 
 [strings."kfx_editor.2d_and_3d_side_by_side"]
 text = "2D and 3D side by side"
@@ -1238,7 +1238,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1284"]
 
 [strings."kfx_editor.a_map_and_level_script_editor_for_keeperfx"]
 text = "A map and level script editor for KeeperFX, the open-source engine for Dungeon Keeper 1."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2250"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2275"]
 
 [strings."kfx_editor.a_multiplayer_map_the_game_ignores_mods_in_multi"]
 text = "A multiplayer map: the game ignores mods in multiplayer games (only single-player tests use them)."
@@ -1279,6 +1279,18 @@ src = ["crates/kfx-editor/src/newmap.rs:189"]
 [strings."kfx_editor.about"]
 text = "About"
 src = ["crates/kfx-editor/src/app/dialogs.rs:2229", "crates/kfx-editor/src/app/menu_bar.rs:1285"]
+
+[strings."kfx_editor.about_data_revision"]
+text = "Script, configuration and Lua data generated from KeeperFX {commit} ({date})"
+src = ["crates/kfx-editor/src/app/dialogs.rs:2247"]
+
+[strings."kfx_editor.about_data_revision_link"]
+text = "commit"
+src = ["crates/kfx-editor/src/app/dialogs.rs:2257"]
+
+[strings."kfx_editor.about_data_revision_note"]
+text = "Commands, configuration keys and Lua functions added to KeeperFX after that date are unknown to this build; a newer editor build may know them."
+src = ["crates/kfx-editor/src/app/dialogs.rs:2261"]
 
 [strings."kfx_editor.about_w_x_h_pixels_rendered_in_tiles_when_larger"]
 text = "About {w} x {h} pixels; rendered in tiles when larger than the GPU allows."
@@ -1574,7 +1586,7 @@ src = ["crates/kfx-editor/src/app/config.rs:832"]
 
 [strings."kfx_editor.active_owner_active_owner"]
 text = "Active owner: {active_owner}"
-src = ["crates/kfx-editor/src/app/toolbar.rs:792"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:795"]
 
 [strings."kfx_editor.add"]
 text = "Add"
@@ -1803,7 +1815,7 @@ src = ["crates/kfx-editor/src/app/audio.rs:274"]
 
 [strings."kfx_editor.billboards_sprites_things_ms_ms_sprite_zips_spri"]
 text = "{billboards} sprites ({things_ms} ms) · {sprite_zips} sprite zips"
-src = ["crates/kfx-editor/src/app/toolbar.rs:948"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:951"]
 
 [strings."kfx_editor.border"]
 text = "Border"
@@ -1879,7 +1891,7 @@ src = ["crates/kfx-editor/src/app/safety.rs:559"]
 
 [strings."kfx_editor.c_changes_c2_kib"]
 text = "{c} changes, ~{c2} KiB"
-src = ["crates/kfx-editor/src/app/toolbar.rs:881"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:884"]
 
 [strings."kfx_editor.camera"]
 text = "Camera"
@@ -2195,7 +2207,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1066"]
 
 [strings."kfx_editor.configuration_layers_and_mods_click_for_the_deta"]
 text = "Configuration layers and mods (click for the details)"
-src = ["crates/kfx-editor/src/app/toolbar.rs:938"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:941"]
 
 [strings."kfx_editor.configuration_map_level"]
 text = "Configuration - map{level}"
@@ -2675,7 +2687,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1002"]
 
 [strings."kfx_editor.dungeon_keeper_is_a_trademark_of_electronic_arts"]
 text = "Dungeon Keeper is a trademark of Electronic Arts. The editor ships no game data: it reads your KeeperFX install."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2269"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2294"]
 
 [strings."kfx_editor.duplicate"]
 text = "Duplicate"
@@ -2703,7 +2715,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:1258"]
 
 [strings."kfx_editor.e_errors_w_warnings"]
 text = "✖ {e} errors, {w} warnings"
-src = ["crates/kfx-editor/src/app/toolbar.rs:904"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:907"]
 
 [strings."kfx_editor.e_g_https_api_github_com_repos_owner_repo_releas"]
 text = "e.g. https://api.github.com/repos/OWNER/REPO/releases/latest"
@@ -3151,7 +3163,7 @@ src = ["crates/kfx-editor/src/browser.rs:614"]
 
 [strings."kfx_editor.formats_slab_generation_and_rules_follow_the_kee"]
 text = "Formats, slab generation and rules follow the KeeperFX source code. Thanks to the KeeperFX project and the authors of its wiki."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2255"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2280"]
 
 [strings."kfx_editor.fortified_walls"]
 text = "Fortified walls"
@@ -3525,7 +3537,7 @@ src = ["crates/kfx-editor/src/app/script_panel.rs:828"]
 
 [strings."kfx_editor.history"]
 text = "History"
-src = ["crates/kfx-editor/src/app/panels.rs:563", "crates/kfx-editor/src/app/toolbar.rs:848"]
+src = ["crates/kfx-editor/src/app/panels.rs:563", "crates/kfx-editor/src/app/toolbar.rs:851"]
 
 [strings."kfx_editor.history_inspector_things_layers_validate_notes_a"]
 text = "History, Inspector, Things, Layers, Validate, Notes and Files as tabs of the left panel (else in a right panel)"
@@ -3633,7 +3645,7 @@ src = ["crates/kfx-editor/src/newmap.rs:165"]
 
 [strings."kfx_editor.isometric"]
 text = "isometric"
-src = ["crates/kfx-editor/src/app/toolbar.rs:995"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:998"]
 
 [strings."kfx_editor.isometric_game_view"]
 text = "Isometric (game view)"
@@ -3725,7 +3737,7 @@ src = ["crates/kfx-editor/src/app/prompts.rs:8"]
 
 [strings."kfx_editor.keeperfx_project"]
 text = "KeeperFX project"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2265"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2290"]
 
 [strings."kfx_editor.keeperfx_tngfx_aptfx_lgtfx"]
 text = "KeeperFX (.tngfx / .aptfx / .lgtfx)"
@@ -3917,7 +3929,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1054"]
 
 [strings."kfx_editor.licence_gpl_2_0_or_later"]
 text = "Licence: GPL-2.0-or-later"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2245"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2270"]
 
 [strings."kfx_editor.light"]
 text = "Light"
@@ -4201,7 +4213,7 @@ src = ["crates/kfx-editor/src/app/generator.rs:262"]
 
 [strings."kfx_editor.minimap"]
 text = "Minimap"
-src = ["crates/kfx-editor/src/app/menu_bar.rs:456", "crates/kfx-editor/src/app/menu_bar.rs:1208", "crates/kfx-editor/src/app/toolbar.rs:803"]
+src = ["crates/kfx-editor/src/app/menu_bar.rs:456", "crates/kfx-editor/src/app/menu_bar.rs:1208", "crates/kfx-editor/src/app/toolbar.rs:806"]
 
 [strings."kfx_editor.mixed"]
 text = "(mixed)"
@@ -4621,7 +4633,7 @@ src = ["crates/kfx-editor/src/app/generator.rs:353"]
 
 [strings."kfx_editor.no_map_open"]
 text = "No map open"
-src = ["crates/kfx-editor/src/app/config.rs:1023", "crates/kfx-editor/src/app/config.rs:1108", "crates/kfx-editor/src/app/custom.rs:953", "crates/kfx-editor/src/app/panels.rs:611", "crates/kfx-editor/src/app/panels.rs:997", "crates/kfx-editor/src/app/panels.rs:1252", "crates/kfx-editor/src/app/toolbar.rs:713", "crates/kfx-editor/src/app/toolbar.rs:854"]
+src = ["crates/kfx-editor/src/app/config.rs:1023", "crates/kfx-editor/src/app/config.rs:1108", "crates/kfx-editor/src/app/custom.rs:953", "crates/kfx-editor/src/app/panels.rs:611", "crates/kfx-editor/src/app/panels.rs:997", "crates/kfx-editor/src/app/panels.rs:1252", "crates/kfx-editor/src/app/toolbar.rs:713", "crates/kfx-editor/src/app/toolbar.rs:857"]
 
 [strings."kfx_editor.no_map_see_below"]
 text = "No map: see below."
@@ -5029,7 +5041,7 @@ src = ["crates/kfx-editor/src/app/config.rs:1152"]
 
 [strings."kfx_editor.opened"]
 text = "(opened)"
-src = ["crates/kfx-editor/src/app/toolbar.rs:866"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:869"]
 
 [strings."kfx_editor.opened_path_pack_config_layers_texture_sets_text"]
 text = "Opened {path} [{pack}; config {layers}; texture sets {texture_sets}]{warn}"
@@ -5302,7 +5314,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:419"]
 
 [strings."kfx_editor.perspective_2cb5"]
 text = "perspective"
-src = ["crates/kfx-editor/src/app/toolbar.rs:993"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:996"]
 
 [strings."kfx_editor.pick"]
 text = "💧 Pick"
@@ -7298,7 +7310,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:562", "crates/kfx-editor/src/app/too
 
 [strings."kfx_editor.triangles_tris_chunks_chunks_last_mesh_mesh_ms_m"]
 text = "{triangles} triangles · {chunks} chunks · last mesh {mesh_ms} ms · zoom {zoom}% · {_}"
-src = ["crates/kfx-editor/src/app/toolbar.rs:962"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:965"]
 
 [strings."kfx_editor.turn_left"]
 text = "⟲ Turn left"
@@ -7446,7 +7458,7 @@ src = ["crates/kfx-editor/src/app/things.rs:469"]
 
 [strings."kfx_editor.valid"]
 text = "✔ valid"
-src = ["crates/kfx-editor/src/app/toolbar.rs:918"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:921"]
 
 [strings."kfx_editor.validate"]
 text = "Validate"
@@ -7458,7 +7470,7 @@ src = ["crates/kfx-editor/src/app/toolbar.rs:361"]
 
 [strings."kfx_editor.validation_click_for_the_list"]
 text = "Validation (click for the list)"
-src = ["crates/kfx-editor/src/app/toolbar.rs:923"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:926"]
 
 [strings."kfx_editor.variants_variants_the_game_picks_one_at_random"]
 text = "{variants} variants, the game picks one at random"
@@ -7478,7 +7490,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:1262"]
 
 [strings."kfx_editor.w_warnings_6e7f"]
 text = "⚠ {w} warnings"
-src = ["crates/kfx-editor/src/app/toolbar.rs:911"]
+src = ["crates/kfx-editor/src/app/toolbar.rs:914"]
 
 [strings."kfx_editor.w_x_h_bases_keepers_gates_hero_gates_hearts_ring"]
 text = "{w}x{h} · {bases} keepers · {gates} hero gates · hearts ringed in the keeper colour, portals boxed"

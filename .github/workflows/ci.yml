@@ -143,3 +143,7 @@ jobs:
       # wgpu adapter. --no-fail-fast: every crate is tested even when one fails.
       - name: Test
         run: cargo test --workspace --locked --no-fail-fast -j 4 -- --test-threads=4
+      # The data sync tool (tools/sync_keeperfx.py) on its synthetic fixtures; standard library only.
+      - name: Test the sync tool
+        if: runner.os == 'Linux'
+        run: python3 -I tools/tests/test_sync_keeperfx.py

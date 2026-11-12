@@ -1,0 +1,236 @@
+# Keep the data generated from KeeperFX current: once a day (or by hand) regenerate everything
+# tools/sync_keeperfx.py derives from the KeeperFX source and wiki and, when something changed,
+# open or update one pull request from the branch sync/keeperfx against main.
+#
+# Security: the KeeperFX and wiki checkouts are untrusted input. They are fetched without
+# symbolic links and only read, by our own scripts (tools/*.py parse the text, the Lua stubs
+# are parsed by our own Rust code); nothing from them is built, run, imported or installed.
+#
+# Pull requests and pushes made with GITHUB_TOKEN do not trigger other workflows (ci.yml does
+# not run on the sync branch), which is why formatting and the tests of the crates that embed
+# the data run here, and the result is written at the top of the pull request.
+#
+# Repository settings this needs (see CONTRIBUTING.md, "Generated data"):
+#   * Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests"
+#     must be on, or `gh pr create` fails;
+#   * optional: the repository variable SYNC_AUTO_MERGE=true (and "Allow auto-merge") lets this
+#     workflow enable auto-merge on a pull request whose changes are additive only and whose
+#     tests passed. Off by default.
+name: sync-keeperfx
+
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+    inputs:
+      keeperfx_ref:
+        description: "KeeperFX branch, tag or commit (empty: the default branch)"
+        required: false
+        default: ""
+      wiki_ref:
+        description: "Wiki branch, tag or commit (empty: the default branch)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-keeperfx
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: "0"
+  # No debug info: the test build otherwise fills the runner's disk (as in ci.yml).
+  CARGO_PROFILE_DEV_DEBUG: "0"
+  CARGO_PROFILE_TEST_DEBUG: "0"
+  BASE_BRANCH: main
+  SYNC_BRANCH: sync/keeperfx
+  # The crates that embed data/*.json or the generated kfx-gfx tables (include_str! of data/,
+  # and the crates that read them through kfx-script).
+  TEST_CRATES: -p kfx-script -p kfx-script-ui -p kfx-config-ui -p kfx-gfx -p kfx-logic-ui -p kfx-prefab -p kfx-editor
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+
+      - name: Fetch KeeperFX and its wiki (read only, no symbolic links)
+        env:
+          KFX_REF: ${{ inputs.keeperfx_ref }}
+          WIKI_REF: ${{ inputs.wiki_ref }}
+        run: |
+          set -euo pipefail
+          fetch() {
+            local dir="$1" url="$2" ref="${3:-HEAD}"
+            if ! [[ "$ref" =~ ^[A-Za-z0-9._/-]{1,200}$ ]]; then
+              echo "::error::invalid ref: $ref"; exit 1
+            fi
+            git init -q "$dir"
+            git -C "$dir" config core.symlinks false
+            git -C "$dir" remote add origin "$url"
+            git -C "$dir" fetch -q --depth 1 --no-tags origin "$ref"
+            git -C "$dir" -c advice.detachedHead=false checkout -q FETCH_HEAD
+          }
+          fetch "$RUNNER_TEMP/keeperfx" https://github.com/dkfans/keeperfx "$KFX_REF"
+          fetch "$RUNNER_TEMP/wiki" https://github.com/dkfans/keeperfx.wiki "$WIKI_REF"
+          {
+            echo "KFX_REV=$(git -C "$RUNNER_TEMP/keeperfx" rev-parse HEAD)"
+            echo "KFX_DATE=$(git -C "$RUNNER_TEMP/keeperfx" log -1 --no-show-signature --format=%cI)"
+            echo "WIKI_REV=$(git -C "$RUNNER_TEMP/wiki" rev-parse HEAD)"
+          } >> "$GITHUB_ENV"
+
+      - name: System packages
+        run: |
+          sudo apt-get update
+          # Window system and ALSA headers for the build; a software Vulkan driver (lavapipe)
+          # for the egui_kittest UI tests (as in ci.yml).
+          sudo apt-get install -y --no-install-recommends pkg-config libxkbcommon-dev libwayland-dev libx11-dev libasound2-dev mesa-vulkan-drivers libvulkan1
+
+      - name: Rust toolchain
+        run: |
+          rustup toolchain install stable --profile minimal --component rustfmt
+          rustup default stable
+
+      - uses: actions/cache@v6
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: sync-ubuntu-24.04-${{ hashFiles('Cargo.lock') }}
+          restore-keys: |
+            sync-ubuntu-24.04-
+            test-ubuntu-24.04-
+
+      - name: Regenerate the data
+        id: sync
+        run: |
+          set -euo pipefail
+          python3 -I tools/sync_keeperfx.py "$RUNNER_TEMP/keeperfx" "$RUNNER_TEMP/wiki" \
+            --keeperfx-rev "$KFX_REV" --keeperfx-date "$KFX_DATE" --wiki-rev "$WIKI_REV" \
+            --work "$RUNNER_TEMP" --report "$RUNNER_TEMP/report.md" \
+            --summary "$RUNNER_TEMP/summary.json"
+          s="$RUNNER_TEMP/summary.json"
+          get() { python3 -I -c 'import json,sys; v=json.load(open(sys.argv[1]))[sys.argv[2]]; print(str(v).lower() if isinstance(v,bool) else v)' "$s" "$1"; }
+          echo "changed=$(get changed)" >> "$GITHUB_OUTPUT"
+          echo "additive=$(get additive_only)" >> "$GITHUB_OUTPUT"
+          echo "short=$(get keeperfx_short)" >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      # Nothing changed upstream that matters to the editor: the remaining steps are skipped and
+      # the run succeeds. An open sync pull request is then out of date (main already has what
+      # upstream has, for example after an upstream revert) and is closed.
+      - name: Close an outdated sync pull request
+        if: steps.sync.outputs.changed != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          number=$(gh pr list --head "$SYNC_BRANCH" --base "$BASE_BRANCH" --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh pr close "$number" --delete-branch \
+              --comment "Closed by the sync-keeperfx workflow: $BASE_BRANCH is up to date with KeeperFX $KFX_REV."
+          fi
+
+      - name: Formatting
+        id: fmt
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          if cargo fmt --all --check; then echo "status=pass"; else echo "status=fail"; fi >> "$GITHUB_OUTPUT"
+
+      - name: Tests of the crates that embed the data
+        id: tests
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          set -o pipefail
+          status=pass
+          python3 -I tools/tests/test_sync_keeperfx.py 2>&1 | tee "$RUNNER_TEMP/test.log" || status=fail
+          cargo test --locked --no-fail-fast -j 4 $TEST_CRATES -- --test-threads=4 2>&1 \
+            | tee -a "$RUNNER_TEMP/test.log" || status=fail
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Commit to the sync branch
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          SHORT: ${{ steps.sync.outputs.short }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$SYNC_BRANCH"
+          mapfile -t files < <(python3 -I -c 'import json,sys; print("\n".join(json.load(open(sys.argv[1]))["changed_files"]))' "$RUNNER_TEMP/summary.json")
+          git add -- data/UPSTREAM.json "${files[@]}"
+          git commit -q -m "Sync data with KeeperFX $SHORT"
+          git push --force origin "$SYNC_BRANCH"
+
+      - name: Open or update the pull request
+        id: pr
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FMT: ${{ steps.fmt.outputs.status }}
+          TESTS: ${{ steps.tests.outputs.status }}
+        run: |
+          set -euo pipefail
+          title=$(python3 -I tools/sync_pr.py --report "$RUNNER_TEMP/report.md" \
+            --summary "$RUNNER_TEMP/summary.json" --test-log "$RUNNER_TEMP/test.log" \
+            --fmt "$FMT" --tests "$TESTS" --body-out "$RUNNER_TEMP/body.md")
+          number=$(gh pr list --head "$SYNC_BRANCH" --base "$BASE_BRANCH" --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --title "$title" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh pr create --base "$BASE_BRANCH" --head "$SYNC_BRANCH" --title "$title" \
+              --body-file "$RUNNER_TEMP/body.md"
+            number=$(gh pr view "$SYNC_BRANCH" --json number --jq .number)
+          fi
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+          if [ "$FMT" != pass ] || [ "$TESTS" != pass ]; then
+            echo "::warning::upstream drift needs hand work: $title"
+          fi
+
+      # Opt-in fast path: only with the repository variable SYNC_AUTO_MERGE set to true, only for
+      # changes the report classifies as additive (no removal, no changed signature, no sprite
+      # table change) and only when formatting and tests passed.
+      - name: Enable auto-merge (opt-in)
+        if: >-
+          steps.sync.outputs.changed == 'true' && vars.SYNC_AUTO_MERGE == 'true' &&
+          steps.sync.outputs.additive == 'true' && steps.fmt.outputs.status == 'pass' &&
+          steps.tests.outputs.status == 'pass'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ steps.pr.outputs.number }}
+        run: gh pr merge "$NUMBER" --auto --squash
+
+      # A pull request updated with changes that are not eligible must not keep an auto-merge
+      # enabled by an earlier run.
+      - name: Disable auto-merge when not eligible
+        if: >-
+          steps.sync.outputs.changed == 'true' && !(vars.SYNC_AUTO_MERGE == 'true' &&
+          steps.sync.outputs.additive == 'true' && steps.fmt.outputs.status == 'pass' &&
+          steps.tests.outputs.status == 'pass')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          if [ "$(gh pr view "$NUMBER" --json autoMergeRequest --jq '.autoMergeRequest != null')" = true ]; then
+            gh pr merge "$NUMBER" --disable-auto
+          fi
+
+      # Make the run red (and notify the maintainer) when the pull request needs hand work.
+      - name: Report failing tests
+        if: >-
+          steps.sync.outputs.changed == 'true' &&
+          (steps.fmt.outputs.status != 'pass' || steps.tests.outputs.status != 'pass')
+        run: |
+          echo "::error::the regenerated data does not pass formatting or the tests; see the pull request"
+          exit 1

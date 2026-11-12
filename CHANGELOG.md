@@ -5,7 +5,21 @@ The format follows Keep a Changelog (https://keepachangelog.com/en/1.1.0/) and t
 
 ## [Unreleased]
 
+### Added
+
+- Help > About, `kfx-editor --version` and `kfx-editor info` show which KeeperFX revision (commit
+  and date) the editor's script, configuration and Lua data was generated from.
+- The data generated from KeeperFX is now regenerated with one command,
+  `tools/sync_keeperfx.py`, which also writes a change report; a daily workflow proposes the
+  result as a pull request.
+
 ### Changed
+
+- An unknown script command is reported as not known to this editor build's data (with the date of
+  the KeeperFX revision it was generated from) instead of as an invalid command, and a command
+  KeeperFX removed says so.
+- Commands the wiki does not document yet get the documentation built from the argument notes
+  and the C source comments.
 
 - Keepers in the owner list are numbered as in level scripts: Keeper 0 (Red) is `PLAYER0`,
   Keeper 6 (Orange) is `PLAYER6`. Validation messages, the owner tooltip and the slab set

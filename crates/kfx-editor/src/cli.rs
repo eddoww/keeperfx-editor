@@ -29,10 +29,41 @@ commands (no window; MAP is a mapNNNNN.slb or another file of the level):
                                          render the whole map (N pixels per slab, default 16;
                                          top-down unless --iso)
   kfx-editor script-check MAP [--json]   DK script and Lua diagnostics; exit 1 on errors
-  kfx-editor info MAP [--json]           size, keepers, things, scripts, format, campaign
+  kfx-editor info MAP [--json]           size, keepers, things, scripts, format, campaign, and
+                                         the KeeperFX revision of the editor's data
+  kfx-editor --version                   editor version and that KeeperFX revision
 Maps are backed up to the editor's backups folder before convert / regenerate overwrite them.
 A map with a file the editor cannot read (a .tngfx/.aptfx/.lgtfx or sidecar) is read-only: the
 problem is printed, convert / regenerate refuse to write, and every command exits non-zero.";
+
+/// `kfx-editor --version`: the editor version and the KeeperFX revision its script,
+/// configuration and Lua data was generated from (`data/UPSTREAM.json`).
+pub fn version_text() -> String {
+    let r = kfx_script::DataRevision::get();
+    format!(
+        "kfx-editor {}\nscript, config and Lua data: KeeperFX {} ({}), wiki {}{}",
+        env!("CARGO_PKG_VERSION"),
+        r.keeperfx_short(),
+        r.keeperfx_day(),
+        r.wiki_short(),
+        r.keeperfx_url()
+            .map(|u| format!("\n{u}"))
+            .unwrap_or_default()
+    )
+}
+
+/// The `editor` object of `info --json`.
+fn editor_json() -> serde_json::Value {
+    let r = kfx_script::DataRevision::get();
+    serde_json::json!({
+        "version": env!("CARGO_PKG_VERSION"),
+        "data": {
+            "keeperfx_commit": r.keeperfx_commit,
+            "keeperfx_date": r.keeperfx_date,
+            "wiki_commit": r.wiki_commit,
+        }
+    })
+}
 
 /// Set when a loaded map has files the editor could not read (the exit code is then not 0).
 static UNREADABLE: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
@@ -459,7 +490,8 @@ fn run_inner(args: &[String]) -> Result<i32, String> {
                             .layers
                             .iter()
                             .map(|l| format!("{}/{}", l.dir.display(), l.prefix))
-                            .collect::<Vec<_>>()
+                            .collect::<Vec<_>>(),
+                        "editor": editor_json()
                     }))
                     .unwrap_or_default()
                 );
@@ -514,6 +546,11 @@ fn run_inner(args: &[String]) -> Result<i32, String> {
                 println!(
                     "  format     {format} things files, texture set {}",
                     d.doc.texture_id
+                );
+                println!(
+                    "  editor     {} (script, config and Lua data from {})",
+                    env!("CARGO_PKG_VERSION"),
+                    kfx_script::DataRevision::get().summary()
                 );
             }
             Ok(0)

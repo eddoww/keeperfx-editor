@@ -7,7 +7,8 @@
 //! ```
 //!
 //! Without `KFX_LUA_REGEN` the test only checks that the shipped file loads and (when an install is
-//! present) that it still matches a fresh build.
+//! present) that it still matches a fresh build. `tools/sync_keeperfx.py` builds the same index
+//! from the `config/fxdata/lua` folder of the KeeperFX source with the `lua_index` example.
 use kfx_formats::testutil;
 use kfx_script::lua::index::ApiIndex;
 use std::path::PathBuf;

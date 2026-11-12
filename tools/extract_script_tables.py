@@ -9,9 +9,11 @@ Reads the C sources under <c_source_root> (read only) and writes a JSON
 document with the script command tables, the TbScriptCommands enum and the
 named constant tables. Standard library only. Exits non-zero with a message
 on stderr if an expected table is missing or parses to zero rows.
+
+The C source is untrusted input: string literals are decoded by a small C
+escape decoder, never evaluated.
 """
 
-import ast
 import json
 import re
 import sys
@@ -154,14 +156,33 @@ def table_rows(clean, masked, open_idx, table_name):
     return rows
 
 
+C_ESCAPES = {"n": "\n", "t": "\t", "r": "\r", "0": "\0", "\\": "\\", '"': '"', "'": "'",
+             "a": "\a", "b": "\b", "f": "\f", "v": "\v", "?": "?"}
+
+
 def c_string(clean, s, e, where):
+    """Decode one C string literal (a single literal, simple escapes only)."""
     text = clean[s:e].strip()
     if len(text) < 2 or text[0] != '"' or text[-1] != '"':
         raise ExtractError("%s: expected string literal, got %r" % (where, text))
-    try:
-        return ast.literal_eval(text)
-    except (ValueError, SyntaxError) as exc:
-        raise ExtractError("%s: cannot decode string %r (%s)" % (where, text, exc))
+    out = []
+    body = text[1:-1]
+    i = 0
+    while i < len(body):
+        ch = body[i]
+        if ch == '"':
+            raise ExtractError("%s: more than one string literal in %r" % (where, text))
+        if ch != "\\":
+            out.append(ch)
+            i += 1
+            continue
+        esc = body[i + 1:i + 2]
+        if esc in C_ESCAPES and not (esc == "0" and body[i + 2:i + 3].isdigit()):
+            out.append(C_ESCAPES[esc])
+            i += 2
+        else:
+            raise ExtractError("%s: unsupported escape in %r" % (where, text))
+    return "".join(out)
 
 
 def c_expr(clean, s, e):

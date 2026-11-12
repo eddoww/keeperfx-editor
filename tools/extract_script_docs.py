@@ -12,8 +12,8 @@ heading (an h3 whose text is an upper-case identifier). Every field is taken
 from the wiki text; fields the wiki does not provide are left empty.
 
 The wiki is untrusted data: this script only reads files. It does not run git
-or any command found in the wiki. The commit hash is read from the .git
-directory files directly.
+or any command found in the wiki. The commit hash is given with --commit or
+read from the .git directory files directly.
 
 Standard library only. Prints a coverage report on stdout.
 """
@@ -40,24 +40,34 @@ def read_text(path):
     return Path(path).read_text(encoding="utf-8", errors="replace")
 
 
+REF_RE = re.compile(r"^refs/[A-Za-z0-9._/-]+$")
+HASH_RE = re.compile(r"^[0-9a-f]{40}([0-9a-f]{24})?$")
+
+
 def wiki_commit(wiki_dir):
-    """Resolve HEAD of the wiki checkout by reading .git files directly."""
+    """Resolve HEAD of the wiki checkout by reading .git files directly.
+
+    Only a ref under refs/ without `..` is followed, and only a commit hash is returned, so a
+    crafted HEAD cannot make this read or copy any other file."""
     git_dir = Path(wiki_dir) / ".git"
     try:
         head = read_text(git_dir / "HEAD").strip()
         if head.startswith("ref: "):
             ref = head[len("ref: "):].strip()
+            if not REF_RE.match(ref) or ".." in ref.split("/"):
+                return "unknown"
             ref_file = git_dir / ref
-            if ref_file.is_file():
-                return read_text(ref_file).strip()
+            if ref_file.is_file() and not ref_file.is_symlink():
+                value = read_text(ref_file).strip()
+                return value if HASH_RE.match(value) else "unknown"
             packed = git_dir / "packed-refs"
             if packed.is_file():
                 for line in read_text(packed).splitlines():
                     parts = line.split()
-                    if len(parts) == 2 and parts[1] == ref:
+                    if len(parts) == 2 and parts[1] == ref and HASH_RE.match(parts[0]):
                         return parts[0]
             return "unknown"
-        return head
+        return head if HASH_RE.match(head) else "unknown"
     except OSError:
         return "unknown"
 
@@ -279,13 +289,16 @@ def load_table_names(path):
     return names
 
 
-def build(wiki_dir, tables_path, out_path):
+def build(wiki_dir, tables_path, out_path, commit=None):
     wiki_dir = Path(wiki_dir)
     if not wiki_dir.is_dir():
         sys.exit("wiki directory not found: %s" % wiki_dir)
+    if commit is not None and not HASH_RE.match(commit):
+        sys.exit("--commit: not a commit hash: %r" % commit)
     table_names = load_table_names(tables_path)
     docs, duplicates = collect_docs(wiki_dir)
-    commit = wiki_commit(wiki_dir)
+    if commit is None:
+        commit = wiki_commit(wiki_dir)
 
     commands = {}
     for name in sorted(docs):
@@ -344,8 +357,9 @@ def main(argv=None):
     parser.add_argument("wiki_dir", help="checkout of dkfans/keeperfx.wiki (read only)")
     parser.add_argument("script_tables", help="path to script_tables.json")
     parser.add_argument("output", help="path of the JSON file to write")
+    parser.add_argument("--commit", help="wiki commit hash to record (default: read from wiki_dir/.git)")
     args = parser.parse_args(argv)
-    return build(args.wiki_dir, args.script_tables, args.output)
+    return build(args.wiki_dir, args.script_tables, args.output, args.commit)
 
 
 if __name__ == "__main__":

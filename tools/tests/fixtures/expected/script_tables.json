@@ -1,0 +1,178 @@
+{
+ "source": "src/lvl_script_commands.c, src/lvl_script_lib.h, src/map_locations.c, src/config_campaigns.c",
+ "arg_letters_doc": "/**\n * Descriptions of script commands for parser.\n * Arguments are: A-string, N-integer, C-creature model, P-player, R-room kind, L-location, O-operator, S-slab kind, B-boolean\n * Lower case letters are optional arguments.\n */",
+ "commands": [
+  {
+   "name": "LEVEL_VERSION",
+   "args": "N       ",
+   "cmd": "Cmd_LEVEL_VERSION",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "WIN_GAME",
+   "args": "        ",
+   "cmd": "Cmd_WIN_GAME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_FLAG",
+   "args": "PAN     ",
+   "cmd": "Cmd_SET_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_GOLD_TO_PLAYER",
+   "args": "PNn     ",
+   "cmd": "Cmd_ADD_GOLD_TO_PLAYER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_FIXTURE_GLOW",
+   "args": "PNn     ",
+   "cmd": "Cmd_SET_FIXTURE_GLOW",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MAX_CREATURES",
+   "args": "PN      ",
+   "cmd": "Cmd_MAX_CREATURES",
+   "check": null,
+   "process": null
+  }
+ ],
+ "dk1_commands": [
+  {
+   "name": "LEVEL_VERSION",
+   "args": "N       ",
+   "cmd": "Cmd_LEVEL_VERSION",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "WIN_GAME",
+   "args": "        ",
+   "cmd": "Cmd_WIN_GAME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_FLAG",
+   "args": "PAN     ",
+   "cmd": "Cmd_SET_FLAG",
+   "check": null,
+   "process": null
+  }
+ ],
+ "subfunctions": [
+  {
+   "name": "RANDOM",
+   "args": "Aaaaaaaa",
+   "cmd": "Cmd_RANDOM",
+   "check": null,
+   "process": null
+  }
+ ],
+ "named_tables": {
+  "player_desc": [
+   {
+    "name": "PLAYER0",
+    "value": "0"
+   },
+   {
+    "name": "PLAYER1",
+    "value": "1"
+   },
+   {
+    "name": "PLAYER_GOOD",
+    "value": "4"
+   },
+   {
+    "name": "ALL_PLAYERS",
+    "value": "8"
+   }
+  ],
+  "flag_desc": [
+   {
+    "name": "FLAG0",
+    "value": "0"
+   },
+   {
+    "name": "FLAG1",
+    "value": "1"
+   },
+   {
+    "name": "FLAG2",
+    "value": "2"
+   }
+  ],
+  "timer_desc": [
+   {
+    "name": "TIMER0",
+    "value": "0"
+   }
+  ],
+  "head_for_desc": [
+   {
+    "name": "ACTION_POINT",
+    "value": "1"
+   },
+   {
+    "name": "DUNGEON",
+    "value": "2"
+   }
+  ],
+  "cmpgn_human_player_options": [
+   {
+    "name": "RED",
+    "value": "0"
+   },
+   {
+    "name": "BLUE",
+    "value": "1"
+   }
+  ]
+ },
+ "command_ids": [
+  {
+   "name": "Cmd_NONE",
+   "value": 0
+  },
+  {
+   "name": "Cmd_LEVEL_VERSION",
+   "value": 1
+  },
+  {
+   "name": "Cmd_WIN_GAME",
+   "value": 2
+  },
+  {
+   "name": "Cmd_SET_FLAG",
+   "value": 3
+  },
+  {
+   "name": "Cmd_ADD_GOLD_TO_PLAYER",
+   "value": 4
+  },
+  {
+   "name": "Cmd_MAX_CREATURES",
+   "value": 5
+  },
+  {
+   "name": "Cmd_FIXTURE_OLD_BEACON",
+   "value": 6
+  },
+  {
+   "name": "Cmd_RANDOM",
+   "value": 7
+  },
+  {
+   "name": "Cmd_SET_FIXTURE_GLOW",
+   "value": 8
+  }
+ ]
+}

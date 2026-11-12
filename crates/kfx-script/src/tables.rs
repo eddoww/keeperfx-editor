@@ -99,28 +99,39 @@ pub struct Tables {
     pub named: HashMap<String, Vec<String>>,
 }
 
+static TABLES: OnceLock<Tables> = OnceLock::new();
+
 impl Tables {
+    /// The tables embedded in this build (or the ones given to [`Tables::install`]).
     pub fn get() -> &'static Tables {
-        static T: OnceLock<Tables> = OnceLock::new();
-        T.get_or_init(|| {
-            let raw: RawTables =
-                serde_json::from_str(TABLES_JSON).expect("embedded script_tables.json");
-            Tables {
-                commands: raw.commands.iter().map(CmdDesc::from_raw).collect(),
-                dk1: raw.dk1_commands.iter().map(CmdDesc::from_raw).collect(),
-                subfunctions: raw.subfunctions.iter().map(CmdDesc::from_raw).collect(),
-                named: raw
-                    .named_tables
-                    .into_iter()
-                    .map(|(k, v)| {
-                        (
-                            k,
-                            v.into_iter().map(|n| n.name.to_ascii_uppercase()).collect(),
-                        )
-                    })
-                    .collect(),
-            }
+        TABLES.get_or_init(|| Tables::from_json(TABLES_JSON).expect("embedded script_tables.json"))
+    }
+
+    /// Parse tables in the format of `data/script_tables.json`.
+    pub fn from_json(json: &str) -> Result<Tables, String> {
+        let raw: RawTables = serde_json::from_str(json).map_err(|e| e.to_string())?;
+        Ok(Tables {
+            commands: raw.commands.iter().map(CmdDesc::from_raw).collect(),
+            dk1: raw.dk1_commands.iter().map(CmdDesc::from_raw).collect(),
+            subfunctions: raw.subfunctions.iter().map(CmdDesc::from_raw).collect(),
+            named: raw
+                .named_tables
+                .into_iter()
+                .map(|(k, v)| {
+                    (
+                        k,
+                        v.into_iter().map(|n| n.name.to_ascii_uppercase()).collect(),
+                    )
+                })
+                .collect(),
         })
+    }
+
+    /// Use `tables` instead of the embedded data for the rest of the process. Only possible
+    /// before the first [`Tables::get`]; gives the tables back otherwise. Meant for tests that
+    /// run the services on other data (for example the fixtures of `tools/sync_keeperfx.py`).
+    pub fn install(tables: Tables) -> Result<(), Tables> {
+        TABLES.set(tables)
     }
 
     /// Command table for a level-file version: `dk1_command_desc` for 0, else the full one.

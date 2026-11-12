@@ -383,10 +383,17 @@ fn completion_members_after_dot_and_colon() {
         "{l:?}"
     );
     // prefix filtering and the `.`-after-global-class case
+    // (upstream may add members with the same prefix, so these only check the filtering)
     let l = labels("local c = GetCreatureNear(1, 2)\nc:lev|\n");
-    assert_eq!(l, vec!["level_up".to_string()]);
+    assert!(
+        l.contains(&"level_up".to_string()) && l.iter().all(|x| x.starts_with("lev")),
+        "{l:?}"
+    );
     let l = labels("PLAYER0.came|\n");
-    assert_eq!(l, vec!["camera".to_string()]);
+    assert!(
+        l.contains(&"camera".to_string()) && l.iter().all(|x| x.starts_with("came")),
+        "{l:?}"
+    );
     let l = labels("PLAYER0:|\n");
     assert!(
         l.contains(&"add_gold".to_string()) && l.contains(&"available".to_string()),

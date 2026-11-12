@@ -271,6 +271,10 @@ fn main() {
         println!("{USAGE}\n\n{}", cli::USAGE);
         return;
     }
+    if args.iter().any(|a| a == "--version" || a == "-V") {
+        println!("{}", cli::version_text());
+        return;
+    }
     if args
         .first()
         .is_some_and(|a| cli::COMMANDS.contains(&a.as_str()))
@@ -380,6 +384,22 @@ mod cli_args {
 
     fn args(a: &[&str]) -> Vec<String> {
         a.iter().map(|s| s.to_string()).collect()
+    }
+
+    #[test]
+    fn version_names_the_keeperfx_revision_of_the_data() {
+        let v = crate::cli::version_text();
+        let r = kfx_script::DataRevision::get();
+        assert!(v.starts_with(&format!("kfx-editor {}", env!("CARGO_PKG_VERSION"))));
+        assert!(
+            v.contains(&format!(
+                "KeeperFX {} ({})",
+                r.keeperfx_short(),
+                r.keeperfx_day()
+            )),
+            "{v}"
+        );
+        assert!(!v.contains("unknown"), "{v}");
     }
 
     #[test]

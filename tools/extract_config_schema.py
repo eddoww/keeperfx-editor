@@ -203,11 +203,23 @@ CAST_RE = re.compile(
     r"u?int(?:8|16|32|64)_t|size_t|ptrdiff_t|TbBool|ThingModel|ushort|uchar|ulong)\s*\)")
 
 
+# Longest constant expression evaluated, and the magnitude limit of every intermediate value.
+MAX_EXPR_LEN = 4096
+VALUE_LIMIT = 1 << 64
+
+
+def bounded(v):
+    if not -VALUE_LIMIT <= v <= VALUE_LIMIT:
+        raise ValueError("value out of range")
+    return v
+
+
 class Consts:
     def __init__(self, src_root):
         self.exprs = {}
         self.cache = {}
-        files = sorted(p for p in src_root.rglob("*") if p.suffix in (".h", ".c") and p.is_file())
+        files = sorted(p for p in src_root.rglob("*")
+                       if p.suffix in (".h", ".c") and p.is_file() and not p.is_symlink())
         define_rx = re.compile(r"(?m)^[ \t]*#[ \t]*define[ \t]+([A-Za-z_]\w*)(?![\w(])[ \t]*(.*?)[ \t]*$")
         enum_rx = re.compile(r"\benum\b\s*(\w+)?\s*\{")
         for p in files:
@@ -254,10 +266,15 @@ class Consts:
         return v
 
     def eval(self, expr, _depth=0):
+        """Value of a C constant expression, or None.
+
+        The source is untrusted: the expression is parsed into a syntax tree that a small
+        interpreter walks (integers and arithmetic only); nothing is ever executed. Results are
+        kept to 64 bits so a hostile expression cannot exhaust memory."""
         if expr is None:
             return None
         e = expr.strip()
-        if not e:
+        if not e or len(e) > MAX_EXPR_LEN:
             return None
         if "sizeof" in e or '"' in e:
             return None
@@ -269,14 +286,14 @@ class Consts:
         e = re.sub(r"(?<![/])/(?![/])", "//", e)
         try:
             tree = ast.parse(e, mode="eval")
-        except SyntaxError:
+        except (SyntaxError, ValueError, RecursionError, MemoryError):
             return None
 
         def ev(node):
             if isinstance(node, ast.Expression):
                 return ev(node.body)
             if isinstance(node, ast.Constant) and isinstance(node.value, int):
-                return int(node.value)
+                return bounded(int(node.value))
             if isinstance(node, ast.Name):
                 v = self.value(node.id, _depth)
                 if v is None:
@@ -294,13 +311,15 @@ class Consts:
                     return int(not v)
             if isinstance(node, ast.BinOp):
                 a, b = ev(node.left), ev(node.right)
+                if isinstance(node.op, (ast.LShift, ast.RShift)) and not 0 <= b < 64:
+                    raise ValueError("shift")
                 ops = {ast.Add: lambda: a + b, ast.Sub: lambda: a - b, ast.Mult: lambda: a * b,
                        ast.FloorDiv: lambda: int(a / b), ast.Mod: lambda: a % b,
                        ast.LShift: lambda: a << b, ast.RShift: lambda: a >> b,
                        ast.BitOr: lambda: a | b, ast.BitAnd: lambda: a & b, ast.BitXor: lambda: a ^ b}
                 for k, f in ops.items():
                     if isinstance(node.op, k):
-                        return f()
+                        return bounded(f())
             if isinstance(node, ast.BoolOp):
                 vals = [ev(v) for v in node.values]
                 if isinstance(node.op, ast.And):
@@ -320,7 +339,7 @@ class Consts:
 
         try:
             return ev(tree)
-        except (ValueError, ZeroDivisionError, RecursionError, TypeError):
+        except (ValueError, ZeroDivisionError, RecursionError, TypeError, MemoryError):
             return None
 
 
@@ -359,7 +378,7 @@ class NamedTables:
         rx = re.compile(r"(?:static\s+)?(?:const\s+)?struct\s+(Long)?NamedCommand\s+(\w+)\s*\[([^\]]*)\]\s*(=\s*\{|;)")
         entry_rx = re.compile(r"\{\s*(\"(?:[^\"\\]|\\.)*\"|NULL|0)\s*,?\s*([^{}]*?)\s*\}")
         files = sorted(p.relative_to(src_root).as_posix() for p in (src_root / "src").rglob("*")
-                       if p.suffix in (".c", ".h") and p.is_file())
+                       if p.suffix in (".c", ".h") and p.is_file() and not p.is_symlink())
         for rel in files:
             cf = CFile(src_root, rel)
             for m in rx.finditer(cf.text):
@@ -1902,7 +1921,7 @@ def c_string_index(src_root):
     """Map lower-cased string literals of the C sources to their first location."""
     idx = {}
     for p in sorted((src_root / "src").rglob("*")):
-        if p.suffix not in (".c", ".h", ".cpp") or not p.is_file():
+        if p.suffix not in (".c", ".h", ".cpp") or not p.is_file() or p.is_symlink():
             continue
         rel = p.relative_to(src_root).as_posix()
         raw = read_text(p)

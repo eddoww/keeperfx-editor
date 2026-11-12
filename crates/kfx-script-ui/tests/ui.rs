@@ -67,9 +67,18 @@ fn typing_opens_completion_and_tab_accepts() {
     let mut h = harness(b"LEVEL_VERSION(1)\n");
     focus_end(&mut h);
     type_text(&mut h, "ADD_CR");
+    // (KeeperFX may add commands with this prefix: check the filtering, not the whole list)
+    let labels = h.state().ed.completion_labels();
+    assert!(
+        labels.iter().any(|l| l == "ADD_CREATURE_TO_LEVEL")
+            && labels.iter().any(|l| l == "ADD_CREATURE_TO_POOL")
+            && labels.iter().all(|l| l.starts_with("ADD_CR")),
+        "{labels:?}"
+    );
+    type_text(&mut h, "EATURE_TO_LEV");
     assert_eq!(
-        h.state().ed.completion_labels(),
-        vec!["ADD_CREATURE_TO_LEVEL", "ADD_CREATURE_TO_POOL"]
+        h.state().ed.completion_labels().first().map(String::as_str),
+        Some("ADD_CREATURE_TO_LEVEL")
     );
     key(&mut h, Modifiers::NONE, Key::ArrowDown);
     key(&mut h, Modifiers::NONE, Key::ArrowUp);

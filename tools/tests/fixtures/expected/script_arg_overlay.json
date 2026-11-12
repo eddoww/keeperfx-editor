@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "_note": "Synthetic fixture for tools/tests/test_sync_keeperfx.py, in the format of data/script_arg_overlay.json.",
+ "lists": {},
+ "commands": {
+  "LEVEL_VERSION": {
+   "doc": "Selects the command set.",
+   "args": [
+    "version:number"
+   ]
+  },
+  "WIN_GAME": {
+   "doc": "Wins the level.",
+   "args": []
+  },
+  "SET_FLAG": {
+   "doc": "Sets a flag.",
+   "args": [
+    "player:player",
+    "flag:flag_var",
+    "value:number"
+   ]
+  },
+  "ADD_GOLD_TO_PLAYER": {
+   "doc": "Gives gold to a player.",
+   "args": [
+    "player:player",
+    "gold:amount",
+    "number3*:number"
+   ],
+   "auto": true,
+   "auto_note": "argument string changed upstream from \"PN\" to \"PNn\" (KeeperFX abcdef1); names and kinds kept where the type letter did not change"
+  },
+  "SET_FIXTURE_GLOW": {
+   "doc": "",
+   "args": [
+    "player*:player",
+    "number2*:number",
+    "number3*:number"
+   ],
+   "auto": true,
+   "auto_note": "new in KeeperFX abcdef1; argument names are generated from the type letters \"PNn\""
+  },
+  "MAX_CREATURES": {
+   "doc": "Limits the creature count.",
+   "args": [
+    "player:player",
+    "max:count"
+   ]
+  }
+ },
+ "removed": {
+  "FIXTURE_OLD_BEACON": {
+   "doc": "A command the new fixture tree removes.",
+   "args": [
+    "player:player",
+    "strength*:number"
+   ]
+  }
+ }
+}

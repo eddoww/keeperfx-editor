@@ -698,6 +698,27 @@ impl<'a> LineParser<'a> {
     }
 }
 
+/// Message of the `unknown-command` diagnostic. The game would log "Invalid command"; the editor
+/// only knows the commands of the KeeperFX revision its data was generated from
+/// ([`crate::DataRevision`]), so it says that instead of calling the command invalid.
+pub fn unknown_command_message(name: &str, version: i64) -> String {
+    let rev = crate::DataRevision::get();
+    if crate::Overlay::get().removed(name).is_some() {
+        return format!(
+            "Unknown command '{name}' (level version {version}): KeeperFX removed it before \
+            {} (the revision this editor build's data was generated from); older KeeperFX \
+            versions may still accept it",
+            rev.keeperfx_day()
+        );
+    }
+    format!(
+        "Unknown command '{name}' (level version {version}): not known to this editor build's \
+        data (generated from KeeperFX {}, {}); a newer editor build may know it",
+        rev.keeperfx_short(),
+        rev.keeperfx_day()
+    )
+}
+
 fn did_you_mean(name: &str, table: &[CmdDesc]) -> Option<String> {
     let mut best: Option<(usize, &str)> = None;
     for c in table {
@@ -863,7 +884,7 @@ impl Document {
                     match desc {
                         None => {
                             let in_full = tables.find_full(&name).is_some();
-                            let mut msg = format!("Invalid command, '{name}' (lev ver {ver_here})");
+                            let mut msg = unknown_command_message(&name, ver_here);
                             let code;
                             if in_full && ver_here <= 0 {
                                 msg = format!(

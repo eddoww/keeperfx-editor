@@ -28,6 +28,25 @@ it can also be a separate window.
 `Ctrl+S` of the main window saves map and scripts. `kfx-editor script-check MAP` runs the same
 diagnostics without a window.
 
+### "Not known to this editor build"
+
+The editor knows the script commands, constants, configuration keys and Lua functions of the
+KeeperFX revision its data was generated from; Help > About and `kfx-editor --version` show that
+revision and its date. A command it does not know is reported as *Unknown command 'NAME': not
+known to this editor build's data (generated from KeeperFX \<commit\>, \<date\>); a newer
+editor build may know it*. That does not have to mean the game rejects it: KeeperFX gains
+commands often, and a game newer than the editor's data may accept commands the editor has not
+seen yet. Check the spelling (the message suggests close names), then the
+[KeeperFX wiki](https://github.com/dkfans/keeperfx/wiki) or a newer editor build. The reverse
+also happens: the editor may know commands that an older KeeperFX release does not have yet.
+
+A command KeeperFX removed is reported as *KeeperFX removed it*; older KeeperFX versions may still
+accept it.
+
+Commands added to KeeperFX shortly before the editor's data was generated may only have generic
+argument names (`player`, `number2`, ...) and a note instead of a description in the signature
+help and the hover; they are valid and checked against the argument types of the command table.
+
 ## Script wizard
 
 Level > Script wizard… (or the Wizard… button of the script panel) opens a form for the level's

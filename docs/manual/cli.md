@@ -6,7 +6,9 @@ KeeperFX install is found from `KFX_INSTALL`, the saved setting, or by walking u
 ```text
 kfx-editor [MAP]                          open the editor window
 kfx-editor validate MAP [--json]          map checks and map <-> script links; exit 1 on errors
-kfx-editor info MAP [--json]              size, keepers, things, scripts, format, campaign, config layers
+kfx-editor info MAP [--json]              size, keepers, things, scripts, format, campaign, config layers,
+                                          and the KeeperFX revision of the editor's data
+kfx-editor --version                      editor version and the KeeperFX revision of its data
 kfx-editor script-check MAP [--json]      DK script and Lua diagnostics; exit 1 on errors
 kfx-editor export-image MAP OUT.png [--iso] [--scale N] [--no-things]
 kfx-editor regenerate MAP [--decorate]    regenerate columns, slab objects and liquids, then save

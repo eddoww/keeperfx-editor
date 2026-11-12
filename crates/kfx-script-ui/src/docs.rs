@@ -151,16 +151,21 @@ fn synthesize() -> HashMap<String, CommandDoc> {
     out
 }
 
+fn synthesized() -> &'static HashMap<String, CommandDoc> {
+    static S: OnceLock<HashMap<String, CommandDoc>> = OnceLock::new();
+    S.get_or_init(synthesize)
+}
+
+/// The wiki documentation, or the synthesised one without the `wiki-docs` feature.
 fn table() -> &'static HashMap<String, CommandDoc> {
+    if !WIKI_EMBEDDED {
+        return synthesized();
+    }
     static T: OnceLock<HashMap<String, CommandDoc>> = OnceLock::new();
     T.get_or_init(|| {
-        if WIKI_EMBEDDED {
-            serde_json::from_str::<Raw>(DOCS_JSON)
-                .map(|r| r.commands)
-                .unwrap_or_default()
-        } else {
-            synthesize()
-        }
+        serde_json::from_str::<Raw>(DOCS_JSON)
+            .map(|r| r.commands)
+            .unwrap_or_default()
     })
 }
 
@@ -175,11 +180,21 @@ pub fn alias_of(name: &str) -> Option<&'static str> {
     }
 }
 
-/// Documentation of `name` (any case, either spelling).
+/// Documentation of `name` (any case, either spelling). A command of the table the wiki does
+/// not describe (yet) gets the synthesised documentation, so a command new upstream is never
+/// shown without any.
 pub fn lookup(name: &str) -> Option<&'static CommandDoc> {
     let up = name.to_ascii_uppercase();
-    let t = table();
-    t.get(&up).or_else(|| alias_of(&up).and_then(|a| t.get(a)))
+    let find = |t: &'static HashMap<String, CommandDoc>| {
+        t.get(&up).or_else(|| alias_of(&up).and_then(|a| t.get(a)))
+    };
+    find(table()).or_else(|| {
+        if WIKI_EMBEDDED {
+            find(synthesized())
+        } else {
+            None
+        }
+    })
 }
 
 /// All documented command names (as spelled by the wiki), sorted.
@@ -357,23 +372,29 @@ mod tests {
     }
 
     #[test]
-    fn every_game_command_has_docs_or_is_known_gap() {
-        let missing: Vec<String> = kfx_script::Tables::get()
-            .commands
+    fn every_game_command_has_docs() {
+        let cmds = &kfx_script::Tables::get().commands;
+        let missing: Vec<&str> = cmds
             .iter()
             .filter(|c| lookup(&c.name).is_none())
-            .map(|c| c.name.clone())
+            .map(|c| c.name.as_str())
             .collect();
+        assert!(missing.is_empty(), "no documentation: {missing:?}");
         if WIKI_EMBEDDED {
-            // The wiki has no page for these two.
+            // The wiki lags behind new commands (and has no entry for PRINT and MESSAGE), so
+            // only a sharp drop in coverage means the extractor broke.
+            let from_wiki = cmds
+                .iter()
+                .filter(|c| lookup(&c.name).is_some_and(|d| !d.synthesized))
+                .count();
             assert!(
-                missing
-                    .iter()
-                    .all(|m| matches!(m.as_str(), "PRINT" | "MESSAGE")),
-                "undocumented: {missing:?}"
+                from_wiki * 10 >= cmds.len() * 9,
+                "only {from_wiki} of {} commands documented by the wiki",
+                cmds.len()
             );
-        } else {
-            assert!(missing.is_empty(), "synthesised docs miss: {missing:?}");
+            for name in ["ADD_CREATURE_TO_LEVEL", "IF", "WIN_GAME", "SET_FLAG"] {
+                assert!(!lookup(name).unwrap().synthesized, "{name}");
+            }
         }
     }
 

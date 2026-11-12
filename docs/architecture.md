@@ -71,6 +71,30 @@ mapNNNNN.* files --(kfx_formats::level_bin / level_fx, rnc)--> MapDoc ---> Docum
 5. **Play-testing.** `playtest.rs` builds the game's command line; a loose map is copied into
    `levels/personal` with a `.lof` first; the game's `keeperfx.log` is read back into the Game log.
 
+## Tracking KeeperFX
+
+The editor's idea of what is valid (script commands and their arguments, named constants,
+configuration keys, the Lua API, sprite tables) is data extracted from the KeeperFX source and
+wiki, checked in under `data/` (and `crates/kfx-gfx/src/gen_*.rs`) and embedded in the binary;
+nothing is read from the KeeperFX source at run time. `tools/sync_keeperfx.py` regenerates all of
+it in one go and records the upstream revision in `data/UPSTREAM.json`; the daily
+`sync-keeperfx` workflow runs it against the KeeperFX default branch and proposes the result as a
+pull request with a change report and the test results.
+
+The one hand-written part, `data/script_arg_overlay.json` (argument names and semantic kinds), is
+reconciled rather than regenerated: new commands get generated entries marked `"auto": true`,
+changed commands keep their hand-written positions, removed commands move to a `"removed"`
+section. Commands therefore never become "unknown" because the overlay lags; `kfx_script::Overlay`
+exposes the `auto` flag and the removed entries.
+
+At run time `kfx_script::DataRevision` reads the embedded `UPSTREAM.json`: Help > About,
+`kfx-editor --version` and `kfx-editor info` show it, and the `unknown-command` diagnostic says that
+a command is not known to this build's data (generated from KeeperFX on that date) instead of
+calling it invalid, or that KeeperFX removed it. The tests check invariants of the data (every
+command has an overlay entry with matching arguments, long-standing commands keep their shape)
+rather than counts, so a sync passes without hand edits unless upstream really changed something
+the editor depends on. CONTRIBUTING.md ("Generated data") has the commands and settings.
+
 ## The headless mode
 
 `kfx-editor --screenshot OUT.png --map MAP [--actions FILE.json]` renders the same UI offscreen

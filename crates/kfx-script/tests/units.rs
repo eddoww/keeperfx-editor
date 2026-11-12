@@ -166,8 +166,11 @@ fn drawfrom_random_import() {
         &format!("{V1}SET_FLAG(PLAYER0, FLAG0, IMPORT(PLAYER_NEUTRAL, CAMPAIGN_FLAG0))\n"),
         "bad-import"
     ));
+    let n_campaign_flags = Tables::get().named("campaign_flag_desc").len();
     assert!(has(
-        &format!("{V1}SET_FLAG(PLAYER0, FLAG0, IMPORT(PLAYER0, CAMPAIGN_FLAG9))\n"),
+        &format!(
+            "{V1}SET_FLAG(PLAYER0, FLAG0, IMPORT(PLAYER0, CAMPAIGN_FLAG{n_campaign_flags}))\n"
+        ),
         "unknown-flag"
     ));
     // unknown creature inside DRAWFROM is reported
@@ -284,8 +287,12 @@ fn code_wrong_types_and_constants() {
     assert!(c("IF(PLAYER0, MONEY ~= 5)\nENDIF").len() > 0);
     assert!(c("DEAD_CREATURES_RETURN_TO_POOL(MAYBE)").contains(&"unknown-boolean"));
     assert!(!c("DEAD_CREATURES_RETURN_TO_POOL(ENABLE)").contains(&"unknown-boolean"));
-    assert!(c("SET_TIMER(PLAYER0, TIMER9)").contains(&"unknown-timer"));
-    assert!(c("SET_FLAG(PLAYER0, FLAG9, 1)").contains(&"unknown-flag"));
+    // one past the last timer / flag of the tables (TIMER8 and FLAG8 with today's eight)
+    let n_timers = Tables::get().named("timer_desc").len();
+    let n_flags = Tables::get().named("flag_desc").len();
+    assert!(n_timers > 0 && n_flags > 0);
+    assert!(c(&format!("SET_TIMER(PLAYER0, TIMER{n_timers})")).contains(&"unknown-timer"));
+    assert!(c(&format!("SET_FLAG(PLAYER0, FLAG{n_flags}, 1)")).contains(&"unknown-flag"));
     assert!(c("SET_CAMPAIGN_FLAG(PLAYER0, FLAG1, 1)").contains(&"unknown-flag"));
     assert!(c("MAGIC_AVAILABLE(PLAYER0, POWER_FOO, 1, 1)").contains(&"unknown-power"));
     assert!(c("TRAP_AVAILABLE(PLAYER0, SPIKE, 1, 1)").contains(&"unknown-trap"));
@@ -715,10 +722,50 @@ fn formatter_reindents_only_leading_whitespace() {
 
 #[test]
 fn tables_and_overlay_are_consistent() {
+    // No pinned counts: `tools/sync_keeperfx.py` regenerates the tables when KeeperFX changes.
+    // What must hold is that the tables are not empty, that the overlay covers every command
+    // with matching arguments, and that long-standing commands keep their shape.
     let t = Tables::get();
-    assert_eq!(t.commands.len(), 176);
-    assert_eq!(t.dk1.len(), 52);
+    assert!(t.commands.len() > 100, "command table lost rows");
+    assert!(t.dk1.len() > 20, "dk1 command table lost rows");
+    assert!(!t.subfunctions.is_empty());
+    for (name, args) in [
+        ("ADD_CREATURE_TO_LEVEL", "PCANNNa"),
+        ("IF", "PAOAa"),
+        ("WIN_GAME", ""),
+        ("LEVEL_VERSION", "N"),
+    ] {
+        let c = t
+            .find_full(name)
+            .unwrap_or_else(|| panic!("{name} missing"));
+        assert_eq!(
+            std::str::from_utf8(&c.args).unwrap().trim_end(),
+            args,
+            "{name}"
+        );
+    }
+    for c in t.commands.iter().chain(&t.dk1).chain(&t.subfunctions) {
+        assert!(!c.name.is_empty(), "nameless command row");
+        assert!(
+            c.args.iter().all(|b| b" !+ANCPRLOSBanprlosb".contains(b)),
+            "{}: unexpected argument letter in {:?}",
+            c.name,
+            String::from_utf8_lossy(&c.args)
+        );
+    }
     let ov = Overlay::get();
+    for name in ov.commands.keys() {
+        assert!(
+            t.find_full(name).is_some(),
+            "overlay has {name}, the table not"
+        );
+    }
+    for name in ov.removed.keys() {
+        assert!(
+            t.find_full(name).is_none(),
+            "{name} is in the table and in the overlay's removed section"
+        );
+    }
     for c in &t.commands {
         let info = ov
             .cmd(&c.name)

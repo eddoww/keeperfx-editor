@@ -483,7 +483,7 @@ pub fn signature_of(name: &str) -> Option<SignatureHelp> {
     Some(SignatureHelp {
         command: name.to_string(),
         label,
-        doc: info.map(|i| i.doc.clone()).unwrap_or_default(),
+        doc: info.map(|_| ov.doc(name)).unwrap_or_default(),
         params,
         active: 0,
     })
@@ -529,7 +529,17 @@ pub fn hover(doc: &Document, offset: usize) -> Option<Hover> {
                 }
                 m
             }
-            None => format!("Unknown command `{}`", cmd.name),
+            None => {
+                let rev = crate::DataRevision::get();
+                format!(
+                    "Unknown command `{}`: not in this editor build's data, which was generated \
+                    from KeeperFX {} ({}). A [newer editor build]({}) may know it.",
+                    cmd.name,
+                    rev.keeperfx_short(),
+                    rev.keeperfx_day(),
+                    crate::upstream::RELEASES_URL
+                )
+            }
         };
         return Some(Hover {
             span: cmd.name_span,

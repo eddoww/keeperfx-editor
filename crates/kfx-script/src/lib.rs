@@ -14,6 +14,7 @@ pub mod provider;
 pub mod schema;
 pub mod services;
 pub mod tables;
+pub mod upstream;
 pub mod util;
 pub mod validate;
 
@@ -32,5 +33,6 @@ pub use services::{
     OutlineItem, OutlineKind, RefKind, ScriptPos, ScriptRef, SignatureHelp, StringArg, TokenClass,
 };
 pub use tables::Tables;
+pub use upstream::DataRevision;
 pub use validate::{validate, Report, Stats};
 pub mod lua;
