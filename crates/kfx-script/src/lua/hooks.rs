@@ -104,32 +104,46 @@ pub const HOOKS: &[Hook] = &[
     Hook {
         name: "OnPickUp",
         params: &[("thing", "Thing"), ("player", "Player")],
-        doc: "A thing was picked up by a hand.",
-        c_line: 297,
+        doc: "A thing is about to be picked up by a hand. Return true to deny the pick up.",
+        c_line: 301,
+    },
+    Hook {
+        name: "OnCreatureDrop",
+        params: &[("thing", "Thing"), ("player", "Player"), ("pos", "Pos3d")],
+        doc: "A thing is about to be dropped from the hand at pos. Return true to keep it in \
+        the hand; forced drops ignore the result.",
+        c_line: 328,
+    },
+    Hook {
+        name: "OnCreatureLanded",
+        params: &[("unit", "Creature"), ("player", "Player")],
+        doc: "A creature dropped from the hand touched the ground, after the engine chose its \
+        state and job. player is the player who dropped it.",
+        c_line: 350,
     },
     Hook {
         name: "OnSlap",
         params: &[("thing", "Thing"), ("player", "Player")],
         doc: "A thing was slapped.",
-        c_line: 313,
+        c_line: 366,
     },
     Hook {
         name: "OnSlabKindChange",
         params: &[("slab", "Slab"), ("old_slab_kind", "slab_type")],
         doc: "A slab changed kind.",
-        c_line: 330,
+        c_line: 383,
     },
     Hook {
         name: "OnSlabOwnerChange",
         params: &[("slab", "Slab"), ("old_owner", "Player")],
         doc: "A slab changed owner.",
-        c_line: 347,
+        c_line: 400,
     },
     Hook {
         name: "OnRoomOwnerChange",
         params: &[("room", "Room"), ("old_owner", "Player")],
         doc: "A room changed owner.",
-        c_line: 364,
+        c_line: 417,
     },
     Hook {
         name: "OnShotHit",
@@ -142,7 +156,7 @@ pub const HOOKS: &[Hook] = &[
             ("rebound_hit", "boolean"),
         ],
         doc: "A shot hit something.",
-        c_line: 380,
+        c_line: 433,
     },
     Hook {
         name: "OnDungeonDestroyed",

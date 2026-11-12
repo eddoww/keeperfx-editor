@@ -3,6 +3,13 @@
 All notable changes to this project are listed in this file.
 The format follows Keep a Changelog (https://keepachangelog.com/en/1.1.0/) and the project uses Semantic Versioning (https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Lua: the engine hooks `OnCreatureDrop` and `OnCreatureLanded` are known, and `OnPickUp` is
+  documented as able to deny the pick up (data synced with KeeperFX `b6396bd`).
+
 ## [0.1.2] - 2026-11-12
 
 ### Added
