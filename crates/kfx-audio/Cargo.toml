@@ -1,0 +1,25 @@
+[package]
+name = "kfx-audio"
+description = "KeeperFX sound banks: reading, sound name resolution and preview playback"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[features]
+default = ["playback", "ui"]
+# Real audio output through cpal (ALSA/PulseAudio/WASAPI/CoreAudio). Without it only the null backend exists.
+playback = ["dep:cpal"]
+# egui sound browser widget.
+ui = ["dep:egui"]
+
+[dependencies]
+kfx-formats.workspace = true
+thiserror.workspace = true
+zip = { version = "2", default-features = false, features = ["deflate"] }
+symphonia = { version = "0.5.5", default-features = false, features = ["mp3", "ogg", "vorbis", "flac", "wav", "pcm", "adpcm"] }
+cpal = { version = "0.16", optional = true }
+egui = { version = "0.37", optional = true, default-features = false }

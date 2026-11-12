@@ -1,0 +1,29 @@
+[package]
+name = "kfx-script-ui"
+description = "egui code editor for KeeperFX DK level scripts and Lua"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[features]
+default = ["wiki-docs"]
+# Embed data/script_docs.json (text taken from the KeeperFX wiki, which states no licence). Without
+# it the command reference is synthesised from the argument overlay and the C source comments.
+wiki-docs = []
+
+[dependencies]
+kfx-script.workspace = true
+egui = "0.37"
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+# system fallback fonts in the UI test harnesses (game text in any script)
+kfx-fonts = { path = "../kfx-fonts" }
+egui = { version = "0.37", features = ["default_fonts"] }
+egui_kittest = { version = "0.37.0", features = ["wgpu"] }
+image = { version = "0.25.10", default-features = false, features = ["png"] }

@@ -1,0 +1,17 @@
+[package]
+name = "kfx-script"
+description = "KeeperFX DK level script and Lua language tooling: parsing, validation, completion, conversion"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+thiserror.workspace = true
+serde.workspace = true
+toml.workspace = true
+serde_json.workspace = true
+kfx-formats.workspace = true

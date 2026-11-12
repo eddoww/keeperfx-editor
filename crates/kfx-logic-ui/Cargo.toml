@@ -1,0 +1,22 @@
+[package]
+name = "kfx-logic-ui"
+description = "Visual level logic editor (events, parties, waves) for KeeperFX DK level scripts"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+kfx-script.workspace = true
+egui = "0.37"
+
+[dev-dependencies]
+# system fallback fonts in the UI test harnesses (game text in any script)
+kfx-fonts = { path = "../kfx-fonts" }
+kfx-formats.workspace = true
+egui = { version = "0.37", features = ["default_fonts"] }
+egui_kittest = { version = "0.37.0", features = ["wgpu"] }
+image = { version = "0.25.10", default-features = false, features = ["png"] }

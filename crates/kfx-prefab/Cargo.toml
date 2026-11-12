@@ -1,0 +1,25 @@
+[package]
+name = "kfx-prefab"
+description = "Prefabs (reusable map pieces) and the translation workflow for KeeperFX levels and the editor UI"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+kfx-formats.workspace = true
+kfx-map.workspace = true
+kfx-script.workspace = true
+toml.workspace = true
+serde.workspace = true
+egui = "0.37"
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+
+[dev-dependencies]
+# system fallback fonts in the UI test harnesses (game text in any script)
+kfx-fonts = { path = "../kfx-fonts" }
+egui = { version = "0.37", features = ["default_fonts"] }
+egui_kittest = { version = "0.37.0", features = ["wgpu"] }

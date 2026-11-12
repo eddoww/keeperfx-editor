@@ -1,0 +1,52 @@
+[package]
+name = "kfx-editor"
+description = "Map editor for KeeperFX (Dungeon Keeper 1)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+kfx-formats.workspace = true
+kfx-gfx.workspace = true
+kfx-map.workspace = true
+kfx-script.workspace = true
+kfx-script-ui = { path = "../kfx-script-ui" }
+kfx-config-ui = { path = "../kfx-config-ui" }
+# the visual Events editor
+kfx-logic-ui = { path = "../kfx-logic-ui" }
+# the campaign editor and the Workshop client
+kfx-campaign-ui = { path = "../kfx-campaign-ui" }
+kfx-workshop = { path = "../kfx-workshop" }
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+# egui memory (window positions) in the settings; egui's own persistence format
+ron = "0.12.3"
+eframe = { version = "0.37.0", default-features = false, features = ["default_fonts", "wgpu", "wayland", "x11"] }
+egui-wgpu = "0.37.0"
+# The emoji/icon fonts used by the toolbar and palette labels.
+egui = { version = "0.37.0", default-features = false, features = ["monochrome_emoji_fonts", "persistence"] }
+bytemuck = { version = "1.25.2", features = ["derive"] }
+# system fallback fonts (CJK, symbols) for the window, headless runs and UI tests
+kfx-fonts = { path = "../kfx-fonts" }
+glam = "0.30"
+pollster = "1.0.1"
+rfd = "0.18.0"
+directories = "6.0.0"
+# prefabs and the translation grid
+kfx-prefab = { path = "../kfx-prefab" }
+# game sounds (cpal output behind `playback`, ALSA headers needed on Linux) and the live link
+kfx-audio = { path = "../kfx-audio", default-features = false, features = ["playback", "ui"] }
+kfx-live = { path = "../kfx-live", default-features = false, features = ["ui"] }
+# map analysis layers and the constrained map generator
+kfx-analysis = { path = "../kfx-analysis" }
+
+[dev-dependencies]
+egui_kittest = { version = "0.37.0", features = ["wgpu", "eframe"] }
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+# the Workshop UI test builds a level zip
+zip = { version = "2.6.1", default-features = false, features = ["deflate"] }

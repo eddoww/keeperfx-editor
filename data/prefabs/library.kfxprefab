@@ -1,0 +1,82 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFoAAABQCAYAAACZM2JkAAAE6UlEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a++82s8wpvzjn/J4Wpkc97xLzlcjWzOO/4lh6uRzXnHv+RwNbI57/iXHK5GNucd/5LD1cjmvONfcrga2Zx3/EsOVyOb845/AXVz3rG96HlRbC96XhTbi54Xxfai50Wxveh5UWwvel4U24ueF8X2oudFsb3o+RcQXPVfgeCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8Fgqv+K1APVyMvir3da2jLOf+Sw/WKtpzzLzlcr2jLOf+Sw/WKtpzzLzlcr2jLOf+Sw/WKtpzzLzlcr2jLOf+SlZ7Ki4C6Oe/YXvT8S9pyztZ8gxfF1nyDF8XWfIMXxdZ8gxfF1nyDF8XWfIMXxdZ8g39JUcf2oudfQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FQiu+q9APVyNvCgO1yteFF94dB8c8aI54kVzxIvmiBfNEf+ijyo7vChWGnkRUDfnHduLnn9JW87Zmm/wLzqCt33kF/MvWR+dZbZxhn/J+ugss40z/EvWR2eZbZzhX7I+Osts4wwvzE8+6ZPZnM3Zmm/wLynq2F70/AsIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FaiHq5EXxeF6xYtqfXSWf8mwPM+LYlie50UxLM/zohiW53lRHK5XvChWGnkRUDfnHduLnn9JW87Zmm/wLzqC2cYZXhSzjTO8KGYbZ3hRzDbO8KKYbZzhX7I5m7M13+BfUtSxvej5FxBc9V+B4Kr/CgRX/VcguOq/AsFV/xUIrvqvQHDVfwWCq/4rUA9XIy+Kw/WKF9X66Cz/kmF5nhfFsDzPi2JYnudFMSzP86I4XK94Uaw08iKgbs47thc9/5K2nLM13+BfdASzjTO8KGYbZ3hRzDbO8KKYbZzhRTHbOMO/ZHM2Z2u+wb+kqGN70fMvILjqvwLBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VegHq5GXhSH6xUvqvXRWf4lw/I8L4pheZ4XxbA8z4tiWJ7nRXG4XvGiWGnkRUDdnHdsL3r+JW05Z2u+wb/oCGYbZ3hRzDbO8KKYbZzhRTHbOMOLYrZxhn/J5mzO1nyDf0lRx/ai519AcNV/BYKr/isQXPVfgeCq/woEV/1XILjqvwLBVf8VqPwn+MknfTJXPQfq4WrkRXG4XvGi+Kiyw+Zszr/kcL1iczbnX/KFR/fxoviossPmbM6/5HC9YnM2519yuF7xolhp5EVA3Zx3bC96/iVtOWdrvsGLYmu+wYtia77Bv+gIvvPRyQvzvk8INmdztuYbvCi25hu8KLbmG/xLijq2Fz3/AoKr/itQ+V/iW3/zDp7bB77uTfwvQXDVfwWCq/4rUPlf4gNf9yb+FyO46r8CwVX/Faj8L/C+Twj+l6MerkZeFCs9laKOf8lKI0Ud/5KVRoo6/iVf+FKPYmd7k3/J6q/+hKKOf8lKI0Ud/5KVRoo6/iWHq5EXAXVz3rG96HlRbC96XhTbi54Xxfai51+ysb3J8Z0t/iWb847tRc+LYnvR86LYXvS8KLYXPf8Cgqv+KxBc9V+B4Kr/CgRX/VcguOq/AsFV/xUIrvqvQHDVfwX+EcRx9eoe3A+yAAAAAElFTkSuQmCC"
+
+[meta]
+name = "Library"
+author = "KeeperFX Editor starter set"
+description = "A five by four library with one door."
+tags = ["library", "rooms", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = ["WOOD"]
+effect_generators = []
+slabs = ["BOOK_SHELVES", "DIRT", "DOOR_WOODEN2", "LIBRARY_WALL", "PAIR_WALL", "PATH", "TORCH_WALL", "TWINS_WALL"]
+config = []
+
+[layout]
+width = 9
+height = 8
+rows = [
+  ":::::::::",
+  ":WwwwwwA:",
+  ":wBBBBBw:",
+  ":wBBBBBw:",
+  ":wBBBBBw:",
+  ":wBBBBBw:",
+  ":CwwDwwW:",
+  "::::_::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "LIBRARY_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "BOOK_SHELVES"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [13, 128]
+y = [19, 128]
+door_orientation = 0
+door_locked = false

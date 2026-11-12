@@ -1,0 +1,24 @@
+[package]
+name = "kfx-live"
+description = "Live link with a running KeeperFX game through its TCP JSON API"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[features]
+default = ["ui"]
+# egui panel: connection status, event log, watch table, console, quick actions.
+ui = ["dep:egui"]
+
+[dependencies]
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+egui = { version = "0.37", optional = true, default-features = false }
+
+[dev-dependencies]
+kfx-formats.workspace = true

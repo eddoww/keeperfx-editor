@@ -1,0 +1,55 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAFYklEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a8++hEPc991/EuGcaTvOv4lwzjSdx3/kmEc6buOf8kwjvRdx79kGEf6ruNfMowjfdfxLxnGkb7r+JcM40jfdfwLqH3X0fc9L4q+73lR9H3Pi6Lve14Ufd/zouj7nhdF3/e8KPq+50XR9z3/AoKr/isQXPVfgeCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8F6jCOvChe85Uew872Jv+Svf1DdrY3+Zfs7R+ys73Jv2Rv/5Cd7U3+JXv7h+xsb/Iv2ds/ZGd7k3/J3v4hO9ub/Et+8pf+iBcBte86+r7nX7KzvcnxnS1eFMd3tnhRHN/Z4kVxfGeLF8XxnS1eFMd3tnhRHN/Z4l/Sdx193/MvILjqvwLBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VegDuPIi2Jv/5AXxd7+IS+Kvf1DXhR7+4e8KPb2D3lR7O0f8qLY2z/kRTGMIy8Cat919H3Pv2Rne5PjO1u8KI7vbPGiOL6zxYvi+M4WL4rjO1u8KI7vbPGiOL6zxb+k7zr6vudfQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FQiu+q+Abn7jr3ZdnORfMi0vUBcn+ZdMywvUxUn+JdPyAnVxkn/Ju8y+huObM/4lX3fnO1IXJ/mXTMsL1MVJ/iXT8gJ1cZJ/ybS8QF2c5F9ArYuTdJuneVF0m6d5UXSbp3lRdJun+Zccn804uT3nX1IXJ+k2T/Oi6DZP86LoNk/zoug2T/MvILjqvwLBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VegTssLvCim5QVeFNPyAi+KaXmBF8XutOZFMS0v8KKYlhd4UUzLC7wopuUFXgTUujhJt3maF0W3eZoXRbd5mhdFt3maf8nx2YyT23P+JXVxkm7zNC+KbvM0L4pu8zQvim7zNP8Cgqv+KxBc9V+B4Kr/CgRX/VcguOq/AsFV/xUIrvqvQHDVfwXqtLzAi2JaXuBFMS0v8KKYlhd4UexOa14U0/ICL4ppeYEXxbS8wItiWl7gRUCti5N0m6d5UXSbp3lRdJuneVF0m6f5lxyfzTi5PedfUhcn6TZP86LoNk/zoug2T/Oi6DZP8y8guOq/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9V0CPfsTD3Hcd/5LXfKXHsLO9yb9kb/+Qne1N/iV7+4fsbG/yL9nbP2Rne5N/yd7+ITvbm/xL9vYP2dne5F+yt3/IzvYm/5Kf/KU/ou86/gXUvuvo+55/yc72Jsd3tnhRHN/Z4kVxfGeLF8XxnS1eFMd3tnhRHN/Z4kVxfGeLf0nfdfR9z7+A4Kr/CgRX/VcguOq/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4E6jCMvir39Q14Ue/uHvCj29g95UeztH/Ki2Ns/5EWxt3/Ii2Jv/5AXxTCOvAiofdfR9z3/kp3tTY7vbPGiOL6zxYvi+M4WL4rjO1u8KI7vbPGiOL6zxYvi+M4W/5K+6+j7nn8BwVX/FQiu+q9AcNV/BYKr/isQXPVfgeCq/woEV/1XILjqvwJ69CMe5r7r+JcM40jfdfxLhnGk7zr+JcM40ncd/5JhHOm7jn/JMI70Xce/ZBhH+q7jXzKMI33X8S8ZxpG+6/gXUPuuo+97XhR93/Oi6PueF0Xf97wo+r7nRdH3PS+Kvu95UfR9z4ui73v+BQRX/VcguOq/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4Hgqv8K/CMJGu1T3H0l6gAAAABJRU5ErkJggg=="
+
+[meta]
+name = "Bridge over a river"
+author = "KeeperFX Editor starter set"
+description = "A three slab wide river crossed by a one slab bridge between two paved banks."
+tags = ["bridge", "water", "terrain"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = []
+effect_generators = []
+slabs = ["BRIDGE_FRAME", "HARD", "PATH", "WATER"]
+config = []
+
+[layout]
+width = 9
+height = 9
+rows = [
+  "#########",
+  "#_______#",
+  "#_______#",
+  "~~~~+~~~~",
+  "~~~~+~~~~",
+  "~~~~+~~~~",
+  "#_______#",
+  "#_______#",
+  "#########",
+]
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "~"
+slab = "WATER"
+owner = "neutral"
+
+[[palette]]
+char = "+"
+slab = "BRIDGE_FRAME"
+owner = "neutral"
+wlb = 2

@@ -1,0 +1,135 @@
+//! Speech message names (`SMsg_*`) and their bank indices.
+//!
+//! Names: `speech_desc[]`, `src/config_sounds.c:230-340` (what a `[speech]` block of
+//! `sounds.cfg` accepts); indices: the `SMsg_` enum, `src/gui_soundmsgs.h:47-156`. A message
+//! index is directly the index into `speech_<lang>.dat` (see [`crate::bank`]).
+
+/// (config name, speech bank index).
+pub const SPEECH_MESSAGES: &[(&str, u16)] = &[
+    ("CreatrAngryAnyReason", 1),
+    ("CreatrAngryNoLair", 2),
+    ("CreatrAngryNotPaid", 3),
+    ("CreatrAngryNoFood", 4),
+    ("CreatrDestroyRooms", 5),
+    ("CreatureLeaving", 6),
+    ("WallsBreach", 7),
+    ("HeartUnderAttack", 8),
+    ("BattleDefeat", 9),
+    ("BattleVictory", 10),
+    ("BattleDeath", 11),
+    ("BattleWon", 12),
+    ("CreatureDefending", 13),
+    ("CreatureAttacking", 14),
+    ("EnemyDestroyRooms", 15),
+    ("EnemyClaimGround", 16),
+    ("EnemyRoomTakeOver", 17),
+    ("NewRoomTakenOver", 18),
+    ("LordOfLandComming", 19),
+    ("FingthingFriends", 20),
+    ("BattleOver", 21),
+    ("GardenTooSmall", 22),
+    ("LairTooSmall", 23),
+    ("TreasuryTooSmall", 24),
+    ("LibraryTooSmall", 25),
+    ("PrisonTooSmall", 26),
+    ("TortureTooSmall", 27),
+    ("TrainingTooSmall", 28),
+    ("WorkshopTooSmall", 29),
+    ("ScavengeTooSmall", 30),
+    ("TempleTooSmall", 31),
+    ("GraveyardTooSmall", 32),
+    ("BarracksTooSmall", 33),
+    ("NoRouteToGarden", 34),
+    ("NoRouteToTreasury", 35),
+    ("NoRouteToLair", 36),
+    ("EntranceClaimed", 37),
+    ("EntranceLost", 38),
+    ("RoomTreasrNeeded", 39),
+    ("RoomLairNeeded", 40),
+    ("RoomGardenNeeded", 41),
+    ("ResearchedRoom", 42),
+    ("ResearchedSpell", 43),
+    ("ManufacturedDoor", 44),
+    ("ManufacturedTrap", 45),
+    ("NoMoreReseach", 46),
+    ("SpellbookTaken", 47),
+    ("TrapTaken", 48),
+    ("DoorTaken", 49),
+    ("SpellbookStolen", 50),
+    ("TrapStolen", 51),
+    ("DoorStolen", 52),
+    ("TortureInformation", 53),
+    ("TortureConverted", 54),
+    ("PrisonMadeSkeleton", 55),
+    ("TortureMadeGhost", 56),
+    ("PrisonersEscaping", 57),
+    ("GraveyardMadeVampire", 58),
+    ("CreatrFreedPrison", 59),
+    ("PrisonersStarving", 60),
+    ("CreatureScanvenged", 61),
+    ("MinionScanvenged", 62),
+    ("CreatureJoinedEnemy", 63),
+    ("CreatureRevealInfo", 64),
+    ("SacrificeGood", 65),
+    ("SacrificeReward", 66),
+    ("SacrificeNeutral", 67),
+    ("SacrificeBad", 68),
+    ("SacrificePunish", 69),
+    ("SacrificeWishing", 70),
+    ("DiscoveredSpecial", 71),
+    ("DiscoveredSpell", 72),
+    ("DiscoveredDoor", 73),
+    ("DiscoveredTrap", 74),
+    ("CreaturesJoinedYou", 75),
+    ("DugIntoNewArea", 76),
+    ("SpecRevealMap", 77),
+    ("SpecResurrect", 78),
+    ("SpecTransfer", 79),
+    ("CommonAcknowledge", 80),
+    ("SpecHeroStolen", 81),
+    ("SpecCreatrDoubled", 82),
+    ("SpecIncLevel", 83),
+    ("SpecWallsFortify", 84),
+    ("SpecHiddenWorld", 85),
+    ("GoldLow", 86),
+    ("GoldNotEnough", 87),
+    ("NoGoldToScavenge", 88),
+    ("NoGoldToTrain", 89),
+    ("Payday", 90),
+    ("FullOfPies", 91),
+    ("SurrealHappen", 92),
+    ("StrangeAccent", 93),
+    ("PantsTooTight", 94),
+    ("CraveChocolate", 95),
+    ("SmellAgain", 96),
+    ("Hello", 97),
+    ("Glaagh", 98),
+    ("Achew", 99),
+    ("Chgreche", 100),
+    ("WorkerJobsLimit", 101),
+    ("GameLoaded", 102),
+    ("GameSaved", 103),
+    ("DefeatedKeeper", 104),
+    ("LevelFailed", 105),
+    ("LevelWon", 106),
+    ("SenceAvatar", 107),
+    ("AvatarBodyVanish", 108),
+    ("GameFinalVictory", 109),
+];
+
+/// Index of a message name (case-insensitive).
+pub fn speech_index(name: &str) -> Option<u16> {
+    SPEECH_MESSAGES
+        .iter()
+        .find(|(n, _)| n.eq_ignore_ascii_case(name))
+        .map(|&(_, i)| i)
+}
+
+/// Config name of a bank index, if it has one (indices 110.. are the "funny" / "harassment" /
+/// "lord quote" lists the game picks from by offset and have no names).
+pub fn speech_name(index: u16) -> Option<&'static str> {
+    SPEECH_MESSAGES
+        .iter()
+        .find(|&&(_, i)| i == index)
+        .map(|&(n, _)| n)
+}

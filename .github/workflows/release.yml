@@ -1,0 +1,126 @@
+# Build release executables for Linux, Windows and macOS and publish them as a GitHub release.
+# Runs when a tag like v0.1.0 is pushed, or by hand for an existing tag.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to build and release (e.g. v0.1.0)"
+        required: true
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: "0"
+  TAG: ${{ github.event.inputs.tag || github.ref_name }}
+
+jobs:
+  build:
+    name: build ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: linux-x86_64
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+          - name: windows-x86_64
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - name: macos-arm64
+            os: macos-latest
+            target: aarch64-apple-darwin
+          - name: macos-x86_64
+            os: macos-latest
+            target: x86_64-apple-darwin
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+      - name: System packages
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pkg-config libxkbcommon-dev libwayland-dev libx11-dev libasound2-dev
+      - name: Rust toolchain
+        shell: bash
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add ${{ matrix.target }}
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: build-${{ matrix.name }}-${{ hashFiles('Cargo.lock') }}
+          restore-keys: build-${{ matrix.name }}-
+      - name: Build release
+        run: cargo build --release --locked -p kfx-editor --target ${{ matrix.target }} -j 4
+      - name: Package
+        shell: bash
+        run: |
+          name="kfx-editor-${TAG}-${{ matrix.name }}"
+          bin="target/${{ matrix.target }}/release"
+          mkdir -p "stage/$name" out
+          cp README.md CHANGELOG.md LICENSE THIRD_PARTY.md "stage/$name/"
+          cp -r docs "stage/$name/docs"
+          case "${{ runner.os }}" in
+            Linux)
+              cp "$bin/kfx-editor" "stage/$name/"
+              cp packaging/org.keeperfx.MapEditor.desktop packaging/org.keeperfx.MapEditor.mime.xml "stage/$name/"
+              tar -C stage -czf "out/$name.tar.gz" "$name"
+              ;;
+            Windows)
+              cp "$bin/kfx-editor.exe" "stage/$name/"
+              (cd stage && 7z a -tzip "../out/$name.zip" "$name" > /dev/null)
+              ;;
+            macOS)
+              # Unsigned application bundle; tarred so the executable bit survives.
+              app="stage/$name/KeeperFX Map Editor.app"
+              mkdir -p "$app/Contents/MacOS"
+              cp "$bin/kfx-editor" "$app/Contents/MacOS/"
+              cp packaging/macos/Info.plist "$app/Contents/"
+              cp "$bin/kfx-editor" "stage/$name/"
+              tar -C stage -czf "out/$name.tar.gz" "$name"
+              ;;
+          esac
+          ls -la out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.name }}
+          path: out/*
+          if-no-files-found: error
+
+  publish:
+    name: publish release
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - name: Checksums
+        run: cd out && sha256sum * > SHA256SUMS.txt && cat SHA256SUMS.txt
+      - name: Create or update the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh release upload "$TAG" out/* --clobber
+          else
+            gh release create "$TAG" out/* --title "KeeperFX Map Editor $TAG" --prerelease --generate-notes \
+              --notes "Pre-release build. Needs your own KeeperFX install; the editor ships no game assets. The Windows and macOS builds are unsigned and little tested: on macOS, right-click the app and choose Open the first time. The user manual is in docs/manual in each archive."
+          fi

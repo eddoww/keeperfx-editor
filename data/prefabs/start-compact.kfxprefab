@@ -1,0 +1,95 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "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"
+
+[meta]
+name = "Dungeon start: compact"
+author = "KeeperFX Editor starter set"
+description = "A dungeon heart in a small walled hall with two imps and gold seams in the corners. Owner slot A."
+tags = ["dungeon", "start", "heart"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["IMP"]
+objects = []
+traps = []
+doors = []
+effect_generators = []
+slabs = ["DIRT", "DRAPE_WALL", "GOLD", "HEART_PEDESTAL", "PAIR_WALL", "PRETTY_PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 11
+height = 9
+rows = [
+  "$:::::::::$",
+  ":WwAwwBwww:",
+  ":W-------w:",
+  ":w--HHH--w:",
+  ":w--HHH--w:",
+  ":A--HHH--B:",
+  ":A-------B:",
+  ":CBwAwBwwW:",
+  "$:::::::::$",
+]
+
+[[palette]]
+char = "$"
+slab = "GOLD"
+owner = "neutral"
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "A"
+
+[[palette]]
+char = "H"
+slab = "HEART_PEDESTAL"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "DRAPE_WALL"
+owner = "A"
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [10, 128]
+y = [7, 128]
+level = 1
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [22, 128]
+y = [19, 128]
+level = 1

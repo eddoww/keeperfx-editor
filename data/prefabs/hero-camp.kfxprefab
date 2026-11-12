@@ -1,0 +1,99 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "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"
+
+[meta]
+name = "Hero outpost: camp"
+author = "KeeperFX Editor starter set"
+description = "An open hero camp in a rock clearing: a hero gate, barbarians, monks and a dwarf around a flag. Hero owned (player 4)."
+tags = ["hero", "outpost", "gate", "open"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["BARBARIAN", "DWARFA", "MONK"]
+objects = ["GUARDFLAG_WHITE", "HERO_GATE"]
+traps = []
+doors = []
+effect_generators = []
+slabs = ["HARD", "PRETTY_PATH"]
+config = []
+
+[layout]
+width = 11
+height = 9
+rows = [
+  "...#####...",
+  "..#-----#..",
+  ".#-------#.",
+  "#---------#",
+  "#---------#",
+  "#---------#",
+  ".#-------#.",
+  "..#-----#..",
+  "...##-##...",
+]
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "keep:4"
+
+[[thing]]
+class = "Object"
+model = "GUARDFLAG_WHITE"
+owner = "keep:4"
+x = [16, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Creature"
+model = "BARBARIAN"
+owner = "keep:4"
+x = [10, 128]
+y = [10, 128]
+level = 3
+
+[[thing]]
+class = "Creature"
+model = "BARBARIAN"
+owner = "keep:4"
+x = [22, 128]
+y = [10, 128]
+level = 3
+
+[[thing]]
+class = "Object"
+model = "HERO_GATE"
+owner = "keep:4"
+x = [16, 128]
+y = [13, 128]
+gate = "gate"
+
+[[thing]]
+class = "Creature"
+model = "MONK"
+owner = "keep:4"
+x = [10, 128]
+y = [16, 128]
+level = 2
+
+[[thing]]
+class = "Creature"
+model = "MONK"
+owner = "keep:4"
+x = [22, 128]
+y = [16, 128]
+level = 2
+
+[[thing]]
+class = "Creature"
+model = "DWARFA"
+owner = "keep:4"
+x = [16, 128]
+y = [19, 128]
+level = 2

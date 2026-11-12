@@ -1,0 +1,82 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAG9ElEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a/y3+SdX+MR3px3/EsOVyOb845/yeFqZHPe8S/5jl97nPivR+W/yea8Y3vR86LYXvS8KLYXPf9DEVz1X4Hgqv8KBFf9VyC46r8CwVX/FQiu+q9AcNV/BYKr/itQeRG982s8wpvzjn/J4Wpkc97xL1nc9Cg2tjf5l0z7h2xsb/IvmfYP2dje5F/yzq9x6M15x7/kcDWyOe/4l3zHrz1O/MuovIg25x3bi54Xxfai51+ysb3J8Z0tXhTHd7Z4URzf2eJfsjnv2F70vCi2Fz3/QQiu+q9AcNV/BYKr/isQXPVfgeCq/woEV/1XILjqvwLBVf8VqLyIDlcjL4rFTY9iY3uTf8ne/iEvir39Q14Ue/uHvCgWNz2Kje1N/iX3/NWf8B+Iyotoc96xvej5l2xsb3J8Z4sXxfGdLV4Ux3e2uN9nf+X3AvDZH/uePLfjO1u8KI7vbPEv2Zx3bC96/oNQ+V/is7/yewH43M/9XAA+8zM/E4DP/tj35H8Bgv9FPvdzP5f7fe7nfi7/ixD8L/DZX/m9fO7nfi4AH/dxH8fHfdzHAfC5n/u5fPZXfi//CxBc9V+B4H+Bz/7Y9+QzP/MzAfiKr/gKvuIrvgKAz/zMz+SzP/Y9+V+A4H+Rz/zMz+R+n/mZn8n/IlT+l/jsj31PAD7zMz8TgM/+2PfkfxEq/8t89se+J/8LUd/5NR7hzXnHv2Rx06PY2N7kX7K3f8iLYm//kBfF3v4hL4q9/UNeFHv7h7woFjc9io3tTf4l7/wah96cd/wLqJvzju1Fz79kY3uT4ztbvCiO72zxoji+s8X9PvsrvxeAz/7Y9+S5Hd/Z4kVxfGeLF8XxnS1eFMd3tviXbM47thc9/wIq/80++yu/F4DP/dzPBeAzP/MzAfjsj31P/jN99ld+L8/PZ3/se/KfgOB/gM/93M/lfp/7uZ/Lf5XDP7+Fwz+/hcM/v4XDP7+F/0QE/40++yu/l8/93M8F4OM+7uP4uI/7OAA+93M/l8/+yu/l/xCCq/4rEPw3+uyPfU8+8zM/E4Cv+Iqv4Cu+4isA+MzP/Ew++2Pfk/9DCP4H+MzP/Ezu95mf+Zn8V9l8+dvYfPnb2Hz529h8+dv4T0Tlv9lnf+x7AvCZn/mZAHz2x74n/xU++2Pfk/9CVP6H+OyPfU/+D6MerkZeFNP+IS+Kvf1DXhR7+4e8KPb2D3lR7O0f8qLY2z/kRbG3f8iL4nA18iKgbs47thc9/5KN7U2O72zxoji+s8WL4vjOFi+K4ztbvCiO72xxv8/+yu8F4LM/9j15bsd3tnhRHN/Z4l+yOe/YXvT8C6j8J/nsr/xenp/P/tj35D/TZ3/l9wLwuZ/7uQB85md+JgCf/bHvyX8jgv9Eh39+C4d/fguHf34Lh39+C/9VPvdzP5f7fe7nfi7/AxD8H/LZX/m9fO7nfi4AH/dxH8fHfdzHAfC5n/u5fPZXfi//jQiu+q9A8H/IZ3/se/KZn/mZAHzFV3wFX/EVXwHAZ37mZ/LZH/ue/Dci+E+0+fK3sfnyt7H58rex+fK38V/lMz/zM7nfZ37mZ/I/AJX/JJ/9se/Jf4fP/tj3BOAzP/MzAfjsj31P/geg8n/UZ3/se/I/CPVwNfKimPYPeVHs7R/yotjbP+RFsbd/yItib/+QF8Xe/iEvir39Q14Uh6uRFwF1c96xvej5l2xsb3J8Z4sXxfGdLV4Ux3e2eFEc39niRXF8Z4sXxfGdLV4Ux3e2+Jdszju2Fz3/AoKr/isQXPVfgeCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8F6nf82uPEi+CdX+PQm/OOf8nipkfxotjbP+RFsbd/yItib/+QF8Xe/iEviqf91Z+wOe/4l3zHrz1O/MuovIg25x3bi55/ycb2Jsd3tnhRHN/Z4kVxfGeLF8XxnS1eFMd3tviXbM47thc9/0EIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/Fai8iA5XIy+Ke/7qT9icd/xLFjc9ihfF3v4hL4q9/UNeFE/7qz9hc97xLzlcjfwHovIi2px3bC96XhTbi55/ycb2Jsd3tnhRHN/Z4kVxfGeLf8nmvGN70fOi2F70/AchuOq/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9V0D8N3nn13iEN+cd/5LFTY9iZ3uTf8nT/upP2Jx3/Eu+49ceJ/7rUflvsjnv2F70/Es2tjc5vrPFv2Rz3rG96PkfiuCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8Fgqv+KxBc9V+BfwT6ykCRTKrRZgAAAABJRU5ErkJggg=="
+
+[meta]
+name = "Neutral den: spiders"
+author = "KeeperFX Editor starter set"
+description = "A small cave with three wild spiders and two bags of gold, open to the south."
+tags = ["neutral", "den", "creatures"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["SPIDER"]
+objects = ["GOLD_BAG"]
+traps = []
+doors = []
+effect_generators = []
+slabs = ["DIRT", "PATH"]
+config = []
+
+[layout]
+width = 9
+height = 9
+rows = [
+  "...:::...",
+  ".::___::.",
+  ".:_____:.",
+  ":_______:",
+  ":_______:",
+  ":_______:",
+  ".:_____:.",
+  ".::___::.",
+  "...:_:...",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Creature"
+model = "SPIDER"
+owner = "neutral"
+x = [13, 128]
+y = [7, 128]
+level = 3
+
+[[thing]]
+class = "Creature"
+model = "SPIDER"
+owner = "neutral"
+x = [10, 128]
+y = [10, 128]
+level = 2
+
+[[thing]]
+class = "Object"
+model = "GOLD_BAG"
+owner = "neutral"
+x = [19, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_BAG"
+owner = "neutral"
+x = [7, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Creature"
+model = "SPIDER"
+owner = "neutral"
+x = [16, 128]
+y = [13, 128]
+level = 2

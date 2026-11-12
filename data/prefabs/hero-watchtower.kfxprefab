@@ -1,0 +1,100 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "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"
+
+[meta]
+name = "Hero outpost: watchtower"
+author = "KeeperFX Editor starter set"
+description = "A small walled hero post with a hero gate, a knight, an archer and a wizard. Hero owned (player 4); the gate number is renumbered on apply."
+tags = ["hero", "outpost", "gate"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["ARCHER", "KNIGHT", "WIZARD"]
+objects = ["GUARDFLAG_WHITE", "HERO_GATE"]
+traps = []
+doors = []
+effect_generators = []
+slabs = ["DRAPE_WALL", "PAIR_WALL", "PRETTY_PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 7
+height = 6
+rows = [
+  "WwAwwBw",
+  "W-----A",
+  "w-----w",
+  "w-----w",
+  "Aww-wCB",
+  "...-...",
+]
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "w"
+slab = "PAIR_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "A"
+slab = "TWINS_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "B"
+slab = "WOMAN_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "keep:4"
+
+[[palette]]
+char = "C"
+slab = "DRAPE_WALL"
+owner = "keep:4"
+
+[[thing]]
+class = "Creature"
+model = "KNIGHT"
+owner = "keep:4"
+x = [4, 128]
+y = [4, 128]
+level = 3
+
+[[thing]]
+class = "Creature"
+model = "ARCHER"
+owner = "keep:4"
+x = [16, 128]
+y = [4, 128]
+level = 3
+
+[[thing]]
+class = "Object"
+model = "HERO_GATE"
+owner = "keep:4"
+x = [10, 128]
+y = [7, 128]
+gate = "gate"
+
+[[thing]]
+class = "Object"
+model = "GUARDFLAG_WHITE"
+owner = "keep:4"
+x = [4, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Creature"
+model = "WIZARD"
+owner = "keep:4"
+x = [10, 128]
+y = [10, 128]
+level = 2

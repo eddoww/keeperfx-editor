@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=KeeperFX Map Editor
+GenericName=Dungeon Keeper map editor
+Comment=Edit KeeperFX levels: terrain, things, scripts and configuration
+Exec=kfx-editor %f
+TryExec=kfx-editor
+Icon=org.keeperfx.MapEditor
+Terminal=false
+Categories=Game;
+Keywords=KeeperFX;Dungeon Keeper;map;level;editor;
+MimeType=application/x-keeperfx-map;
+StartupWMClass=kfx-editor

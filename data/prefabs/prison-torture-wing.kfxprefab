@@ -1,0 +1,126 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFoAAAA2CAYAAABHno4jAAACPElEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a9+9Fu+tLnqPxvBVf8VCK76r0Bw1X8Fgqv+KxBc9V+BygswHT2Uq/716sbTeD4IrvqvQHDVfwWCq/4rEFz1X4Hgqv8KVP6VPvXCrfx3+MKTD+b5+dQLt/Lf4QtPPph/BSr/Bl/6+u/Kf6VP/PUf5IX5zb3r+K/0ujv38K9EcNV/BYKr/isQXPVfgeCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VcguOq/AsFV/xWo/Bt84q//IP+TvO7OPfwPhz76LV/aPB/T0UP5z/SpF27l+fnCkw/mP9OnXriV5+cLTz6Y/wh142k8H1T+G33no5MHet8nBP8VvvPRyQO97xOC/2RU/ht962/ewf0+8HVv4r/Kt/7mHdzvA1/3Jv4LUPlv9IGvexP/HT7wdW/ivxjBVf8VqPw3et8nBP8d3vcJwX8xKv9Kb/Ya1/Mf4W+4nufnzfjP9Tdcz/PzZvzr/MLv3c2/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4HKv9Iv/N7d/Hf41Au38vx84ckH878Alf9FvvPRyQO97xOC/yWo/C/yrb95B/f7wNe9if9FqPwv8oGvexP/SxFc9V+Byv8i7/uE4H8pKi9A3Xga/5N8/yu/Ms9P/ds/5n8Bgqv+KxBc9V+B4Kr/CgRX/VcguOq/Av8IgC1F3cLEO/cAAAAASUVORK5CYII="
+
+[meta]
+name = "Prison and torture wing"
+author = "KeeperFX Editor starter set"
+description = "A prison and a torture chamber side by side, each with its own door onto a shared corridor, one door to the outside."
+tags = ["prison", "torture", "rooms", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = ["WOOD"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_WOODEN2", "DRAPE_WALL", "PAIR_WALL", "PATH", "PRETTY_PATH", "PRISON_AREA", "PRISON_WALL", "TORCH_WALL", "TORTURE_AREA", "TORTURE_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 15
+height = 9
+rows = [
+  ":::::::::::::::",
+  ":WwwwwwABBBBBA:",
+  ":wPPPPPBQQQQQB:",
+  ":wPPPPPBQQQQQB:",
+  ":wPPPPPBQQQQQB:",
+  ":CwwwDwEBBDBBE:",
+  ":C-----------E:",
+  ":FEACAEDAWCFEA:",
+  ":::::::_:::::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "PRISON_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "TORTURE_WALL"
+owner = "A"
+
+[[palette]]
+char = "P"
+slab = "PRISON_AREA"
+owner = "A"
+
+[[palette]]
+char = "Q"
+slab = "TORTURE_AREA"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "E"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "A"
+
+[[palette]]
+char = "F"
+slab = "DRAPE_WALL"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [16, 128]
+y = [16, 128]
+door_orientation = 0
+door_locked = false
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [31, 128]
+y = [16, 128]
+door_orientation = 0
+door_locked = false
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [22, 128]
+y = [22, 128]
+door_orientation = 0
+door_locked = false

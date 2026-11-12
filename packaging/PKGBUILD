@@ -1,0 +1,56 @@
+# Arch Linux package that builds from a local checkout of this repository.
+# It is not published in a package repository. Use it from the packaging/ folder:
+#
+#   makepkg -f            # builds ../ in place, 4 jobs, under nice
+#
+# The checkout is used as is (no download): the build copies nothing and writes its output
+# to $srcdir/target so the working tree stays clean.
+pkgname=kfx-editor
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Map editor for KeeperFX (Dungeon Keeper 1): terrain, things, DK script, Lua, config overrides'
+arch=('x86_64')
+url='https://github.com/eddoww/keeperfx-editor'
+license=('GPL-2.0-or-later')
+# The wgpu renderer needs a Vulkan driver; winit loads the window system libraries at run time.
+depends=('gcc-libs' 'glibc' 'vulkan-icd-loader' 'libxkbcommon' 'wayland' 'libx11' 'libxcursor' 'libxi')
+optdepends=('xdg-desktop-portal: native file dialogs'
+            'wine: play-test with keeperfx.exe'
+            'keeperfx: a KeeperFX install to edit (the editor ships no game assets)')
+makedepends=('cargo')
+options=('!lto')
+_checkout="${_checkout:-$startdir/..}"
+
+prepare() {
+  cd "$_checkout"
+  nice -n 19 cargo fetch --locked --target "$(rustc -vV | sed -n 's/^host: //p')"
+}
+
+build() {
+  cd "$_checkout"
+  export CARGO_TARGET_DIR="$srcdir/target"
+  nice -n 19 cargo build --release --frozen -p kfx-editor -j 4
+}
+
+check() {
+  cd "$_checkout"
+  export CARGO_TARGET_DIR="$srcdir/target"
+  # Tests that need a KeeperFX install skip themselves when KFX_INSTALL is not set.
+  env -u KFX_INSTALL nice -n 19 cargo test --release --frozen \
+    -p kfx-formats -p kfx-gfx -p kfx-map -p kfx-script -j 4 -- --test-threads=4
+}
+
+package() {
+  cd "$_checkout"
+  install -Dm755 "$srcdir/target/release/kfx-editor" "$pkgdir/usr/bin/kfx-editor"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 THIRD_PARTY.md "$pkgdir/usr/share/licenses/$pkgname/THIRD_PARTY.md"
+  install -Dm644 packaging/org.keeperfx.MapEditor.desktop \
+    "$pkgdir/usr/share/applications/org.keeperfx.MapEditor.desktop"
+  install -Dm644 packaging/org.keeperfx.MapEditor.metainfo.xml \
+    "$pkgdir/usr/share/metainfo/org.keeperfx.MapEditor.metainfo.xml"
+  install -Dm644 packaging/org.keeperfx.MapEditor.mime.xml \
+    "$pkgdir/usr/share/mime/packages/org.keeperfx.MapEditor.xml"
+  install -d "$pkgdir/usr/share/doc/$pkgname"
+  cp -r README.md docs "$pkgdir/usr/share/doc/$pkgname/"
+}

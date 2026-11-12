@@ -1,0 +1,180 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFsAAABNCAYAAADJuRgfAAAFVElEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a9+1Ed9hrnqPxsAwVX/FQAIrvqvAEBw1X8FAIKr/isAEFz1XwGA4Kr/CgBUXog3e43ruepf5xd+726eDwCCq/4rABBc9V8BgOCq/woABFf9VwAguOq/AgDBVf8VAKj8G/3C793N/1dv9hrX868EQHDVfwUAgqv+KwAQXPVfAYDgqv8KAARX/VcAILjqvwIAlf8Eb/Ya1/O/3S/83t38BwKg8iJ46/f8eO7309/75fxHeOv3/Hju99Pf++X8Z3vr9/x47vfT3/vl/Ed46/f8eO7309/75bwQAFT+BW/9nh/P2bNnud+ZM2f46e/9cv493vo9P56zZ89yvzNnzvDT3/vl/Gd56/f8eM6ePcv9zpw5w09/75fz7/HW7/nxnD17lvudOXOGn/7eL+cFACB4EW1sbPAfbWNjg/9KGxsb/Efb2NjgRQBA5UV0dHTEf7SjoyP+Kx0dHfEf7ejoiBcBAJV/wU9/75dz5swZ7vfT3/vl/Hv99Pd+OWfOnOF+P/29X85/pp/+3i/nzJkz3O+nv/fL+ff66e/9cs6cOcP9fvp7v5wXAoDKi+Cnv/fL+Y/209/75fxX+unv/XL+o/309345LyIAgv+F3vo9P57/ZQAI/pd56/f8eF72KW/NW7/nx/O/CADB/yJv/Z4fz8s+5a0BeNmnvDVv/Z4fz/8SAAT/S7z1e348L/uUt+aBXvYpb81bv+fH878AAMH/Ej/9vV/OXz78p3mgv3z4T/PT3/vl/C8AQPC/yE9/75fzlw//aQD+8uE/zU9/75fzvwQAwf8yP/29X85fPvyn+env/XL+FwGg8r/QT3/vl/O/DACV/2Xe+j0/nvv99Pd+Of9LAFD5X+St3/PjOXv2LPc7c+YMP/29X87/AgAE/wttbGzwvwwAlf+Fjo6O+F8GgMr/Ij/9vV/OmTNnuN9Pf++X878EAJX/ZX76e7+c/4UAqPwn+IXfu5v/aF/4hZ/MC/Kpn/rF/A8HQOV/ka/6gFfjuX3Mt/0B/wsAUPlf5Ft/8w4e6ANf9yb+lwAguOq/AgCV/0U+8HVv4n8pAIKr/isAUPlf5GO+7Q/4XwqAyr/Rm73G9fxX+oNf+h5ekDd7jev5Hw6Ayr/TW7/nx3O/n/7eL+dF8dbv+fE8t5/+3i/nP8tbv+fH89x++nu/nBfFW7/nx3O/n/7eL+ffCIDKv8Nbv+fHc/bsWe535swZfvp7v5wXxc///G9yvzd/89flP9vP//xvcr83f/PX5UXx1u/58Zw9e5b7nTlzhp/+3i/n3wCA4D/AxsYG/5dtbGzw7wRA5T/A0dER/5cdHR3x7wRA5d/hp7/3yzlz5gz3++nv/XJeVG/+5q/Lf6U3f/PX5V/rp7/3yzlz5gz3++nv/XL+jQDQR33UZ5gX4M1e43qu+tf5hd+7m+cDgOCq/woAVP6Xeev3/Hju99Pf++X8LwFA5X+Rt37Pj+fs2bPc78yZM/z09345/wsAEPwvtLGxwf8yAFT+Fzo6OuJ/GQAq/4v89Pd+OWfOnOF+P/29X87/EgBU/pf56e/9cv4XAqDyQvzC793N/xRf+IWfzAvyqZ/6xfwPB0Dlf5Ff+6O/4bm9wau8FP8LAFD5X+Qj3/0teaCv/f6f5X8JAIKr/isAUPlf5Gu//2f5XwqA4Kr/CgBU/hd5g1d5Kf6XAkD8L/GrP/6N5gV4w7f/UPE/GwDBVf8VAAiu+q8AQHDVfwUAgqv+KwAQXPVfAYDgqv8KAPwjFn7xmtKkRFUAAAAASUVORK5CYII="
+
+[meta]
+name = "Hero fortress keep"
+author = "KeeperFX Editor starter set"
+description = "A walled keep with an outer steel gate, an inner wooden door and a ring corridor. The hero gate stands in the keep, guards in the courtyard. Hero owned (player 4)."
+tags = ["hero", "fortress", "gate", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["ARCHER", "BARBARIAN", "KNIGHT", "MONK", "WIZARD"]
+objects = ["GUARDFLAG_WHITE", "HERO_GATE"]
+traps = []
+doors = ["STEEL", "WOOD"]
+effect_generators = []
+slabs = ["DOOR_STEEL2", "DOOR_WOODEN2", "DRAPE_WALL", "PAIR_WALL", "PRETTY_PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 13
+height = 11
+rows = [
+  "WwABCAWABAAWw",
+  "w-----------A",
+  "w-CCAABBAWw-A",
+  "A-A-------A-B",
+  "A-C-------w-A",
+  "B-A-------A-W",
+  "B-WBAWDAWAB-W",
+  "C-----------A",
+  "C-----------A",
+  "AWAAACdAWwBBA",
+  "......-......",
+]
+
+[[palette]]
+char = "W"
+slab = "WOMAN_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "w"
+slab = "TORCH_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "A"
+slab = "PAIR_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "B"
+slab = "TWINS_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "C"
+slab = "DRAPE_WALL"
+owner = "keep:4"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "keep:4"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN2"
+owner = "keep:4"
+
+[[palette]]
+char = "d"
+slab = "DOOR_STEEL2"
+owner = "keep:4"
+
+[[thing]]
+class = "Creature"
+model = "WIZARD"
+owner = "keep:4"
+x = [4, 128]
+y = [10, 128]
+level = 3
+
+[[thing]]
+class = "Creature"
+model = "ARCHER"
+owner = "keep:4"
+x = [13, 128]
+y = [10, 128]
+level = 4
+
+[[thing]]
+class = "Creature"
+model = "ARCHER"
+owner = "keep:4"
+x = [25, 128]
+y = [10, 128]
+level = 4
+
+[[thing]]
+class = "Creature"
+model = "WIZARD"
+owner = "keep:4"
+x = [34, 128]
+y = [10, 128]
+level = 3
+
+[[thing]]
+class = "Object"
+model = "HERO_GATE"
+owner = "keep:4"
+x = [19, 128]
+y = [13, 128]
+gate = "gate"
+
+[[thing]]
+class = "Creature"
+model = "MONK"
+owner = "keep:4"
+x = [19, 128]
+y = [16, 128]
+level = 3
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "keep:4"
+x = [19, 128]
+y = [19, 128]
+door_orientation = 0
+door_locked = false
+
+[[thing]]
+class = "Creature"
+model = "KNIGHT"
+owner = "keep:4"
+x = [7, 128]
+y = [22, 128]
+level = 5
+
+[[thing]]
+class = "Object"
+model = "GUARDFLAG_WHITE"
+owner = "keep:4"
+x = [13, 128]
+y = [22, 128]
+
+[[thing]]
+class = "Object"
+model = "GUARDFLAG_WHITE"
+owner = "keep:4"
+x = [25, 128]
+y = [22, 128]
+
+[[thing]]
+class = "Creature"
+model = "KNIGHT"
+owner = "keep:4"
+x = [31, 128]
+y = [22, 128]
+level = 5
+
+[[thing]]
+class = "Creature"
+model = "BARBARIAN"
+owner = "keep:4"
+x = [19, 128]
+y = [25, 128]
+level = 4
+
+[[thing]]
+class = "Door"
+model = "STEEL"
+owner = "keep:4"
+x = [19, 128]
+y = [28, 128]
+door_orientation = 0
+door_locked = false

@@ -1,0 +1,49 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAFNElEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a/yH+zRj3iY+67jXzKMI33X8S95zVd6DDvbm/xLfvKX/oi+6/iXDONI33X8S/72cU8Q/3Go/Afru46+73lR9H3Pv2Rne5PjO1v8S/quo+97XhR93/NfjOCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8Fgqv+KxBc9V+Byovo0Y94mPuu41/ymq/0GHa2N/mX7O0fsrO9yb9kb/+QF8VrvtJj2Nne5F+yt3/IzvYm/5KDw0P3Xce/5G8f9wTxL6PyIuq7jr7v+ZfsbG9yfGeLF8XxnS1eFMd3tnhRHN/Z4kVxfGeLf0nfdfR9z38Qgqv+KxBc9V+B4Kr/CgRX/VcguOq/AsFV/xUIrvqvQHDVfwXqox/xMPddx7/kNV/pMexsb/Iv2ds/5EWxt3/Ii2Jv/5AXxd7+IS+Kvf1DXhSv+UqPYWd7k3/JweGh+67jX0Dtu46+7/mX7GxvcnxnixfF8Z0tXhTHd7Z4URzf2eJFcXxnixfF8Z0tXhTHd7b4l/RdR9/3/AsIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FajDOPKi2Ns/5EWxt3/Ii+KlXnGDM2c2+ZecPZucObPJv+Ts2eTMmU3+JT/5w/fyotjbP+RFMYwjLwJq33X0fc+/ZGd7k+M7W7woju9s8S85c2aT6649xoviumuP8aK47tpj/Et2tjc5vrPFi+L4zhb/kr7r6PuefwHBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VcguOq/AnUYR14Ue/uHvCj29g95UZw9m7wozp7d50Vx9uw+L4q9/UNeFHv7h7wohnHkRUDtu46+7/mX7GxvcnxnixfF8Z0t/iVnzmxy3bXHeFFcd+0xXhTXXXuMf8nO9ibHd7Z4URzf2eJf0ncdfd/zLyC46r8CwVX/FQiu+q9AcNV/BYKr/isQXPVfgeCq/woEV/1XoA7jyItib/+QF8Xe/iEvirNnkxfF2bP7vCjOnt3nRbG3f8iLYm//kBfFMI68CKh919H3Pf+Sne1Nju9s8aI4vrPFv+TMmU2uu/YYL4rrrj3Gi+K6a4/xL9nZ3uT4zhYviuM7W/xL+q6j73v+BQRX/VcguOq/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4Hgqv8K1GEceVHs7R/yotjbP+RF8ZM/fC8725v8S/b2D9nZ3uRfsrd/yM72Jv+Svf1DXhR7+4e8KIZx5EVA7buOvu/5l+xsb3J8Z4sXxfGdLV4Ux3e2eFEc39niRXF8Z4sXxfGdLV4Ux3e2+Jf0XUff9/wLCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VcguOq/AsFV/xWof/u4J4gXwcHhofuu41/ymq/0GF4Ue/uHvCj29g95UeztH/Ki2Ns/5EXxk7/0R/Rdx7/kbx/3BPEvo/Ii6ruOvu/5l+xsb3J8Z4sXxfGdLV4Ux3e2eFEc39niRXF8Z4t/Sd919H3PfxCCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FQiu+q9AcNV/BcR/sEc/4mHuu45/yTCO9F3Hv+Q1X+kx7Gxv8i/5yV/6I/qu418yjCN91/Ev+dvHPUH8x6HyH6zvOvq+50XR9z3/kp3tTY7vbPEv6buOvu95UfR9z38xgqv+KxBc9V+B4Kr/CgRX/VcguOq/AsFV/xUIrvqvQHDVfwX+ERnBy3UyT7yRAAAAAElFTkSuQmCC"
+
+[meta]
+name = "Portal clearing"
+author = "KeeperFX Editor starter set"
+description = "A rock cavern with a three by three creature portal and openings north and south."
+tags = ["portal", "entrance", "terrain"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = []
+effect_generators = []
+slabs = ["ENTRANCE_ZONE", "HARD", "PATH"]
+config = []
+
+[layout]
+width = 9
+height = 9
+rows = [
+  "..##_##..",
+  ".#_____#.",
+  "#_______#",
+  "#__EEE__#",
+  "#__EEE__#",
+  "#__EEE__#",
+  "#_______#",
+  ".#_____#.",
+  "..##_##..",
+]
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "E"
+slab = "ENTRANCE_ZONE"
+owner = "neutral"

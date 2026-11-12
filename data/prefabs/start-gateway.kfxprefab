@@ -1,0 +1,103 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFsAAAA/CAYAAACPU7TVAAAC3UlEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a9+9Fu+tPlf4IaXfGVekLv+9o/5Hw6A4Kr/CgAEV/1XACC46r8CAMFV/xUACK76rwBAcNV/BQAqL8R09FD+p3iJrvCC3Hb0UP6nqBtP4/kAILjqvwIAwVX/FQAIrvqvAEBw1X8FAIKr/isAEFz1XwGAyr/Rm73G9fxP8WavcT3/lX7h9+7mXwmAyr/T233Jd3G/n/ik9+Gq5wuA4N/h7b7ku3jKox/NUx79aJ7y6Efzdl/yXVz1fAEQ/Ae4/i/+gqteKAAq/wHufrmX46oXCoDKv8NPfNL78PAv+S7u9xOf9D5c9XwBUPl3+olPeh+u+hcBUPkv9lI/80f8R/ubt3oV/ocDoPLf4MLeDv9RTu7s8e/1dl/yXdzvJz7pffhPAEDw/9zbfcl38ZRHP5qnPPrRPOXRj+btvuS7+E8AQHDVZdf/xV/wnwiAylWX3f1yL8d/IgAq/8/9xCe9Dw//ku/ifj/xSe/DfwIAKlfxE5/0PvwnAyC46r8CAMFV/xUACK76rwBAcNV/BQCCq/4rABBc9V8BgOCq/woABFf9VwAguOq/AgDBVf8VAAiu+q8AQHDVfwUAgqv+KwBQ+W9wcmeP/2cAqPwX+5u3ehX+HwKg8r/M233Jd3G/n/ik9+F/CQCC/0Xe7ku+i6c8+tE85dGP5imPfjRv9yXfxf8SAAT/C13/F3/B/zIAVP4XuvvlXo7/ZQCo/C/yE5/0Pjz8S76L+/3EJ70P/0sAUPlf5ic+6X34XwiAyr/RL/ze3fxXerPXuJ4X5Bd+727+hwMguOq/AgDBVf8VAAiu+q8AQHDVfwUAgqv+KwAQXPVfAYDKC1E3nsb/FH83XsMLUjeexv9wAARX/VcAILjqvwIAwVX/FQAIrvqvAEBw1X8FAIKr/isA8I+ZNVbpVfIknwAAAABJRU5ErkJggg=="
+
+[meta]
+name = "Dungeon start: hall with exits"
+author = "KeeperFX Editor starter set"
+description = "A heart hall with an open doorway north and south, paths leading out, three imps. Owner slot A."
+tags = ["dungeon", "start", "heart"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["IMP"]
+objects = []
+traps = []
+doors = []
+effect_generators = []
+slabs = ["DIRT", "DRAPE_WALL", "HEART_PEDESTAL", "PAIR_WALL", "PATH", "PRETTY_PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 13
+height = 9
+rows = [
+  "::::::_::::::",
+  ":WwAww-wwwBC:",
+  ":W---------W:",
+  ":w--HHH----w:",
+  ":w--HHH----W:",
+  ":A--HHH----w:",
+  ":A---------A:",
+  ":BCwAw-wwWAB:",
+  "::::::_::::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "DRAPE_WALL"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "H"
+slab = "HEART_PEDESTAL"
+owner = "A"
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [7, 128]
+y = [7, 128]
+level = 1
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [28, 128]
+y = [10, 128]
+level = 1
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [19, 128]
+y = [19, 128]
+level = 1

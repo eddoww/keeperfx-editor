@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.keeperfx.MapEditor</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <name>KeeperFX Map Editor</name>
+  <summary>Map editor for KeeperFX, the Dungeon Keeper 1 engine</summary>
+  <description>
+    <p>
+      Edit KeeperFX levels in one program: terrain with the game's slab placement rules,
+      creatures, objects, traps, doors, effect generators, action points and lights, the DK
+      level script, Lua scripts, and play-testing in the game.
+    </p>
+    <p>
+      The editor ships no game assets. It needs a KeeperFX installation and reads art and
+      configuration from it.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/eddoww/keeperfx-editor</url>
+  <url type="bugtracker">https://github.com/eddoww/keeperfx-editor/issues</url>
+  <launchable type="desktop-id">org.keeperfx.MapEditor.desktop</launchable>
+  <provides>
+    <binary>kfx-editor</binary>
+    <mediatype>application/x-keeperfx-map</mediatype>
+  </provides>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <keywords>
+    <keyword>KeeperFX</keyword>
+    <keyword>Dungeon Keeper</keyword>
+    <keyword>level editor</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <requires>
+    <display_length compare="ge">900</display_length>
+  </requires>
+</component>

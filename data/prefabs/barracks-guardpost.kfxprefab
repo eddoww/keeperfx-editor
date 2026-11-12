@@ -1,0 +1,101 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFgAAABACAYAAACeELDCAAAFr0lEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a++82s8wpvzjhfkcDWyOe94QQ5XI5vzjhfkcDWyOe94QQ5XI5vzjhfkcDWyOe94QQ5XI5vzjhfkcDWyOe94QQ5XI5vzjhfkcDWyOe94QQ5XI5vzjheAujnv2F70vDDbi54XZnvR88JsL3pemO1Fzwuzveh5YbYXPS/M9qLnhdle9Lww24ueF2Z70fMCEFz1n4ngqv9MBFf9ZyK46j8TwVX/mQiu+s9EPVyNvDB7u9fQlnNekMP1irac84Icrle05ZwX5HC9oi3nvCCH6xVtOecFOVyvaMs5L8jhekVbznlBDtcr2nLOC3K4XtGWc16QlZ7KC0HdnHdsL3pekLacszXf4IXZmm/wwmzNN3hhtuYbvDBb8w1emK35Bi/M1nyDF2ZrvsELszXf4AUp6the9LwABFf9ZyK46j8TwVX/mQiu+s9EcNV/JoKr/jNRD1cjL8zhesUL84VH98ERL9wRL9wRL9wRL9wRL9wRL9wRL9BHlR1emJVGXgjq5rxje9HzgrTlnK35Bi/QEfzpB78kL8i5i4ecPrHJC3Lu4iGnT2zygpy7eMjpE5u8IOcuHnL6xCYvyLmLh5w+sckLcu7iIadPbPL8vOI3/y2bszlb8w1ekKKO7UXPC0Bw1X8mgqv+MxFc9Z+J4Kr/TARX/WciuOo/E/VwNfLCHK5X/EvOXTzkBbmwe8QLc2H3iBfmwu4RL8yF3SNemAu7R7wwF3aPeGEO1ytemJVGXgjq5rxje9HzgrTlnK35Bi/QEZw+sckLc/rEJi/M6RObvDCnT2zywpw+sckLc/rEJi/M6RObvCCbszlb8w1ekKKO7UXPC0Bw1X8mgqv+MxFc9Z+J4Kr/TARX/Wei8h/gFb/5b7nq+aIerkZemMP1ihfmo8oOm7M5L8jhesXmbM4LcrhesTmb84J84dF9vDAfVXbYnM15QQ7XKzZnc16Qw/WKzdmcF+RwveKFWWnkhaBuzju2Fz0vSFvO2Zpv8MJszTd4YbbmG7wwW/MNXqAj+M5HJ8/P+z4h2JzN2Zpv8MJszTd4YbbmG7wwW/MNXpCiju1FzwtAcNV/Jir/S3zrb97BA33g697E/wIEV/1novK/xAe+7k38L0Rw1X8mKv8LvO8Tgv+lqIerkRfmcL3ihfnCo/vgiBfuiBfuiH+zLzy6D4544Y544Y54gT6q7PDCrDTyQlA35x3bi54XpC3nbM03eIGO4J7XnvOC3Lu/5trtGS/Ivftrrt2e8YLcu7/m2u0ZL8i9+2uu3Z7xgty7v+ba7RkvyL37a67dnvH8XPfbKzZnc7bmG7wgRR3bi54XgOCq/0wEV/1nIrjqPxPBVf+ZCK76z0TlP8B1v73iBbkOgBUvyHUArHhBrgNgxQtyHQArXpDrAFjxglwHwIr/JNTD1cgLc7he8cJ8VNlhczbnBTlcr9iczXlBDtcrNmdzXpAvPLqPF+ajyg6bszkvyOF6xeZszgtyuF6xOZvzghyuV7wwK428ENTNecf2oucFacs5W/MNXpit+QYvzNZ8gxdma77BC3QE3/no5Pl53ycEm7M5W/MNXpit+QYvzNZ8gxdma77BC1LUsb3oeQEIrvrPROV/iW/9zTt4oA983Zv4X4Dgqv9MVP6X+MDXvYn/hQiu+s9E5X+B931C8L8U9XA18sKs9FSKOl6QlUaKOl6QlUaKOl6QlUaKOl6QL3ypR7GzvckLsvqrP6Go4wVZaaSo4wVZaaSo4wVZaaSo4wU5XI28ENTNecf2oueF2V70vDDbi54XZnvR88JsL3pekI3tTY7vbPGCbM47thc9L8z2oueF2V70vDDbi54XZnvR8wIQXPWfieCq/0wEV/1nIrjqPxPBVf+ZCK76z8Q/AojxPaPVluwXAAAAAElFTkSuQmCC"
+
+[meta]
+name = "Barracks and guard post"
+author = "KeeperFX Editor starter set"
+description = "A barracks with a guard post row in front of its door."
+tags = ["barracks", "guard", "rooms", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = ["WOOD"]
+effect_generators = []
+slabs = ["BARRACK_AREA", "BARRACK_WALL", "DIRT", "DOOR_WOODEN2", "GUARD_AREA", "PAIR_WALL", "PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 11
+height = 8
+rows = [
+  ":::::::::::",
+  ":WwwwwwwwA:",
+  ":wRRRRRRRw:",
+  ":wRRRRRRRw:",
+  ":AwwwDwwwA:",
+  ":BUUUUUUUC:",
+  ":BACBDCWAC:",
+  ":::::_:::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "BARRACK_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "R"
+slab = "BARRACK_AREA"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "U"
+slab = "GUARD_AREA"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [16, 128]
+y = [13, 128]
+door_orientation = 0
+door_locked = false
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [16, 128]
+y = [19, 128]
+door_orientation = 0
+door_locked = false

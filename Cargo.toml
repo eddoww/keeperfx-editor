@@ -1,0 +1,44 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/kfx-formats",
+    "crates/kfx-gfx",
+    "crates/kfx-map",
+    "crates/kfx-script",
+    "crates/kfx-analysis",
+    "crates/kfx-audio",
+    "crates/kfx-fonts",
+    "crates/kfx-live",
+    "crates/kfx-prefab",
+    "crates/kfx-workshop",
+    "crates/kfx-script-ui",
+    "crates/kfx-config-ui",
+    "crates/kfx-logic-ui",
+    "crates/kfx-campaign-ui",
+    "crates/kfx-editor",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-2.0-or-later"
+rust-version = "1.99"
+repository = "https://github.com/eddoww/keeperfx-editor"
+homepage = "https://github.com/eddoww/keeperfx-editor"
+
+[workspace.dependencies]
+thiserror = "2"
+toml = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+kfx-formats = { path = "crates/kfx-formats" }
+kfx-map = { path = "crates/kfx-map" }
+kfx-gfx = { path = "crates/kfx-gfx" }
+kfx-script = { path = "crates/kfx-script" }
+
+[profile.release]
+lto = "thin"
+strip = "debuginfo"
+
+[profile.dev]
+opt-level = 1

@@ -1,0 +1,153 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFUAAABBCAYAAACgsujXAAADkElEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a9+9Fu+tHkub//GBzy3H//lLf473PCSr8xzu+tv/5j/Dm//xgc8tx//5S0eAIDgqv9IAARX/UcCILjqPxIAwVX/kQDQR7/lS5vnMh09lP8prrvmaTy3e+57KP9T1I2n8QAABFf9RwIguOo/EgDBVf+RAAiu+o8EQOVF9GavcT3Pz9t9yXdxv5/4pPfhP971PI9H8R/u7b7ku7jfT3zS+/D8/MLv3c2/AIDg3+HtvuS7eMqjH81THv1onvLoR/N2X/Jd/G/0dl/yXTzl0Y/mKY9+NE959KN5uy/5Lv6NAAj+A1z/F3/B/wXX/8Vf8O8EQOU/wN0v93L8X3D3y70c/04AVP4dfuKT3oeHf8l3cb+f+KT34X+jn/ik9+HhX/Jd3O8nPul9+DcCQB/9li9tnst09FCe25u9xvU8t8/4qd/juX3e27wG/9t8xk/9Hs/t897mNXhuv/B7d/Pc6sbTeAAAgqv+IwEQXPUfCYDgqv9IAARX/UcCoPLv8Hlv8xr8X/B5b/Ma/AcBILjqPxIAwVX/kQAIrvqPBEBw1X8kACr/g9z8ff/Av9Xt7/Fi/A8AQHDVfyQAgqv+IwEQXPUfCYDgqv9IAARX/UcCILjqPxIAwVX/kQAIrvqPBEBw1X8kAIKr/iMBEFz1HwmA4Kr/SAAEV/1HAiC46j8SAJX/QW5/jxfjfzkAgqv+IwEQXPUfCYDgqv9IAARX/UcCoPLv8Bk/9Xs8t897m9fgf5vP+Knf47l93tu8Bv8GAARX/UcCILjqPxIAwVX/kQAIrvqPBEDl3+Hz3uY1eLsv+S7u9xOf9D78b/R5b/MavN2XfBf3+4lPeh/+jQAI/h3e7ku+i6c8+tE85dGP5imPfjRv9yXfxf9Gb/cl38VTHv1onvLoR/OURz+at/uS7+LfCIDgP8D1f/EX/F9w/V/8Bf9OAFT+A9z9ci/H/wV3v9zL8e8EQOXf4Sc+6X14+Jd8F/f7iU96H/43+olPeh8e/iXfxf1+4pPeh38jAPTRb/nS5rlMRw/lf4rp4Q/mudWn3Mr/FHXjaTwAAMFV/5EACK76jwRAcNV/JACCq/4jAVB5PurG0/if4pbT1/Dc7rrrafwPBUBw1X8kAIKr/iMBEFz1HwmA4Kr/SAD8I0V6gllj4XoAAAAAAElFTkSuQmCC"
+
+[meta]
+name = "Dungeon start: fortress"
+author = "KeeperFX Editor starter set"
+description = "A big heart hall with pillars, a wooden door north and a braced door south, four imps. Owner slot A."
+tags = ["dungeon", "start", "heart", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["IMP"]
+objects = []
+traps = []
+doors = ["BRACED", "WOOD"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_BRACE2", "DOOR_WOODEN2", "DRAPE_WALL", "GOLD", "HARD", "HEART_PEDESTAL", "PAIR_WALL", "PATH", "PRETTY_PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 17
+height = 13
+rows = [
+  ":$::::::_::::::$:",
+  ":WwAwwBwDwCBBwAC:",
+  ":W-------------w:",
+  ":w-#---------#-B:",
+  ":w-------------w:",
+  ":A-----HHH-----A:",
+  ":A-----HHH-----w:",
+  ":C-----HHH-----w:",
+  ":C-------------B:",
+  ":w-#---------#-W:",
+  ":w-------------w:",
+  ":BwwAwBwdwAwCBwA:",
+  "::::::::_::::::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "$"
+slab = "GOLD"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "DRAPE_WALL"
+owner = "A"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "A"
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "H"
+slab = "HEART_PEDESTAL"
+owner = "A"
+
+[[palette]]
+char = "d"
+slab = "DOOR_BRACE2"
+owner = "A"
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [25, 128]
+y = [4, 128]
+door_orientation = 0
+door_locked = false
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [10, 128]
+y = [7, 128]
+level = 1
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [40, 128]
+y = [7, 128]
+level = 1
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [10, 128]
+y = [31, 128]
+level = 1
+
+[[thing]]
+class = "Creature"
+model = "IMP"
+owner = "A"
+x = [40, 128]
+y = [31, 128]
+level = 1
+
+[[thing]]
+class = "Door"
+model = "BRACED"
+owner = "A"
+x = [25, 128]
+y = [34, 128]
+door_orientation = 0
+door_locked = false

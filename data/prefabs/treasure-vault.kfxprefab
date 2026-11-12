@@ -1,0 +1,330 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "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"
+
+[meta]
+name = "Treasure vault with traps"
+author = "KeeperFX Editor starter set"
+description = "A nine by three treasury full of gold hoards behind a locked steel door, a trapped guard corridor and a wooden door to the outside."
+tags = ["treasury", "traps", "doors", "vault"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = ["GOLD_HOARD_3"]
+traps = ["ALARM", "BOULDER", "POISON_GAS"]
+doors = ["STEEL", "WOOD"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_STEEL2", "DOOR_WOODEN2", "DRAPE_WALL", "PAIR_WALL", "PATH", "PRETTY_PATH", "TORCH_WALL", "TREASURY_AREA", "TREASURY_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 13
+height = 10
+rows = [
+  ":::::::::::::",
+  ":WwwwwwwwwwA:",
+  ":wTTTTTTTTTw:",
+  ":wTTTTTTTTTw:",
+  ":wTTTTTTTTTw:",
+  ":BwwwwDwwwwC:",
+  ":B---------B:",
+  ":E---------E:",
+  ":ECACBdCECAC:",
+  "::::::_::::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "TREASURY_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "T"
+slab = "TREASURY_AREA"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_STEEL2"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "A"
+
+[[palette]]
+char = "E"
+slab = "DRAPE_WALL"
+owner = "A"
+
+[[palette]]
+char = "d"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [7, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [10, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [13, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [16, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [19, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [22, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [25, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [28, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [31, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [7, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [10, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [13, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [16, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [19, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [22, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [25, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [28, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [31, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [7, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [10, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [13, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [16, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [19, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [22, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [25, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [28, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_HOARD_3"
+owner = "A"
+x = [31, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Door"
+model = "STEEL"
+owner = "A"
+x = [19, 128]
+y = [16, 128]
+door_orientation = 0
+door_locked = true
+
+[[thing]]
+class = "Trap"
+model = "ALARM"
+owner = "A"
+x = [7, 128]
+y = [19, 128]
+
+[[thing]]
+class = "Trap"
+model = "BOULDER"
+owner = "A"
+x = [19, 128]
+y = [19, 128]
+
+[[thing]]
+class = "Trap"
+model = "POISON_GAS"
+owner = "A"
+x = [10, 128]
+y = [22, 128]
+
+[[thing]]
+class = "Trap"
+model = "POISON_GAS"
+owner = "A"
+x = [28, 128]
+y = [22, 128]
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [19, 128]
+y = [25, 128]
+door_orientation = 0
+door_locked = false

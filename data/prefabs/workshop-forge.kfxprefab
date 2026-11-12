@@ -1,0 +1,82 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFoAAABQCAYAAACZM2JkAAAE90lEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a++82s8wpvzjn/J4Wpkc97xLzlcjWzOO/4lh6uRzXnHv+RwNbI57/iXHK5GNucd/5LD1cjmvONfcrga2Zx3/EsOVyOb845/AXVz3rG96HlRbC96XhTbi54Xxfai50Wxveh5UWwvel4U24ueF8X2oudFsb3o+RcQXPVfgeCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8Fgqv+K1APVyMvir3da2jLOf+Sw/WKtpzzLzlcr2jLOf+Sw/WKtpzzLzlcr2jLOf+Sw/WKtpzzLzlcr2jLOf+SlZ7Ki4C6Oe/YXvT8S9pyztZ8gxfF1nyDF8XWfIMXxdZ8gxfF1nyDF8XWfIMXxdZ8g39JUcf2oudfQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FQiu+q9APVyNvCgO1yteFF94dB8c8aI54kVzxIvmiBfNEf+ijyo7vChWGnkRUDfnHduLnn9JW87Zmm/wLzqCn37FOf+SiwdrTmzN+JdcPFhzYmvGv+TiwZoTWzP+JRcP1pzYmvHCvPWfrticzdmab/AvKerYXvT8Cwiu+q9AcNV/BYKr/isQXPVfgeCq/woEV/1XILjqvwLBVf8VqIerkRfF4XrFi+riwZp/yaXDgRfFpcOBF8Wlw4EXxaXDgRfF4XrFi2KlkRcBdXPesb3o+Ze05Zyt+Qb/oiM4sTXjRXFia8aL4sTWjBfFia0ZL4oTWzNeuBWbszlb8w3+JUUd24uefwHBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VcguOq/AvVwNfKiOFyveFFdPFjzL7l0OPCiuHQ48KK4dDjworh0OPCiOFyveFGsNPIioG7OO7YXPf+StpyzNd/gX3QEJ7ZmvChObM14UZzYmvGiOLE140VxYmvGC7diczZna77Bv6SoY3vR8y8guOq/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9V6AerkZeFIfrFS+qiwdr/iWXDgdeFJcOB14Ulw4HXhSXDgdeFIfrFS+KlUZeBNTNecf2oudf0pZztuYb/IuO4MTWjBfFia0ZL4oTWzNeFCe2ZrwoTmzNeOFWbM7mbM03+JcUdWwvev4FBFf9VyC46r8CwVX/FQiu+q9AcNV/BYKr/isQXPVfgcp/grf+0xUvmhUvmhUvmhUvmhX/xaiHq5EXxeF6xYvio8oOm7M5/5LD9YrN2Zx/yRce3ceL4qPKDpuzOf+Sw/WKzdmcf8nhesWLYqWRFwF1c96xvej5l7TlnK35Bi+KrfkGL4qt+Qb/oiP4zkcnL8z7PiHYnM3Zmm/wotiab/Ci2Jpv8C8p6the9PwLCK76r0Dlf4lv/c07eG4f+Lo38b8EwVX/FQiu+q9A5X+JD3zdm/hfjOCq/woEV/1XoPK/wPs+Ifhfjnq4GnlRrPRUijr+JSuNFHX8S1YaKer4l3zhSz2Kne1N/iWrv/oTijr+JSuNFHX8S1YaKer4lxyuRl4E1M15x/ai50Wxveh5UWwvel4U24uef8nG9ibHd7b4l2zOO7YXPS+K7UXPi2J70fOi2F70/AsIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FfhHldj8xNppdCAAAAAASUVORK5CYII="
+
+[meta]
+name = "Workshop"
+author = "KeeperFX Editor starter set"
+description = "A five by four workshop with a wooden door."
+tags = ["workshop", "rooms", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = ["WOOD"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_WOODEN2", "PAIR_WALL", "PATH", "TORCH_WALL", "TWINS_WALL", "WORKSHOP_AREA", "WORKSHOP_WALL"]
+config = []
+
+[layout]
+width = 9
+height = 8
+rows = [
+  ":::::::::",
+  ":WwwwwwA:",
+  ":wKKKKKw:",
+  ":wKKKKKw:",
+  ":wKKKKKw:",
+  ":wKKKKKw:",
+  ":BwwDwwW:",
+  "::::_::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "WORKSHOP_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "K"
+slab = "WORKSHOP_AREA"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [13, 128]
+y = [19, 128]
+door_orientation = 0
+door_locked = false

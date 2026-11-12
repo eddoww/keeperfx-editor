@@ -1,0 +1,99 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "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"
+
+[meta]
+name = "Guarded gem chamber"
+author = "KeeperFX Editor starter set"
+description = "A rock vault lined with gems behind a secret door, guarded by two trolls and a demonspawn on a lightning trap."
+tags = ["gems", "secret", "guards", "traps"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["DEMONSPAWN", "TROLL"]
+objects = []
+traps = ["LIGHTNING"]
+doors = ["SECRET"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_SECRET2", "GEMS", "HARD", "PATH"]
+config = []
+
+[layout]
+width = 11
+height = 9
+rows = [
+  ":::::::::::",
+  ":#########:",
+  ":#*******#:",
+  ":#_______#:",
+  ":#_______#:",
+  ":#_______#:",
+  ":####D####:",
+  ":::::_:::::",
+  ":::::::::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "*"
+slab = "GEMS"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "D"
+slab = "DOOR_SECRET2"
+owner = "A"
+
+[[thing]]
+class = "Creature"
+model = "DEMONSPAWN"
+owner = "neutral"
+x = [16, 128]
+y = [10, 128]
+level = 4
+
+[[thing]]
+class = "Creature"
+model = "TROLL"
+owner = "neutral"
+x = [10, 128]
+y = [13, 128]
+level = 3
+
+[[thing]]
+class = "Creature"
+model = "TROLL"
+owner = "neutral"
+x = [22, 128]
+y = [13, 128]
+level = 3
+
+[[thing]]
+class = "Trap"
+model = "LIGHTNING"
+owner = "A"
+x = [16, 128]
+y = [16, 128]
+
+[[thing]]
+class = "Door"
+model = "SECRET"
+owner = "A"
+x = [16, 128]
+y = [19, 128]
+door_orientation = 0
+door_locked = false

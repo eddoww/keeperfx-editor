@@ -1,0 +1,82 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFoAAABQCAYAAACZM2JkAAAE60lEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a++82s8wpvzjn/J4Wpkc97xLzlcjWzOO/4lh6uRzXnHv+RwNbI57/iXHK5GNucd/5LD1cjmvONfcrga2Zx3/EsOVyOb845/AXVz3rG96HlRbC96XhTbi54Xxfai50Wxveh5UWwvel4U24ueF8X2oudFsb3o+RcQXPVfgeCq/woEV/1XILjqvwLBVf8VCK76r0Bw1X8Fgqv+K1APVyMvir3da2jLOf+Sw/WKtpzzLzlcr2jLOf+Sw/WKtpzzLzlcr2jLOf+Sw/WKtpzzLzlcr2jLOf+SlZ7Ki4C6Oe/YXvT8S9pyztZ8gxfF1nyDF8XWfIMXxdZ8gxfF1nyDF8XWfIMXxdZ8g39JUcf2oudfQHDVfwWCq/4rEFz1X4Hgqv8KBFf9VyC46r8CwVX/FQiu+q9APVyNvCgO1yteFF94dB8c8aI54kVzxIvmiBfNEf+ijyo7vChWGnkRUDfnHduLnn9JW87Zmm/wLzqCD3/ll+RfcnRwyMbWJv+So4NDNrY2+ZccHRyysbXJv+To4JCNrU1emK//479lczZna77Bv6SoY3vR8y8guOq/AsFV/xUIrvqvQHDVfwWCq/4rEFz1X4Hgqv8KBFf9V6AerkZeFIfrFS+qo4ND/iWrwyNeFKvDI14Uq8MjXhSrwyNeFIfrFS+KlUZeBNTNecf2oudf0pZztuYb/IuOYGNrkxfFxtYmL4qNrU1eFBtbm7woNrY2+ZdszuZszTf4lxR1bC96/gUEV/1XILjqvwLBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CtTD1ciL4nC94kV1dHDIv2R1eMSLYnV4xItidXjEi2J1eMSL4nC94kWx0siLgLo579he9PxL2nLO1nyDf9ERbGxt8qLY2NrkRbGxtcmLYmNrkxfFxtYm/5LN2Zyt+Qb/kqKO7UXPv4Dgqv8KBFf9VyC46r8CwVX/FQiu+q9AcNV/BYKr/isQXPVfgXq4GnlRHK5XvKiODg75l6wOj3hRrA6PeFGsDo94UawOj3hRHK5XvChWGnkRUDfnHduLnn9JW87Zmm/wLzqCja1NXhQbW5u8KDa2NnlRbGxt8qLY2NrkX7I5m7M13+BfUtSxvej5FxBc9V+B4Kr/CgRX/VcguOq/AsFV/xUIrvqvQHDVfwUq/wm+/o//lqueA/VwNfKiOFyveFF8VNlhczbnX3K4XrE5m/Mv+cKj+3hRfFTZYXM2519yuF6xOZvzLzlcr3hRrDTyIqBuzju2Fz3/kracszXf4EWxNd/gRbE13+BfdATf+ejkhXnfJwSbszlb8w1eFFvzDV4UW/MN/iVFHduLnn8BwVX/Faj8L/Gtv3kHz+0DX/cm/pcguOq/AsFV/xWo/C/xga97E/+LEVz1X4Hgqv8KVP4XeN8nBP/LUQ9XIy+KlZ5KUce/ZKWRoo5/yUojRR3/ki98qUexs73Jv2T1V39CUce/ZKWRoo5/yUojRR3/ksPVyIuAujnv2F70vCi2Fz0viu1Fz4tie9HzL9nY3uT4zhb/ks15x/ai50Wxveh5UWwvel4U24uefwHBVf8VCK76r0Bw1X8Fgqv+KxBc9V+B4Kr/CgRX/VcguOq/Av8IT7T2GGDKVU0AAAAASUVORK5CYII="
+
+[meta]
+name = "Graveyard"
+author = "KeeperFX Editor starter set"
+description = "A five by four graveyard with a door."
+tags = ["graveyard", "rooms", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = ["WOOD"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_WOODEN2", "GRAVE_AREA", "GRAVE_WALL", "PAIR_WALL", "PATH", "TORCH_WALL", "TWINS_WALL"]
+config = []
+
+[layout]
+width = 9
+height = 8
+rows = [
+  ":::::::::",
+  ":WwwwwwA:",
+  ":wGGGGGw:",
+  ":wGGGGGw:",
+  ":wGGGGGw:",
+  ":wGGGGGw:",
+  ":BwwDwwW:",
+  "::::_::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "GRAVE_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "G"
+slab = "GRAVE_AREA"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [13, 128]
+y = [19, 128]
+door_orientation = 0
+door_locked = false

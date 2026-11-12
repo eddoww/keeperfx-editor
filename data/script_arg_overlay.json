@@ -1,0 +1,1520 @@
+{
+ "version": 1,
+ "_note": "Hand-annotated from the *_check functions of src/lvl_script_commands.c. Args are \"name:kind\"; a trailing * on the name means the display name is a guess.",
+ "lists": {
+  "creature_properties": [
+   "BLEEDS",
+   "UNAFFECTED_BY_WIND",
+   "IMMUNE_TO_GAS",
+   "HUMANOID_SKELETON",
+   "PISS_ON_DEAD",
+   "FLYING",
+   "SEE_INVISIBLE",
+   "PASS_LOCKED_DOORS",
+   "SPECIAL_DIGGER",
+   "ARACHNID",
+   "DIPTERA",
+   "LORD",
+   "SPECTATOR",
+   "EVIL",
+   "NEVER_CHICKENS",
+   "IMMUNE_TO_BOULDER",
+   "NO_CORPSE_ROTTING",
+   "NO_ENMHEART_ATTCK",
+   "TREMBLING_FAT",
+   "FEMALE",
+   "INSECT",
+   "ONE_OF_KIND",
+   "NO_IMPRISONMENT",
+   "IMMUNE_TO_DISEASE",
+   "ILLUMINATED",
+   "ALLURING_SCVNGR",
+   "NO_RESURRECT",
+   "NO_TRANSFER",
+   "TREMBLING",
+   "FAT",
+   "NO_STEAL_HERO",
+   "PREFER_STEAL",
+   "EVENTFUL_DEATH",
+   "DIGGING_CREATURE",
+   "NO_HEALTH_FLOWER",
+   "CANNOT_PICK_UP",
+   "DROP_ON_PATH",
+   "CANNOT_POSSESS"
+  ],
+  "spawn_types": [
+   "NONE",
+   "0",
+   "DEFAULT",
+   "1",
+   "JUMP",
+   "2",
+   "FALL",
+   "3",
+   "INIT",
+   "INITIALIZE",
+   "4"
+  ],
+  "research_types": [
+   "MAGIC",
+   "ROOM",
+   "CREATURE"
+  ],
+  "sacrifice_actions": [
+   "MKCREATURE",
+   "MKGOODHERO",
+   "NEGSPELLALL",
+   "POSSPELLALL",
+   "NEGUNIQFUNC",
+   "POSUNIQFUNC",
+   "CUSTOMREWARD",
+   "CUSTOMPUNISH"
+  ],
+  "sacrifice_unique": [
+   "ALL_CREATRS_ANGRY",
+   "ALL_CREATRS_HAPPY",
+   "COMPLETE_RESEARCH",
+   "COMPLETE_MANUFACTR",
+   "KILL_ALL_CHICKENS",
+   "CHEAPER_IMPS",
+   "COSTLIER_IMPS",
+   "ALL_CREATRS_VER_ANGRY"
+  ]
+ },
+ "commands": {
+  "CREATE_PARTY": {
+   "doc": "Defines a creature party; fill it with ADD_TO_PARTY.",
+   "args": [
+    "name:party_def"
+   ]
+  },
+  "ADD_TO_PARTY": {
+   "doc": "Adds a member to a party (a trigger when inside IF).",
+   "args": [
+    "party:party",
+    "creature:creature",
+    "level:level",
+    "gold:amount",
+    "objective:hero_objective",
+    "countdown*:count"
+   ]
+  },
+  "DELETE_FROM_PARTY": {
+   "doc": "Removes a member (creature and level) from a party.",
+   "args": [
+    "party:party",
+    "creature:creature",
+    "level:level"
+   ]
+  },
+  "ADD_PARTY_TO_LEVEL": {
+   "doc": "Spawns a party at a location.",
+   "args": [
+    "player:player",
+    "party:party",
+    "location:location",
+    "copies:count"
+   ]
+  },
+  "ADD_CREATURE_TO_LEVEL": {
+   "doc": "Spawns creatures at a location.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "location:location",
+    "copies:count",
+    "level:level",
+    "gold:amount",
+    "spawn_type:spawn_type"
+   ]
+  },
+  "ADD_OBJECT_TO_LEVEL": {
+   "doc": "Places an object at a location.",
+   "args": [
+    "object:object",
+    "location:location",
+    "arg*:number",
+    "owner:player",
+    "orientation:orientation"
+   ]
+  },
+  "IF": {
+   "doc": "Starts a conditional block: IF(player, variable >= value) ... ENDIF.",
+   "args": [
+    "player:player",
+    "variable:variable",
+    "operator:operator",
+    "value:if_value",
+    "variable2:variable"
+   ]
+  },
+  "IF_ACTION_POINT": {
+   "doc": "Condition: the action point was triggered by the player.",
+   "args": [
+    "action_point:ap_number",
+    "player:player"
+   ]
+  },
+  "ENDIF": {
+   "doc": "Closes the innermost IF block.",
+   "args": []
+  },
+  "SET_GENERATE_SPEED": {
+   "doc": "Sets the creature generation interval.",
+   "args": [
+    "turns:turns",
+    "player*:player"
+   ]
+  },
+  "REM": {
+   "doc": "Comment (never reaches the command table).",
+   "args": []
+  },
+  "START_MONEY": {
+   "doc": "Gold the player starts with.",
+   "args": [
+    "player:player",
+    "amount:amount"
+   ]
+  },
+  "ROOM_AVAILABLE": {
+   "doc": "Makes a room researchable/available.",
+   "args": [
+    "player:player",
+    "room:room",
+    "researchable*:number",
+    "available*:number"
+   ]
+  },
+  "CREATURE_AVAILABLE": {
+   "doc": "Makes a creature available for the player.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "available*:number",
+    "force*:number"
+   ]
+  },
+  "MAGIC_AVAILABLE": {
+   "doc": "Makes a power researchable/available.",
+   "args": [
+    "player:player",
+    "power:power",
+    "researchable*:number",
+    "available*:number"
+   ]
+  },
+  "TRAP_AVAILABLE": {
+   "doc": "Makes a trap available.",
+   "args": [
+    "player:player",
+    "trap:trap",
+    "buildable*:number",
+    "amount*:number"
+   ]
+  },
+  "RESEARCH": {
+   "doc": "Sets research points for a magic/room/creature item.",
+   "args": [
+    "player:player",
+    "type:research_type",
+    "item:research_item",
+    "points*:number"
+   ]
+  },
+  "RESEARCH_ORDER": {
+   "doc": "Like RESEARCH but also fixes the order of the item.",
+   "args": [
+    "player:player",
+    "type:research_type",
+    "item:research_item",
+    "points*:number"
+   ]
+  },
+  "COMPUTER_PLAYER": {
+   "doc": "Assigns an AI model (number, ROAMING or OFF) to a player.",
+   "args": [
+    "player:player",
+    "model:computer_model"
+   ]
+  },
+  "SET_TIMER": {
+   "doc": "Resets a timer to the current game turn.",
+   "args": [
+    "player:player",
+    "timer:timer"
+   ]
+  },
+  "ADD_TUNNELLER_TO_LEVEL": {
+   "doc": "Spawns a tunneller that heads for a target.",
+   "args": [
+    "player:player",
+    "location:location",
+    "heading:head_for",
+    "target*:number",
+    "level:level",
+    "gold:amount"
+   ]
+  },
+  "WIN_GAME": {
+   "doc": "Win condition (used inside IF).",
+   "args": []
+  },
+  "LOSE_GAME": {
+   "doc": "Lose condition (used inside IF).",
+   "args": []
+  },
+  "SET_FLAG": {
+   "doc": "Sets a flag.",
+   "args": [
+    "player:player",
+    "flag:flag_var",
+    "value:number"
+   ]
+  },
+  "MAX_CREATURES": {
+   "doc": "Maximum number of creatures of the player.",
+   "args": [
+    "player:player",
+    "count:count"
+   ]
+  },
+  "NEXT_COMMAND_REUSABLE": {
+   "doc": "Makes the next command repeat every time its IF becomes true.",
+   "args": []
+  },
+  "DOOR_AVAILABLE": {
+   "doc": "Makes a door available.",
+   "args": [
+    "player:player",
+    "door:door",
+    "buildable*:number",
+    "amount*:number"
+   ]
+  },
+  "DISPLAY_OBJECTIVE": {
+   "doc": "Shows an objective text, optionally zooming to a location.",
+   "args": [
+    "message:message_id",
+    "location:location",
+    "icon:icon"
+   ]
+  },
+  "DISPLAY_OBJECTIVE_WITH_POS": {
+   "doc": "Objective text zooming to subtile x,y.",
+   "args": [
+    "message:message_id",
+    "x*:subtile_x",
+    "y*:subtile_y",
+    "icon:icon"
+   ]
+  },
+  "DISPLAY_INFORMATION": {
+   "doc": "Shows an information text.",
+   "args": [
+    "message:message_id",
+    "location:location",
+    "icon:icon"
+   ]
+  },
+  "DISPLAY_INFORMATION_WITH_POS": {
+   "doc": "Information text zooming to subtile x,y.",
+   "args": [
+    "message:message_id",
+    "x*:subtile_x",
+    "y*:subtile_y"
+   ]
+  },
+  "DISPLAY_PLAYER_OBJECTIVE": {
+   "doc": "Objective text for one player.",
+   "args": [
+    "message:message_id",
+    "player:player",
+    "location:location",
+    "icon:icon"
+   ]
+  },
+  "DISPLAY_PLAYER_OBJECTIVE_WITH_POS": {
+   "doc": "Objective text for one player at subtile x,y.",
+   "args": [
+    "message:message_id",
+    "player:player",
+    "x*:subtile_x",
+    "y*:subtile_y",
+    "icon:icon"
+   ]
+  },
+  "DISPLAY_PLAYER_INFORMATION": {
+   "doc": "Information text for one player.",
+   "args": [
+    "message:message_id",
+    "player:player",
+    "location:location"
+   ]
+  },
+  "DISPLAY_PLAYER_INFORMATION_WITH_POS": {
+   "doc": "Information text for one player at subtile x,y.",
+   "args": [
+    "message:message_id",
+    "player:player",
+    "x*:subtile_x",
+    "y*:subtile_y"
+   ]
+  },
+  "QUICK_OBJECTIVE": {
+   "doc": "Objective with inline text stored in a quick message slot.",
+   "args": [
+    "index:quick_msg",
+    "text:text",
+    "location:location",
+    "icon:icon"
+   ]
+  },
+  "QUICK_OBJECTIVE_WITH_POS": {
+   "doc": "Quick objective at subtile x,y.",
+   "args": [
+    "index:quick_msg",
+    "text:text",
+    "x*:subtile_x",
+    "y*:subtile_y",
+    "icon:icon"
+   ]
+  },
+  "QUICK_INFORMATION": {
+   "doc": "Information with inline text.",
+   "args": [
+    "index:quick_msg",
+    "text:text",
+    "location:location",
+    "icon:icon"
+   ]
+  },
+  "QUICK_INFORMATION_WITH_POS": {
+   "doc": "Quick information at subtile x,y.",
+   "args": [
+    "index:quick_msg",
+    "text:text",
+    "x*:subtile_x",
+    "y*:subtile_y"
+   ]
+  },
+  "QUICK_PLAYER_OBJECTIVE": {
+   "doc": "Quick objective for one player.",
+   "args": [
+    "index:quick_msg",
+    "player:player",
+    "text:text",
+    "location:location",
+    "icon:icon"
+   ]
+  },
+  "QUICK_PLAYER_OBJECTIVE_WITH_POS": {
+   "doc": "Quick player objective at subtile x,y.",
+   "args": [
+    "index:quick_msg",
+    "player:player",
+    "text:text",
+    "x*:subtile_x",
+    "y*:subtile_y",
+    "icon:icon"
+   ]
+  },
+  "QUICK_PLAYER_INFORMATION": {
+   "doc": "Quick information for one player.",
+   "args": [
+    "index:quick_msg",
+    "player:player",
+    "text:text",
+    "location:location"
+   ]
+  },
+  "QUICK_PLAYER_INFORMATION_WITH_POS": {
+   "doc": "Quick player information at subtile x,y.",
+   "args": [
+    "index:quick_msg",
+    "player:player",
+    "text:text",
+    "x*:subtile_x",
+    "y*:subtile_y"
+   ]
+  },
+  "DISPLAY_MESSAGE": {
+   "doc": "Prints a localized message in the message area.",
+   "args": [
+    "message:message_id",
+    "icon:chat_icon"
+   ]
+  },
+  "QUICK_MESSAGE": {
+   "doc": "Prints an inline message in the message area.",
+   "args": [
+    "index:quick_msg",
+    "text:text",
+    "icon:chat_icon"
+   ]
+  },
+  "CLEAR_MESSAGE": {
+   "doc": "Clears the last messages from the message area.",
+   "args": [
+    "count*:count"
+   ]
+  },
+  "HEART_LOST_OBJECTIVE": {
+   "doc": "Objective shown when the heart is lost.",
+   "args": [
+    "message*:number",
+    "location:location"
+   ]
+  },
+  "HEART_LOST_QUICK_OBJECTIVE": {
+   "doc": "Quick objective shown when the heart is lost.",
+   "args": [
+    "index:quick_msg",
+    "text:text",
+    "location:location"
+   ]
+  },
+  "ADD_TUNNELLER_PARTY_TO_LEVEL": {
+   "doc": "Spawns a tunneller leading a party.",
+   "args": [
+    "player:player",
+    "party:party",
+    "location:location",
+    "heading:head_for",
+    "target*:number",
+    "level:level",
+    "gold:amount"
+   ]
+  },
+  "ADD_CREATURE_TO_POOL": {
+   "doc": "Adds creatures to the pool.",
+   "args": [
+    "creature:creature",
+    "amount:count"
+   ]
+  },
+  "RESET_ACTION_POINT": {
+   "doc": "Resets the triggered state of an action point.",
+   "args": [
+    "action_point:ap_number",
+    "player*:player"
+   ]
+  },
+  "SET_CREATURE_MAX_LEVEL": {
+   "doc": "Limits the creature level for a player.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "level:level"
+   ]
+  },
+  "SET_MUSIC": {
+   "doc": "Plays a music track number or file.",
+   "args": [
+    "track*:music"
+   ]
+  },
+  "TUTORIAL_FLASH_BUTTON": {
+   "doc": "Flashes a GUI button (id, room, power, trap or door name).",
+   "args": [
+    "button*:gui_button",
+    "turns*:turns"
+   ]
+  },
+  "SET_CREATURE_STRENGTH": {
+   "doc": "Sets creature strength.",
+   "args": [
+    "creature:creature",
+    "value:number"
+   ]
+  },
+  "SET_CREATURE_HEALTH": {
+   "doc": "Sets creature health.",
+   "args": [
+    "creature:creature",
+    "value:number"
+   ]
+  },
+  "SET_CREATURE_ARMOUR": {
+   "doc": "Sets creature armour.",
+   "args": [
+    "creature:creature",
+    "value:number"
+   ]
+  },
+  "SET_CREATURE_FEAR_WOUNDED": {
+   "doc": "Sets the health percentage at which a creature flees.",
+   "args": [
+    "creature:creature",
+    "value:number"
+   ]
+  },
+  "SET_CREATURE_FEAR_STRONGER": {
+   "doc": "Sets the fear of stronger enemies.",
+   "args": [
+    "creature:creature",
+    "value:number"
+   ]
+  },
+  "SET_CREATURE_FEARSOME_FACTOR": {
+   "doc": "Sets how scary the creature is.",
+   "args": [
+    "creature:creature",
+    "value:number"
+   ]
+  },
+  "SET_CREATURE_PROPERTY": {
+   "doc": "Enables or disables a creature property.",
+   "args": [
+    "creature:creature",
+    "property:creature_property",
+    "enabled:bool"
+   ]
+  },
+  "IF_AVAILABLE": {
+   "doc": "Condition on what is available to a player.",
+   "args": [
+    "player:player",
+    "variable:avail_variable",
+    "operator:operator",
+    "value:if_value",
+    "variable2:variable"
+   ]
+  },
+  "IF_CONTROLS": {
+   "doc": "Condition on what a player controls.",
+   "args": [
+    "player:player",
+    "variable:ctrl_variable",
+    "operator:operator",
+    "value:if_value",
+    "variable2:variable"
+   ]
+  },
+  "SET_COMPUTER_GLOBALS": {
+   "doc": "AI global values.",
+   "args": [
+    "player:player",
+    "value1*:number",
+    "value2*:number",
+    "value3*:number",
+    "value4*:number",
+    "value5*:number",
+    "value6*:number",
+    "value7*:number"
+   ]
+  },
+  "SET_COMPUTER_CHECKS": {
+   "doc": "Tunes a computer-player check.",
+   "args": [
+    "player:player",
+    "name*:computer_name",
+    "value1*:number",
+    "value2*:number",
+    "value3*:number",
+    "value4*:number",
+    "value5*:number"
+   ]
+  },
+  "SET_COMPUTER_EVENT": {
+   "doc": "Tunes a computer-player event.",
+   "args": [
+    "player:player",
+    "name*:computer_name",
+    "value1*:number",
+    "value2*:number",
+    "value3*:number",
+    "value4*:number",
+    "value5*:number"
+   ]
+  },
+  "SET_COMPUTER_PROCESS": {
+   "doc": "Tunes a computer-player process.",
+   "args": [
+    "player:player",
+    "name*:computer_name",
+    "value1*:number",
+    "value2*:number",
+    "value3*:number",
+    "value4*:number",
+    "value5*:number"
+   ]
+  },
+  "ALLY_PLAYERS": {
+   "doc": "Allies or separates two players.",
+   "args": [
+    "player1:player",
+    "player2:player",
+    "allied*:number"
+   ]
+  },
+  "DEAD_CREATURES_RETURN_TO_POOL": {
+   "doc": "Whether dead creatures return to the pool.",
+   "args": [
+    "enabled:bool"
+   ]
+  },
+  "BONUS_LEVEL_TIME": {
+   "doc": "Time limit of a bonus level.",
+   "args": [
+    "turns:turns",
+    "real_time*:bool"
+   ]
+  },
+  "SWAP_CREATURE": {
+   "doc": "Replaces one creature type by another.",
+   "args": [
+    "creature:creature",
+    "replacement:creature"
+   ]
+  },
+  "PRINT": {
+   "doc": "Writes text to the game log.",
+   "args": [
+    "text:text"
+   ]
+  },
+  "MESSAGE": {
+   "doc": "Writes text to the game log.",
+   "args": [
+    "text:text"
+   ]
+  },
+  "PLAY_MESSAGE": {
+   "doc": "Plays a speech or sound.",
+   "args": [
+    "player:player",
+    "type:msg_type",
+    "sound:sound"
+   ]
+  },
+  "ADD_GOLD_TO_PLAYER": {
+   "doc": "Adds gold to a player.",
+   "args": [
+    "player:player",
+    "amount:amount"
+   ]
+  },
+  "SET_CREATURE_TENDENCIES": {
+   "doc": "Enables a creature tendency (IMPRISON, FLEE).",
+   "args": [
+    "player:player",
+    "tendency:tendency",
+    "enabled:bool"
+   ]
+  },
+  "REVEAL_MAP_RECT": {
+   "doc": "Reveals a rectangle of the map around subtile x,y.",
+   "args": [
+    "player:player",
+    "x*:subtile_x",
+    "y*:subtile_y",
+    "width*:number",
+    "height*:number"
+   ]
+  },
+  "CONCEAL_MAP_RECT": {
+   "doc": "Hides a rectangle of the map around subtile x,y.",
+   "args": [
+    "player:player",
+    "x*:subtile_x",
+    "y*:subtile_y",
+    "width*:number",
+    "height*:number",
+    "mode*:conceal_mode"
+   ]
+  },
+  "REVEAL_MAP_LOCATION": {
+   "doc": "Reveals the map around a location.",
+   "args": [
+    "player:player",
+    "location:location",
+    "range:number"
+   ]
+  },
+  "TAG_MAP_RECT": {
+   "doc": "Tags slabs for digging in a rectangle around slab x,y.",
+   "args": [
+    "player:player",
+    "x:slab_x",
+    "y:slab_y",
+    "width:number",
+    "height:number"
+   ]
+  },
+  "UNTAG_MAP_RECT": {
+   "doc": "Untags slabs for digging in a rectangle around slab x,y.",
+   "args": [
+    "player:player",
+    "x:slab_x",
+    "y:slab_y",
+    "width:number",
+    "height:number"
+   ]
+  },
+  "LEVEL_VERSION": {
+   "doc": "Selects the script dialect: 0 = original DK commands, 1 = KeeperFX.",
+   "args": [
+    "version:number"
+   ]
+  },
+  "KILL_CREATURE": {
+   "doc": "Kills creatures chosen by a criterion.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "criterion:criterion",
+    "count:count"
+   ]
+  },
+  "COMPUTER_DIG_TO_LOCATION": {
+   "doc": "Orders the AI to dig from one location to another.",
+   "args": [
+    "player:player",
+    "origin:location",
+    "destination:location"
+   ]
+  },
+  "USE_POWER_ON_CREATURE": {
+   "doc": "Casts a power on a creature.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "criterion:criterion",
+    "caster:player",
+    "power:power",
+    "level:level",
+    "free:free_state"
+   ]
+  },
+  "USE_POWER_ON_PLAYERS_CREATURES": {
+   "doc": "Casts a power on all creatures of a player.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "caster:player",
+    "power:power",
+    "level:level",
+    "free:free_state"
+   ]
+  },
+  "USE_POWER_AT_POS": {
+   "doc": "Casts a power at subtile x,y.",
+   "args": [
+    "player:player",
+    "x:subtile_x",
+    "y:subtile_y",
+    "power:power",
+    "level:level",
+    "free:free_state"
+   ]
+  },
+  "USE_POWER_AT_LOCATION": {
+   "doc": "Casts a power at a location.",
+   "args": [
+    "player:player",
+    "location:location",
+    "power:power",
+    "level:level",
+    "free:free_state"
+   ]
+  },
+  "USE_POWER": {
+   "doc": "Casts a global power.",
+   "args": [
+    "player:player",
+    "power:power",
+    "free:free_state"
+   ]
+  },
+  "USE_SPECIAL_INCREASE_LEVEL": {
+   "doc": "Uses an increase-level special.",
+   "args": [
+    "player:player",
+    "count*:count"
+   ]
+  },
+  "USE_SPECIAL_MULTIPLY_CREATURES": {
+   "doc": "Uses a multiply-creatures special.",
+   "args": [
+    "player:player",
+    "count*:count"
+   ]
+  },
+  "MAKE_SAFE": {
+   "doc": "Makes the player's dungeon safe from heroes.",
+   "args": [
+    "player:player"
+   ]
+  },
+  "USE_SPECIAL_MAKE_SAFE": {
+   "doc": "Alias of MAKE_SAFE.",
+   "args": [
+    "player:player"
+   ]
+  },
+  "LOCATE_HIDDEN_WORLD": {
+   "doc": "Reveals the hidden-world portal.",
+   "args": []
+  },
+  "USE_SPECIAL_LOCATE_HIDDEN_WORLD": {
+   "doc": "Alias of LOCATE_HIDDEN_WORLD.",
+   "args": []
+  },
+  "USE_SPECIAL_TRANSFER_CREATURE": {
+   "doc": "Transfers a creature to the next level.",
+   "args": [
+    "player:player"
+   ]
+  },
+  "USE_SPECIAL_STEAL_HERO": {
+   "doc": "Steals a hero.",
+   "args": [
+    "player:player",
+    "location:location",
+    "effect:effect"
+   ]
+  },
+  "TRANSFER_CREATURE": {
+   "doc": "Transfers creatures to the next level.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "criterion:criterion",
+    "count*:count"
+   ]
+  },
+  "CHANGE_CREATURES_ANNOYANCE": {
+   "doc": "Changes annoyance of creatures.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "operation:script_operator",
+    "amount:number"
+   ]
+  },
+  "ADD_TO_FLAG": {
+   "doc": "Adds to a flag.",
+   "args": [
+    "player:player",
+    "flag:flag_var",
+    "value:number"
+   ]
+  },
+  "SET_CAMPAIGN_FLAG": {
+   "doc": "Sets a flag that survives between levels.",
+   "args": [
+    "player:player",
+    "flag:campaign_flag",
+    "value:number"
+   ]
+  },
+  "ADD_TO_CAMPAIGN_FLAG": {
+   "doc": "Adds to a campaign flag.",
+   "args": [
+    "player:player",
+    "flag:campaign_flag",
+    "value:number"
+   ]
+  },
+  "EXPORT_VARIABLE": {
+   "doc": "Stores a variable into a campaign flag.",
+   "args": [
+    "player:player",
+    "variable:variable",
+    "flag:campaign_flag"
+   ]
+  },
+  "RUN_AFTER_VICTORY": {
+   "doc": "Keep running the script after victory.",
+   "args": [
+    "enabled:bool"
+   ]
+  },
+  "SET_NEXT_LEVEL": {
+   "doc": "Sets the next level of the campaign.",
+   "args": [
+    "level_number:number"
+   ]
+  },
+  "SHOW_BONUS_LEVEL": {
+   "doc": "Shows a bonus level on the land view.",
+   "args": [
+    "level_number:number"
+   ]
+  },
+  "HIDE_BONUS_LEVEL": {
+   "doc": "Hides a bonus level on the land view.",
+   "args": [
+    "level_number:number"
+   ]
+  },
+  "SET_LEVEL_ENSIGN": {
+   "doc": "Sets the land-view ensign of a level.",
+   "args": [
+    "level_number:number",
+    "ensign:ensign"
+   ]
+  },
+  "LEVEL_UP_CREATURE": {
+   "doc": "Levels up creatures chosen by a criterion.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "criterion:criterion",
+    "levels:count"
+   ]
+  },
+  "LEVEL_UP_PLAYERS_CREATURES": {
+   "doc": "Levels up all creatures of a player.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "levels*:count"
+   ]
+  },
+  "CHANGE_CREATURE_OWNER": {
+   "doc": "Moves creatures to another owner.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "criterion:criterion",
+    "new_owner:player"
+   ]
+  },
+  "SET_GAME_RULE": {
+   "doc": "Changes a rules.cfg value during the level.",
+   "args": [
+    "rule:rule_name",
+    "value:rule_value",
+    "player*:player"
+   ]
+  },
+  "SET_ROOM_CONFIGURATION": {
+   "doc": "Changes a room property (terrain.cfg names).",
+   "args": [
+    "room:room",
+    "property:config_property",
+    "value1*:config_value",
+    "value2*:config_value",
+    "value3*:number"
+   ]
+  },
+  "SET_TRAP_CONFIGURATION": {
+   "doc": "Changes a trap property (trapdoor.cfg names).",
+   "args": [
+    "trap:trap",
+    "property:config_property",
+    "value1*:config_value",
+    "value2*:config_value",
+    "value3*:config_value",
+    "value4*:config_value"
+   ]
+  },
+  "SET_DOOR_CONFIGURATION": {
+   "doc": "Changes a door property (trapdoor.cfg names).",
+   "args": [
+    "door:door",
+    "property:config_property",
+    "value1*:config_value",
+    "value2*:config_value"
+   ]
+  },
+  "SET_OBJECT_CONFIGURATION": {
+   "doc": "Changes an object property (objects.cfg names).",
+   "args": [
+    "object:object",
+    "property:config_property",
+    "value1*:config_value",
+    "value2*:config_value",
+    "value3*:config_value",
+    "value4*:config_value"
+   ]
+  },
+  "SET_CREATURE_CONFIGURATION": {
+   "doc": "Changes a creature property (creature .cfg names).",
+   "args": [
+    "creature:creature",
+    "property:config_property",
+    "value1*:config_value",
+    "value2*:config_value",
+    "value3*:config_value",
+    "value4*:config_value",
+    "value5*:config_value",
+    "value6*:config_value"
+   ]
+  },
+  "SET_SACRIFICE_RECIPE": {
+   "doc": "Defines a sacrifice recipe: action, parameter and victims.",
+   "args": [
+    "action:sacrifice_action",
+    "param:sacrifice_param",
+    "victim:creature"
+   ]
+  },
+  "REMOVE_SACRIFICE_RECIPE": {
+   "doc": "Removes the recipe with the given victims.",
+   "args": [
+    "victim:creature"
+   ]
+  },
+  "SET_BOX_TOOLTIP": {
+   "doc": "Sets the tooltip text of a custom box.",
+   "args": [
+    "box:box_number",
+    "text:text"
+   ]
+  },
+  "SET_BOX_TOOLTIP_ID": {
+   "doc": "Sets the tooltip of a custom box from a string id.",
+   "args": [
+    "box:box_number",
+    "message:message_id"
+   ]
+  },
+  "CHANGE_SLAB_OWNER": {
+   "doc": "Changes owner of the slab (and optionally connected slabs).",
+   "args": [
+    "x:slab_x",
+    "y:slab_y",
+    "owner:player",
+    "fill:fill_type"
+   ]
+  },
+  "CHANGE_SLAB_TYPE": {
+   "doc": "Changes the slab type.",
+   "args": [
+    "x:slab_x",
+    "y:slab_y",
+    "slab:slab",
+    "fill:fill_type"
+   ]
+  },
+  "CREATE_EFFECTS_LINE": {
+   "doc": "Draws a line of effects between two locations.",
+   "args": [
+    "from:location",
+    "to:location",
+    "curvature:number",
+    "spatial_step:number",
+    "temporal_step:number",
+    "effect:effect"
+   ]
+  },
+  "IF_SLAB_OWNER": {
+   "doc": "Condition: owner of slab x,y.",
+   "args": [
+    "x:slab_x",
+    "y:slab_y",
+    "owner:player"
+   ]
+  },
+  "IF_SLAB_TYPE": {
+   "doc": "Condition: type of slab x,y.",
+   "args": [
+    "x:slab_x",
+    "y:slab_y",
+    "slab:slab"
+   ]
+  },
+  "USE_SPELL_ON_CREATURE": {
+   "doc": "Casts a creature spell on a creature.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "criterion:criterion",
+    "spell:spell",
+    "level:level"
+   ]
+  },
+  "USE_SPELL_ON_PLAYERS_CREATURES": {
+   "doc": "Casts a creature spell on all creatures of a player.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "spell:spell",
+    "level:level"
+   ]
+  },
+  "SET_HEART_HEALTH": {
+   "doc": "Sets the dungeon heart health.",
+   "args": [
+    "player:player",
+    "health:number"
+   ]
+  },
+  "ADD_HEART_HEALTH": {
+   "doc": "Adds to the dungeon heart health.",
+   "args": [
+    "player:player",
+    "health:number",
+    "warn*:bool"
+   ]
+  },
+  "CREATURE_ENTRANCE_LEVEL": {
+   "doc": "Level of creatures entering the dungeon.",
+   "args": [
+    "player:player",
+    "level:level"
+   ]
+  },
+  "RANDOMISE_FLAG": {
+   "doc": "Sets a flag to a random value.",
+   "args": [
+    "player:player",
+    "flag:flag_var",
+    "max:number"
+   ]
+  },
+  "RANDOMIZE_FLAG": {
+   "doc": "Alias of RANDOMISE_FLAG.",
+   "args": [
+    "player:player",
+    "flag:flag_var",
+    "max:number"
+   ]
+  },
+  "COMPUTE_FLAG": {
+   "doc": "Computes a flag from a variable.",
+   "args": [
+    "player:player",
+    "flag:flag_var",
+    "operation:script_operator",
+    "source_player:player",
+    "source:variable",
+    "alt*:bool"
+   ]
+  },
+  "DISPLAY_TIMER": {
+   "doc": "Shows a timer on screen.",
+   "args": [
+    "player:player",
+    "timer:timer",
+    "real_time*:bool"
+   ]
+  },
+  "ADD_TO_TIMER": {
+   "doc": "Adds turns to a timer.",
+   "args": [
+    "player:player",
+    "timer:timer",
+    "turns:number"
+   ]
+  },
+  "ADD_BONUS_TIME": {
+   "doc": "Adds time to the bonus-level timer.",
+   "args": [
+    "turns:turns"
+   ]
+  },
+  "DISPLAY_VARIABLE": {
+   "doc": "Shows a variable on screen.",
+   "args": [
+    "player:player",
+    "variable:variable",
+    "target*:number",
+    "mode*:number"
+   ]
+  },
+  "DISPLAY_VARIABLE_WITH_LABEL": {
+   "doc": "Shows a variable with an icon label.",
+   "args": [
+    "player:player",
+    "variable:variable",
+    "icon*:chat_icon"
+   ]
+  },
+  "DISPLAY_COUNTDOWN": {
+   "doc": "Shows a countdown timer.",
+   "args": [
+    "player:player",
+    "timer:timer",
+    "turns:turns",
+    "real_time*:bool"
+   ]
+  },
+  "HIDE_TIMER": {
+   "doc": "Hides the on-screen timer.",
+   "args": []
+  },
+  "HIDE_VARIABLE": {
+   "doc": "Hides on-screen variables.",
+   "args": [
+    "player*:player",
+    "variable*:variable"
+   ]
+  },
+  "CREATE_EFFECT": {
+   "doc": "Creates an effect at a location.",
+   "args": [
+    "effect:effect",
+    "location:location",
+    "height*:number"
+   ]
+  },
+  "CREATE_EFFECT_AT_POS": {
+   "doc": "Creates an effect at subtile x,y.",
+   "args": [
+    "effect:effect",
+    "x:subtile_x",
+    "y:subtile_y",
+    "height*:number"
+   ]
+  },
+  "SET_DOOR": {
+   "doc": "Locks or unlocks the door on a slab.",
+   "args": [
+    "state:lock_state",
+    "x:slab_x",
+    "y:slab_y"
+   ]
+  },
+  "PLACE_DOOR": {
+   "doc": "Places a door on slab x,y.",
+   "args": [
+    "player:player",
+    "door:door",
+    "x:slab_x",
+    "y:slab_y",
+    "locked:lock_state",
+    "free:free_state"
+   ]
+  },
+  "PLACE_TRAP": {
+   "doc": "Places a trap on subtile x,y.",
+   "args": [
+    "player:player",
+    "trap:trap",
+    "x:subtile_x",
+    "y:subtile_y",
+    "free:free_state"
+   ]
+  },
+  "ZOOM_TO_LOCATION": {
+   "doc": "Moves the camera to a location.",
+   "args": [
+    "player:player",
+    "location:location"
+   ]
+  },
+  "SET_CREATURE_INSTANCE": {
+   "doc": "Sets a creature instance slot.",
+   "args": [
+    "creature:creature",
+    "slot:number",
+    "instance:instance",
+    "level:level"
+   ]
+  },
+  "SET_HAND_RULE": {
+   "doc": "Sets a hand pickup rule.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "slot:rule_slot",
+    "action:rule_action",
+    "rule:hand_rule",
+    "param*:number"
+   ]
+  },
+  "MOVE_CREATURE": {
+   "doc": "Moves creatures to a location.",
+   "args": [
+    "player:player",
+    "creature:creature",
+    "criterion:criterion",
+    "count:count",
+    "location:location",
+    "effect:effect"
+   ]
+  },
+  "COUNT_CREATURES_AT_ACTION_POINT": {
+   "doc": "Counts creatures at an action point into a flag.",
+   "args": [
+    "action_point:ap_number",
+    "player:player",
+    "creature:creature",
+    "flag_player:player",
+    "flag:flag_var"
+   ]
+  },
+  "IF_ALLIED": {
+   "doc": "Condition: two players are allied (1) or not (0).",
+   "args": [
+    "player1:player",
+    "player2:player",
+    "operator:operator",
+    "value:number"
+   ]
+  },
+  "SET_TEXTURE": {
+   "doc": "Sets the texture pack of the level.",
+   "args": [
+    "player*:player",
+    "texture:texture_pack"
+   ]
+  },
+  "HIDE_HERO_GATE": {
+   "doc": "Hides or shows a hero gate.",
+   "args": [
+    "gate:hero_gate",
+    "hidden:bool"
+   ]
+  },
+  "NEW_TRAP_TYPE": {
+   "doc": "Declares a new trap type.",
+   "args": [
+    "name:new_name"
+   ]
+  },
+  "NEW_OBJECT_TYPE": {
+   "doc": "Declares a new object type.",
+   "args": [
+    "name:new_name"
+   ]
+  },
+  "NEW_ROOM_TYPE": {
+   "doc": "Declares a new room type.",
+   "args": [
+    "name:new_name"
+   ]
+  },
+  "NEW_CREATURE_TYPE": {
+   "doc": "Declares a new creature type.",
+   "args": [
+    "name:new_name"
+   ]
+  },
+  "COPY_CREATURE_TYPE": {
+   "doc": "Declares a new creature type copied from an existing one.",
+   "args": [
+    "source:creature",
+    "name:new_name"
+   ]
+  },
+  "SET_HAND_GRAPHIC": {
+   "doc": "Selects the hand graphic of a player.",
+   "args": [
+    "player:player",
+    "hand:hand_graphic"
+   ]
+  },
+  "ADD_EFFECT_GENERATOR_TO_LEVEL": {
+   "doc": "Places an effect generator.",
+   "args": [
+    "generator:effect_gen",
+    "location:location",
+    "range:number"
+   ]
+  },
+  "SET_EFFECT_GENERATOR_CONFIGURATION": {
+   "doc": "Changes an effect generator property.",
+   "args": [
+    "generator:effect_gen",
+    "property:config_property",
+    "value1*:config_value",
+    "value2*:config_value",
+    "value3*:config_value"
+   ]
+  },
+  "SET_POWER_CONFIGURATION": {
+   "doc": "Changes a power property (magic.cfg names).",
+   "args": [
+    "power:power",
+    "property:config_property",
+    "value1*:config_value",
+    "value2*:config_value"
+   ]
+  },
+  "SET_PLAYER_COLOR": {
+   "doc": "Changes the colour of a player.",
+   "args": [
+    "player:player",
+    "color:player_color"
+   ]
+  },
+  "SET_PLAYER_COLOUR": {
+   "doc": "Alias of SET_PLAYER_COLOR.",
+   "args": [
+    "player:player",
+    "color:player_color"
+   ]
+  },
+  "MAKE_UNSAFE": {
+   "doc": "Makes the player's dungeon unsafe again.",
+   "args": [
+    "player:player"
+   ]
+  },
+  "SET_INCREASE_ON_EXPERIENCE": {
+   "doc": "Sets an experience-level increase percentage.",
+   "args": [
+    "variable:on_experience",
+    "value:number"
+   ]
+  },
+  "SET_PLAYER_MODIFIER": {
+   "doc": "Sets a player modifier percentage.",
+   "args": [
+    "player:player",
+    "modifier:modifier",
+    "value:number"
+   ]
+  },
+  "ADD_TO_PLAYER_MODIFIER": {
+   "doc": "Adds to a player modifier percentage.",
+   "args": [
+    "player:player",
+    "modifier:modifier",
+    "value:number"
+   ]
+  },
+  "CHANGE_SLAB_TEXTURE": {
+   "doc": "Changes the texture pack of a slab.",
+   "args": [
+    "x:slab_x",
+    "y:slab_y",
+    "texture:texture_pack",
+    "fill:fill_type"
+   ]
+  },
+  "ADD_OBJECT_TO_LEVEL_AT_POS": {
+   "doc": "Places an object at subtile x,y.",
+   "args": [
+    "object:object",
+    "x:subtile_x",
+    "y:subtile_y",
+    "arg*:number",
+    "owner:player",
+    "orientation:orientation"
+   ]
+  },
+  "LOCK_POSSESSION": {
+   "doc": "Locks or unlocks possession for a player.",
+   "args": [
+    "player:player",
+    "locked:lock_state"
+   ]
+  },
+  "SET_DIGGER": {
+   "doc": "Sets the digger creature of a player.",
+   "args": [
+    "player:player",
+    "creature:creature"
+   ]
+  },
+  "RUN_LUA_CODE": {
+   "doc": "Runs a Lua snippet.",
+   "args": [
+    "code:lua"
+   ]
+  },
+  "TRIGGER_ACTION_POINT": {
+   "doc": "Triggers an action point.",
+   "args": [
+    "action_point:ap_number",
+    "player*:player"
+   ]
+  }
+ }
+}

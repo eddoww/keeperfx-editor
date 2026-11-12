@@ -1,0 +1,28 @@
+[package]
+name = "kfx-config-ui"
+description = "Configuration editors for KeeperFX levels, campaigns and mods (rules, creatures, slabset, columnset, cubes, tileset)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+kfx-formats.workspace = true
+kfx-gfx.workspace = true
+kfx-map.workspace = true
+egui = "0.37"
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+toml_edit = "0.22.27"
+zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+# system fallback fonts in the UI test harnesses (game text in any script)
+kfx-fonts = { path = "../kfx-fonts" }
+egui = { version = "0.37", features = ["default_fonts"] }
+egui_kittest = { version = "0.37.0", features = ["wgpu"] }
+image = { version = "0.25.10", default-features = false, features = ["png"] }

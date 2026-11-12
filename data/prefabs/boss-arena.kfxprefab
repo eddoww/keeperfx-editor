@@ -1,0 +1,89 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFsAAABbCAYAAAAcNvmZAAAD6ElEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a/yX+zlX/olzf8Qf/7Xfyv+awAQXPVfAYDgqv8KAARX/VcAILjqvwIAwVX/FQAIrvqvAEDl3+jlX/olzb/BO775q/I/iPk3+PO//lvxrwNAcNV/BQCCq/4rABBc9V8BgOCq/woABFf9VwAguOq/AgCVF+LlX/olzb/Bjz78Dl6QH+d/jh99+B28IO/4lJt4QV7+pV/SvAB//td/K54XAMFV/xUACK76rwBAcNV/BQCCq/4rABBc9V8BgOCq/woAVP6NfvThd/B/2Y8+/A5ekHd8yk38KwEQXPVfAYDgqv8KAARX/VcAILjqvwIAwVX/FQAIrvqvAIBe/qVf0rwA7/jmr8pV/zo/+vN/yPMBQOW/wWd/5ffy3D77Y9+T/yyf/ZXfy3P77I99T/4LAVD5b/LzP/+b3O/N3/x1+c/28z//m9zvzd/8dfkvBkBw1X8FAIKr/isAUPlv8uZv/rr8V3rzN39d/hsBoJd/6Zc0L8A7vvmrctW/zo/+/B/yfAAQXPVfAYDgqv8KAARX/VcAILjqvwIAwVX/FQAIrvqvAEBw1X8FAIKr/isAUPlf5rO/8nu532d/7HvyvwQAlf9FPvsrv5fP/dzP5X6f+ZmfyWd/7HvyvwAAwf9CH/dxH8f/MgBU/hf6iq/4Cv6XAaDyv8hnf+x78pmf+Znc77M/9j35XwKAyv8yn/2x78n/QgAEV/1XACC46r8CAMFV/xUACK76rwBAcNV/BQCCq/4rABBc9V8BgOCq/woAVP4bfPZXfi/P7bM/9j35z/LZX/m9PLfP/tj35L8QAJX/Jj//87/J/d78zV+X/2w///O/yf3e/M1fl/9iAARX/VcAILjqvwIAlf8mb/7mr8t/pTd/89flvxEAevmXfknzArzjm78qV/3r/OjP/yHPBwDihXj5l35J8wL86MPv4N/ixx/9jvxP8fZP+FH+Ld7xKTfxgvz5X/+teF4ABFf9VwAguOq/AgDBVf8VAAiu+q8AQHDVfwUAgqv+KwBQ+Td6x6fcxAvyow+/g//t3vEpN/EfCIDgqv8KAARX/VcAILjqvwIAwVX/FQAIrvqvAEBw1X8FAMS/0cu/9Euaf4N3fPNX5X+KH/35P+Tf4s//+m/Fvw4AwVX/FQAIrvqvAEBw1X8FAIKr/isAEFz1XwGA4Kr/CgCI/2Iv/9Ivaf4N3vHNX5UX5Ed//g/5t/jzv/5b8V8DgOCq/woABFf9VwAguOq/AgDBVf8VAAiu+q8AQHDVfwUA/hEZOnEgBTFkJQAAAABJRU5ErkJggg=="
+
+[meta]
+name = "Boss arena"
+author = "KeeperFX Editor starter set"
+description = "A round arena with lava in its corners, four lava pillars and a dragon in the middle; one way in from the south."
+tags = ["boss", "arena", "lava", "creatures"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["DRAGON"]
+objects = ["LAVA_PILLAR"]
+traps = []
+doors = []
+effect_generators = []
+slabs = ["HARD", "LAVA", "PATH"]
+config = []
+
+[layout]
+width = 13
+height = 13
+rows = [
+  "....#####....",
+  "..##_____##..",
+  ".##^_____^##.",
+  ".#^^_____^^#.",
+  "#___________#",
+  "#___________#",
+  "#___________#",
+  "#___________#",
+  "#___________#",
+  ".#^^_____^^#.",
+  ".##^_____^##.",
+  "..##_____##..",
+  "....##_##....",
+]
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "^"
+slab = "LAVA"
+owner = "neutral"
+
+[[thing]]
+class = "Object"
+model = "LAVA_PILLAR"
+owner = "neutral"
+x = [13, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "LAVA_PILLAR"
+owner = "neutral"
+x = [25, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Creature"
+model = "DRAGON"
+owner = "neutral"
+x = [19, 128]
+y = [19, 128]
+level = 8
+
+[[thing]]
+class = "Object"
+model = "LAVA_PILLAR"
+owner = "neutral"
+x = [13, 128]
+y = [25, 128]
+
+[[thing]]
+class = "Object"
+model = "LAVA_PILLAR"
+owner = "neutral"
+x = [25, 128]
+y = [25, 128]

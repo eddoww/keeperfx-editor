@@ -1,0 +1,128 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFsAAABNCAYAAADJuRgfAAAC/ElEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a9+9Fu+tLnqPxsAwVX/FQAIrvqvAEBw1X8FAIKr/isAEFz1XwGA4Kr/CgBUXojp6KFc9a9TN57G8wFAcNV/BQCCq/4rABBc9V8BgOCq/woABFf9VwAguOq/AgCVf6NPvXAr/9G+8OSDeUHe7DWu5wV5qZ/5I/4rfeHJB/OvBEDl3+E7H/rB/Ed536d9M/8ev/qND+W/wht+6NP4NwAguOq/AgDBVf8VAAiu+q8AQHDVfwUAgqv+KwBQ+R/kUy/cygvyN1zP/2IAVP6H+c5HJ8/tfZ8Q/C8HQOV/mG/9zTt4oA983Zv4PwCA4Kr/CgBU/of5wNe9if+DAAiu+q8AQOV/mPd9QvB/EACV/0G+8OSDeUHejP/VAAiu+q8AQHDVfwUAgqv+KwAQXPVfAYDgqv8KAFT+Hd73ad/MVS8SACr/Rl948sFc9SIDILjqvwIAwVX/FQAIrvqvAEBw1X8FAIKr/isAEFz1XwGAyr/Rp164lf9oX3jywfwfBUDl3+E7H/rB/Ed536d9M/+HARBc9V8BgOCq/woABFf9VwAguOq/AgDBVf8VAKj8D/KpF27lBfkbrud/MQAq/8N856OT5/a+Twj+lwOg8j/Mt/7mHTzQB77uTfwfAEBw1X8FACr/w3zg697E/0EABFf9VwCg8j/M+z4h+D8IgMr/IF948sG8IG/G/2oABFf9VwAguOq/AgDBVf8VAAiu+q8AQHDVfwUAKv8O7/u0b+Z/ijf80KfxPxgAlX+jLzz5YP4rvdTP/BEvyBeefDD/wwFQ+V/kOx+dPLf3fULwvwAAlf9FvvU37+CBPvB1b+J/CQCCq/4rAFD5X+QDX/cm/pcCILjqvwIAlf9F3vcJwf9SAFReiLrxNP6n+P5XfmVekPq3f8z/cAAEV/1XACC46r8CAMFV/xUACK76rwBAcNV/BQCCq/4rAPCPDmBE0341dpQAAAAASUVORK5CYII="
+
+[meta]
+name = "Lairs and hatchery block"
+author = "KeeperFX Editor starter set"
+description = "Two lairs behind doors and a long hatchery along a claimed corridor, one door south."
+tags = ["lair", "hatchery", "rooms", "doors"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = ["WOOD"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_WOODEN", "DOOR_WOODEN2", "HATCHERY", "HATCHERY_WALL", "LAIR_AREA", "LAIR_WALL", "PAIR_WALL", "PATH", "PRETTY_PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 13
+height = 11
+rows = [
+  ":::::::::::::",
+  ":WwwwABCCCCB:",
+  ":wLLLw-YYYYC:",
+  ":wLLLD-YYYYC:",
+  ":wLLLw-YYYYC:",
+  ":EwwwA-YYYYC:",
+  ":wLLLw-YYYYC:",
+  ":wLLLD-YYYYC:",
+  ":wLLLw-YYYYC:",
+  ":AwwwAdCCCCE:",
+  "::::::_::::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "LAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "C"
+slab = "HATCHERY_WALL"
+owner = "A"
+
+[[palette]]
+char = "L"
+slab = "LAIR_AREA"
+owner = "A"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "A"
+
+[[palette]]
+char = "Y"
+slab = "HATCHERY"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_WOODEN"
+owner = "A"
+
+[[palette]]
+char = "E"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "d"
+slab = "DOOR_WOODEN2"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [16, 128]
+y = [10, 128]
+door_orientation = 1
+door_locked = false
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [16, 128]
+y = [22, 128]
+door_orientation = 1
+door_locked = false
+
+[[thing]]
+class = "Door"
+model = "WOOD"
+owner = "A"
+x = [19, 128]
+y = [28, 128]
+door_orientation = 0
+door_locked = false

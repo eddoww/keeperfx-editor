@@ -1,0 +1,17 @@
+[package]
+name = "kfx-analysis"
+description = "Map analysis (reachability, economy, fairness, symmetry) and the random map generator for KeeperFX levels"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+kfx-formats = { path = "../kfx-formats" }
+kfx-map = { path = "../kfx-map" }
+
+[dev-dependencies]
+png = "0.17.16"

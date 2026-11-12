@@ -1,0 +1,3499 @@
+{
+ "source": "src/lvl_script_commands.c, src/lvl_script_lib.h, src/map_locations.c, src/config_campaigns.c",
+ "arg_letters_doc": "/**\n * Descriptions of script commands for parser.\n * Arguments are: A-string, N-integer, C-creature model, P-player, R-room kind, L-location, O-operator, S-slab kind, B-boolean\n * Lower case letters are optional arguments, Exclamation points sets 'extended' option, for example 'ANY_CREATURE' for creatures.\n */",
+ "commands": [
+  {
+   "name": "CREATE_PARTY",
+   "args": "A       ",
+   "cmd": "Cmd_CREATE_PARTY",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_TO_PARTY",
+   "args": "ACNNAN  ",
+   "cmd": "Cmd_ADD_TO_PARTY",
+   "check": "add_to_party_check",
+   "process": null
+  },
+  {
+   "name": "DELETE_FROM_PARTY",
+   "args": "ACN     ",
+   "cmd": "Cmd_DELETE_FROM_PARTY",
+   "check": "delete_from_party_check",
+   "process": null
+  },
+  {
+   "name": "ADD_PARTY_TO_LEVEL",
+   "args": "PAAN    ",
+   "cmd": "Cmd_ADD_PARTY_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_CREATURE_TO_LEVEL",
+   "args": "PCANNNa ",
+   "cmd": "Cmd_ADD_CREATURE_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_OBJECT_TO_LEVEL",
+   "args": "AANpa   ",
+   "cmd": "Cmd_ADD_OBJECT_TO_LEVEL",
+   "check": "add_object_to_level_check",
+   "process": "add_object_to_level_process"
+  },
+  {
+   "name": "IF",
+   "args": "PAOAa   ",
+   "cmd": "Cmd_IF",
+   "check": "if_check",
+   "process": null
+  },
+  {
+   "name": "IF_ACTION_POINT",
+   "args": "NP      ",
+   "cmd": "Cmd_IF_ACTION_POINT",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ENDIF",
+   "args": "        ",
+   "cmd": "Cmd_ENDIF",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_GENERATE_SPEED",
+   "args": "Np      ",
+   "cmd": "Cmd_SET_GENERATE_SPEED",
+   "check": "set_generate_speed_check",
+   "process": "set_generate_speed_process"
+  },
+  {
+   "name": "REM",
+   "args": "        ",
+   "cmd": "Cmd_REM",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "START_MONEY",
+   "args": "PN      ",
+   "cmd": "Cmd_START_MONEY",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ROOM_AVAILABLE",
+   "args": "PRNN    ",
+   "cmd": "Cmd_ROOM_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "CREATURE_AVAILABLE",
+   "args": "PCNN    ",
+   "cmd": "Cmd_CREATURE_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MAGIC_AVAILABLE",
+   "args": "PANN    ",
+   "cmd": "Cmd_MAGIC_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "TRAP_AVAILABLE",
+   "args": "PANN    ",
+   "cmd": "Cmd_TRAP_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RESEARCH",
+   "args": "PAAN    ",
+   "cmd": "Cmd_RESEARCH",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RESEARCH_ORDER",
+   "args": "PAAN    ",
+   "cmd": "Cmd_RESEARCH_ORDER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "COMPUTER_PLAYER",
+   "args": "PA      ",
+   "cmd": "Cmd_COMPUTER_PLAYER",
+   "check": "computer_player_check",
+   "process": "computer_player_process"
+  },
+  {
+   "name": "SET_TIMER",
+   "args": "PA      ",
+   "cmd": "Cmd_SET_TIMER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_TUNNELLER_TO_LEVEL",
+   "args": "PAANNN  ",
+   "cmd": "Cmd_ADD_TUNNELLER_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "WIN_GAME",
+   "args": "        ",
+   "cmd": "Cmd_WIN_GAME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "LOSE_GAME",
+   "args": "        ",
+   "cmd": "Cmd_LOSE_GAME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_FLAG",
+   "args": "PAN     ",
+   "cmd": "Cmd_SET_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MAX_CREATURES",
+   "args": "PN      ",
+   "cmd": "Cmd_MAX_CREATURES",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "NEXT_COMMAND_REUSABLE",
+   "args": "        ",
+   "cmd": "Cmd_NEXT_COMMAND_REUSABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DOOR_AVAILABLE",
+   "args": "PANN    ",
+   "cmd": "Cmd_DOOR_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DISPLAY_OBJECTIVE",
+   "args": "Ala     ",
+   "cmd": "Cmd_DISPLAY_OBJECTIVE",
+   "check": "display_objective_check",
+   "process": "display_objective_process"
+  },
+  {
+   "name": "DISPLAY_OBJECTIVE_WITH_POS",
+   "args": "ANNa    ",
+   "cmd": "Cmd_DISPLAY_OBJECTIVE_WITH_POS",
+   "check": "display_objective_check",
+   "process": "display_objective_process"
+  },
+  {
+   "name": "DISPLAY_INFORMATION",
+   "args": "Ala     ",
+   "cmd": "Cmd_DISPLAY_INFORMATION",
+   "check": "display_information_check",
+   "process": "display_information_process"
+  },
+  {
+   "name": "DISPLAY_INFORMATION_WITH_POS",
+   "args": "ANN     ",
+   "cmd": "Cmd_DISPLAY_INFORMATION_WITH_POS",
+   "check": "display_information_check",
+   "process": "display_information_process"
+  },
+  {
+   "name": "DISPLAY_PLAYER_OBJECTIVE",
+   "args": "APla    ",
+   "cmd": "Cmd_DISPLAY_PLAYER_OBJECTIVE",
+   "check": "display_player_objective_check",
+   "process": "display_objective_process"
+  },
+  {
+   "name": "DISPLAY_PLAYER_OBJECTIVE_WITH_POS",
+   "args": "APNNa   ",
+   "cmd": "Cmd_DISPLAY_PLAYER_OBJECTIVE_WITH_POS",
+   "check": "display_player_objective_check",
+   "process": "display_objective_process"
+  },
+  {
+   "name": "DISPLAY_PLAYER_INFORMATION",
+   "args": "APl     ",
+   "cmd": "Cmd_DISPLAY_PLAYER_INFORMATION",
+   "check": "display_player_information_check",
+   "process": "display_information_process"
+  },
+  {
+   "name": "DISPLAY_PLAYER_INFORMATION_WITH_POS",
+   "args": "APNN    ",
+   "cmd": "Cmd_DISPLAY_PLAYER_INFORMATION_WITH_POS",
+   "check": "display_player_information_check",
+   "process": "display_information_process"
+  },
+  {
+   "name": "QUICK_OBJECTIVE",
+   "args": "NAla    ",
+   "cmd": "Cmd_QUICK_OBJECTIVE",
+   "check": "quick_objective_check",
+   "process": "quick_objective_process"
+  },
+  {
+   "name": "QUICK_OBJECTIVE_WITH_POS",
+   "args": "NANNa   ",
+   "cmd": "Cmd_QUICK_OBJECTIVE_WITH_POS",
+   "check": "quick_objective_check",
+   "process": "quick_objective_process"
+  },
+  {
+   "name": "QUICK_INFORMATION",
+   "args": "NAla    ",
+   "cmd": "Cmd_QUICK_INFORMATION",
+   "check": "quick_information_check",
+   "process": "quick_information_process"
+  },
+  {
+   "name": "QUICK_INFORMATION_WITH_POS",
+   "args": "NANN    ",
+   "cmd": "Cmd_QUICK_INFORMATION_WITH_POS",
+   "check": "quick_information_check",
+   "process": "quick_information_process"
+  },
+  {
+   "name": "QUICK_PLAYER_OBJECTIVE",
+   "args": "NPala   ",
+   "cmd": "Cmd_QUICK_PLAYER_OBJECTIVE",
+   "check": "quick_player_objective_check",
+   "process": "quick_objective_process"
+  },
+  {
+   "name": "QUICK_PLAYER_OBJECTIVE_WITH_POS",
+   "args": "NPANNa  ",
+   "cmd": "Cmd_QUICK_PLAYER_OBJECTIVE_WITH_POS",
+   "check": "quick_player_objective_check",
+   "process": "quick_objective_process"
+  },
+  {
+   "name": "QUICK_PLAYER_INFORMATION",
+   "args": "NPAl    ",
+   "cmd": "Cmd_QUICK_PLAYER_INFORMATION",
+   "check": "quick_player_information_check",
+   "process": "quick_information_process"
+  },
+  {
+   "name": "QUICK_PLAYER_INFORMATION_WITH_POS",
+   "args": "NPANN   ",
+   "cmd": "Cmd_QUICK_PLAYER_INFORMATION_WITH_POS",
+   "check": "quick_player_information_check",
+   "process": "quick_information_process"
+  },
+  {
+   "name": "DISPLAY_MESSAGE",
+   "args": "AA      ",
+   "cmd": "Cmd_DISPLAY_MESSAGE",
+   "check": "display_message_check",
+   "process": "display_message_process"
+  },
+  {
+   "name": "QUICK_MESSAGE",
+   "args": "NAA     ",
+   "cmd": "Cmd_QUICK_MESSAGE",
+   "check": "quick_message_check",
+   "process": "quick_message_process"
+  },
+  {
+   "name": "CLEAR_MESSAGE",
+   "args": "n       ",
+   "cmd": "Cmd_CLEAR_MESSAGE",
+   "check": "clear_message_check",
+   "process": "clear_message_process"
+  },
+  {
+   "name": "HEART_LOST_OBJECTIVE",
+   "args": "Nl      ",
+   "cmd": "Cmd_HEART_LOST_OBJECTIVE",
+   "check": "heart_lost_objective_check",
+   "process": "heart_lost_objective_process"
+  },
+  {
+   "name": "HEART_LOST_QUICK_OBJECTIVE",
+   "args": "NAl     ",
+   "cmd": "Cmd_HEART_LOST_QUICK_OBJECTIVE",
+   "check": "heart_lost_quick_objective_check",
+   "process": "heart_lost_quick_objective_process"
+  },
+  {
+   "name": "ADD_TUNNELLER_PARTY_TO_LEVEL",
+   "args": "PAAANNN ",
+   "cmd": "Cmd_ADD_TUNNELLER_PARTY_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_CREATURE_TO_POOL",
+   "args": "CN      ",
+   "cmd": "Cmd_ADD_CREATURE_TO_POOL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RESET_ACTION_POINT",
+   "args": "Na      ",
+   "cmd": "Cmd_RESET_ACTION_POINT",
+   "check": "reset_or_trigger_action_point_check",
+   "process": "reset_action_point_process"
+  },
+  {
+   "name": "SET_CREATURE_MAX_LEVEL",
+   "args": "PC!N    ",
+   "cmd": "Cmd_SET_CREATURE_MAX_LEVEL",
+   "check": "set_creature_max_level_check",
+   "process": "set_creature_max_level_process"
+  },
+  {
+   "name": "SET_MUSIC",
+   "args": "A       ",
+   "cmd": "Cmd_SET_MUSIC",
+   "check": "set_music_check",
+   "process": "set_music_process"
+  },
+  {
+   "name": "TUTORIAL_FLASH_BUTTON",
+   "args": "AN      ",
+   "cmd": "Cmd_TUTORIAL_FLASH_BUTTON",
+   "check": "tutorial_flash_button_check",
+   "process": "tutorial_flash_button_process"
+  },
+  {
+   "name": "SET_CREATURE_STRENGTH",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_STRENGTH",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_HEALTH",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_HEALTH",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_ARMOUR",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_ARMOUR",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_FEAR_WOUNDED",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_FEAR_WOUNDED",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_FEAR_STRONGER",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_FEAR_STRONGER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_FEARSOME_FACTOR",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_FEARSOME_FACTOR",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_PROPERTY",
+   "args": "CAB     ",
+   "cmd": "Cmd_SET_CREATURE_PROPERTY",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "IF_AVAILABLE",
+   "args": "PAOAa   ",
+   "cmd": "Cmd_IF_AVAILABLE",
+   "check": "if_available_check",
+   "process": null
+  },
+  {
+   "name": "IF_CONTROLS",
+   "args": "PAOAa   ",
+   "cmd": "Cmd_IF_CONTROLS",
+   "check": "if_controls_check",
+   "process": null
+  },
+  {
+   "name": "SET_COMPUTER_GLOBALS",
+   "args": "PNNNNNNn",
+   "cmd": "Cmd_SET_COMPUTER_GLOBALS",
+   "check": "set_computer_globals_check",
+   "process": "set_computer_globals_process"
+  },
+  {
+   "name": "SET_COMPUTER_CHECKS",
+   "args": "PANNNNN ",
+   "cmd": "Cmd_SET_COMPUTER_CHECKS",
+   "check": "set_computer_checks_check",
+   "process": "set_computer_checks_process"
+  },
+  {
+   "name": "SET_COMPUTER_EVENT",
+   "args": "PANNNNN ",
+   "cmd": "Cmd_SET_COMPUTER_EVENT",
+   "check": "set_computer_event_check",
+   "process": "set_computer_event_process"
+  },
+  {
+   "name": "SET_COMPUTER_PROCESS",
+   "args": "PANNNNN ",
+   "cmd": "Cmd_SET_COMPUTER_PROCESS",
+   "check": "set_computer_process_check",
+   "process": "set_computer_process_process"
+  },
+  {
+   "name": "ALLY_PLAYERS",
+   "args": "PPN     ",
+   "cmd": "Cmd_ALLY_PLAYERS",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DEAD_CREATURES_RETURN_TO_POOL",
+   "args": "B       ",
+   "cmd": "Cmd_DEAD_CREATURES_RETURN_TO_POOL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "BONUS_LEVEL_TIME",
+   "args": "Nb      ",
+   "cmd": "Cmd_BONUS_LEVEL_TIME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SWAP_CREATURE",
+   "args": "CC      ",
+   "cmd": "Cmd_SWAP_CREATURE",
+   "check": "swap_creature_check",
+   "process": "swap_creature_process"
+  },
+  {
+   "name": "PRINT",
+   "args": "A       ",
+   "cmd": "Cmd_PRINT",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MESSAGE",
+   "args": "A       ",
+   "cmd": "Cmd_MESSAGE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "PLAY_MESSAGE",
+   "args": "PAA     ",
+   "cmd": "Cmd_PLAY_MESSAGE",
+   "check": "play_message_check",
+   "process": "play_message_process"
+  },
+  {
+   "name": "ADD_GOLD_TO_PLAYER",
+   "args": "PN      ",
+   "cmd": "Cmd_ADD_GOLD_TO_PLAYER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_TENDENCIES",
+   "args": "PAB     ",
+   "cmd": "Cmd_SET_CREATURE_TENDENCIES",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "REVEAL_MAP_RECT",
+   "args": "PNNNN   ",
+   "cmd": "Cmd_REVEAL_MAP_RECT",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "CONCEAL_MAP_RECT",
+   "args": "PNNNNb! ",
+   "cmd": "Cmd_CONCEAL_MAP_RECT",
+   "check": "conceal_map_rect_check",
+   "process": "conceal_map_rect_process"
+  },
+  {
+   "name": "REVEAL_MAP_LOCATION",
+   "args": "PLN     ",
+   "cmd": "Cmd_REVEAL_MAP_LOCATION",
+   "check": "reveal_map_location_check",
+   "process": "reveal_map_location_process"
+  },
+  {
+   "name": "TAG_MAP_RECT",
+   "args": "PNNnn   ",
+   "cmd": "Cmd_TAG_MAP_RECT",
+   "check": "tag_map_rect_check",
+   "process": "tag_map_rect_process"
+  },
+  {
+   "name": "UNTAG_MAP_RECT",
+   "args": "PNNnn   ",
+   "cmd": "Cmd_UNTAG_MAP_RECT",
+   "check": "tag_map_rect_check",
+   "process": "untag_map_rect_process"
+  },
+  {
+   "name": "LEVEL_VERSION",
+   "args": "N       ",
+   "cmd": "Cmd_LEVEL_VERSION",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "KILL_CREATURE",
+   "args": "PC!AN   ",
+   "cmd": "Cmd_KILL_CREATURE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "COMPUTER_DIG_TO_LOCATION",
+   "args": "PLL     ",
+   "cmd": "Cmd_COMPUTER_DIG_TO_LOCATION",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_POWER_ON_CREATURE",
+   "args": "PC!APANA",
+   "cmd": "Cmd_USE_POWER_ON_CREATURE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_POWER_ON_PLAYERS_CREATURES",
+   "args": "PC!PANB!",
+   "cmd": "Cmd_USE_POWER_ON_PLAYERS_CREATURES",
+   "check": "use_power_on_players_creatures_check",
+   "process": "use_power_on_players_creatures_process"
+  },
+  {
+   "name": "USE_POWER_AT_POS",
+   "args": "PNNANA  ",
+   "cmd": "Cmd_USE_POWER_AT_POS",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_POWER_AT_LOCATION",
+   "args": "PLANA   ",
+   "cmd": "Cmd_USE_POWER_AT_LOCATION",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_POWER",
+   "args": "PAA     ",
+   "cmd": "Cmd_USE_POWER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_SPECIAL_INCREASE_LEVEL",
+   "args": "PN      ",
+   "cmd": "Cmd_USE_SPECIAL_INCREASE_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_SPECIAL_MULTIPLY_CREATURES",
+   "args": "PN      ",
+   "cmd": "Cmd_USE_SPECIAL_MULTIPLY_CREATURES",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MAKE_SAFE",
+   "args": "P       ",
+   "cmd": "Cmd_MAKE_SAFE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_SPECIAL_MAKE_SAFE",
+   "args": "P       ",
+   "cmd": "Cmd_MAKE_SAFE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "LOCATE_HIDDEN_WORLD",
+   "args": "        ",
+   "cmd": "Cmd_LOCATE_HIDDEN_WORLD",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_SPECIAL_LOCATE_HIDDEN_WORLD",
+   "args": "        ",
+   "cmd": "Cmd_LOCATE_HIDDEN_WORLD",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_SPECIAL_TRANSFER_CREATURE",
+   "args": "P       ",
+   "cmd": "Cmd_USE_SPECIAL_TRANSFER_CREATURE",
+   "check": "special_transfer_creature_check",
+   "process": "special_transfer_creature_process"
+  },
+  {
+   "name": "USE_SPECIAL_STEAL_HERO",
+   "args": "PLa     ",
+   "cmd": "Cmd_USE_SPECIAL_STEAL_HERO",
+   "check": "special_steal_hero_check",
+   "process": "special_steal_hero_process"
+  },
+  {
+   "name": "TRANSFER_CREATURE",
+   "args": "PC!An   ",
+   "cmd": "Cmd_TRANSFER_CREATURE",
+   "check": "script_transfer_creature_check",
+   "process": "script_transfer_creature_process"
+  },
+  {
+   "name": "CHANGE_CREATURES_ANNOYANCE",
+   "args": "PC!AN   ",
+   "cmd": "Cmd_CHANGE_CREATURES_ANNOYANCE",
+   "check": "change_creatures_annoyance_check",
+   "process": "change_creatures_annoyance_process"
+  },
+  {
+   "name": "ADD_TO_FLAG",
+   "args": "PAN     ",
+   "cmd": "Cmd_ADD_TO_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CAMPAIGN_FLAG",
+   "args": "PAN     ",
+   "cmd": "Cmd_SET_CAMPAIGN_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_TO_CAMPAIGN_FLAG",
+   "args": "PAN     ",
+   "cmd": "Cmd_ADD_TO_CAMPAIGN_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "EXPORT_VARIABLE",
+   "args": "PAA     ",
+   "cmd": "Cmd_EXPORT_VARIABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RUN_AFTER_VICTORY",
+   "args": "B       ",
+   "cmd": "Cmd_RUN_AFTER_VICTORY",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_NEXT_LEVEL",
+   "args": "N       ",
+   "cmd": "Cmd_SET_NEXT_LEVEL",
+   "check": "set_next_level_check",
+   "process": "set_next_level_process"
+  },
+  {
+   "name": "SHOW_BONUS_LEVEL",
+   "args": "N       ",
+   "cmd": "Cmd_SHOW_BONUS_LEVEL",
+   "check": "show_bonus_level_check",
+   "process": "show_bonus_level_process"
+  },
+  {
+   "name": "HIDE_BONUS_LEVEL",
+   "args": "N       ",
+   "cmd": "Cmd_HIDE_BONUS_LEVEL",
+   "check": "show_bonus_level_check",
+   "process": "hide_bonus_level_process"
+  },
+  {
+   "name": "SET_LEVEL_ENSIGN",
+   "args": "NA      ",
+   "cmd": "Cmd_SET_LEVEL_ENSIGN",
+   "check": "set_level_ensign_check",
+   "process": "set_level_ensign_process"
+  },
+  {
+   "name": "LEVEL_UP_CREATURE",
+   "args": "PC!AN   ",
+   "cmd": "Cmd_LEVEL_UP_CREATURE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "LEVEL_UP_PLAYERS_CREATURES",
+   "args": "PC!n    ",
+   "cmd": "Cmd_LEVEL_UP_PLAYERS_CREATURES",
+   "check": "level_up_players_creatures_check",
+   "process": "level_up_players_creatures_process"
+  },
+  {
+   "name": "CHANGE_CREATURE_OWNER",
+   "args": "PC!AP   ",
+   "cmd": "Cmd_CHANGE_CREATURE_OWNER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_GAME_RULE",
+   "args": "AAa     ",
+   "cmd": "Cmd_SET_GAME_RULE",
+   "check": "set_game_rule_check",
+   "process": "set_game_rule_process"
+  },
+  {
+   "name": "SET_ROOM_CONFIGURATION",
+   "args": "AAAan   ",
+   "cmd": "Cmd_SET_ROOM_CONFIGURATION",
+   "check": "set_room_configuration_check",
+   "process": "set_room_configuration_process"
+  },
+  {
+   "name": "SET_TRAP_CONFIGURATION",
+   "args": "AAAnnn  ",
+   "cmd": "Cmd_SET_TRAP_CONFIGURATION",
+   "check": "set_trap_configuration_check",
+   "process": "set_trap_configuration_process"
+  },
+  {
+   "name": "SET_DOOR_CONFIGURATION",
+   "args": "AAAn    ",
+   "cmd": "Cmd_SET_DOOR_CONFIGURATION",
+   "check": "set_door_configuration_check",
+   "process": "set_door_configuration_process"
+  },
+  {
+   "name": "SET_OBJECT_CONFIGURATION",
+   "args": "AAAnnn  ",
+   "cmd": "Cmd_SET_OBJECT_CONFIGURATION",
+   "check": "set_object_configuration_check",
+   "process": "set_object_configuration_process"
+  },
+  {
+   "name": "SET_CREATURE_CONFIGURATION",
+   "args": "CAAaaaaa",
+   "cmd": "Cmd_SET_CREATURE_CONFIGURATION",
+   "check": "set_creature_configuration_check",
+   "process": "set_creature_configuration_process"
+  },
+  {
+   "name": "SET_SACRIFICE_RECIPE",
+   "args": "AAA+    ",
+   "cmd": "Cmd_SET_SACRIFICE_RECIPE",
+   "check": "set_sacrifice_recipe_check",
+   "process": "set_sacrifice_recipe_process"
+  },
+  {
+   "name": "REMOVE_SACRIFICE_RECIPE",
+   "args": "A+      ",
+   "cmd": "Cmd_REMOVE_SACRIFICE_RECIPE",
+   "check": "remove_sacrifice_recipe_check",
+   "process": "set_sacrifice_recipe_process"
+  },
+  {
+   "name": "SET_BOX_TOOLTIP",
+   "args": "NA      ",
+   "cmd": "Cmd_SET_BOX_TOOLTIP",
+   "check": "set_box_tooltip_check",
+   "process": "set_box_tooltip_process"
+  },
+  {
+   "name": "SET_BOX_TOOLTIP_ID",
+   "args": "NA      ",
+   "cmd": "Cmd_SET_BOX_TOOLTIP_ID",
+   "check": "set_box_tooltip_id_check",
+   "process": "set_box_tooltip_id_process"
+  },
+  {
+   "name": "CHANGE_SLAB_OWNER",
+   "args": "NNPa    ",
+   "cmd": "Cmd_CHANGE_SLAB_OWNER",
+   "check": "change_slab_owner_check",
+   "process": "change_slab_owner_process"
+  },
+  {
+   "name": "CHANGE_SLAB_TYPE",
+   "args": "NNSa    ",
+   "cmd": "Cmd_CHANGE_SLAB_TYPE",
+   "check": "change_slab_type_check",
+   "process": "change_slab_type_process"
+  },
+  {
+   "name": "CREATE_EFFECTS_LINE",
+   "args": "LLNNNA  ",
+   "cmd": "Cmd_CREATE_EFFECTS_LINE",
+   "check": "create_effects_line_check",
+   "process": "create_effects_line_process"
+  },
+  {
+   "name": "IF_SLAB_OWNER",
+   "args": "NNP     ",
+   "cmd": "Cmd_IF_SLAB_OWNER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "IF_SLAB_TYPE",
+   "args": "NNS     ",
+   "cmd": "Cmd_IF_SLAB_TYPE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "USE_SPELL_ON_CREATURE",
+   "args": "PC!AAn  ",
+   "cmd": "Cmd_USE_SPELL_ON_CREATURE",
+   "check": "use_spell_on_creature_check",
+   "process": "use_spell_on_creature_process"
+  },
+  {
+   "name": "USE_SPELL_ON_PLAYERS_CREATURES",
+   "args": "PC!An   ",
+   "cmd": "Cmd_USE_SPELL_ON_PLAYERS_CREATURES",
+   "check": "use_spell_on_players_creatures_check",
+   "process": "use_spell_on_players_creatures_process"
+  },
+  {
+   "name": "SET_HEART_HEALTH",
+   "args": "PN      ",
+   "cmd": "Cmd_SET_HEART_HEALTH",
+   "check": "set_heart_health_check",
+   "process": "set_heart_health_process"
+  },
+  {
+   "name": "ADD_HEART_HEALTH",
+   "args": "PNb     ",
+   "cmd": "Cmd_ADD_HEART_HEALTH",
+   "check": "add_heart_health_check",
+   "process": "add_heart_health_process"
+  },
+  {
+   "name": "CREATURE_ENTRANCE_LEVEL",
+   "args": "PN      ",
+   "cmd": "Cmd_CREATURE_ENTRANCE_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RANDOMISE_FLAG",
+   "args": "PAn     ",
+   "cmd": "Cmd_RANDOMISE_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RANDOMIZE_FLAG",
+   "args": "PAn     ",
+   "cmd": "Cmd_RANDOMISE_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "COMPUTE_FLAG",
+   "args": "PAAPAb  ",
+   "cmd": "Cmd_COMPUTE_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DISPLAY_TIMER",
+   "args": "PAb     ",
+   "cmd": "Cmd_DISPLAY_TIMER",
+   "check": "display_timer_check",
+   "process": "display_timer_process"
+  },
+  {
+   "name": "ADD_TO_TIMER",
+   "args": "PAN     ",
+   "cmd": "Cmd_ADD_TO_TIMER",
+   "check": "add_to_timer_check",
+   "process": "add_to_timer_process"
+  },
+  {
+   "name": "ADD_BONUS_TIME",
+   "args": "N       ",
+   "cmd": "Cmd_ADD_BONUS_TIME",
+   "check": "add_bonus_time_check",
+   "process": "add_bonus_time_process"
+  },
+  {
+   "name": "DISPLAY_VARIABLE",
+   "args": "PAnn    ",
+   "cmd": "Cmd_DISPLAY_VARIABLE",
+   "check": "display_variable_check",
+   "process": "display_variable_process"
+  },
+  {
+   "name": "DISPLAY_VARIABLE_WITH_LABEL",
+   "args": "PAa    ",
+   "cmd": "Cmd_DISPLAY_VARIABLE_WITH_LABEL",
+   "check": "display_variable_with_label_check",
+   "process": "display_variable_with_label_process"
+  },
+  {
+   "name": "DISPLAY_COUNTDOWN",
+   "args": "PANb    ",
+   "cmd": "Cmd_DISPLAY_COUNTDOWN",
+   "check": "display_countdown_check",
+   "process": "display_timer_process"
+  },
+  {
+   "name": "HIDE_TIMER",
+   "args": "        ",
+   "cmd": "Cmd_HIDE_TIMER",
+   "check": "cmd_no_param_check",
+   "process": "hide_timer_process"
+  },
+  {
+   "name": "HIDE_VARIABLE",
+   "args": "pa      ",
+   "cmd": "Cmd_HIDE_VARIABLE",
+   "check": "hide_variable_check",
+   "process": "hide_variable_process"
+  },
+  {
+   "name": "CREATE_EFFECT",
+   "args": "AAn     ",
+   "cmd": "Cmd_CREATE_EFFECT",
+   "check": "create_effect_check",
+   "process": "create_effect_process"
+  },
+  {
+   "name": "CREATE_EFFECT_AT_POS",
+   "args": "ANNn    ",
+   "cmd": "Cmd_CREATE_EFFECT_AT_POS",
+   "check": "create_effect_at_pos_check",
+   "process": "create_effect_at_pos_process"
+  },
+  {
+   "name": "SET_DOOR",
+   "args": "ANN     ",
+   "cmd": "Cmd_SET_DOOR",
+   "check": "set_door_check",
+   "process": "set_door_process"
+  },
+  {
+   "name": "PLACE_DOOR",
+   "args": "PANNb!b!",
+   "cmd": "Cmd_PLACE_DOOR",
+   "check": "place_door_check",
+   "process": "place_door_process"
+  },
+  {
+   "name": "PLACE_TRAP",
+   "args": "PANNb!  ",
+   "cmd": "Cmd_PLACE_TRAP",
+   "check": "place_trap_check",
+   "process": "place_trap_process"
+  },
+  {
+   "name": "ZOOM_TO_LOCATION",
+   "args": "PL      ",
+   "cmd": "Cmd_MOVE_PLAYER_CAMERA_TO",
+   "check": "player_zoom_to_check",
+   "process": "player_zoom_to_process"
+  },
+  {
+   "name": "SET_CREATURE_INSTANCE",
+   "args": "CNAN    ",
+   "cmd": "Cmd_SET_CREATURE_INSTANCE",
+   "check": "set_creature_instance_check",
+   "process": "set_creature_instance_process"
+  },
+  {
+   "name": "SET_HAND_RULE",
+   "args": "PC!Aaaa ",
+   "cmd": "Cmd_SET_HAND_RULE",
+   "check": "set_hand_rule_check",
+   "process": "set_hand_rule_process"
+  },
+  {
+   "name": "MOVE_CREATURE",
+   "args": "PC!ANLa ",
+   "cmd": "Cmd_MOVE_CREATURE",
+   "check": "move_creature_check",
+   "process": "move_creature_process"
+  },
+  {
+   "name": "COUNT_CREATURES_AT_ACTION_POINT",
+   "args": "NPC!PA  ",
+   "cmd": "Cmd_COUNT_CREATURES_AT_ACTION_POINT",
+   "check": "count_creatures_at_action_point_check",
+   "process": "count_creatures_at_action_point_process"
+  },
+  {
+   "name": "IF_ALLIED",
+   "args": "PPON    ",
+   "cmd": "Cmd_IF_ALLIED",
+   "check": "if_allied_check",
+   "process": null
+  },
+  {
+   "name": "SET_TEXTURE",
+   "args": "PA      ",
+   "cmd": "Cmd_SET_TEXTURE",
+   "check": "set_texture_check",
+   "process": "set_texture_process"
+  },
+  {
+   "name": "HIDE_HERO_GATE",
+   "args": "NB      ",
+   "cmd": "Cmd_HIDE_HERO_GATE",
+   "check": "hide_hero_gate_check",
+   "process": "hide_hero_gate_process"
+  },
+  {
+   "name": "NEW_TRAP_TYPE",
+   "args": "A       ",
+   "cmd": "Cmd_NEW_TRAP_TYPE",
+   "check": "new_trap_type_check",
+   "process": "null_process"
+  },
+  {
+   "name": "NEW_OBJECT_TYPE",
+   "args": "A       ",
+   "cmd": "Cmd_NEW_OBJECT_TYPE",
+   "check": "new_object_type_check",
+   "process": "null_process"
+  },
+  {
+   "name": "NEW_ROOM_TYPE",
+   "args": "A       ",
+   "cmd": "Cmd_NEW_ROOM_TYPE",
+   "check": "new_room_type_check",
+   "process": "null_process"
+  },
+  {
+   "name": "NEW_CREATURE_TYPE",
+   "args": "A       ",
+   "cmd": "Cmd_NEW_CREATURE_TYPE",
+   "check": "new_creature_type_check",
+   "process": "null_process"
+  },
+  {
+   "name": "COPY_CREATURE_TYPE",
+   "args": "CA      ",
+   "cmd": "Cmd_COPY_CREATURE_TYPE",
+   "check": "copy_creature_type_check",
+   "process": "null_process"
+  },
+  {
+   "name": "SET_HAND_GRAPHIC",
+   "args": "PA      ",
+   "cmd": "Cmd_SET_HAND_GRAPHIC",
+   "check": "set_power_hand_check",
+   "process": "set_power_hand_process"
+  },
+  {
+   "name": "ADD_EFFECT_GENERATOR_TO_LEVEL",
+   "args": "AAN     ",
+   "cmd": "Cmd_ADD_EFFECT_GENERATOR_TO_LEVEL",
+   "check": "add_effectgen_to_level_check",
+   "process": "add_effectgen_to_level_process"
+  },
+  {
+   "name": "SET_EFFECT_GENERATOR_CONFIGURATION",
+   "args": "AAAnn   ",
+   "cmd": "Cmd_SET_EFFECT_GENERATOR_CONFIGURATION",
+   "check": "set_effectgen_configuration_check",
+   "process": "set_effectgen_configuration_process"
+  },
+  {
+   "name": "SET_POWER_CONFIGURATION",
+   "args": "AAAa    ",
+   "cmd": "Cmd_SET_POWER_CONFIGURATION",
+   "check": "set_power_configuration_check",
+   "process": "set_power_configuration_process"
+  },
+  {
+   "name": "SET_PLAYER_COLOR",
+   "args": "PA      ",
+   "cmd": "Cmd_SET_PLAYER_COLOUR",
+   "check": "set_player_colour_check",
+   "process": "set_player_colour_process"
+  },
+  {
+   "name": "SET_PLAYER_COLOUR",
+   "args": "PA      ",
+   "cmd": "Cmd_SET_PLAYER_COLOUR",
+   "check": "set_player_colour_check",
+   "process": "set_player_colour_process"
+  },
+  {
+   "name": "MAKE_UNSAFE",
+   "args": "P       ",
+   "cmd": "Cmd_MAKE_UNSAFE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_INCREASE_ON_EXPERIENCE",
+   "args": "AN      ",
+   "cmd": "Cmd_SET_INCREASE_ON_EXPERIENCE",
+   "check": "set_increase_on_experience_check",
+   "process": "set_increase_on_experience_process"
+  },
+  {
+   "name": "SET_PLAYER_MODIFIER",
+   "args": "PAN     ",
+   "cmd": "Cmd_SET_PLAYER_MODIFIER",
+   "check": "set_player_modifier_check",
+   "process": "set_player_modifier_process"
+  },
+  {
+   "name": "ADD_TO_PLAYER_MODIFIER",
+   "args": "PAN     ",
+   "cmd": "Cmd_ADD_TO_PLAYER_MODIFIER",
+   "check": "add_to_player_modifier_check",
+   "process": "add_to_player_modifier_process"
+  },
+  {
+   "name": "CHANGE_SLAB_TEXTURE",
+   "args": "NNAa    ",
+   "cmd": "Cmd_CHANGE_SLAB_TEXTURE",
+   "check": "change_slab_texture_check",
+   "process": "change_slab_texture_process"
+  },
+  {
+   "name": "ADD_OBJECT_TO_LEVEL_AT_POS",
+   "args": "ANNNpa  ",
+   "cmd": "Cmd_ADD_OBJECT_TO_LEVEL_AT_POS",
+   "check": "add_object_to_level_at_pos_check",
+   "process": "add_object_to_level_at_pos_process"
+  },
+  {
+   "name": "LOCK_POSSESSION",
+   "args": "PB!     ",
+   "cmd": "Cmd_LOCK_POSSESSION",
+   "check": "lock_possession_check",
+   "process": "lock_possession_process"
+  },
+  {
+   "name": "SET_DIGGER",
+   "args": "PC      ",
+   "cmd": "Cmd_SET_DIGGER",
+   "check": "set_digger_check",
+   "process": "set_digger_process"
+  },
+  {
+   "name": "RUN_LUA_CODE",
+   "args": "A       ",
+   "cmd": "Cmd_RUN_LUA_CODE",
+   "check": "run_lua_code_check",
+   "process": "run_lua_code_process"
+  },
+  {
+   "name": "TRIGGER_ACTION_POINT",
+   "args": "Na      ",
+   "cmd": "Cmd_TRIGGER_ACTION_POINT",
+   "check": "reset_or_trigger_action_point_check",
+   "process": "trigger_action_point_process"
+  }
+ ],
+ "dk1_commands": [
+  {
+   "name": "CREATE_PARTY",
+   "args": "A       ",
+   "cmd": "Cmd_CREATE_PARTY",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_TO_PARTY",
+   "args": "ACNNAN  ",
+   "cmd": "Cmd_ADD_TO_PARTY",
+   "check": "add_to_party_check",
+   "process": null
+  },
+  {
+   "name": "ADD_PARTY_TO_LEVEL",
+   "args": "PAAN    ",
+   "cmd": "Cmd_ADD_PARTY_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_CREATURE_TO_LEVEL",
+   "args": "PCANNN  ",
+   "cmd": "Cmd_ADD_CREATURE_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "IF",
+   "args": "PAOAa   ",
+   "cmd": "Cmd_IF",
+   "check": "if_check",
+   "process": null
+  },
+  {
+   "name": "IF_ACTION_POINT",
+   "args": "NP      ",
+   "cmd": "Cmd_IF_ACTION_POINT",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ENDIF",
+   "args": "        ",
+   "cmd": "Cmd_ENDIF",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_GENERATE_SPEED",
+   "args": "N       ",
+   "cmd": "Cmd_SET_GENERATE_SPEED",
+   "check": "set_generate_speed_check",
+   "process": "set_generate_speed_process"
+  },
+  {
+   "name": "REM",
+   "args": "        ",
+   "cmd": "Cmd_REM",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "START_MONEY",
+   "args": "PN      ",
+   "cmd": "Cmd_START_MONEY",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ROOM_AVAILABLE",
+   "args": "PRNN    ",
+   "cmd": "Cmd_ROOM_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "CREATURE_AVAILABLE",
+   "args": "PCNN    ",
+   "cmd": "Cmd_CREATURE_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MAGIC_AVAILABLE",
+   "args": "PANN    ",
+   "cmd": "Cmd_MAGIC_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "TRAP_AVAILABLE",
+   "args": "PANN    ",
+   "cmd": "Cmd_TRAP_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RESEARCH",
+   "args": "PAAN    ",
+   "cmd": "Cmd_RESEARCH_ORDER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "COMPUTER_PLAYER",
+   "args": "PN      ",
+   "cmd": "Cmd_COMPUTER_PLAYER",
+   "check": "computer_player_check",
+   "process": "computer_player_process"
+  },
+  {
+   "name": "SET_TIMER",
+   "args": "PA      ",
+   "cmd": "Cmd_SET_TIMER",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_TUNNELLER_TO_LEVEL",
+   "args": "PAANNN  ",
+   "cmd": "Cmd_ADD_TUNNELLER_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "WIN_GAME",
+   "args": "        ",
+   "cmd": "Cmd_WIN_GAME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "LOSE_GAME",
+   "args": "        ",
+   "cmd": "Cmd_LOSE_GAME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_FLAG",
+   "args": "PAN     ",
+   "cmd": "Cmd_SET_FLAG",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MAX_CREATURES",
+   "args": "PN      ",
+   "cmd": "Cmd_MAX_CREATURES",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "NEXT_COMMAND_REUSABLE",
+   "args": "        ",
+   "cmd": "Cmd_NEXT_COMMAND_REUSABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DOOR_AVAILABLE",
+   "args": "PANN    ",
+   "cmd": "Cmd_DOOR_AVAILABLE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DISPLAY_OBJECTIVE",
+   "args": "AA      ",
+   "cmd": "Cmd_DISPLAY_OBJECTIVE",
+   "check": "display_objective_check",
+   "process": "display_objective_process"
+  },
+  {
+   "name": "DISPLAY_OBJECTIVE_WITH_POS",
+   "args": "ANN     ",
+   "cmd": "Cmd_DISPLAY_OBJECTIVE_WITH_POS",
+   "check": "display_objective_check",
+   "process": "display_objective_process"
+  },
+  {
+   "name": "DISPLAY_INFORMATION",
+   "args": "A       ",
+   "cmd": "Cmd_DISPLAY_INFORMATION",
+   "check": "display_information_check",
+   "process": "display_information_process"
+  },
+  {
+   "name": "DISPLAY_INFORMATION_WITH_POS",
+   "args": "ANN     ",
+   "cmd": "Cmd_DISPLAY_INFORMATION_WITH_POS",
+   "check": "display_information_check",
+   "process": "display_information_process"
+  },
+  {
+   "name": "ADD_TUNNELLER_PARTY_TO_LEVEL",
+   "args": "PAAANNN ",
+   "cmd": "Cmd_ADD_TUNNELLER_PARTY_TO_LEVEL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "ADD_CREATURE_TO_POOL",
+   "args": "CN      ",
+   "cmd": "Cmd_ADD_CREATURE_TO_POOL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "RESET_ACTION_POINT",
+   "args": "N       ",
+   "cmd": "Cmd_RESET_ACTION_POINT",
+   "check": "reset_or_trigger_action_point_check",
+   "process": "reset_action_point_process"
+  },
+  {
+   "name": "SET_CREATURE_MAX_LEVEL",
+   "args": "PC!N    ",
+   "cmd": "Cmd_SET_CREATURE_MAX_LEVEL",
+   "check": "set_creature_max_level_check",
+   "process": "set_creature_max_level_process"
+  },
+  {
+   "name": "SET_MUSIC",
+   "args": "N       ",
+   "cmd": "Cmd_SET_MUSIC",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "TUTORIAL_FLASH_BUTTON",
+   "args": "NN      ",
+   "cmd": "Cmd_TUTORIAL_FLASH_BUTTON",
+   "check": "tutorial_flash_button_check",
+   "process": "tutorial_flash_button_process"
+  },
+  {
+   "name": "SET_CREATURE_STRENGTH",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_STRENGTH",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_HEALTH",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_HEALTH",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_ARMOUR",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_ARMOUR",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "SET_CREATURE_FEAR",
+   "args": "CN      ",
+   "cmd": "Cmd_SET_CREATURE_FEAR_WOUNDED",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "IF_AVAILABLE",
+   "args": "PAOAa   ",
+   "cmd": "Cmd_IF_AVAILABLE",
+   "check": "if_available_check",
+   "process": null
+  },
+  {
+   "name": "SET_COMPUTER_GLOBALS",
+   "args": "PNNNNNN ",
+   "cmd": "Cmd_SET_COMPUTER_GLOBALS",
+   "check": "set_computer_globals_check",
+   "process": "set_computer_globals_process"
+  },
+  {
+   "name": "SET_COMPUTER_CHECKS",
+   "args": "PANNNNN ",
+   "cmd": "Cmd_SET_COMPUTER_CHECKS",
+   "check": "set_computer_checks_check",
+   "process": "set_computer_checks_process"
+  },
+  {
+   "name": "SET_COMPUTER_EVENT",
+   "args": "PANN    ",
+   "cmd": "Cmd_SET_COMPUTER_EVENT",
+   "check": "set_computer_event_check",
+   "process": "set_computer_event_process"
+  },
+  {
+   "name": "SET_COMPUTER_PROCESS",
+   "args": "PANNNNN ",
+   "cmd": "Cmd_SET_COMPUTER_PROCESS",
+   "check": "set_computer_process_check",
+   "process": "set_computer_process_process"
+  },
+  {
+   "name": "ALLY_PLAYERS",
+   "args": "PP      ",
+   "cmd": "Cmd_ALLY_PLAYERS",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DEAD_CREATURES_RETURN_TO_POOL",
+   "args": "N       ",
+   "cmd": "Cmd_DEAD_CREATURES_RETURN_TO_POOL",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "BONUS_LEVEL_TIME",
+   "args": "N       ",
+   "cmd": "Cmd_BONUS_LEVEL_TIME",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "QUICK_OBJECTIVE",
+   "args": "NAA     ",
+   "cmd": "Cmd_QUICK_OBJECTIVE",
+   "check": "quick_objective_check",
+   "process": "quick_objective_process"
+  },
+  {
+   "name": "QUICK_INFORMATION",
+   "args": "NA      ",
+   "cmd": "Cmd_QUICK_INFORMATION",
+   "check": "quick_information_check",
+   "process": "quick_information_process"
+  },
+  {
+   "name": "SWAP_CREATURE",
+   "args": "CC      ",
+   "cmd": "Cmd_SWAP_CREATURE",
+   "check": "swap_creature_check",
+   "process": "swap_creature_process"
+  },
+  {
+   "name": "PRINT",
+   "args": "A       ",
+   "cmd": "Cmd_PRINT",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "MESSAGE",
+   "args": "A       ",
+   "cmd": "Cmd_MESSAGE",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "LEVEL_VERSION",
+   "args": "N       ",
+   "cmd": "Cmd_LEVEL_VERSION",
+   "check": null,
+   "process": null
+  }
+ ],
+ "subfunctions": [
+  {
+   "name": "RANDOM",
+   "args": "Aaaaaaaa",
+   "cmd": "Cmd_RANDOM",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "DRAWFROM",
+   "args": "Aaaaaaaa",
+   "cmd": "Cmd_DRAWFROM",
+   "check": null,
+   "process": null
+  },
+  {
+   "name": "IMPORT",
+   "args": "PA      ",
+   "cmd": "Cmd_IMPORT",
+   "check": null,
+   "process": null
+  }
+ ],
+ "named_tables": {
+  "player_desc": [
+   {
+    "name": "PLAYER0",
+    "value": "PLAYER0"
+   },
+   {
+    "name": "PLAYER1",
+    "value": "PLAYER1"
+   },
+   {
+    "name": "PLAYER2",
+    "value": "PLAYER2"
+   },
+   {
+    "name": "PLAYER3",
+    "value": "PLAYER3"
+   },
+   {
+    "name": "PLAYER_GOOD",
+    "value": "PLAYER_GOOD"
+   },
+   {
+    "name": "ALL_PLAYERS",
+    "value": "ALL_PLAYERS"
+   },
+   {
+    "name": "PLAYER_NEUTRAL",
+    "value": "PLAYER_NEUTRAL"
+   },
+   {
+    "name": "PLAYER4",
+    "value": "PLAYER4"
+   },
+   {
+    "name": "PLAYER5",
+    "value": "PLAYER5"
+   },
+   {
+    "name": "PLAYER6",
+    "value": "PLAYER6"
+   }
+  ],
+  "controls_variable_desc": [
+   {
+    "name": "TOTAL_DIGGERS",
+    "value": "SVar_CONTROLS_TOTAL_DIGGERS"
+   },
+   {
+    "name": "TOTAL_CREATURES",
+    "value": "SVar_CONTROLS_TOTAL_CREATURES"
+   },
+   {
+    "name": "TOTAL_DOORS",
+    "value": "SVar_TOTAL_DOORS"
+   },
+   {
+    "name": "TOTAL_TRAPS",
+    "value": "SVar_TOTAL_TRAPS"
+   },
+   {
+    "name": "TOTAL_AREA",
+    "value": "SVar_TOTAL_AREA"
+   },
+   {
+    "name": "GOOD_CREATURES",
+    "value": "SVar_CONTROLS_GOOD_CREATURES"
+   },
+   {
+    "name": "EVIL_CREATURES",
+    "value": "SVar_CONTROLS_EVIL_CREATURES"
+   }
+  ],
+  "available_variable_desc": [
+   {
+    "name": "TOTAL_CREATURES",
+    "value": "SVar_AVAILABLE_TOTAL_CREATURES"
+   },
+   {
+    "name": "TOTAL_DOORS",
+    "value": "SVar_AVAILABLE_TOTAL_DOORS"
+   },
+   {
+    "name": "TOTAL_TRAPS",
+    "value": "SVar_AVAILABLE_TOTAL_TRAPS"
+   },
+   {
+    "name": "TOTAL_AREA",
+    "value": "SVar_TOTAL_AREA"
+   }
+  ],
+  "comparison_desc": [
+   {
+    "name": "==",
+    "value": "MOp_EQUAL"
+   },
+   {
+    "name": "!=",
+    "value": "MOp_NOT_EQUAL"
+   },
+   {
+    "name": "<",
+    "value": "MOp_SMALLER"
+   },
+   {
+    "name": ">",
+    "value": "MOp_GREATER"
+   },
+   {
+    "name": "<=",
+    "value": "MOp_SMALLER_EQ"
+   },
+   {
+    "name": ">=",
+    "value": "MOp_GREATER_EQ"
+   }
+  ],
+  "timer_desc": [
+   {
+    "name": "TIMER0",
+    "value": "0"
+   },
+   {
+    "name": "TIMER1",
+    "value": "1"
+   },
+   {
+    "name": "TIMER2",
+    "value": "2"
+   },
+   {
+    "name": "TIMER3",
+    "value": "3"
+   },
+   {
+    "name": "TIMER4",
+    "value": "4"
+   },
+   {
+    "name": "TIMER5",
+    "value": "5"
+   },
+   {
+    "name": "TIMER6",
+    "value": "6"
+   },
+   {
+    "name": "TIMER7",
+    "value": "7"
+   }
+  ],
+  "flag_desc": [
+   {
+    "name": "FLAG0",
+    "value": "0"
+   },
+   {
+    "name": "FLAG1",
+    "value": "1"
+   },
+   {
+    "name": "FLAG2",
+    "value": "2"
+   },
+   {
+    "name": "FLAG3",
+    "value": "3"
+   },
+   {
+    "name": "FLAG4",
+    "value": "4"
+   },
+   {
+    "name": "FLAG5",
+    "value": "5"
+   },
+   {
+    "name": "FLAG6",
+    "value": "6"
+   },
+   {
+    "name": "FLAG7",
+    "value": "7"
+   }
+  ],
+  "hand_rule_desc": [
+   {
+    "name": "ALWAYS",
+    "value": "HandRule_Always"
+   },
+   {
+    "name": "AGE_LOWER",
+    "value": "HandRule_AgeLower"
+   },
+   {
+    "name": "AGE_HIGHER",
+    "value": "HandRule_AgeHigher"
+   },
+   {
+    "name": "LEVEL_LOWER",
+    "value": "HandRule_LvlLower"
+   },
+   {
+    "name": "LEVEL_HIGHER",
+    "value": "HandRule_LvlHigher"
+   },
+   {
+    "name": "AT_ACTION_POINT",
+    "value": "HandRule_AtActionPoint"
+   },
+   {
+    "name": "AFFECTED_BY",
+    "value": "HandRule_AffectedBy"
+   },
+   {
+    "name": "WANDERING",
+    "value": "HandRule_Wandering"
+   },
+   {
+    "name": "WORKING",
+    "value": "HandRule_Working"
+   },
+   {
+    "name": "FIGHTING",
+    "value": "HandRule_Fighting"
+   },
+   {
+    "name": "DROPPED_TIME_HIGHER",
+    "value": "HandRule_DroppedTimeHigher"
+   },
+   {
+    "name": "DROPPED_TIME_LOWER",
+    "value": "HandRule_DroppedTimeLower"
+   },
+   {
+    "name": "BLOCKED_FOR_PICKUP",
+    "value": "HandRule_BlockedPickup"
+   }
+  ],
+  "rule_slot_desc": [
+   {
+    "name": "RULE0",
+    "value": "0"
+   },
+   {
+    "name": "RULE1",
+    "value": "1"
+   },
+   {
+    "name": "RULE2",
+    "value": "2"
+   },
+   {
+    "name": "RULE3",
+    "value": "3"
+   },
+   {
+    "name": "RULE4",
+    "value": "4"
+   },
+   {
+    "name": "RULE5",
+    "value": "5"
+   },
+   {
+    "name": "RULE6",
+    "value": "6"
+   },
+   {
+    "name": "RULE7",
+    "value": "7"
+   }
+  ],
+  "rule_action_desc": [
+   {
+    "name": "DENY",
+    "value": "HandRuleAction_Deny"
+   },
+   {
+    "name": "ALLOW",
+    "value": "HandRuleAction_Allow"
+   },
+   {
+    "name": "ENABLE",
+    "value": "HandRuleAction_Enable"
+   },
+   {
+    "name": "DISABLE",
+    "value": "HandRuleAction_Disable"
+   }
+  ],
+  "hero_objective_desc": [
+   {
+    "name": "STEAL_GOLD",
+    "value": "CHeroTsk_StealGold"
+   },
+   {
+    "name": "STEAL_SPELLS",
+    "value": "CHeroTsk_StealSpells"
+   },
+   {
+    "name": "ATTACK_ENEMIES",
+    "value": "CHeroTsk_AttackEnemies"
+   },
+   {
+    "name": "ATTACK_DUNGEON_HEART",
+    "value": "CHeroTsk_AttackDnHeart"
+   },
+   {
+    "name": "SNIPE_DUNGEON_HEART",
+    "value": "CHeroTsk_SnipeDnHeart"
+   },
+   {
+    "name": "ATTACK_ROOMS",
+    "value": "CHeroTsk_AttackRooms"
+   },
+   {
+    "name": "SABOTAGE_ROOMS",
+    "value": "CHeroTsk_SabotageRooms"
+   },
+   {
+    "name": "DEFEND_PARTY",
+    "value": "CHeroTsk_DefendParty"
+   },
+   {
+    "name": "DEFEND_LOCATION",
+    "value": "CHeroTsk_DefendSpawn"
+   },
+   {
+    "name": "DEFEND_HEART",
+    "value": "CHeroTsk_DefendHeart"
+   },
+   {
+    "name": "DEFEND_ROOMS",
+    "value": "CHeroTsk_DefendRooms"
+   }
+  ],
+  "msgtype_desc": [
+   {
+    "name": "SPEECH",
+    "value": "1"
+   },
+   {
+    "name": "SOUND",
+    "value": "2"
+   }
+  ],
+  "tendency_desc": [
+   {
+    "name": "IMPRISON",
+    "value": "1"
+   },
+   {
+    "name": "FLEE",
+    "value": "2"
+   }
+  ],
+  "creature_select_criteria_desc": [
+   {
+    "name": "MOST_EXPERIENCED",
+    "value": "CSelCrit_MostExperienced"
+   },
+   {
+    "name": "MOST_EXP_WANDERING",
+    "value": "CSelCrit_MostExpWandering"
+   },
+   {
+    "name": "MOST_EXP_WORKING",
+    "value": "CSelCrit_MostExpWorking"
+   },
+   {
+    "name": "MOST_EXP_FIGHTING",
+    "value": "CSelCrit_MostExpFighting"
+   },
+   {
+    "name": "LEAST_EXPERIENCED",
+    "value": "CSelCrit_LeastExperienced"
+   },
+   {
+    "name": "LEAST_EXP_WANDERING",
+    "value": "CSelCrit_LeastExpWandering"
+   },
+   {
+    "name": "LEAST_EXP_WORKING",
+    "value": "CSelCrit_LeastExpWorking"
+   },
+   {
+    "name": "LEAST_EXP_FIGHTING",
+    "value": "CSelCrit_LeastExpFighting"
+   },
+   {
+    "name": "NEAR_OWN_HEART",
+    "value": "CSelCrit_NearOwnHeart"
+   },
+   {
+    "name": "NEAR_ENEMY_HEART",
+    "value": "CSelCrit_NearEnemyHeart"
+   },
+   {
+    "name": "ON_ENEMY_GROUND",
+    "value": "CSelCrit_OnEnemyGround"
+   },
+   {
+    "name": "ON_FRIENDLY_GROUND",
+    "value": "CSelCrit_OnFriendlyGround"
+   },
+   {
+    "name": "ON_NEUTRAL_GROUND",
+    "value": "CSelCrit_OnNeutralGround"
+   },
+   {
+    "name": "ANYWHERE",
+    "value": "CSelCrit_Any"
+   }
+  ],
+  "on_experience_desc": [
+   {
+    "name": "SizeIncreaseOnExp",
+    "value": "1"
+   },
+   {
+    "name": "PayIncreaseOnExp",
+    "value": "2"
+   },
+   {
+    "name": "SpellDamageIncreaseOnExp",
+    "value": "3"
+   },
+   {
+    "name": "RangeIncreaseOnExp",
+    "value": "4"
+   },
+   {
+    "name": "JobValueIncreaseOnExp",
+    "value": "5"
+   },
+   {
+    "name": "HealthIncreaseOnExp",
+    "value": "6"
+   },
+   {
+    "name": "StrengthIncreaseOnExp",
+    "value": "7"
+   },
+   {
+    "name": "DexterityIncreaseOnExp",
+    "value": "8"
+   },
+   {
+    "name": "DefenseIncreaseOnExp",
+    "value": "9"
+   },
+   {
+    "name": "LoyaltyIncreaseOnExp",
+    "value": "10"
+   },
+   {
+    "name": "ExpForHittingIncreaseOnExp",
+    "value": "11"
+   },
+   {
+    "name": "TrainingCostIncreaseOnExp",
+    "value": "12"
+   },
+   {
+    "name": "ScavengingCostIncreaseOnExp",
+    "value": "13"
+   }
+  ],
+  "modifier_desc": [
+   {
+    "name": "Health",
+    "value": "1"
+   },
+   {
+    "name": "Strength",
+    "value": "2"
+   },
+   {
+    "name": "Armour",
+    "value": "3"
+   },
+   {
+    "name": "SpellDamage",
+    "value": "4"
+   },
+   {
+    "name": "Speed",
+    "value": "5"
+   },
+   {
+    "name": "Salary",
+    "value": "6"
+   },
+   {
+    "name": "TrainingCost",
+    "value": "7"
+   },
+   {
+    "name": "ScavengingCost",
+    "value": "8"
+   },
+   {
+    "name": "Loyalty",
+    "value": "9"
+   }
+  ],
+  "gui_button_group_desc": [
+   {
+    "name": "MINIMAP",
+    "value": "GID_MINIMAP_AREA"
+   },
+   {
+    "name": "TABS",
+    "value": "GID_TABS_AREA"
+   },
+   {
+    "name": "INFO",
+    "value": "GID_INFO_PANE"
+   },
+   {
+    "name": "ROOM",
+    "value": "GID_ROOM_PANE"
+   },
+   {
+    "name": "POWER",
+    "value": "GID_POWER_PANE"
+   },
+   {
+    "name": "TRAP",
+    "value": "GID_TRAP_PANE"
+   },
+   {
+    "name": "DOOR",
+    "value": "GID_DOOR_PANE"
+   },
+   {
+    "name": "CREATURE",
+    "value": "GID_CREATR_PANE"
+   },
+   {
+    "name": "MESSAGE",
+    "value": "GID_MESSAGE_AREA"
+   }
+  ],
+  "campaign_flag_desc": [
+   {
+    "name": "CAMPAIGN_FLAG0",
+    "value": "0"
+   },
+   {
+    "name": "CAMPAIGN_FLAG1",
+    "value": "1"
+   },
+   {
+    "name": "CAMPAIGN_FLAG2",
+    "value": "2"
+   },
+   {
+    "name": "CAMPAIGN_FLAG3",
+    "value": "3"
+   },
+   {
+    "name": "CAMPAIGN_FLAG4",
+    "value": "4"
+   },
+   {
+    "name": "CAMPAIGN_FLAG5",
+    "value": "5"
+   },
+   {
+    "name": "CAMPAIGN_FLAG6",
+    "value": "6"
+   },
+   {
+    "name": "CAMPAIGN_FLAG7",
+    "value": "7"
+   }
+  ],
+  "script_operator_desc": [
+   {
+    "name": "SET",
+    "value": "1"
+   },
+   {
+    "name": "INCREASE",
+    "value": "2"
+   },
+   {
+    "name": "DECREASE",
+    "value": "3"
+   },
+   {
+    "name": "MULTIPLY",
+    "value": "4"
+   }
+  ],
+  "script_boolean_desc": [
+   {
+    "name": "0",
+    "value": "0"
+   },
+   {
+    "name": "OFF",
+    "value": "0"
+   },
+   {
+    "name": "NO",
+    "value": "0"
+   },
+   {
+    "name": "FALSE",
+    "value": "0"
+   },
+   {
+    "name": "DISABLE",
+    "value": "0"
+   },
+   {
+    "name": "DISABLED",
+    "value": "0"
+   },
+   {
+    "name": "1",
+    "value": "1"
+   },
+   {
+    "name": "ON",
+    "value": "1"
+   },
+   {
+    "name": "YES",
+    "value": "1"
+   },
+   {
+    "name": "TRUE",
+    "value": "1"
+   },
+   {
+    "name": "ENABLE",
+    "value": "1"
+   },
+   {
+    "name": "ENABLED",
+    "value": "1"
+   }
+  ],
+  "variable_desc": [
+   {
+    "name": "MONEY",
+    "value": "SVar_MONEY"
+   },
+   {
+    "name": "GAME_TURN",
+    "value": "SVar_GAME_TURN"
+   },
+   {
+    "name": "TOTAL_DIGGERS",
+    "value": "SVar_TOTAL_DIGGERS"
+   },
+   {
+    "name": "TOTAL_CREATURES",
+    "value": "SVar_TOTAL_CREATURES"
+   },
+   {
+    "name": "TOTAL_RESEARCH",
+    "value": "SVar_TOTAL_RESEARCH"
+   },
+   {
+    "name": "TOTAL_DOORS",
+    "value": "SVar_TOTAL_DOORS"
+   },
+   {
+    "name": "TOTAL_TRAPS",
+    "value": "SVar_TOTAL_TRAPS"
+   },
+   {
+    "name": "TOTAL_AREA",
+    "value": "SVar_TOTAL_AREA"
+   },
+   {
+    "name": "TOTAL_CREATURES_LEFT",
+    "value": "SVar_TOTAL_CREATURES_LEFT"
+   },
+   {
+    "name": "CREATURES_ANNOYED",
+    "value": "SVar_CREATURES_ANNOYED"
+   },
+   {
+    "name": "BATTLES_LOST",
+    "value": "SVar_BATTLES_LOST"
+   },
+   {
+    "name": "BATTLES_WON",
+    "value": "SVar_BATTLES_WON"
+   },
+   {
+    "name": "ROOMS_DESTROYED",
+    "value": "SVar_ROOMS_DESTROYED"
+   },
+   {
+    "name": "SPELLS_STOLEN",
+    "value": "SVar_SPELLS_STOLEN"
+   },
+   {
+    "name": "TIMES_BROKEN_INTO",
+    "value": "SVar_TIMES_BROKEN_INTO"
+   },
+   {
+    "name": "GOLD_POTS_STOLEN",
+    "value": "SVar_GOLD_POTS_STOLEN"
+   },
+   {
+    "name": "HEART_HEALTH",
+    "value": "SVar_HEART_HEALTH"
+   },
+   {
+    "name": "GHOSTS_RAISED",
+    "value": "SVar_GHOSTS_RAISED"
+   },
+   {
+    "name": "SKELETONS_RAISED",
+    "value": "SVar_SKELETONS_RAISED"
+   },
+   {
+    "name": "VAMPIRES_RAISED",
+    "value": "SVar_VAMPIRES_RAISED"
+   },
+   {
+    "name": "CREATURES_CONVERTED",
+    "value": "SVar_CREATURES_CONVERTED"
+   },
+   {
+    "name": "EVIL_CREATURES_CONVERTED",
+    "value": "SVar_EVIL_CREATURES_CONVERTED"
+   },
+   {
+    "name": "GOOD_CREATURES_CONVERTED",
+    "value": "SVar_GOOD_CREATURES_CONVERTED"
+   },
+   {
+    "name": "TIMES_ANNOYED_CREATURE",
+    "value": "SVar_TIMES_ANNOYED_CREATURE"
+   },
+   {
+    "name": "TIMES_TORTURED_CREATURE",
+    "value": "SVar_TIMES_TORTURED_CREATURE"
+   },
+   {
+    "name": "TOTAL_DOORS_MANUFACTURED",
+    "value": "SVar_TOTAL_DOORS_MANUFACTURED"
+   },
+   {
+    "name": "TOTAL_TRAPS_MANUFACTURED",
+    "value": "SVar_TOTAL_TRAPS_MANUFACTURED"
+   },
+   {
+    "name": "TOTAL_MANUFACTURED",
+    "value": "SVar_TOTAL_MANUFACTURED"
+   },
+   {
+    "name": "TOTAL_TRAPS_USED",
+    "value": "SVar_TOTAL_TRAPS_USED"
+   },
+   {
+    "name": "TOTAL_DOORS_USED",
+    "value": "SVar_TOTAL_DOORS_USED"
+   },
+   {
+    "name": "KEEPERS_DESTROYED",
+    "value": "SVar_KEEPERS_DESTROYED"
+   },
+   {
+    "name": "CREATURES_SACRIFICED",
+    "value": "SVar_CREATURES_SACRIFICED"
+   },
+   {
+    "name": "CREATURES_FROM_SACRIFICE",
+    "value": "SVar_CREATURES_FROM_SACRIFICE"
+   },
+   {
+    "name": "TIMES_LEVELUP_CREATURE",
+    "value": "SVar_TIMES_LEVELUP_CREATURE"
+   },
+   {
+    "name": "TOTAL_SALARY",
+    "value": "SVar_TOTAL_SALARY"
+   },
+   {
+    "name": "CURRENT_SALARY",
+    "value": "SVar_CURRENT_SALARY"
+   },
+   {
+    "name": "DUNGEON_DESTROYED",
+    "value": "SVar_DUNGEON_DESTROYED"
+   },
+   {
+    "name": "TOTAL_GOLD_MINED",
+    "value": "SVar_TOTAL_GOLD_MINED"
+   },
+   {
+    "name": "DOORS_DESTROYED",
+    "value": "SVar_DOORS_DESTROYED"
+   },
+   {
+    "name": "CREATURES_SCAVENGED_LOST",
+    "value": "SVar_CREATURES_SCAVENGED_LOST"
+   },
+   {
+    "name": "CREATURES_SCAVENGED_GAINED",
+    "value": "SVar_CREATURES_SCAVENGED_GAINED"
+   },
+   {
+    "name": "ALL_DUNGEONS_DESTROYED",
+    "value": "SVar_ALL_DUNGEONS_DESTROYED"
+   },
+   {
+    "name": "GOOD_CREATURES",
+    "value": "SVar_GOOD_CREATURES"
+   },
+   {
+    "name": "EVIL_CREATURES",
+    "value": "SVar_EVIL_CREATURES"
+   },
+   {
+    "name": "TRAPS_SOLD",
+    "value": "SVar_TRAPS_SOLD"
+   },
+   {
+    "name": "DOORS_SOLD",
+    "value": "SVar_DOORS_SOLD"
+   },
+   {
+    "name": "MANUFACTURED_SOLD",
+    "value": "SVar_MANUFACTURED_SOLD"
+   },
+   {
+    "name": "MANUFACTURE_GOLD",
+    "value": "SVar_MANUFACTURE_GOLD"
+   },
+   {
+    "name": "TOTAL_SCORE",
+    "value": "SVar_TOTAL_SCORE"
+   },
+   {
+    "name": "BONUS_TIME",
+    "value": "SVar_BONUS_TIME"
+   },
+   {
+    "name": "CREATURES_TRANSFERRED",
+    "value": "SVar_CREATURES_TRANSFERRED"
+   },
+   {
+    "name": "ACTIVE_BATTLES",
+    "value": "SVar_ACTIVE_BATTLES"
+   },
+   {
+    "name": "VIEW_TYPE",
+    "value": "SVar_VIEW_TYPE"
+   },
+   {
+    "name": "TOTAL_SLAPS",
+    "value": "SVar_TOTAL_SLAPS"
+   },
+   {
+    "name": "SCORE",
+    "value": "SVar_SCORE"
+   },
+   {
+    "name": "PLAYER_SCORE",
+    "value": "SVar_PLAYER_SCORE"
+   },
+   {
+    "name": "MANAGE_SCORE",
+    "value": "SVar_MANAGE_SCORE"
+   },
+   {
+    "name": "CONTROLLED_THING",
+    "value": "SVar_CONTROLLED_THING"
+   }
+  ],
+  "dk1_variable_desc": [
+   {
+    "name": "MONEY",
+    "value": "SVar_MONEY"
+   },
+   {
+    "name": "GAME_TURN",
+    "value": "SVar_GAME_TURN"
+   },
+   {
+    "name": "TOTAL_IMPS",
+    "value": "SVar_TOTAL_DIGGERS"
+   },
+   {
+    "name": "TOTAL_CREATURES",
+    "value": "SVar_CONTROLS_TOTAL_CREATURES"
+   },
+   {
+    "name": "TOTAL_RESEARCH",
+    "value": "SVar_TOTAL_RESEARCH"
+   },
+   {
+    "name": "TOTAL_DOORS",
+    "value": "SVar_TOTAL_DOORS"
+   },
+   {
+    "name": "TOTAL_AREA",
+    "value": "SVar_TOTAL_AREA"
+   },
+   {
+    "name": "TOTAL_CREATURES_LEFT",
+    "value": "SVar_TOTAL_CREATURES_LEFT"
+   },
+   {
+    "name": "CREATURES_ANNOYED",
+    "value": "SVar_CREATURES_ANNOYED"
+   },
+   {
+    "name": "BATTLES_LOST",
+    "value": "SVar_BATTLES_LOST"
+   },
+   {
+    "name": "BATTLES_WON",
+    "value": "SVar_BATTLES_WON"
+   },
+   {
+    "name": "ROOMS_DESTROYED",
+    "value": "SVar_ROOMS_DESTROYED"
+   },
+   {
+    "name": "SPELLS_STOLEN",
+    "value": "SVar_SPELLS_STOLEN"
+   },
+   {
+    "name": "TIMES_BROKEN_INTO",
+    "value": "SVar_TIMES_BROKEN_INTO"
+   },
+   {
+    "name": "GOLD_POTS_STOLEN",
+    "value": "SVar_GOLD_POTS_STOLEN"
+   },
+   {
+    "name": "DUNGEON_DESTROYED",
+    "value": "SVar_DUNGEON_DESTROYED"
+   },
+   {
+    "name": "TOTAL_GOLD_MINED",
+    "value": "SVar_TOTAL_GOLD_MINED"
+   },
+   {
+    "name": "DOORS_DESTROYED",
+    "value": "SVar_DOORS_DESTROYED"
+   },
+   {
+    "name": "CREATURES_SCAVENGED_LOST",
+    "value": "SVar_CREATURES_SCAVENGED_LOST"
+   },
+   {
+    "name": "CREATURES_SCAVENGED_GAINED",
+    "value": "SVar_CREATURES_SCAVENGED_GAINED"
+   },
+   {
+    "name": "ALL_DUNGEONS_DESTROYED",
+    "value": "SVar_ALL_DUNGEONS_DESTROYED"
+   }
+  ],
+  "fill_desc": [
+   {
+    "name": "NONE",
+    "value": "FillIterType_NoFill"
+   },
+   {
+    "name": "MATCH",
+    "value": "FillIterType_Match"
+   },
+   {
+    "name": "FLOOR",
+    "value": "FillIterType_Floor"
+   },
+   {
+    "name": "BRIDGE",
+    "value": "FillIterType_FloorBridge"
+   }
+  ],
+  "locked_desc": [
+   {
+    "name": "LOCKED",
+    "value": "1"
+   },
+   {
+    "name": "UNLOCKED",
+    "value": "0"
+   }
+  ],
+  "is_free_desc": [
+   {
+    "name": "PAID",
+    "value": "0"
+   },
+   {
+    "name": "FREE",
+    "value": "1"
+   }
+  ],
+  "orientation_desc": [
+   {
+    "name": "North",
+    "value": "ANGLE_NORTH"
+   },
+   {
+    "name": "NorthEast",
+    "value": "ANGLE_NORTHEAST"
+   },
+   {
+    "name": "East",
+    "value": "ANGLE_EAST"
+   },
+   {
+    "name": "SouthEast",
+    "value": "ANGLE_SOUTHEAST"
+   },
+   {
+    "name": "South",
+    "value": "ANGLE_SOUTH"
+   },
+   {
+    "name": "SouthWest",
+    "value": "ANGLE_SOUTHWEST"
+   },
+   {
+    "name": "West",
+    "value": "ANGLE_WEST"
+   },
+   {
+    "name": "NorthWest",
+    "value": "ANGLE_NORTHWEST"
+   }
+  ],
+  "texture_pack_desc": [
+   {
+    "name": "NONE",
+    "value": "0"
+   },
+   {
+    "name": "STANDARD",
+    "value": "1"
+   },
+   {
+    "name": "ANCIENT",
+    "value": "2"
+   },
+   {
+    "name": "WINTER",
+    "value": "3"
+   },
+   {
+    "name": "SNAKE_KEY",
+    "value": "4"
+   },
+   {
+    "name": "STONE_FACE",
+    "value": "5"
+   },
+   {
+    "name": "VOLUPTUOUS",
+    "value": "6"
+   },
+   {
+    "name": "BIG_BREASTS",
+    "value": "6"
+   },
+   {
+    "name": "ROUGH_ANCIENT",
+    "value": "7"
+   },
+   {
+    "name": "SKULL_RELIEF",
+    "value": "8"
+   },
+   {
+    "name": "DESERT_TOMB",
+    "value": "9"
+   },
+   {
+    "name": "GYPSUM",
+    "value": "10"
+   },
+   {
+    "name": "LILAC_STONE",
+    "value": "11"
+   },
+   {
+    "name": "SWAMP_SERPENT",
+    "value": "12"
+   },
+   {
+    "name": "LAVA_CAVERN",
+    "value": "13"
+   },
+   {
+    "name": "LATERITE_CAVERN",
+    "value": "14"
+   }
+  ],
+  "head_for_desc": [
+   {
+    "name": "ACTION_POINT",
+    "value": "MLoc_ACTIONPOINT"
+   },
+   {
+    "name": "DUNGEON",
+    "value": "MLoc_PLAYERSDUNGEON"
+   },
+   {
+    "name": "DUNGEON_HEART",
+    "value": "MLoc_PLAYERSHEART"
+   },
+   {
+    "name": "APPROPIATE_DUNGEON",
+    "value": "MLoc_APPROPRTDUNGEON"
+   },
+   {
+    "name": "APPROPRIATE_DUNGEON",
+    "value": "MLoc_APPROPRTDUNGEON"
+   }
+  ],
+  "cmpgn_human_player_options": [
+   {
+    "name": "RED",
+    "value": "0"
+   },
+   {
+    "name": "BLUE",
+    "value": "1"
+   },
+   {
+    "name": "GREEN",
+    "value": "2"
+   },
+   {
+    "name": "YELLOW",
+    "value": "3"
+   },
+   {
+    "name": "WHITE",
+    "value": "4"
+   },
+   {
+    "name": "NEUTRAL",
+    "value": "5"
+   },
+   {
+    "name": "PURPLE",
+    "value": "6"
+   },
+   {
+    "name": "BLACK",
+    "value": "7"
+   },
+   {
+    "name": "ORANGE",
+    "value": "8"
+   }
+  ]
+ },
+ "command_ids": [
+  {
+   "name": "Cmd_NONE",
+   "value": 0
+  },
+  {
+   "name": "Cmd_CREATE_PARTY",
+   "value": 1
+  },
+  {
+   "name": "Cmd_ADD_TO_PARTY",
+   "value": 2
+  },
+  {
+   "name": "Cmd_ADD_PARTY_TO_LEVEL",
+   "value": 3
+  },
+  {
+   "name": "Cmd_ADD_CREATURE_TO_LEVEL",
+   "value": 4
+  },
+  {
+   "name": "Cmd_MESSAGE",
+   "value": 5
+  },
+  {
+   "name": "Cmd_IF",
+   "value": 6
+  },
+  {
+   "name": "Cmd_ENDIF",
+   "value": 7
+  },
+  {
+   "name": "Cmd_SET_GENERATE_SPEED",
+   "value": 9
+  },
+  {
+   "name": "Cmd_REM",
+   "value": 10
+  },
+  {
+   "name": "Cmd_START_MONEY",
+   "value": 11
+  },
+  {
+   "name": "Cmd_ROOM_AVAILABLE",
+   "value": 12
+  },
+  {
+   "name": "Cmd_CREATURE_AVAILABLE",
+   "value": 13
+  },
+  {
+   "name": "Cmd_MAGIC_AVAILABLE",
+   "value": 14
+  },
+  {
+   "name": "Cmd_TRAP_AVAILABLE",
+   "value": 15
+  },
+  {
+   "name": "Cmd_RESEARCH",
+   "value": 16
+  },
+  {
+   "name": "Cmd_COMPUTER_PLAYER",
+   "value": 17
+  },
+  {
+   "name": "Cmd_SET_TIMER",
+   "value": 18
+  },
+  {
+   "name": "Cmd_IF_ACTION_POINT",
+   "value": 19
+  },
+  {
+   "name": "Cmd_ADD_TUNNELLER_TO_LEVEL",
+   "value": 20
+  },
+  {
+   "name": "Cmd_WIN_GAME",
+   "value": 21
+  },
+  {
+   "name": "Cmd_LOSE_GAME",
+   "value": 22
+  },
+  {
+   "name": "Cmd_SET_FLAG",
+   "value": 25
+  },
+  {
+   "name": "Cmd_MAX_CREATURES",
+   "value": 26
+  },
+  {
+   "name": "Cmd_NEXT_COMMAND_REUSABLE",
+   "value": 27
+  },
+  {
+   "name": "Cmd_RANDOM",
+   "value": 28
+  },
+  {
+   "name": "Cmd_DRAWFROM",
+   "value": 29
+  },
+  {
+   "name": "Cmd_DOOR_AVAILABLE",
+   "value": 30
+  },
+  {
+   "name": "Cmd_DISPLAY_OBJECTIVE",
+   "value": 37
+  },
+  {
+   "name": "Cmd_DISPLAY_INFORMATION",
+   "value": 38
+  },
+  {
+   "name": "Cmd_ADD_TUNNELLER_PARTY_TO_LEVEL",
+   "value": 40
+  },
+  {
+   "name": "Cmd_ADD_CREATURE_TO_POOL",
+   "value": 41
+  },
+  {
+   "name": "Cmd_RESET_ACTION_POINT",
+   "value": 42
+  },
+  {
+   "name": "Cmd_SET_CREATURE_MAX_LEVEL",
+   "value": 59
+  },
+  {
+   "name": "Cmd_SET_MUSIC",
+   "value": 60
+  },
+  {
+   "name": "Cmd_TUTORIAL_FLASH_BUTTON",
+   "value": 54
+  },
+  {
+   "name": "Cmd_SET_CREATURE_STRENGTH",
+   "value": 62
+  },
+  {
+   "name": "Cmd_SET_CREATURE_HEALTH",
+   "value": 61
+  },
+  {
+   "name": "Cmd_SET_CREATURE_ARMOUR",
+   "value": 63
+  },
+  {
+   "name": "Cmd_SET_CREATURE_FEAR_WOUNDED",
+   "value": 64
+  },
+  {
+   "name": "Cmd_IF_AVAILABLE",
+   "value": 66
+  },
+  {
+   "name": "Cmd_SET_COMPUTER_GLOBALS",
+   "value": 68
+  },
+  {
+   "name": "Cmd_SET_COMPUTER_CHECKS",
+   "value": 69
+  },
+  {
+   "name": "Cmd_SET_COMPUTER_EVENT",
+   "value": 70
+  },
+  {
+   "name": "Cmd_SET_COMPUTER_PROCESS",
+   "value": 71
+  },
+  {
+   "name": "Cmd_ALLY_PLAYERS",
+   "value": 72
+  },
+  {
+   "name": "Cmd_DEAD_CREATURES_RETURN_TO_POOL",
+   "value": 73
+  },
+  {
+   "name": "Cmd_BONUS_LEVEL_TIME",
+   "value": 75
+  },
+  {
+   "name": "Cmd_QUICK_OBJECTIVE",
+   "value": 44
+  },
+  {
+   "name": "Cmd_QUICK_INFORMATION",
+   "value": 45
+  },
+  {
+   "name": "Cmd_QUICK_OBJECTIVE_WITH_POS",
+   "value": 46
+  },
+  {
+   "name": "Cmd_QUICK_INFORMATION_WITH_POS",
+   "value": 47
+  },
+  {
+   "name": "Cmd_DISPLAY_OBJECTIVE_WITH_POS",
+   "value": 65
+  },
+  {
+   "name": "Cmd_DISPLAY_INFORMATION_WITH_POS",
+   "value": 74
+  },
+  {
+   "name": "Cmd_PRINT",
+   "value": 76
+  },
+  {
+   "name": "Cmd_SWAP_CREATURE",
+   "value": 77
+  },
+  {
+   "name": "Cmd_CHANGE_SLAB_TYPE",
+   "value": 78
+  },
+  {
+   "name": "Cmd_CHANGE_SLAB_OWNER",
+   "value": 79
+  },
+  {
+   "name": "Cmd_IF_SLAB_TYPE",
+   "value": 80
+  },
+  {
+   "name": "Cmd_IF_SLAB_OWNER",
+   "value": 81
+  },
+  {
+   "name": "Cmd_SET_CREATURE_TENDENCIES",
+   "value": 84
+  },
+  {
+   "name": "Cmd_PLAY_MESSAGE",
+   "value": 85
+  },
+  {
+   "name": "Cmd_ADD_GOLD_TO_PLAYER",
+   "value": 86
+  },
+  {
+   "name": "Cmd_REVEAL_MAP_RECT",
+   "value": 87
+  },
+  {
+   "name": "Cmd_REVEAL_MAP_LOCATION",
+   "value": 88
+  },
+  {
+   "name": "Cmd_LEVEL_VERSION",
+   "value": 90
+  },
+  {
+   "name": "Cmd_RESEARCH_ORDER",
+   "value": 91
+  },
+  {
+   "name": "Cmd_KILL_CREATURE",
+   "value": 92
+  },
+  {
+   "name": "Cmd_SET_CREATURE_FEAR_STRONGER",
+   "value": 93
+  },
+  {
+   "name": "Cmd_IF_CONTROLS",
+   "value": 94
+  },
+  {
+   "name": "Cmd_ADD_TO_FLAG",
+   "value": 95
+  },
+  {
+   "name": "Cmd_SET_CAMPAIGN_FLAG",
+   "value": 96
+  },
+  {
+   "name": "Cmd_ADD_TO_CAMPAIGN_FLAG",
+   "value": 97
+  },
+  {
+   "name": "Cmd_EXPORT_VARIABLE",
+   "value": 98
+  },
+  {
+   "name": "Cmd_IMPORT",
+   "value": 99
+  },
+  {
+   "name": "Cmd_RUN_AFTER_VICTORY",
+   "value": 100
+  },
+  {
+   "name": "Cmd_LEVEL_UP_CREATURE",
+   "value": 101
+  },
+  {
+   "name": "Cmd_CHANGE_CREATURE_OWNER",
+   "value": 102
+  },
+  {
+   "name": "Cmd_SET_GAME_RULE",
+   "value": 103
+  },
+  {
+   "name": "Cmd_SET_TRAP_CONFIGURATION",
+   "value": 104
+  },
+  {
+   "name": "Cmd_SET_DOOR_CONFIGURATION",
+   "value": 105
+  },
+  {
+   "name": "Cmd_SET_OBJECT_CONFIGURATION",
+   "value": 106
+  },
+  {
+   "name": "Cmd_SET_CREATURE_CONFIGURATION",
+   "value": 107
+  },
+  {
+   "name": "Cmd_SET_CREATURE_PROPERTY",
+   "value": 108
+  },
+  {
+   "name": "Cmd_SET_CREATURE_FEARSOME_FACTOR",
+   "value": 109
+  },
+  {
+   "name": "Cmd_USE_POWER_ON_CREATURE",
+   "value": 110
+  },
+  {
+   "name": "Cmd_USE_POWER_AT_POS",
+   "value": 111
+  },
+  {
+   "name": "Cmd_USE_POWER",
+   "value": 112
+  },
+  {
+   "name": "Cmd_USE_POWER_AT_LOCATION",
+   "value": 113
+  },
+  {
+   "name": "Cmd_ADD_OBJECT_TO_LEVEL",
+   "value": 114
+  },
+  {
+   "name": "Cmd_USE_SPECIAL_INCREASE_LEVEL",
+   "value": 115
+  },
+  {
+   "name": "Cmd_USE_SPECIAL_MULTIPLY_CREATURES",
+   "value": 116
+  },
+  {
+   "name": "Cmd_MAKE_SAFE",
+   "value": 117
+  },
+  {
+   "name": "Cmd_LOCATE_HIDDEN_WORLD",
+   "value": 118
+  },
+  {
+   "name": "Cmd_USE_SPECIAL_TRANSFER_CREATURE",
+   "value": 119
+  },
+  {
+   "name": "Cmd_USE_SPECIAL_STEAL_HERO",
+   "value": 120
+  },
+  {
+   "name": "Cmd_COMPUTER_DIG_TO_LOCATION",
+   "value": 121
+  },
+  {
+   "name": "Cmd_DELETE_FROM_PARTY",
+   "value": 122
+  },
+  {
+   "name": "Cmd_SET_SACRIFICE_RECIPE",
+   "value": 123
+  },
+  {
+   "name": "Cmd_REMOVE_SACRIFICE_RECIPE",
+   "value": 124
+  },
+  {
+   "name": "Cmd_SET_BOX_TOOLTIP",
+   "value": 125
+  },
+  {
+   "name": "Cmd_SET_BOX_TOOLTIP_ID",
+   "value": 126
+  },
+  {
+   "name": "Cmd_CREATE_EFFECTS_LINE",
+   "value": 127
+  },
+  {
+   "name": "Cmd_DISPLAY_MESSAGE",
+   "value": 128
+  },
+  {
+   "name": "Cmd_QUICK_MESSAGE",
+   "value": 129
+  },
+  {
+   "name": "Cmd_CLEAR_MESSAGE",
+   "value": 130
+  },
+  {
+   "name": "Cmd_SET_HEART_HEALTH",
+   "value": 131
+  },
+  {
+   "name": "Cmd_ADD_HEART_HEALTH",
+   "value": 132
+  },
+  {
+   "name": "Cmd_CREATURE_ENTRANCE_LEVEL",
+   "value": 133
+  },
+  {
+   "name": "Cmd_RANDOMISE_FLAG",
+   "value": 134
+  },
+  {
+   "name": "Cmd_COMPUTE_FLAG",
+   "value": 135
+  },
+  {
+   "name": "Cmd_CONCEAL_MAP_RECT",
+   "value": 136
+  },
+  {
+   "name": "Cmd_DISPLAY_TIMER",
+   "value": 137
+  },
+  {
+   "name": "Cmd_ADD_TO_TIMER",
+   "value": 138
+  },
+  {
+   "name": "Cmd_ADD_BONUS_TIME",
+   "value": 139
+  },
+  {
+   "name": "Cmd_DISPLAY_VARIABLE",
+   "value": 140
+  },
+  {
+   "name": "Cmd_DISPLAY_COUNTDOWN",
+   "value": 141
+  },
+  {
+   "name": "Cmd_HIDE_TIMER",
+   "value": 142
+  },
+  {
+   "name": "Cmd_HIDE_VARIABLE",
+   "value": 143
+  },
+  {
+   "name": "Cmd_CREATE_EFFECT",
+   "value": 144
+  },
+  {
+   "name": "Cmd_CREATE_EFFECT_AT_POS",
+   "value": 145
+  },
+  {
+   "name": "Cmd_HEART_LOST_QUICK_OBJECTIVE",
+   "value": 146
+  },
+  {
+   "name": "Cmd_HEART_LOST_OBJECTIVE",
+   "value": 147
+  },
+  {
+   "name": "Cmd_SET_DOOR",
+   "value": 148
+  },
+  {
+   "name": "Cmd_SET_CREATURE_INSTANCE",
+   "value": 149
+  },
+  {
+   "name": "Cmd_TRANSFER_CREATURE",
+   "value": 150
+  },
+  {
+   "name": "Cmd_SET_HAND_RULE",
+   "value": 151
+  },
+  {
+   "name": "Cmd_MOVE_CREATURE",
+   "value": 152
+  },
+  {
+   "name": "Cmd_COUNT_CREATURES_AT_ACTION_POINT",
+   "value": 153
+  },
+  {
+   "name": "Cmd_IF_ALLIED",
+   "value": 154
+  },
+  {
+   "name": "Cmd_SET_TEXTURE",
+   "value": 155
+  },
+  {
+   "name": "Cmd_USE_SPELL_ON_CREATURE",
+   "value": 156
+  },
+  {
+   "name": "Cmd_USE_SPELL_ON_PLAYERS_CREATURES",
+   "value": 157
+  },
+  {
+   "name": "Cmd_SET_ROOM_CONFIGURATION",
+   "value": 158
+  },
+  {
+   "name": "Cmd_NEW_TRAP_TYPE",
+   "value": 159
+  },
+  {
+   "name": "Cmd_NEW_OBJECT_TYPE",
+   "value": 160
+  },
+  {
+   "name": "Cmd_NEW_ROOM_TYPE",
+   "value": 161
+  },
+  {
+   "name": "Cmd_NEW_CREATURE_TYPE",
+   "value": 162
+  },
+  {
+   "name": "Cmd_SET_HAND_GRAPHIC",
+   "value": 163
+  },
+  {
+   "name": "Cmd_ADD_EFFECT_GENERATOR_TO_LEVEL",
+   "value": 164
+  },
+  {
+   "name": "Cmd_SET_EFFECT_GENERATOR_CONFIGURATION",
+   "value": 165
+  },
+  {
+   "name": "Cmd_SET_POWER_CONFIGURATION",
+   "value": 166
+  },
+  {
+   "name": "Cmd_SET_PLAYER_COLOUR",
+   "value": 167
+  },
+  {
+   "name": "Cmd_MAKE_UNSAFE",
+   "value": 168
+  },
+  {
+   "name": "Cmd_LEVEL_UP_PLAYERS_CREATURES",
+   "value": 169
+  },
+  {
+   "name": "Cmd_SET_INCREASE_ON_EXPERIENCE",
+   "value": 170
+  },
+  {
+   "name": "Cmd_SET_PLAYER_MODIFIER",
+   "value": 171
+  },
+  {
+   "name": "Cmd_ADD_TO_PLAYER_MODIFIER",
+   "value": 172
+  },
+  {
+   "name": "Cmd_USE_POWER_ON_PLAYERS_CREATURES",
+   "value": 173
+  },
+  {
+   "name": "Cmd_CHANGE_SLAB_TEXTURE",
+   "value": 174
+  },
+  {
+   "name": "Cmd_MOVE_PLAYER_CAMERA_TO",
+   "value": 175
+  },
+  {
+   "name": "Cmd_ADD_OBJECT_TO_LEVEL_AT_POS",
+   "value": 176
+  },
+  {
+   "name": "Cmd_PLACE_DOOR",
+   "value": 177
+  },
+  {
+   "name": "Cmd_PLACE_TRAP",
+   "value": 178
+  },
+  {
+   "name": "Cmd_LOCK_POSSESSION",
+   "value": 179
+  },
+  {
+   "name": "Cmd_SET_DIGGER",
+   "value": 180
+  },
+  {
+   "name": "Cmd_RUN_LUA_CODE",
+   "value": 181
+  },
+  {
+   "name": "Cmd_TAG_MAP_RECT",
+   "value": 182
+  },
+  {
+   "name": "Cmd_UNTAG_MAP_RECT",
+   "value": 183
+  },
+  {
+   "name": "Cmd_SET_NEXT_LEVEL",
+   "value": 184
+  },
+  {
+   "name": "Cmd_SHOW_BONUS_LEVEL",
+   "value": 185
+  },
+  {
+   "name": "Cmd_HIDE_BONUS_LEVEL",
+   "value": 186
+  },
+  {
+   "name": "Cmd_HIDE_HERO_GATE",
+   "value": 187
+  },
+  {
+   "name": "Cmd_DISPLAY_PLAYER_OBJECTIVE",
+   "value": 188
+  },
+  {
+   "name": "Cmd_DISPLAY_PLAYER_INFORMATION",
+   "value": 189
+  },
+  {
+   "name": "Cmd_DISPLAY_PLAYER_OBJECTIVE_WITH_POS",
+   "value": 190
+  },
+  {
+   "name": "Cmd_DISPLAY_PLAYER_INFORMATION_WITH_POS",
+   "value": 191
+  },
+  {
+   "name": "Cmd_QUICK_PLAYER_OBJECTIVE",
+   "value": 192
+  },
+  {
+   "name": "Cmd_QUICK_PLAYER_INFORMATION",
+   "value": 193
+  },
+  {
+   "name": "Cmd_QUICK_PLAYER_OBJECTIVE_WITH_POS",
+   "value": 194
+  },
+  {
+   "name": "Cmd_QUICK_PLAYER_INFORMATION_WITH_POS",
+   "value": 195
+  },
+  {
+   "name": "Cmd_COPY_CREATURE_TYPE",
+   "value": 196
+  },
+  {
+   "name": "Cmd_TRIGGER_ACTION_POINT",
+   "value": 197
+  },
+  {
+   "name": "Cmd_SET_LEVEL_ENSIGN",
+   "value": 198
+  },
+  {
+   "name": "Cmd_DISPLAY_VARIABLE_WITH_LABEL",
+   "value": 199
+  },
+  {
+   "name": "Cmd_CHANGE_CREATURES_ANNOYANCE",
+   "value": 200
+  }
+ ]
+}

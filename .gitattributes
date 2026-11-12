@@ -1,0 +1,41 @@
+# Line endings: every text file is checked out with LF on every platform. Tests compare
+# generated text byte for byte with checked-in files (data/prefabs/*.kfxprefab, data/lua_api.json,
+# workshop HTML/JSON fixtures), and Git for Windows would otherwise convert them to CRLF
+# (core.autocrlf=true is the default there).
+* text=auto eol=lf
+
+*.rs text eol=lf
+*.toml text eol=lf
+*.lock text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.kfxprefab text eol=lf
+*.wgsl text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.xml text eol=lf
+*.desktop text eol=lf
+*.txt text eol=lf
+*.cfg text eol=lf
+*.lua text eol=lf
+*.po text eol=lf
+*.csv text eol=lf
+PKGBUILD text eol=lf
+LICENSE text eol=lf
+
+# Binary: never converted, never diffed as text.
+*.png binary
+*.jpg binary
+*.ico binary
+*.icns binary
+*.zip binary
+*.dat binary
+*.slb binary
+*.clm binary
+*.tng binary
+*.wav binary
+*.ogg binary
+*.flac binary
+*.ttf binary
+*.otf binary

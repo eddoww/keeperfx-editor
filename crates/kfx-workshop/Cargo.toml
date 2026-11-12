@@ -1,0 +1,31 @@
+[package]
+name = "kfx-workshop"
+description = "KeeperFX Workshop client, mod installer and packager, with an egui browser"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+kfx-formats.workspace = true
+egui = "0.37"
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+ureq = { version = "2.12", default-features = false, features = ["tls", "gzip"] }
+zip = { version = "2.6.1", default-features = false, features = ["deflate", "bzip2"] }
+sevenz-rust2 = { version = "0.13", default-features = false }
+sha2 = "0.10"
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "gif"] }
+
+[dev-dependencies]
+# system fallback fonts in the UI test harnesses (game text in any script)
+kfx-fonts = { path = "../kfx-fonts" }
+kfx-map.workspace = true
+zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+egui = { version = "0.37", features = ["default_fonts"] }
+egui_kittest = { version = "0.37.0", features = ["wgpu"] }
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "gif"] }

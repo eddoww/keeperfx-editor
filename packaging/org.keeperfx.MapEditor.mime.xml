@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Install to /usr/share/mime/packages/ and run update-mime-database /usr/share/mime.
+     The slab file of a level is mapNNNNN.slb (five digits); shared-mime-info matches globs
+     case-insensitively, so MAP00007.SLB is covered too. The editor opens the whole level
+     (.own, .dat, .clm, .tngfx, ... next to it) from this one file. -->
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-keeperfx-map">
+    <comment>KeeperFX map slab file</comment>
+    <comment xml:lang="en">KeeperFX map slab file</comment>
+    <glob pattern="map?????.slb"/>
+    <icon name="org.keeperfx.MapEditor"/>
+  </mime-type>
+</mime-info>

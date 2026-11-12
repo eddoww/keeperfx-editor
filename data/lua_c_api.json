@@ -1,0 +1,2520 @@
+{
+ "fields": {
+  "Camera": {
+   "dynamic_player_variables": false,
+   "get": [
+    {
+     "line": 143,
+     "name": "pos"
+    },
+    {
+     "line": 145,
+     "name": "yaw"
+    },
+    {
+     "line": 147,
+     "name": "pitch"
+    },
+    {
+     "line": 149,
+     "name": "roll"
+    },
+    {
+     "line": 151,
+     "name": "horizontal_fov"
+    },
+    {
+     "line": 153,
+     "name": "zoom"
+    },
+    {
+     "line": 155,
+     "name": "view_mode"
+    }
+   ],
+   "set": []
+  },
+  "Map": {
+   "dynamic_player_variables": false,
+   "get": [
+    {
+     "line": 54,
+     "name": "creature_pool"
+    },
+    {
+     "line": 56,
+     "name": "map_name"
+    },
+    {
+     "line": 58,
+     "name": "map_number"
+    },
+    {
+     "line": 60,
+     "name": "campaign"
+    },
+    {
+     "line": 62,
+     "name": "map_type"
+    },
+    {
+     "line": 76,
+     "name": "width"
+    },
+    {
+     "line": 78,
+     "name": "height"
+    },
+    {
+     "line": 80,
+     "name": "default_texture"
+    }
+   ],
+   "set": [
+    {
+     "line": 97,
+     "name": "default_texture"
+    }
+   ]
+  },
+  "Player": {
+   "dynamic_player_variables": true,
+   "get": [
+    {
+     "line": 214,
+     "name": "camera"
+    },
+    {
+     "line": 216,
+     "name": "heart"
+    },
+    {
+     "line": 218,
+     "name": "controls"
+    },
+    {
+     "line": 221,
+     "name": "available"
+    },
+    {
+     "line": 224,
+     "name": "type"
+    },
+    {
+     "line": 240,
+     "name": "max_creatures"
+    },
+    {
+     "line": 246,
+     "name": "player_name"
+    },
+    {
+     "line": 248,
+     "name": "colour"
+    }
+   ],
+   "set": [
+    {
+     "line": 166,
+     "name": "player_name"
+    },
+    {
+     "line": 172,
+     "name": "colour"
+    }
+   ]
+  },
+  "Room": {
+   "dynamic_player_variables": false,
+   "get": [
+    {
+     "line": 124,
+     "name": "type"
+    },
+    {
+     "line": 126,
+     "name": "owner"
+    },
+    {
+     "line": 128,
+     "name": "slabs"
+    },
+    {
+     "line": 130,
+     "name": "slabs_count"
+    },
+    {
+     "line": 132,
+     "name": "workers"
+    },
+    {
+     "line": 134,
+     "name": "health"
+    },
+    {
+     "line": 136,
+     "name": "max_health"
+    },
+    {
+     "line": 138,
+     "name": "used_capacity"
+    },
+    {
+     "line": 140,
+     "name": "max_capacity"
+    },
+    {
+     "line": 142,
+     "name": "capacity_used_for_storage"
+    },
+    {
+     "line": 144,
+     "name": "efficiency"
+    },
+    {
+     "line": 146,
+     "name": "centerpos"
+    }
+   ],
+   "set": [
+    {
+     "line": 43,
+     "name": "owner"
+    },
+    {
+     "line": 46,
+     "name": "health"
+    },
+    {
+     "line": 49,
+     "name": "max_capacity"
+    },
+    {
+     "line": 52,
+     "name": "used_capacity"
+    },
+    {
+     "line": 55,
+     "name": "capacity_used_for_storage"
+    }
+   ]
+  },
+  "Slab": {
+   "dynamic_player_variables": false,
+   "get": [
+    {
+     "line": 125,
+     "name": "revealed"
+    },
+    {
+     "line": 128,
+     "name": "owner"
+    },
+    {
+     "line": 131,
+     "name": "kind"
+    },
+    {
+     "line": 134,
+     "name": "style"
+    },
+    {
+     "line": 137,
+     "name": "centerpos"
+    },
+    {
+     "line": 144,
+     "name": "room"
+    }
+   ],
+   "set": [
+    {
+     "line": 97,
+     "name": "revealed"
+    },
+    {
+     "line": 100,
+     "name": "owner"
+    },
+    {
+     "line": 102,
+     "name": "kind"
+    },
+    {
+     "line": 105,
+     "name": "style"
+    }
+   ]
+  },
+  "Thing": {
+   "dynamic_player_variables": false,
+   "get": [
+    {
+     "family": "shared",
+     "line": 582,
+     "name": "ThingIndex"
+    },
+    {
+     "family": "shared",
+     "line": 584,
+     "name": "creation_turn"
+    },
+    {
+     "family": "shared",
+     "line": 586,
+     "name": "model"
+    },
+    {
+     "family": "shared",
+     "line": 588,
+     "name": "owner"
+    },
+    {
+     "family": "shared",
+     "line": 590,
+     "name": "pos"
+    },
+    {
+     "family": "shared",
+     "line": 592,
+     "name": "orientation"
+    },
+    {
+     "family": "shared",
+     "line": 594,
+     "name": "pitch"
+    },
+    {
+     "family": "shared",
+     "line": 596,
+     "name": "health"
+    },
+    {
+     "family": "shared",
+     "line": 598,
+     "name": "anim_sprite"
+    },
+    {
+     "family": "shared",
+     "line": 600,
+     "name": "anim_speed"
+    },
+    {
+     "family": "shared",
+     "line": 602,
+     "name": "sprite_size"
+    },
+    {
+     "family": "shared",
+     "line": 604,
+     "name": "sprite_size_min"
+    },
+    {
+     "family": "shared",
+     "line": 606,
+     "name": "sprite_size_max"
+    },
+    {
+     "family": "shared",
+     "line": 608,
+     "name": "transformation_speed"
+    },
+    {
+     "family": "shared",
+     "line": 610,
+     "name": "clipbox_size_xy"
+    },
+    {
+     "family": "shared",
+     "line": 612,
+     "name": "clipbox_size_z"
+    },
+    {
+     "family": "shared",
+     "line": 614,
+     "name": "solid_size_xy"
+    },
+    {
+     "family": "shared",
+     "line": 616,
+     "name": "solid_size_z"
+    },
+    {
+     "family": "shared",
+     "line": 618,
+     "name": "max_health"
+    },
+    {
+     "family": "shared",
+     "line": 620,
+     "name": "picked_up"
+    },
+    {
+     "family": "picked_up",
+     "line": 622,
+     "name": "thing_class"
+    },
+    {
+     "family": "picked_up",
+     "line": 624,
+     "name": "parent"
+    },
+    {
+     "family": "creature",
+     "line": 637,
+     "name": "name"
+    },
+    {
+     "family": "creature",
+     "line": 639,
+     "name": "gold_held"
+    },
+    {
+     "family": "creature",
+     "line": 641,
+     "name": "party"
+    },
+    {
+     "family": "creature",
+     "line": 643,
+     "name": "level"
+    },
+    {
+     "family": "creature",
+     "line": 645,
+     "name": "max_speed"
+    },
+    {
+     "family": "creature",
+     "line": 647,
+     "name": "exp_points"
+    },
+    {
+     "family": "creature",
+     "line": 649,
+     "name": "creature_kills"
+    },
+    {
+     "family": "creature",
+     "line": 651,
+     "name": "creature_kills_enemies"
+    },
+    {
+     "family": "creature",
+     "line": 653,
+     "name": "creature_kills_allies"
+    },
+    {
+     "family": "creature",
+     "line": 655,
+     "name": "hunger_amount"
+    },
+    {
+     "family": "creature",
+     "line": 657,
+     "name": "hunger_level"
+    },
+    {
+     "family": "creature",
+     "line": 659,
+     "name": "hunger_loss"
+    },
+    {
+     "family": "creature",
+     "line": 661,
+     "name": "lair"
+    },
+    {
+     "family": "creature",
+     "line": 663,
+     "name": "opponents_melee_count"
+    },
+    {
+     "family": "creature",
+     "line": 665,
+     "name": "opponents_ranged_count"
+    },
+    {
+     "family": "creature",
+     "line": 667,
+     "name": "opponents_count"
+    },
+    {
+     "family": "creature",
+     "line": 669,
+     "name": "battle_enemy"
+    },
+    {
+     "family": "creature",
+     "line": 680,
+     "name": "combat_type"
+    },
+    {
+     "family": "creature",
+     "line": 694,
+     "name": "battle_id"
+    },
+    {
+     "family": "creature",
+     "line": 696,
+     "name": "force_health_flower_displayed"
+    },
+    {
+     "family": "creature",
+     "line": 698,
+     "name": "force_health_flower_hidden"
+    },
+    {
+     "family": "creature",
+     "line": 700,
+     "name": "hand_blocked_turns"
+    },
+    {
+     "family": "creature",
+     "line": 702,
+     "name": "countdown"
+    },
+    {
+     "family": "creature",
+     "line": 704,
+     "name": "state"
+    },
+    {
+     "family": "creature",
+     "line": 706,
+     "name": "state_besides_interruptions"
+    },
+    {
+     "family": "creature",
+     "line": 708,
+     "name": "continue_state"
+    },
+    {
+     "family": "creature",
+     "line": 710,
+     "name": "instance"
+    },
+    {
+     "family": "creature",
+     "line": 712,
+     "name": "workroom"
+    },
+    {
+     "family": "creature",
+     "line": 714,
+     "name": "moveto_pos"
+    },
+    {
+     "family": "creature",
+     "line": 716,
+     "name": "flee_pos"
+    },
+    {
+     "family": "creature",
+     "line": 718,
+     "name": "patrol_pos"
+    },
+    {
+     "family": "creature",
+     "line": 720,
+     "name": "patrol_countdown"
+    },
+    {
+     "family": "creature",
+     "line": 722,
+     "name": "party_objective"
+    },
+    {
+     "family": "creature",
+     "line": 724,
+     "name": "party_original_objective"
+    },
+    {
+     "family": "creature",
+     "line": 726,
+     "name": "party_target_player"
+    },
+    {
+     "family": "creature",
+     "line": 728,
+     "name": "conscious_back_turns"
+    },
+    {
+     "family": "creature",
+     "line": 730,
+     "name": "unsummon_duration"
+    },
+    {
+     "family": "creature",
+     "line": 732,
+     "name": "familiars"
+    },
+    {
+     "family": "trap",
+     "line": 739,
+     "name": "shots"
+    },
+    {
+     "family": "trap",
+     "line": 741,
+     "name": "revealed"
+    },
+    {
+     "family": "trap",
+     "line": 743,
+     "name": "rearm_turn"
+    },
+    {
+     "family": "trap",
+     "line": 745,
+     "name": "shooting_finished_turn"
+    },
+    {
+     "family": "special_box",
+     "line": 752,
+     "name": "box_kind"
+    },
+    {
+     "family": "shot",
+     "line": 759,
+     "name": "target"
+    },
+    {
+     "family": "shot",
+     "line": 765,
+     "name": "damage"
+    },
+    {
+     "family": "shot",
+     "line": 767,
+     "name": "originpos"
+    }
+   ],
+   "set": [
+    {
+     "family": "shared",
+     "line": 317,
+     "name": "orientation"
+    },
+    {
+     "family": "shared",
+     "line": 328,
+     "name": "pitch"
+    },
+    {
+     "family": "shared",
+     "line": 331,
+     "name": "owner"
+    },
+    {
+     "family": "shared",
+     "line": 337,
+     "name": "health"
+    },
+    {
+     "family": "creature",
+     "line": 355,
+     "name": "pos"
+    },
+    {
+     "family": "creature",
+     "line": 361,
+     "name": "anim_sprite"
+    },
+    {
+     "family": "creature",
+     "line": 364,
+     "name": "anim_speed"
+    },
+    {
+     "family": "creature",
+     "line": 367,
+     "name": "sprite_size"
+    },
+    {
+     "family": "creature",
+     "line": 370,
+     "name": "sprite_size_min"
+    },
+    {
+     "family": "creature",
+     "line": 373,
+     "name": "sprite_size_max"
+    },
+    {
+     "family": "creature",
+     "line": 376,
+     "name": "transformation_speed"
+    },
+    {
+     "family": "creature",
+     "line": 379,
+     "name": "clipbox_size_xy"
+    },
+    {
+     "family": "creature",
+     "line": 382,
+     "name": "clipbox_size_z"
+    },
+    {
+     "family": "creature",
+     "line": 385,
+     "name": "solid_size_xy"
+    },
+    {
+     "family": "creature",
+     "line": 388,
+     "name": "solid_size_z"
+    },
+    {
+     "family": "creature",
+     "line": 400,
+     "name": "name"
+    },
+    {
+     "family": "creature",
+     "line": 408,
+     "name": "gold_held"
+    },
+    {
+     "family": "creature",
+     "line": 411,
+     "name": "exp_points"
+    },
+    {
+     "family": "creature",
+     "line": 418,
+     "name": "moveto_pos"
+    },
+    {
+     "family": "creature",
+     "line": 421,
+     "name": "flee_pos"
+    },
+    {
+     "family": "creature",
+     "line": 425,
+     "name": "max_speed"
+    },
+    {
+     "family": "creature",
+     "line": 428,
+     "name": "patrol_pos"
+    },
+    {
+     "family": "creature",
+     "line": 431,
+     "name": "patrol_countdown"
+    },
+    {
+     "family": "creature",
+     "line": 434,
+     "name": "party_objective"
+    },
+    {
+     "family": "creature",
+     "line": 437,
+     "name": "party_original_objective"
+    },
+    {
+     "family": "creature",
+     "line": 440,
+     "name": "party_target_player"
+    },
+    {
+     "family": "creature",
+     "line": 443,
+     "name": "countdown"
+    },
+    {
+     "family": "creature",
+     "line": 450,
+     "name": "state"
+    },
+    {
+     "family": "creature",
+     "line": 453,
+     "name": "continue_state"
+    },
+    {
+     "family": "creature",
+     "line": 456,
+     "name": "instance"
+    },
+    {
+     "family": "creature",
+     "line": 482,
+     "name": "hunger_amount"
+    },
+    {
+     "family": "creature",
+     "line": 485,
+     "name": "hunger_level"
+    },
+    {
+     "family": "creature",
+     "line": 488,
+     "name": "creature_kills"
+    },
+    {
+     "family": "creature",
+     "line": 491,
+     "name": "creature_kills_allies"
+    },
+    {
+     "family": "creature",
+     "line": 494,
+     "name": "creature_kills_enemies"
+    },
+    {
+     "family": "creature",
+     "line": 497,
+     "name": "hunger_loss"
+    },
+    {
+     "family": "creature",
+     "line": 500,
+     "name": "hand_blocked_turns"
+    },
+    {
+     "family": "creature",
+     "line": 503,
+     "name": "force_health_flower_displayed"
+    },
+    {
+     "family": "creature",
+     "line": 506,
+     "name": "force_health_flower_hidden"
+    },
+    {
+     "family": "creature",
+     "line": 509,
+     "name": "conscious_back_turns"
+    },
+    {
+     "family": "creature",
+     "line": 512,
+     "name": "unsummon_duration"
+    },
+    {
+     "family": "trap",
+     "line": 521,
+     "name": "shots"
+    },
+    {
+     "family": "trap",
+     "line": 524,
+     "name": "revealed"
+    },
+    {
+     "family": "trap",
+     "line": 528,
+     "name": "rearm_turn"
+    },
+    {
+     "family": "trap",
+     "line": 532,
+     "name": "shooting_finished_turn"
+    },
+    {
+     "family": "special_box",
+     "line": 541,
+     "name": "box_kind"
+    },
+    {
+     "family": "shot",
+     "line": 549,
+     "name": "target"
+    },
+    {
+     "family": "shot",
+     "line": 556,
+     "name": "damage"
+    }
+   ]
+  }
+ },
+ "globals": [
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_generate_speed",
+   "line": 2671,
+   "name": "SetGenerateSpeed"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Computer_player",
+   "line": 2672,
+   "name": "ComputerPlayer"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Ally_players",
+   "line": 2673,
+   "name": "AllyPlayers"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Start_money",
+   "line": 2674,
+   "name": "StartMoney"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Max_creatures",
+   "line": 2675,
+   "name": "MaxCreatures"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_creature_to_pool",
+   "line": 2676,
+   "name": "AddCreatureToPool"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Creature_available",
+   "line": 2677,
+   "name": "CreatureAvailable"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Dead_creatures_return_to_pool",
+   "line": 2678,
+   "name": "DeadCreaturesReturnToPool"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Room_available",
+   "line": 2679,
+   "name": "RoomAvailable"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Magic_available",
+   "line": 2680,
+   "name": "MagicAvailable"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Door_available",
+   "line": 2681,
+   "name": "DoorAvailable"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Trap_available",
+   "line": 2682,
+   "name": "TrapAvailable"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Win_game",
+   "line": 2685,
+   "name": "WinGame"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Lose_game",
+   "line": 2686,
+   "name": "LoseGame"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Count_creatures_at_action_point",
+   "line": 2687,
+   "name": "CountCreaturesAtActionPoint"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_timer",
+   "line": 2688,
+   "name": "SetTimer"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_to_timer",
+   "line": 2689,
+   "name": "AddToTimer"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_timer",
+   "line": 2690,
+   "name": "DisplayTimer"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Hide_timer",
+   "line": 2691,
+   "name": "HideTimer"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Bonus_level_time",
+   "line": 2692,
+   "name": "BonusLevelTime"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_bonus_time",
+   "line": 2693,
+   "name": "AddBonusTime"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Reset_action_point",
+   "line": 2694,
+   "name": "ResetActionPoint"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_next_level",
+   "line": 2695,
+   "name": "SetNextLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Trigger_action_point",
+   "line": 2696,
+   "name": "TriggerActionPoint"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_creature_to_level",
+   "line": 2699,
+   "name": "AddCreatureToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_tunneller_to_level",
+   "line": 2700,
+   "name": "AddTunnellerToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Create_party",
+   "line": 2701,
+   "name": "CreateParty"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_to_party",
+   "line": 2702,
+   "name": "AddToParty"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Delete_from_party",
+   "line": 2703,
+   "name": "DeleteFromParty"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_tunneller_party_to_level",
+   "line": 2704,
+   "name": "AddTunnellerPartyToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_party_to_level",
+   "line": 2705,
+   "name": "AddPartyToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_objective",
+   "line": 2708,
+   "name": "DisplayObjective"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_objective_with_pos",
+   "line": 2709,
+   "name": "DisplayObjectiveWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_information",
+   "line": 2710,
+   "name": "DisplayInformation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_information_with_pos",
+   "line": 2711,
+   "name": "DisplayInformationWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_objective",
+   "line": 2712,
+   "name": "QuickObjective"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_objective_with_pos",
+   "line": 2713,
+   "name": "QuickObjectiveWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_information",
+   "line": 2714,
+   "name": "QuickInformation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_information_with_pos",
+   "line": 2715,
+   "name": "QuickInformationWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_player_objective",
+   "line": 2716,
+   "name": "DisplayPlayerObjective"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_player_objective_with_pos",
+   "line": 2717,
+   "name": "DisplayPlayerObjectiveWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_player_information",
+   "line": 2718,
+   "name": "DisplayPlayerInformation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_player_information_with_pos",
+   "line": 2719,
+   "name": "DisplayPlayerInformationWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_player_objective",
+   "line": 2720,
+   "name": "QuickPlayerObjective"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_player_objective_with_pos",
+   "line": 2721,
+   "name": "QuickPlayerObjectiveWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_player_information",
+   "line": 2722,
+   "name": "QuickPlayerInformation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_player_information_with_pos",
+   "line": 2723,
+   "name": "QuickPlayerInformationWithPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_message",
+   "line": 2724,
+   "name": "DisplayMessage"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Quick_message",
+   "line": 2725,
+   "name": "QuickMessage"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_game_timestamp",
+   "line": 2726,
+   "name": "GetGameTimestamp"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Clear_message",
+   "line": 2727,
+   "name": "ClearMessage"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Heart_lost_objective",
+   "line": 2728,
+   "name": "HeartLostObjective"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Heart_lost_quick_objective",
+   "line": 2729,
+   "name": "HeartLostQuickObjective"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Play_message",
+   "line": 2730,
+   "name": "PlayMessage"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Tutorial_flash_button",
+   "line": 2731,
+   "name": "TutorialFlashButton"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_countdown",
+   "line": 2732,
+   "name": "DisplayCountdown"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Display_variable",
+   "line": 2733,
+   "name": "DisplayVariable"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_DISPLAY_VARIABLE_WITH_LABEL",
+   "line": 2734,
+   "name": "DisplayVariableWithLabel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Hide_variable",
+   "line": 2735,
+   "name": "HideVariable"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Reveal_map_location",
+   "line": 2738,
+   "name": "RevealMapLocation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Reveal_map_rect",
+   "line": 2739,
+   "name": "RevealMapRect"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Conceal_map_rect",
+   "line": 2740,
+   "name": "ConcealMapRect"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_door",
+   "line": 2741,
+   "name": "SetDoor"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_heart_health",
+   "line": 2742,
+   "name": "AddHeartHealth"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_object_to_level",
+   "line": 2743,
+   "name": "AddObjectToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_object_to_level_at_pos",
+   "line": 2744,
+   "name": "AddObjectToLevelAtPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_shot_to_level",
+   "line": 2745,
+   "name": "AddShotToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_effect_generator_to_level",
+   "line": 2746,
+   "name": "AddEffectGeneratorToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Add_corpse_to_level",
+   "line": 2747,
+   "name": "AddCorpseToLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Place_door",
+   "line": 2748,
+   "name": "PlaceDoor"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Place_trap",
+   "line": 2749,
+   "name": "PlaceTrap"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Change_slab_owner",
+   "line": 2750,
+   "name": "ChangeSlabOwner"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Change_slab_type",
+   "line": 2751,
+   "name": "ChangeSlabType"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Change_slab_texture",
+   "line": 2752,
+   "name": "ChangeSlabTexture"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Hide_hero_gate",
+   "line": 2753,
+   "name": "HideHeroGate"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_New_creature_type",
+   "line": 2756,
+   "name": "NewCreatureType"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Copy_creature_type",
+   "line": 2757,
+   "name": "CopyCreatureType"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_New_object_type",
+   "line": 2758,
+   "name": "NewObjectType"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_New_trap_type",
+   "line": 2759,
+   "name": "NewTrapType"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_New_room_type",
+   "line": 2760,
+   "name": "NewRoomType"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_door_configuration",
+   "line": 2761,
+   "name": "SetDoorConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_object_configuration",
+   "line": 2762,
+   "name": "SetObjectConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_trap_configuration",
+   "line": 2763,
+   "name": "SetTrapConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_Set_creature_configuration",
+   "line": 2764,
+   "name": "SetCreatureConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_effect_generator_configuration",
+   "line": 2765,
+   "name": "SetEffectGeneratorConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_Set_power_configuration",
+   "line": 2766,
+   "name": "SetPowerConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_room_configuration",
+   "line": 2767,
+   "name": "SetRoomConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_game_rule",
+   "line": 2768,
+   "name": "SetGameRule"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_hand_rule",
+   "line": 2769,
+   "name": "SetHandRule"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Swap_creature",
+   "line": 2770,
+   "name": "SwapCreature"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_sacrifice_recipe",
+   "line": 2771,
+   "name": "SetSacrificeRecipe"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Remove_sacrifice_recipe",
+   "line": 2772,
+   "name": "RemoveSacrificeRecipe"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_creature_instance",
+   "line": 2775,
+   "name": "SetCreatureInstance"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_creature_max_level",
+   "line": 2776,
+   "name": "SetCreatureMaxLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_Set_creature_property",
+   "line": 2777,
+   "name": "SetCreatureProperty"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_creature_tendencies",
+   "line": 2778,
+   "name": "SetCreatureTendencies"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Creature_entrance_level",
+   "line": 2779,
+   "name": "CreatureEntranceLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Change_creatures_annoyance",
+   "line": 2780,
+   "name": "ChangeCreaturesAnnoyance"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Research",
+   "line": 2783,
+   "name": "Research"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Research_order",
+   "line": 2784,
+   "name": "Research_order"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Computer_dig_to_location",
+   "line": 2787,
+   "name": "ComputerDigToLocation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_computer_process",
+   "line": 2788,
+   "name": "SetComputerProcess"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_computer_checks",
+   "line": 2789,
+   "name": "SetComputerChecks"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_computer_globals",
+   "line": 2790,
+   "name": "SetComputerGlobals"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_computer_event",
+   "line": 2791,
+   "name": "SetComputerEvent"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_special_increase_level",
+   "line": 2794,
+   "name": "UseSpecialIncreaseLevel"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_special_multiply_creatures",
+   "line": 2795,
+   "name": "UseSpecialMultiplyCreatures"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_special_Transfer_creature",
+   "line": 2796,
+   "name": "UseSpecialTransferCreature"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_special_Steal_hero",
+   "line": 2797,
+   "name": "UseSpecialStealHero"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_box_tooltip",
+   "line": 2798,
+   "name": "SetBoxTooltip"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_box_tooltip_id",
+   "line": 2799,
+   "name": "SetBoxTooltipId"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Make_safe",
+   "line": 2800,
+   "name": "MakeSafe"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Make_unsafe",
+   "line": 2801,
+   "name": "MakeUnsafe"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Locate_hidden_world",
+   "line": 2802,
+   "name": "LocateHiddenWorld"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Create_effect",
+   "line": 2805,
+   "name": "CreateEffect"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Create_effect_at_pos",
+   "line": 2806,
+   "name": "CreateEffectAtPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Create_effect_at_coords",
+   "line": 2807,
+   "name": "CreateEffectAtCoords"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Create_effects_line",
+   "line": 2808,
+   "name": "CreateEffectsLine"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_power",
+   "line": 2811,
+   "name": "UsePower"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_power_at_location",
+   "line": 2812,
+   "name": "UsePowerAtLocation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_power_at_pos",
+   "line": 2813,
+   "name": "UsePowerAtPos"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_power_on_creature",
+   "line": 2814,
+   "name": "UsePowerOnCreature"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Use_spell_on_creature",
+   "line": 2815,
+   "name": "UseSpellOnCreature"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_Use_spell_on_players_creatures",
+   "line": 2816,
+   "name": "UseSpellOnPlayersCreatures"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_Use_power_on_players_creatures",
+   "line": 2817,
+   "name": "UsePowerOnPlayersCreatures"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_hand_graphic",
+   "line": 2818,
+   "name": "SetHandGraphic"
+  },
+  {
+   "array": "global_methods",
+   "commented": true,
+   "file": "lua_api.c",
+   "func": "lua_Set_increase_on_experience",
+   "line": 2819,
+   "name": "SetIncreaseOnExperience"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_music",
+   "line": 2820,
+   "name": "SetMusic"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Zoom_to_location",
+   "line": 2821,
+   "name": "ZoomToLocation"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Lock_possession",
+   "line": 2822,
+   "name": "LockPossession"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_digger",
+   "line": 2823,
+   "name": "SetDigger"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Set_texture",
+   "line": 2824,
+   "name": "SetTexture"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_print",
+   "line": 2827,
+   "name": "print"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_set_custom_intralevel_data",
+   "line": 2828,
+   "name": "SetCustomCampaignData"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_custom_intralevel_data",
+   "line": 2829,
+   "name": "GetCustomCampaignData"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_run_dkscript_command",
+   "line": 2830,
+   "name": "RunDKScriptCommand"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_creature_near",
+   "line": 2833,
+   "name": "GetCreatureNear"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_creature_by_criterion",
+   "line": 2834,
+   "name": "GetCreatureByCriterion"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_thing_by_idx",
+   "line": 2835,
+   "name": "GetThingByIdx"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_things_of_class",
+   "line": 2836,
+   "name": "GetThingsOfClass"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_things_on_subtile",
+   "line": 2837,
+   "name": "GetThingsOnSubtile"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_things_on_slab",
+   "line": 2838,
+   "name": "GetThingsOnSlab"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_is_action_point_activated_by_player",
+   "line": 2839,
+   "name": "IsActionpointActivatedByPlayer"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_slab",
+   "line": 2840,
+   "name": "GetSlab"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_string",
+   "line": 2841,
+   "name": "GetString"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_floor_height",
+   "line": 2842,
+   "name": "GetFloorHeight"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_get_rooms_of_player_and_kind",
+   "line": 2843,
+   "name": "GetRoomsOfPlayerAndType"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
+   "func": "lua_Pay_for_power",
+   "line": 2846,
+   "name": "PayForPower"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Create_lens",
+   "line": 928,
+   "name": "CreateLens"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Set_lens_draw_callback",
+   "line": 929,
+   "name": "SetLensDrawCallback"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Set_active_lens",
+   "line": 930,
+   "name": "SetActiveLens"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Get_active_lens",
+   "line": 931,
+   "name": "GetActiveLens"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Set_lens_parameter",
+   "line": 932,
+   "name": "SetLensParameter"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Load_lens_asset",
+   "line": 933,
+   "name": "LoadLensAsset"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Set_lens_enabled",
+   "line": 934,
+   "name": "SetLensEnabled"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Is_lens_enabled",
+   "line": 935,
+   "name": "IsLensEnabled"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Copy_buffer",
+   "line": 936,
+   "name": "CopyBuffer"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Submit_pixel_batch",
+   "line": 937,
+   "name": "SubmitPixelBatch"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Apply_color_offset_batch",
+   "line": 938,
+   "name": "ApplyColorOffsetBatch"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Blend_color_batch",
+   "line": 939,
+   "name": "BlendColorBatch"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Remap_pixel_batch",
+   "line": 940,
+   "name": "RemapPixelBatch"
+  },
+  {
+   "array": "lens_methods",
+   "commented": false,
+   "file": "lua_api_lens.c",
+   "func": "lua_Build_darkening_lut",
+   "line": 941,
+   "name": "BuildDarkeningLUT"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_LoadCustomSound",
+   "line": 206,
+   "name": "LoadCustomSound"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_GetCustomSoundId",
+   "line": 207,
+   "name": "GetCustomSoundId"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_IsCustomSoundLoaded",
+   "line": 208,
+   "name": "IsCustomSoundLoaded"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_SetCreatureSound",
+   "line": 211,
+   "name": "SetCreatureSound"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_PlaySound",
+   "line": 214,
+   "name": "PlaySound"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_StopSound",
+   "line": 215,
+   "name": "StopSound"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_PlayMusic",
+   "line": 218,
+   "name": "PlayMusic"
+  },
+  {
+   "array": "lua_register",
+   "commented": false,
+   "file": "lua_api_sound.c",
+   "func": "lua_StopMusic",
+   "line": 219,
+   "name": "StopMusic"
+  }
+ ],
+ "hooks": [
+  {
+   "line": 29,
+   "name": "OnDungeonDestroyed"
+  },
+  {
+   "line": 45,
+   "name": "OnChatMsg"
+  },
+  {
+   "line": 100,
+   "name": "OnCampaignGameStart"
+  },
+  {
+   "line": 115,
+   "name": "OnGameStart"
+  },
+  {
+   "line": 134,
+   "name": "OnGameTick"
+  },
+  {
+   "line": 149,
+   "name": "OnPowerCast"
+  },
+  {
+   "line": 170,
+   "name": "OnSpecialActivated"
+  },
+  {
+   "line": 188,
+   "name": "OnTrapPlaced"
+  },
+  {
+   "line": 204,
+   "name": "OnCreatureDeath"
+  },
+  {
+   "line": 220,
+   "name": "OnObjectDestroyed"
+  },
+  {
+   "line": 236,
+   "name": "OnCreatureRebirth"
+  },
+  {
+   "line": 251,
+   "name": "OnCreatureFellIntoAbyss"
+  },
+  {
+   "line": 264,
+   "name": "OnApplyDamage"
+  },
+  {
+   "line": 282,
+   "name": "OnLevelUp"
+  },
+  {
+   "line": 297,
+   "name": "OnPickUp"
+  },
+  {
+   "line": 313,
+   "name": "OnSlap"
+  },
+  {
+   "line": 330,
+   "name": "OnSlabKindChange"
+  },
+  {
+   "line": 347,
+   "name": "OnSlabOwnerChange"
+  },
+  {
+   "line": 364,
+   "name": "OnRoomOwnerChange"
+  },
+  {
+   "line": 380,
+   "name": "OnShotHit"
+  },
+  {
+   "line": 64,
+   "name": "OnModGameStart_<modname>"
+  }
+ ],
+ "methods": {
+  "Player": [
+   {
+    "array": "player_methods",
+    "commented": false,
+    "file": "lua_api_player.c",
+    "func": "lua_Set_texture",
+    "line": 72,
+    "name": "set_texture"
+   },
+   {
+    "array": "player_methods",
+    "commented": false,
+    "file": "lua_api_player.c",
+    "func": "lua_Add_gold_to_player",
+    "line": 73,
+    "name": "add_gold"
+   },
+   {
+    "array": "player_methods",
+    "commented": true,
+    "file": "lua_api_player.c",
+    "func": "lua_SET_PLAYER_COLOR",
+    "line": 74,
+    "name": "SET_PLAYER_COLOR"
+   },
+   {
+    "array": "player_methods",
+    "commented": true,
+    "file": "lua_api_player.c",
+    "func": "lua_SET_PLAYER_MODIFIER",
+    "line": 75,
+    "name": "SET_PLAYER_MODIFIER"
+   },
+   {
+    "array": "player_methods",
+    "commented": true,
+    "file": "lua_api_player.c",
+    "func": "lua_ADD_TO_PLAYER_MODIFIER",
+    "line": 76,
+    "name": "ADD_TO_PLAYER_MODIFIER"
+   }
+  ],
+  "Slab": [
+   {
+    "array": "slab_methods",
+    "commented": false,
+    "file": "lua_api_slabs.c",
+    "func": "lua_GET_CREATURES",
+    "line": 75,
+    "name": "GET_CREATURES"
+   }
+  ],
+  "Thing": [
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "make_thing_zombie",
+    "line": 844,
+    "name": "make_thing_zombie"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_creature_walk_to",
+    "line": 845,
+    "name": "walk_to"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_creature_set_start_state",
+    "line": 846,
+    "name": "set_start_state"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_kill_creature",
+    "line": 847,
+    "name": "kill"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_stun_creature",
+    "line": 848,
+    "name": "stun"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_remove_creature_from_play",
+    "line": 849,
+    "name": "remove_from_play"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_destroy_object",
+    "line": 850,
+    "name": "destroy"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_delete_thing",
+    "line": 851,
+    "name": "delete"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_transform_creature",
+    "line": 852,
+    "name": "transform"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_is_valid",
+    "line": 853,
+    "name": "isValid"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_Transfer_creature",
+    "line": 854,
+    "name": "transfer"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_Level_up_creature",
+    "line": 855,
+    "name": "level_up"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_Teleport_creature",
+    "line": 856,
+    "name": "teleport"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_Change_creature_owner",
+    "line": 857,
+    "name": "change_owner"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_set_velocity",
+    "line": 858,
+    "name": "set_velocity"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_get_creature_annoyance",
+    "line": 859,
+    "name": "get_annoyance"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_set_creature_annoyance",
+    "line": 860,
+    "name": "set_annoyance"
+   },
+   {
+    "array": "thing_methods",
+    "commented": false,
+    "file": "lua_api_things.c",
+    "func": "lua_is_in_enemy_custody",
+    "line": 861,
+    "name": "in_enemy_custody"
+   }
+  ]
+ },
+ "notes": [
+  "Player variables (MONEY, FLAG0, ...) are resolved dynamically by parse_get_varib and are not listed here.",
+  "Fields of lua_api_things.c are shared by all thing classes; `family` is a guess from the surrounding thing_is_* test."
+ ],
+ "raw_fields": {
+  "Camera": [
+   "__class",
+   "playerId"
+  ],
+  "Player": [
+   "__class",
+   "playerId"
+  ],
+  "Pos": [
+   "val_x",
+   "val_y",
+   "val_z"
+  ],
+  "Room": [
+   "__class",
+   "creation_turn",
+   "room_idx"
+  ],
+  "Slab": [
+   "__class",
+   "slb_x",
+   "slb_y"
+  ],
+  "Thing": [
+   "ThingIndex",
+   "__class",
+   "creation_turn"
+  ]
+ },
+ "source_dir": "src"
+}

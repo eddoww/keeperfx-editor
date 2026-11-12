@@ -1,0 +1,118 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAF8AAAAjCAYAAADyrNZPAAACTUlEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a9+9Fu+tLnqvxoAwVX/HQAIrvrvAEBw1X8HAIKr/jsAUPkfZDp6KP/Z6sbT+B8AgOCq/w4ABFf9dwAguOq/AwDB/2Lf+Ye/zP9SAFT+h3vLD359np+3fs+P52Wf8tZ858N/mp/+3i/n+fnZb/51/ocCIPhf6K3f8+N52ae8NQAv+5S35q3f8+P5XwaA4H+Zt37Pj+dln/LWPNDLPuWteev3/Hj+FwEg+F/mp7/3y/nLh/80D/SXD/9pfvp7v5z/RQAI/hf66e/9cv7y4T8NwF8+/Kf56e/9cv6XAUAf/ZYvbZ7LdPRQ/ie7a+s4AL/8qz/MG7/hOwNww8Eu/5PVjafxAABU/hd74zd8Z/6XAiC46r8DAMFV/x0ACP4X+8kn/DX/SwFQb3jJV+a5vURX+J/uTX7oj3j13/xNfvJ1X5dfepdXARb8T/Z34zU8AADB/0Jv8kN/xKv/5m8C8Oq/+Zu8yQ/9Ef/LABD8L/MmP/RHvPpv/iYP9Oq/+Zu8yQ/9Ef+LABD8L/NL7/Iq/P7rvi4P9Puv+7r80ru8Cv+LABD8L/RL7/Iq/P7rvi4Av/+6r8svvcur8L8MAProt3xp81ymo4fyv8HX33ErH37Tg/nfoG48jQcAoPK/2Iff9GD+lwIguOq/AwDBVf8dAAiu+u8AQOX5qBtP46r/VAAEV/13ACC46r8DAMFV/x0ACK767wDAPwJ1/WBi1x5m0gAAAABJRU5ErkJggg=="
+
+[meta]
+name = "Ambush corridor"
+author = "KeeperFX Editor starter set"
+description = "A claimed corridor with an action point trigger in the middle and a hidden hero alcove behind a secret door. When a creature of player A reaches the trigger, a hero party pours out of the hero gate (script fragment included)."
+tags = ["ambush", "script", "action-point", "hero", "gate"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = ["HERO_GATE"]
+traps = []
+doors = ["SECRET"]
+effect_generators = []
+slabs = ["DIRT", "DOOR_SECRET2", "DRAPE_WALL", "PAIR_WALL", "PATH", "PRETTY_PATH", "TORCH_WALL", "TWINS_WALL", "WOMAN_WALL"]
+config = []
+
+[layout]
+width = 19
+height = 7
+rows = [
+  ":::::::::::::::::::",
+  ":::::::WWWwA:::::::",
+  ":::::::B---C:::::::",
+  ":WWWWAWWBDAWWBWAAW:",
+  "_EEEEEEEEEEEEEEEEE_",
+  ":BWWWWwAwAAWWACBCB:",
+  ":::::::::::::::::::",
+]
+
+[[palette]]
+char = ":"
+slab = "DIRT"
+owner = "neutral"
+
+[[palette]]
+char = "W"
+slab = "PAIR_WALL"
+owner = "A"
+
+[[palette]]
+char = "w"
+slab = "DRAPE_WALL"
+owner = "A"
+
+[[palette]]
+char = "A"
+slab = "WOMAN_WALL"
+owner = "A"
+
+[[palette]]
+char = "B"
+slab = "TWINS_WALL"
+owner = "A"
+
+[[palette]]
+char = "-"
+slab = "PRETTY_PATH"
+owner = "keep:4"
+
+[[palette]]
+char = "C"
+slab = "TORCH_WALL"
+owner = "A"
+
+[[palette]]
+char = "D"
+slab = "DOOR_SECRET2"
+owner = "A"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "E"
+slab = "PRETTY_PATH"
+owner = "A"
+
+[[thing]]
+class = "Object"
+model = "HERO_GATE"
+owner = "keep:4"
+x = [28, 128]
+y = [7, 128]
+gate = "gate"
+
+[[thing]]
+class = "Door"
+model = "SECRET"
+owner = "A"
+x = [28, 128]
+y = [10, 128]
+door_orientation = 0
+door_locked = false
+
+[[action_point]]
+key = "trigger"
+x = [28, 128]
+y = [13, 128]
+range = [3, 0]
+number = 1
+
+[script]
+dk = '''
+REM Ambush corridor: heroes leave the gate when a creature of the keeper reaches the trigger
+CREATE_PARTY(AMBUSH{{ap.trigger}})
+ADD_TO_PARTY(AMBUSH{{ap.trigger}}, KNIGHT, 3, 0, ATTACK_ENEMIES, 0)
+ADD_TO_PARTY(AMBUSH{{ap.trigger}}, ARCHER, 3, 0, ATTACK_ENEMIES, 0)
+ADD_TO_PARTY(AMBUSH{{ap.trigger}}, WIZARD, 2, 0, ATTACK_ENEMIES, 0)
+IF_ACTION_POINT({{ap.trigger}}, {{player.A}})
+	ADD_PARTY_TO_LEVEL(PLAYER_GOOD, AMBUSH{{ap.trigger}}, -{{gate.gate}}, 1)
+ENDIF
+'''

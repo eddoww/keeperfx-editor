@@ -1,0 +1,19 @@
+[package]
+name = "kfx-fonts"
+description = "System fallback fonts for egui (CJK, symbols and other scripts)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+egui = { version = "0.37", default-features = false }
+# egui's own provider: the operating system's font fallback (fontconfig, DirectWrite, CoreText)
+# through fontique, fonts memory-mapped on demand. No font is bundled.
+egui_system_font_provider = "0.37.0"
+
+[dev-dependencies]
+egui = { version = "0.37", features = ["default_fonts"] }

@@ -1,0 +1,88 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "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"
+
+[meta]
+name = "Neutral den: orc camp"
+author = "KeeperFX Editor starter set"
+description = "A rock camp with three wild orcs and some barrels."
+tags = ["neutral", "den", "creatures"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = ["ORC"]
+objects = ["BARREL"]
+traps = []
+doors = []
+effect_generators = []
+slabs = ["HARD", "PATH"]
+config = []
+
+[layout]
+width = 11
+height = 8
+rows = [
+  "..#######..",
+  ".#_______#.",
+  "#_________#",
+  "#_________#",
+  "#_________#",
+  "#_________#",
+  ".#_______#.",
+  "..###_###..",
+]
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[thing]]
+class = "Object"
+model = "BARREL"
+owner = "neutral"
+x = [7, 128]
+y = [7, 128]
+
+[[thing]]
+class = "Creature"
+model = "ORC"
+owner = "neutral"
+x = [10, 128]
+y = [10, 128]
+level = 3
+
+[[thing]]
+class = "Creature"
+model = "ORC"
+owner = "neutral"
+x = [22, 128]
+y = [10, 128]
+level = 3
+
+[[thing]]
+class = "Object"
+model = "BARREL"
+owner = "neutral"
+x = [10, 128]
+y = [16, 128]
+
+[[thing]]
+class = "Creature"
+model = "ORC"
+owner = "neutral"
+x = [16, 128]
+y = [16, 128]
+level = 4
+
+[[thing]]
+class = "Object"
+model = "BARREL"
+owner = "neutral"
+x = [25, 128]
+y = [16, 128]

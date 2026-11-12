@@ -1,0 +1,78 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "iVBORw0KGgoAAAANSUhEUgAAAFsAAABNCAYAAADJuRgfAAADAklEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2bWmMnpZKr54yMyLu+Xa3anqmhztr1a/yn+DlX/olzf9yf/7Xfyv+4wAQXPVfAYDgqv8KAARX/VcAILjqvwIAwVX/FQAIrvqvAEDl3+jlX/olzQvwow+/g//t3pGXNC/An//134p/HQCCq/4rABBc9V8BgOCq/woABFf9VwAguOq/AgDBVf8VABAvxMu/9EuaF+BHH34H/1+941Nu4gX587/+W/G8AAiu+q8AQHDVfwUAgqv+KwAQXPVfAYDgqv8KAARX/VcAQC//0i9pXoAfffgd/Ff68Ue/I//R3v4JP8p/pXd8yk08HwBU/of57K/8Xp7bZ3/se/K/HACV/4EO//wW7rf58rfxfwAAwVX/FQAIrvqvAEDlf6DNl7+N/2MAqPwP89kf+578HwRAcNV/BQAq/4t89ld+L8/tsz/2PQH47K/8Xp7bZ3/se/I/BACV/2Xe+ssPud9Pf/wmD3T457dwv82Xv43/QQAIrvqvAEBw1X8FACr/y/z0x2/ygmy+/G38DwVA5X+Rz/7Y9+QF+eyPfU/+BwMguOq/AgDBVf8VAAiu+q8AQHDVfwUAgqv+KwAQXPVfAYDgqv8KAFT+B3n7J/woL8hv3vTSvCCve8df8z8cAMFV/xUACK76rwBAcNV/BQCCq/4rABBc9V8BgOCq/woABFf9VwAguOq/AgDBVf8VAAiu+q8AQHDVfwUAgqv+KwAQXPVfAYD653/9t+IFeEde0rwAP/rwO/j/6h2fchMvyJ//9d+K5wVAcNV/BQCCq/4rABBc9V8BgOCq/woABFf9VwAguOq/AgDi3+jlX/olzQvwjm/+qvxv96M//4e8IH/+138r/nUACK76rwBAcNV/BQCCq/4rABBc9V8BgOCq/woABFf9VwBA/Cd4+Zd+SfMf7B3f/FV5QX705/+Q/2h//td/K/7jABBc9V8BgOCq/woABFf9VwAguOq/AgDBVf8VAAiu+q8AwD8CPCZQDRDNLs0AAAAASUVORK5CYII="
+
+[meta]
+name = "Treasure island"
+author = "KeeperFX Editor starter set"
+description = "A path island in a lava lake with gold bags and a spellbook, reached by a bridge from the south."
+tags = ["treasure", "lava", "island", "bridge"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = ["GOLD_BAG", "SPELLBOOK_SOE"]
+traps = []
+doors = []
+effect_generators = []
+slabs = ["BRIDGE_FRAME", "HARD", "LAVA", "PATH"]
+config = []
+
+[layout]
+width = 13
+height = 11
+rows = [
+  "...#######...",
+  "..#^^^^^^^#..",
+  ".#^^^^^^^^^#.",
+  "#^^^^___^^^^#",
+  "#^^^^___^^^^#",
+  "#^^^^___^^^^#",
+  "#^^^^^+^^^^^#",
+  "#^^^^^+^^^^^#",
+  ".#^^^^+^^^^#.",
+  "..#_______#..",
+  "...###_###...",
+]
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "^"
+slab = "LAVA"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "+"
+slab = "BRIDGE_FRAME"
+owner = "neutral"
+wlb = 1
+
+[[thing]]
+class = "Object"
+model = "GOLD_BAG"
+owner = "neutral"
+x = [16, 128]
+y = [10, 128]
+
+[[thing]]
+class = "Object"
+model = "SPELLBOOK_SOE"
+owner = "neutral"
+x = [19, 128]
+y = [13, 128]
+
+[[thing]]
+class = "Object"
+model = "GOLD_BAG"
+owner = "neutral"
+x = [22, 128]
+y = [13, 128]

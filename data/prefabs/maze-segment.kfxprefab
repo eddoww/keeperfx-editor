@@ -1,0 +1,51 @@
+# KeeperFX Editor prefab. The format is described in the kfx-prefab crate (model.rs).
+format = 1
+thumbnail = "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"
+
+[meta]
+name = "Maze segment"
+author = "KeeperFX Editor starter set"
+description = "An eleven by eleven rock maze with an entrance west and an exit east and a gold seam in the middle."
+tags = ["maze", "terrain", "gold"]
+editor_version = "0.1.0"
+
+[meta.requires]
+creatures = []
+objects = []
+traps = []
+doors = []
+effect_generators = []
+slabs = ["GOLD", "HARD", "PATH"]
+config = []
+
+[layout]
+width = 11
+height = 11
+rows = [
+  "###########",
+  "__#_____#_#",
+  "#_###_#_#_#",
+  "#_____#_#_#",
+  "#######_#_#",
+  "#____$#___#",
+  "#_#_#####_#",
+  "#_#_____#_#",
+  "#_###_###_#",
+  "#___#______",
+  "###########",
+]
+
+[[palette]]
+char = "#"
+slab = "HARD"
+owner = "neutral"
+
+[[palette]]
+char = "_"
+slab = "PATH"
+owner = "neutral"
+
+[[palette]]
+char = "$"
+slab = "GOLD"
+owner = "neutral"
