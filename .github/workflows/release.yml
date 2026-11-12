@@ -77,23 +77,40 @@ jobs:
             Linux)
               cp "$bin/kfx-editor" "stage/$name/"
               cp packaging/org.keeperfx.MapEditor.desktop packaging/org.keeperfx.MapEditor.mime.xml "stage/$name/"
+              # hicolor icons, laid out to be copied into ~/.local/share/icons or /usr/share/icons
+              for s in 16 24 32 48 64 128 256 512; do
+                mkdir -p "stage/$name/icons/hicolor/${s}x${s}/apps"
+                cp "packaging/icons/kfx-editor-$s.png" "stage/$name/icons/hicolor/${s}x${s}/apps/org.keeperfx.MapEditor.png"
+              done
               tar -C stage -czf "out/$name.tar.gz" "$name"
               ;;
             Windows)
-              cp "$bin/kfx-editor.exe" "stage/$name/"
+              # the GUI program (no console window) and the console program for the command line
+              cp "$bin/kfx-editor.exe" "$bin/kfx-editor-cli.exe" "stage/$name/"
               (cd stage && 7z a -tzip "../out/$name.zip" "$name" > /dev/null)
               ;;
             macOS)
               # Unsigned application bundle; tarred so the executable bit survives.
               app="stage/$name/KeeperFX Map Editor.app"
-              mkdir -p "$app/Contents/MacOS"
+              mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
               cp "$bin/kfx-editor" "$app/Contents/MacOS/"
               cp packaging/macos/Info.plist "$app/Contents/"
+              cp packaging/icons/kfx-editor.icns "$app/Contents/Resources/"
               cp "$bin/kfx-editor" "stage/$name/"
               tar -C stage -czf "out/$name.tar.gz" "$name"
               ;;
           esac
           ls -la out
+      # Windows: the installer from the same staged files, tried before it is published (silent
+      # install into a temporary folder, the command line, silent uninstall).
+      - name: Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $version = $env:TAG -replace '^v', ''
+          $name = "kfx-editor-$env:TAG-${{ matrix.name }}"
+          ./packaging/windows/build-installer.ps1 -Version $version -SourceDir "stage\$name" -OutputDir out -OutputBase "$name-setup"
+          ./packaging/windows/smoke-test-installer.ps1 -Setup "out\$name-setup.exe" -Version $version
       - uses: actions/upload-artifact@v7
         with:
           name: release-${{ matrix.name }}
@@ -111,16 +128,33 @@ jobs:
         with:
           path: out
           merge-multiple: true
+      # Every asset, the installer included: the editor's self-update refuses a download that is
+      # not listed here.
       - name: Checksums
-        run: cd out && sha256sum * > SHA256SUMS.txt && cat SHA256SUMS.txt
+        run: |
+          cd out
+          test -n "$(ls kfx-editor-*-windows-x86_64-setup.exe)"
+          sha256sum kfx-editor-* > SHA256SUMS.txt
+          cat SHA256SUMS.txt
       - name: Create or update the release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          # The release notes template (shown in the editor's Updates dialog too, as plain text).
+          NOTES: |
+            Pre-release build. Needs your own KeeperFX install; the editor ships no game assets. The user manual is in docs/manual in each download.
+
+            **Windows**: `kfx-editor-${{ env.TAG }}-windows-x86_64-setup.exe` installs the editor for your user account (no administrator rights needed) and lets it update itself; `kfx-editor-${{ env.TAG }}-windows-x86_64.zip` is the portable version. Both are unsigned, so Windows SmartScreen warns on first start ("Windows protected your PC"): choose "More info", then "Run anyway".
+
+            **macOS**: the application is unsigned. The first time, right-click (or Control-click) "KeeperFX Map Editor.app" and choose Open, then Open again.
+
+            **Linux**: unpack the archive anywhere and run `kfx-editor`.
+
+            The editor looks for new versions on GitHub once a day (it asks you first) and can install them; every download is checked against `SHA256SUMS.txt` (see docs/manual/updates.md).
         run: |
           if gh release view "$TAG" > /dev/null 2>&1; then
             gh release upload "$TAG" out/* --clobber
           else
             gh release create "$TAG" out/* --title "KeeperFX Map Editor $TAG" --prerelease --generate-notes \
-              --notes "Pre-release build. Needs your own KeeperFX install; the editor ships no game assets. The Windows and macOS builds are unsigned and little tested: on macOS, right-click the app and choose Open the first time. The user manual is in docs/manual in each archive."
+              --notes "$NOTES"
           fi

@@ -91,6 +91,10 @@ jobs:
         run: |
           mkdir -p dist/kfx-editor-${{ matrix.name }}
           cp target/${{ matrix.target }}/release/${{ matrix.exe }} dist/kfx-editor-${{ matrix.name }}/
+          # Windows: the console program for the command line, next to the GUI program
+          if [ "${{ runner.os }}" = Windows ]; then
+            cp target/${{ matrix.target }}/release/kfx-editor-cli.exe dist/kfx-editor-${{ matrix.name }}/
+          fi
           cp README.md CHANGELOG.md LICENSE THIRD_PARTY.md dist/kfx-editor-${{ matrix.name }}/
       # macOS: also an unsigned application bundle, tarred so the executable bit survives.
       - name: macOS app bundle
@@ -98,10 +102,24 @@ jobs:
         shell: bash
         run: |
           app="dist/KeeperFX Map Editor.app"
-          mkdir -p "$app/Contents/MacOS"
+          mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
           cp target/${{ matrix.target }}/release/${{ matrix.exe }} "$app/Contents/MacOS/"
           cp packaging/macos/Info.plist "$app/Contents/"
+          cp packaging/icons/kfx-editor.icns "$app/Contents/Resources/"
           tar -C dist -czf "dist/kfx-editor-${{ matrix.name }}/KeeperFX Map Editor.app.tar.gz" "KeeperFX Map Editor.app"
+      # Windows: build the installer and try it (install, run, uninstall) as the release does,
+      # so that installer breakage shows up before a tag. Nothing is published.
+      - name: Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $version = (Select-String -Path Cargo.toml -Pattern '^version = "(.+)"').Matches[0].Groups[1].Value
+          $stage = Join-Path $env:RUNNER_TEMP "stage\kfx-editor-ci-windows-x86_64"
+          New-Item -ItemType Directory -Force -Path $stage | Out-Null
+          Copy-Item target\${{ matrix.target }}\release\kfx-editor.exe, target\${{ matrix.target }}\release\kfx-editor-cli.exe, README.md, CHANGELOG.md, LICENSE, THIRD_PARTY.md -Destination $stage
+          Copy-Item -Recurse docs -Destination (Join-Path $stage "docs")
+          ./packaging/windows/build-installer.ps1 -Version $version -SourceDir $stage -OutputDir dist\kfx-editor-${{ matrix.name }} -OutputBase "kfx-editor-ci-windows-x86_64-setup"
+          ./packaging/windows/smoke-test-installer.ps1 -Setup "dist\kfx-editor-${{ matrix.name }}\kfx-editor-ci-windows-x86_64-setup.exe" -Version $version
       - uses: actions/upload-artifact@v7
         with:
           name: kfx-editor-${{ matrix.name }}
