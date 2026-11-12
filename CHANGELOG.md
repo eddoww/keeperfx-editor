@@ -12,18 +12,51 @@ The format follows Keep a Changelog (https://keepachangelog.com/en/1.1.0/) and t
 - The data generated from KeeperFX is now regenerated with one command,
   `tools/sync_keeperfx.py`, which also writes a change report; a daily workflow proposes the
   result as a pull request.
+- Self-update from the GitHub releases. After a one-time notice (nothing is sent before it is
+  answered) the editor checks once a day; Preferences > Updates turns this off, chooses the
+  stable or pre-release channel (pre-release by default, as every release so far is one) and can
+  install new versions automatically on exit. Help > Check for updates opens the Updates window
+  with the release notes and Update now / Later / Skip this version; the update is checked
+  against the release's `SHA256SUMS.txt`, installed all or nothing, and the editor starts again on
+  the open map. The previous version is kept until the new one has started, with a roll back.
+  Package-manager installs, read-only locations and development builds only get a notice. See
+  `docs/manual/updates.md`.
+- `kfx-editor update --check` (exit code 10 when an update exists), `kfx-editor update
+  [--restart [MAP]]` and `kfx-editor --version`.
+- A Windows installer, `kfx-editor-<tag>-windows-x86_64-setup.exe`: per-user install without
+  administrator rights (or all users), Start menu entry, optional desktop shortcut and "Open
+  with" entry for `.slb` maps, uninstaller, upgrade in place, silent switches. The zip stays.
+- An application icon (window, Windows executables, installer, macOS bundle, Linux desktop entry
+  and hicolor icons).
+- Crash logs: an error that stops the editor is logged in the `crashes` folder of the
+  configuration folder, and the next start shows where.
 
 ### Changed
 
+- Windows: `kfx-editor.exe` no longer opens a console window. The command line is
+  `kfx-editor-cli.exe`, shipped beside it; `kfx-editor.exe` given a command runs it through
+  `kfx-editor-cli.exe` and shows the output in a window.
+- The old opt-in release check (a release URL in Preferences > Files, through `curl`) is replaced
+  by the update checks above.
+- Workshop: tar.gz archives are read too; the archive checks moved into a shared crate.
 - An unknown script command is reported as not known to this editor build's data (with the date of
   the KeeperFX revision it was generated from) instead of as an invalid command, and a command
   KeeperFX removed says so.
 - Commands the wiki does not document yet get the documentation built from the argument notes
   and the C source comments.
 
+## [0.1.1] - 2026-11-12
+
+### Changed
+
 - Keepers in the owner list are numbered as in level scripts: Keeper 0 (Red) is `PLAYER0`,
   Keeper 6 (Orange) is `PLAYER6`. Validation messages, the owner tooltip and the slab set
   owner picker now use the script names (`PLAYER0`, `PLAYER_GOOD`, ...).
+
+### Fixed
+
+- Live link: a watched variable reported twice with the same value no longer loses its previous
+  value.
 
 ## [0.1.0] - 2026-11-12
 

@@ -28,9 +28,9 @@ env:
 jobs:
   fmt:
     name: rustfmt
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Rust toolchain
         run: |
           rustup toolchain install stable --profile minimal --component rustfmt
@@ -46,7 +46,7 @@ jobs:
       matrix:
         include:
           - name: linux-x86_64
-            os: ubuntu-latest
+            os: ubuntu-24.04
             target: x86_64-unknown-linux-gnu
             exe: kfx-editor
           - name: windows-x86_64
@@ -62,7 +62,7 @@ jobs:
             target: x86_64-apple-darwin
             exe: kfx-editor
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: System packages
         if: runner.os == 'Linux'
         run: |
@@ -75,7 +75,7 @@ jobs:
           rustup toolchain install stable --profile minimal
           rustup default stable
           rustup target add ${{ matrix.target }}
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: |
             ~/.cargo/registry/index
@@ -91,6 +91,10 @@ jobs:
         run: |
           mkdir -p dist/kfx-editor-${{ matrix.name }}
           cp target/${{ matrix.target }}/release/${{ matrix.exe }} dist/kfx-editor-${{ matrix.name }}/
+          # Windows: the console program for the command line, next to the GUI program
+          if [ "${{ runner.os }}" = Windows ]; then
+            cp target/${{ matrix.target }}/release/kfx-editor-cli.exe dist/kfx-editor-${{ matrix.name }}/
+          fi
           cp README.md CHANGELOG.md LICENSE THIRD_PARTY.md dist/kfx-editor-${{ matrix.name }}/
       # macOS: also an unsigned application bundle, tarred so the executable bit survives.
       - name: macOS app bundle
@@ -98,11 +102,25 @@ jobs:
         shell: bash
         run: |
           app="dist/KeeperFX Map Editor.app"
-          mkdir -p "$app/Contents/MacOS"
+          mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
           cp target/${{ matrix.target }}/release/${{ matrix.exe }} "$app/Contents/MacOS/"
           cp packaging/macos/Info.plist "$app/Contents/"
+          cp packaging/icons/kfx-editor.icns "$app/Contents/Resources/"
           tar -C dist -czf "dist/kfx-editor-${{ matrix.name }}/KeeperFX Map Editor.app.tar.gz" "KeeperFX Map Editor.app"
-      - uses: actions/upload-artifact@v4
+      # Windows: build the installer and try it (install, run, uninstall) as the release does,
+      # so that installer breakage shows up before a tag. Nothing is published.
+      - name: Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $version = (Select-String -Path Cargo.toml -Pattern '^version = "(.+)"').Matches[0].Groups[1].Value
+          $stage = Join-Path $env:RUNNER_TEMP "stage\kfx-editor-ci-windows-x86_64"
+          New-Item -ItemType Directory -Force -Path $stage | Out-Null
+          Copy-Item target\${{ matrix.target }}\release\kfx-editor.exe, target\${{ matrix.target }}\release\kfx-editor-cli.exe, README.md, CHANGELOG.md, LICENSE, THIRD_PARTY.md -Destination $stage
+          Copy-Item -Recurse docs -Destination (Join-Path $stage "docs")
+          ./packaging/windows/build-installer.ps1 -Version $version -SourceDir $stage -OutputDir dist\kfx-editor-${{ matrix.name }} -OutputBase "kfx-editor-ci-windows-x86_64-setup"
+          ./packaging/windows/smoke-test-installer.ps1 -Setup "dist\kfx-editor-${{ matrix.name }}\kfx-editor-ci-windows-x86_64-setup.exe" -Version $version
+      - uses: actions/upload-artifact@v7
         with:
           name: kfx-editor-${{ matrix.name }}
           path: dist/kfx-editor-${{ matrix.name }}
@@ -114,9 +132,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-24.04, windows-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: System packages
         if: runner.os == 'Linux'
         run: |
@@ -129,7 +147,7 @@ jobs:
         run: |
           rustup toolchain install stable --profile minimal
           rustup default stable
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: |
             ~/.cargo/registry/index

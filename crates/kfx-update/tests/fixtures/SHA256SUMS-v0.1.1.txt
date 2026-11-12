@@ -1,0 +1,4 @@
+22897db6edb1a3b49fc4c480452a1387d432edcc259858cec3471c565e6f4597  kfx-editor-v0.1.1-linux-x86_64.tar.gz
+62f2bacebdd8bcad6d32c2eb7b3acbfdb836ef58ab583218c11303323af2b903  kfx-editor-v0.1.1-macos-arm64.tar.gz
+2b7a29d6d92ee9d8698a5a4e16ecbd292667e04e70c6cc279c6718e6072d66ab  kfx-editor-v0.1.1-macos-x86_64.tar.gz
+a2d8462e4b803060adc8bc8ca508f2cc7c6498ef66d252812ee780d5fa0ce5fa  kfx-editor-v0.1.1-windows-x86_64.zip

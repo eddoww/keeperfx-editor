@@ -30,18 +30,31 @@ and maps are saved in the format the game loads. It is written in Rust with egui
 ## Download
 
 Builds are published on the [releases page](https://github.com/eddoww/keeperfx-editor/releases)
-of this repository once a version is tagged (`<tag>` below is the release tag, for example
-`v0.1.0`):
+of this repository (`<tag>` below is the release tag, for example `v0.1.2`):
 
-| Platform | Archive |
+| Platform | Download |
 |---|---|
-| Linux x86_64 | `kfx-editor-<tag>-linux-x86_64.tar.gz` (also holds a desktop entry and a MIME type file) |
-| Windows x86_64 | `kfx-editor-<tag>-windows-x86_64.zip` |
-| macOS arm64 / x86_64 | `kfx-editor-<tag>-macos-arm64.tar.gz`, `kfx-editor-<tag>-macos-x86_64.tar.gz` (the executable and an unsigned `KeeperFX Map Editor.app`) |
+| Windows x86_64 | **`kfx-editor-<tag>-windows-x86_64-setup.exe`**: the installer (per user, no administrator rights; Start menu entry, optional `.slb` "Open with" entry, uninstaller) |
+| Windows x86_64, portable | `kfx-editor-<tag>-windows-x86_64.zip`: unpack anywhere and run `kfx-editor.exe` |
+| macOS arm64 / x86_64 | `kfx-editor-<tag>-macos-arm64.tar.gz`, `kfx-editor-<tag>-macos-x86_64.tar.gz` (an unsigned `KeeperFX Map Editor.app` and the bare executable) |
+| Linux x86_64 | `kfx-editor-<tag>-linux-x86_64.tar.gz` (also holds a desktop entry, a MIME type file and icons) |
 
-Each archive contains the executable, this README, the changelog, the licence, `THIRD_PARTY.md`
-and the user manual. The Windows and macOS builds are not signed; on macOS, right-click the
-application and choose Open the first time.
+Each download contains the editor, this README, the changelog, the licence, `THIRD_PARTY.md` and
+the user manual; `SHA256SUMS.txt` lists the checksum of every file. On Windows, `kfx-editor.exe`
+is the editor window and `kfx-editor-cli.exe` the same program for the command line.
+
+The builds are not code-signed:
+
+* **Windows** SmartScreen warns the first time ("Windows protected your PC"): choose **More info**,
+  then **Run anyway**.
+* **macOS** Gatekeeper refuses the first start: right-click (or Control-click) the application,
+  choose **Open**, then **Open** again.
+
+The editor can update itself: after asking you once, it looks for a new release on GitHub once a
+day, and **Update now** downloads, checks (SHA-256 from the release) and installs it, then starts
+again on the open map. This can be turned off in Preferences > Updates; see
+[Updates](docs/manual/updates.md). Installing, first start and uninstalling are described in
+[Getting started](docs/manual/getting-started.md).
 
 ## Build from source
 
@@ -67,10 +80,12 @@ target/release/kfx-editor [path/to/map00001.slb]
 kfx-editor                         # open the window
 kfx-editor path/to/map00001.slb    # open a level (any file of the level, or its folder)
 kfx-editor validate MAP [--json]   # check a level without opening the window
+kfx-editor update --check          # is there a newer release? (exit code 10 if so)
 kfx-editor --help                  # every command and option
 ```
 
-The command line also has `info`, `script-check`, `export-image`, `regenerate` and `convert`,
+On Windows, use `kfx-editor-cli.exe` for the commands (`kfx-editor.exe` is the window). The
+command line also has `info`, `script-check`, `export-image`, `regenerate` and `convert`,
 and a headless mode that renders the editor offscreen and runs a scripted list of editor actions;
 see [Command line](docs/manual/cli.md).
 
@@ -95,6 +110,7 @@ the items you install from the Workshop.
 * Play-testing with the game log, a live link with the running game, sound previews and a
   KeeperFX Workshop window.
 * All-or-nothing saves, backups before overwriting and crash recovery.
+* Self-update from the GitHub releases (checksum-verified, with a way back), a Windows installer.
 
 The full list is in [docs/features.md](docs/features.md), and the
 [user manual](docs/manual/README.md) describes each part. Known limitations are listed in
@@ -102,7 +118,7 @@ The full list is in [docs/features.md](docs/features.md), and the
 
 ## Status
 
-Version 0.1.0, not yet released. The editor is developed and tested on Linux, including tests
+Version 0.1.1, a pre-release. The editor is developed and tested on Linux, including tests
 that load its maps in the real game. The Windows (x86_64) and macOS (arm64 and x86_64) builds are
 compiled and tested in CI; reports from those platforms are welcome.
 

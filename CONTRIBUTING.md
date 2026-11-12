@@ -23,6 +23,11 @@ cargo build -p kfx-editor              # debug build
 cargo build --release -p kfx-editor    # release build: target/release/kfx-editor
 ```
 
+The package builds two executables from one library: `kfx-editor` and `kfx-editor-cli`. On
+Windows the first is built for the GUI subsystem (no console window) and the second is the
+command-line program; elsewhere they are the same and only `kfx-editor` is shipped (see
+[packaging/windows.md](packaging/windows.md)).
+
 The full workspace is large; if your machine is shared or small, limit the parallel jobs with
 `-j N`.
 
@@ -108,6 +113,7 @@ as input.
 | `KFX_SCRIPT_UNION`, `KFX_SCRIPT_VERBOSE` | Variants and detail of the level script corpus test. |
 | `KFX_AUDIO_PLAYBACK_TEST=1` | Open a real audio output in the playback test (it plays at volume 0). Off by default. |
 | `KFX_DUMP_SPRITES=1` | Write a few decoded sprite frames as PNG files (a debugging aid of the editor's sprite tests). |
+| `KFX_UPDATE_TEST_API`, `KFX_UPDATE_TEST_ALLOW_DEV=1` | Debug builds only (ignored by release builds): point the update client at a mock GitHub over plain HTTP (`http://127.0.0.1:PORT`) and let a debug build install an update. Used by `crates/kfx-editor/tests/update_e2e.rs`. |
 
 ### UI tests and the GPU
 
@@ -118,19 +124,45 @@ without a GPU can use a software Vulkan driver; the Linux CI job installs Mesa's
 ### CI
 
 `.github/workflows/ci.yml` checks formatting, builds release executables for Linux x86_64,
-Windows x86_64 and macOS (arm64 and x86_64), and runs the whole test suite on Linux, Windows and
-macOS, without a KeeperFX install. `.github/workflows/release.yml` builds the release archives when
-a `v*` tag is pushed. `.github/workflows/sync-keeperfx.yml` keeps the generated data current (see
-"The sync workflow" below).
+Windows x86_64 and macOS (arm64 and x86_64), builds and tries the Windows installer (silent
+install, the command line, silent uninstall), and runs the whole test suite on Linux, Windows and
+macOS, without a KeeperFX install. `.github/workflows/release.yml` builds the release archives and
+the Windows installer when a `v*` tag is pushed, and publishes them with `SHA256SUMS.txt`.
+`.github/workflows/sync-keeperfx.yml` keeps the generated data current (see "The sync workflow"
+below).
+
+The self-update tests run against a mock GitHub on the loopback interface
+(`crates/kfx-update/tests/`) and an in-memory one (`ui_tests_updates.rs`); no test contacts the
+real GitHub. The recorded answer of the live API used as a fixture is
+`crates/kfx-update/tests/fixtures/releases-live.json`.
+
+### Code signing
+
+The Windows executables and installer and the macOS application are not signed, so SmartScreen
+and Gatekeeper warn on first start. Signing would need:
+
+* Windows: a code-signing certificate from a certificate authority (an OV or EV certificate, or a
+  cloud signing service such as Azure Trusted Signing), stored as CI secrets, and a `signtool`
+  step on the Windows job for `kfx-editor.exe`, `kfx-editor-cli.exe` and the setup (Inno Setup's
+  `SignTool` directive signs the setup and its uninstaller). SmartScreen reputation still builds up
+  over time with an OV certificate.
+* macOS: an Apple Developer ID (paid membership), the Developer ID Application certificate and an
+  app-specific password or API key as CI secrets, `codesign --options runtime` of the bundle and
+  notarisation with `notarytool`, then `stapler`.
+
+Signed updates (a signature over `SHA256SUMS.txt` checked by the editor) are a separate step;
+[SECURITY.md](SECURITY.md) describes how they would fit.
 
 ## Code layout
 
 ```text
 crates/      the workspace crates (below)
 data/        generated reference data embedded in the binary, the starter prefabs, the UI catalogue
-tools/       Python scripts that extract data/ and two Rust tables from the KeeperFX source
+tools/       Python scripts that extract data/ and two Rust tables from the KeeperFX source, and
+             draw the application icon (make_icon.py)
 docs/        user manual (docs/manual), file formats, architecture, features, roadmap
-packaging/   desktop entry, AppStream metadata, MIME type, Arch PKGBUILD, Windows and macOS notes
+packaging/   desktop entry, AppStream metadata, MIME type, Arch PKGBUILD, icons, the Windows
+             installer, Windows and macOS notes
 ```
 
 | Crate | Role |
@@ -145,11 +177,13 @@ packaging/   desktop entry, AppStream metadata, MIME type, Arch PKGBUILD, Window
 | `kfx-campaign-ui` | Campaign and map pack model, validation and egui editor. |
 | `kfx-analysis` | Map analysis (reachability, distances, economy, fairness, symmetry, heroes) and the map generator. |
 | `kfx-prefab` | Prefabs (`*.kfxprefab`), the level text translation grid, and the editor's own i18n runtime and string scanner. |
-| `kfx-workshop` | KeeperFX Workshop client, safe archive reading, installer and packager, with an egui browser. |
+| `kfx-archive` | Safe reading and extraction of downloaded ZIP and tar.gz archives (name checks, links, size limits), shared by the Workshop and the self-update. |
+| `kfx-workshop` | KeeperFX Workshop client, archive reading (7z and RAR on top of `kfx-archive`), installer and packager, with an egui browser. |
+| `kfx-update` | Self-update from the GitHub releases: release list with ETag and rate limits, version choice, resumable downloads, SHA-256 checks, install layouts and the atomic swap with rollback. No GUI. |
 | `kfx-audio` | Sound banks, sound resolution as the game does it, decoding, preview playback and the sound browser. |
 | `kfx-live` | Client for the game's TCP JSON API and the Live link panel. |
 | `kfx-fonts` | System fallback fonts for egui; no bundled fonts. |
-| `kfx-editor` | The application: window, renderer, tools, panels, play-testing, settings, the command line and the headless mode. |
+| `kfx-editor` | The application: window, renderer, tools, panels, play-testing, settings, updates, the command line and the headless mode. |
 
 [docs/architecture.md](docs/architecture.md) describes how the crates fit together and how the
 slab placement port is validated; [docs/formats.md](docs/formats.md) documents the file formats.
@@ -237,6 +271,7 @@ tree untouched, and a second run changes nothing. The editor shows that revision
 | `data/UPSTREAM.json` | The KeeperFX and wiki revisions of the files above | Written by the sync tool |
 | `data/prefabs/*.kfxprefab`, `crates/kfx-prefab/src/starter_files.rs` | The starter prefab set and the list that embeds it | `KFX_INSTALL=... cargo run -p kfx-prefab --example make_starter` |
 | `data/i18n/en.toml` | The English UI catalogue, the template for translations | `cargo run -p kfx-prefab --example extract_strings` |
+| `packaging/icons/*` | The application icon in every size and format | `python3 -I tools/make_icon.py` |
 
 Do not edit generated files by hand. Licence notes for this data are in
 [THIRD_PARTY.md](THIRD_PARTY.md).
@@ -315,9 +350,10 @@ Open an issue at <https://github.com/eddoww/keeperfx-editor/issues> with:
 * the KeeperFX version (Preferences > Files shows the game version read from `keeperfx.log`) and
   the KeeperFX revision the editor's data comes from (`kfx-editor --version`);
 * what you did, what happened and what you expected, as steps that reproduce it;
-* the editor's output: the editor writes no log file of its own, so start it from a terminal and
-  copy what it prints there (errors, and a panic message if it crashed). For a problem in the
-  game, the game's `keeperfx.log` from the KeeperFX folder helps too;
+* the editor's output: start it from a terminal and copy what it prints there (on Windows,
+  `kfx-editor-cli.exe` prints to the terminal). If it crashed, the crash log from the `crashes`
+  folder of the configuration folder (the next start shows its path). For a problem in the game,
+  the game's `keeperfx.log` from the KeeperFX folder helps too;
 * the level involved, zipped, if you can share it (please do not attach files from the original
   game).
 

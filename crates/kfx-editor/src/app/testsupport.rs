@@ -68,6 +68,10 @@ impl EditorApp {
             self.first_run.open = false;
         }
     }
+    /// Close the KeeperFX folder dialog even without an install (tests that need no game data).
+    pub fn hide_first_run(&mut self) {
+        self.first_run.open = false;
+    }
     /// Forget the unsaved changes (so that a following New / Open does not ask).
     pub fn discard_changes_for_test(&mut self) {
         if let Some(d) = self.doc.as_mut() {

@@ -8,6 +8,23 @@ rust-version.workspace = true
 repository.workspace = true
 homepage.workspace = true
 publish = false
+build = "build.rs"
+
+[lib]
+name = "kfx_editor"
+path = "src/lib.rs"
+# the doc comments hold examples of command lines and file formats, not Rust
+doctest = false
+
+# the editor window (on Windows built for the GUI subsystem: no console window)
+[[bin]]
+name = "kfx-editor"
+path = "src/main.rs"
+
+# the same program as a console program, for the command line on Windows
+[[bin]]
+name = "kfx-editor-cli"
+path = "src/bin/kfx-editor-cli.rs"
 
 [dependencies]
 kfx-formats.workspace = true
@@ -44,9 +61,20 @@ kfx-audio = { path = "../kfx-audio", default-features = false, features = ["play
 kfx-live = { path = "../kfx-live", default-features = false, features = ["ui"] }
 # map analysis layers and the constrained map generator
 kfx-analysis = { path = "../kfx-analysis" }
+# self-update from the GitHub releases
+kfx-update = { path = "../kfx-update" }
+# the window icon (PNG); already used by the Workshop crate
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+semver = "1.0.28"
+
+# Windows: icon and version information in the executables (needs the Windows SDK's resource
+# compiler, present on the MSVC CI runner; the build script does nothing without it)
+[target.'cfg(windows)'.build-dependencies]
+winresource = "0.1"
 
 [dev-dependencies]
 egui_kittest = { version = "0.37.0", features = ["wgpu", "eframe"] }
-image = { version = "0.25.10", default-features = false, features = ["png"] }
-# the Workshop UI test builds a level zip
+# the Workshop UI test builds a level zip; the update tests build release packages
 zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+flate2 = "1.1"
+tar = { version = "0.4", default-features = false }

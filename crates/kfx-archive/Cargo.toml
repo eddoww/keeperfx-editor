@@ -1,0 +1,22 @@
+[package]
+name = "kfx-archive"
+description = "Safe reading and extraction of downloaded ZIP and tar.gz archives"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish = false
+
+[dependencies]
+thiserror.workspace = true
+zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+flate2 = "1.1"
+tar = { version = "0.4", default-features = false }
+
+[dev-dependencies]
+kfx-formats.workspace = true
+zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+flate2 = "1.1"
+tar = { version = "0.4", default-features = false }

@@ -1297,6 +1297,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b97b65636e5b9ef369943878ac74335ba1c55c1cb6adbf1e2c293c624248d693"
 
 [[package]]
+name = "filetime"
+version = "0.2.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5c287a33c7f0a620c38e641e7f60827713987b3c0f26e8ddc9462cc69cf75759"
+dependencies = [
+ "cfg-if",
+ "libc",
+]
+
+[[package]]
 name = "find-msvc-tools"
 version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1997,7 +2007,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-analysis"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "kfx-formats",
  "kfx-map",
@@ -2005,8 +2015,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "kfx-archive"
+version = "0.1.1"
+dependencies = [
+ "flate2",
+ "kfx-formats",
+ "tar",
+ "thiserror 2.0.21",
+ "zip",
+]
+
+[[package]]
 name = "kfx-audio"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cpal",
  "egui",
@@ -2018,7 +2039,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-campaign-ui"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "egui_kittest",
@@ -2030,7 +2051,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-config-ui"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "egui_kittest",
@@ -2048,7 +2069,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-editor"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "bytemuck",
  "directories",
@@ -2056,6 +2077,7 @@ dependencies = [
  "egui",
  "egui-wgpu",
  "egui_kittest",
+ "flate2",
  "glam",
  "image",
  "kfx-analysis",
@@ -2071,19 +2093,23 @@ dependencies = [
  "kfx-prefab",
  "kfx-script",
  "kfx-script-ui",
+ "kfx-update",
  "kfx-workshop",
  "pollster",
  "rfd",
  "ron",
+ "semver",
  "serde",
  "serde_json",
+ "tar",
  "toml 0.8.23",
+ "winresource",
  "zip",
 ]
 
 [[package]]
 name = "kfx-fonts"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "egui_system_font_provider",
@@ -2091,7 +2117,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-formats"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "encoding_rs",
  "serde",
@@ -2102,7 +2128,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-gfx"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "kfx-formats",
  "png 0.17.16",
@@ -2115,7 +2141,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-live"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "kfx-formats",
@@ -2126,7 +2152,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-logic-ui"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "egui_kittest",
@@ -2138,7 +2164,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-map"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "kfx-formats",
  "serde",
@@ -2149,7 +2175,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-prefab"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "egui_kittest",
@@ -2164,7 +2190,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-script"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "kfx-formats",
  "serde",
@@ -2175,7 +2201,7 @@ dependencies = [
 
 [[package]]
 name = "kfx-script-ui"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "egui_kittest",
@@ -2187,12 +2213,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "kfx-update"
+version = "0.1.1"
+dependencies = [
+ "flate2",
+ "kfx-archive",
+ "kfx-formats",
+ "semver",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tar",
+ "thiserror 2.0.21",
+ "ureq",
+ "zip",
+]
+
+[[package]]
 name = "kfx-workshop"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "egui",
  "egui_kittest",
  "image",
+ "kfx-archive",
  "kfx-fonts",
  "kfx-formats",
  "kfx-map",
@@ -4014,6 +4058,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tar"
+version = "0.4.46"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3f6221d9a6003c78398e3b239969f352578258df48c8eb051caadae0015bc840"
+dependencies = [
+ "filetime",
+ "libc",
+]
+
+[[package]]
 name = "tempfile"
 version = "3.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4156,10 +4210,12 @@ version = "1.2.1+spec-1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d5755c51863cdac711f1956baf8eb9588e060755f7d3c4c979e70ea1e1f32cd7"
 dependencies = [
+ "indexmap",
  "serde_core",
  "serde_spanned 1.1.3",
  "toml_datetime 1.1.3+spec-1.1.0",
  "toml_parser",
+ "toml_writer",
  "winnow 1.0.5",
 ]
 
@@ -4221,6 +4277,12 @@ name = "toml_write"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5d99f8c9a7727884afe522e9bd5edbfc91a3312b36a77b5fb8926e4c31a41801"
+
+[[package]]
+name = "toml_writer"
+version = "1.2.0+spec-1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "009dbb7700f11c55ef83aebbe4c0e9cf1f1ac0844bd8d6f00dc38f302026e13a"
 
 [[package]]
 name = "tracing"
@@ -5215,6 +5277,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8c3b93199df0ab874cdf0c6a94f0a0dc3423fe41f1cafb62b8bd7b1deb277aef"
 dependencies = [
  "memchr",
+]
+
+[[package]]
+name = "winresource"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a2bc6d36480b829272a5bdabf08e6dca8004761c1da7e35efef800540c66221b"
+dependencies = [
+ "toml 1.2.1+spec-1.1.0",
+ "version_check",
 ]
 
 [[package]]

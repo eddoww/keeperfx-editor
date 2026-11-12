@@ -66,3 +66,13 @@ impl From<kfx_formats::Error> for Error {
         Error::Other(e.to_string())
     }
 }
+
+impl From<kfx_archive::Error> for Error {
+    fn from(e: kfx_archive::Error) -> Error {
+        match e {
+            kfx_archive::Error::Io { path, source } => Error::Io { path, source },
+            kfx_archive::Error::Archive { path, detail } => Error::Archive { path, detail },
+            kfx_archive::Error::Unsafe(s) => Error::Unsafe(s),
+        }
+    }
+}

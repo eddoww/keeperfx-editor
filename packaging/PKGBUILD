@@ -6,7 +6,7 @@
 # The checkout is used as is (no download): the build copies nothing and writes its output
 # to $srcdir/target so the working tree stays clean.
 pkgname=kfx-editor
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='Map editor for KeeperFX (Dungeon Keeper 1): terrain, things, DK script, Lua, config overrides'
 arch=('x86_64')
@@ -37,7 +37,8 @@ check() {
   export CARGO_TARGET_DIR="$srcdir/target"
   # Tests that need a KeeperFX install skip themselves when KFX_INSTALL is not set.
   env -u KFX_INSTALL nice -n 19 cargo test --release --frozen \
-    -p kfx-formats -p kfx-gfx -p kfx-map -p kfx-script -j 4 -- --test-threads=4
+    -p kfx-formats -p kfx-gfx -p kfx-map -p kfx-script -p kfx-archive -p kfx-update \
+    -j 4 -- --test-threads=4
 }
 
 package() {
@@ -51,6 +52,15 @@ package() {
     "$pkgdir/usr/share/metainfo/org.keeperfx.MapEditor.metainfo.xml"
   install -Dm644 packaging/org.keeperfx.MapEditor.mime.xml \
     "$pkgdir/usr/share/mime/packages/org.keeperfx.MapEditor.xml"
+  for s in 16 24 32 48 64 128 256 512; do
+    install -Dm644 "packaging/icons/kfx-editor-$s.png" \
+      "$pkgdir/usr/share/icons/hicolor/${s}x${s}/apps/org.keeperfx.MapEditor.png"
+  done
   install -d "$pkgdir/usr/share/doc/$pkgname"
   cp -r README.md docs "$pkgdir/usr/share/doc/$pkgname/"
+  # Tells the editor that pacman manages it: it then only says that a new version exists and
+  # never replaces its own files (the editor also looks beside the executable).
+  install -d "$pkgdir/usr/share/kfx-editor"
+  echo "Installed by the Arch Linux package; update it with pacman." \
+    > "$pkgdir/usr/share/kfx-editor/managed-install"
 }

@@ -10,7 +10,9 @@ members = [
     "crates/kfx-fonts",
     "crates/kfx-live",
     "crates/kfx-prefab",
+    "crates/kfx-archive",
     "crates/kfx-workshop",
+    "crates/kfx-update",
     "crates/kfx-script-ui",
     "crates/kfx-config-ui",
     "crates/kfx-logic-ui",
@@ -19,7 +21,7 @@ members = [
 ]
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "GPL-2.0-or-later"
 rust-version = "1.99"

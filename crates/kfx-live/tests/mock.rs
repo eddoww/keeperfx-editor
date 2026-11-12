@@ -20,6 +20,11 @@ fn client_for(m: &Mock) -> LiveClient {
         "connect: {:?}",
         c.status()
     );
+    // The connection is reported before the handshake reply with the game version arrives.
+    let end = Instant::now() + Duration::from_secs(5);
+    while c.status().kfx_version.is_none() && Instant::now() < end {
+        std::thread::sleep(Duration::from_millis(10));
+    }
     c
 }
 

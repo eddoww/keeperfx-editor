@@ -5,6 +5,43 @@
 A KeeperFX install: a folder that contains `fxdata/` and `data/` (any letter case). The editor
 ships no game assets; it reads palettes, textures, sprites, configs and campaigns from that folder.
 
+## Installing
+
+Download the editor from the [releases page](https://github.com/eddoww/keeperfx-editor/releases)
+(`<tag>` is the version, for example `v0.1.2`).
+
+**Windows.** Two choices:
+
+* `kfx-editor-<tag>-windows-x86_64-setup.exe`, the installer (recommended). It installs for your
+  user account, without administrator rights, into
+  `%LOCALAPPDATA%\Programs\KeeperFX Map Editor`, adds a Start menu entry and optionally a desktop
+  shortcut and an "Open with KeeperFX Map Editor" entry for `.slb` map files. Running a newer
+  installer over it upgrades in place. The setup can also install for all users (into Program
+  Files, with administrator rights).
+* `kfx-editor-<tag>-windows-x86_64.zip`, the portable version: unpack it anywhere you can write
+  and start `kfx-editor.exe`.
+
+Both hold `kfx-editor.exe`, the editor window (it opens no console window), and
+`kfx-editor-cli.exe`, the same program for the [command line](cli.md). They are not code-signed,
+so the first start shows a Windows SmartScreen warning, "Windows protected your PC": choose
+**More info**, then **Run anyway**. The editor cannot avoid this warning without a paid
+code-signing certificate.
+
+Silent installation (for scripts): `kfx-editor-<tag>-windows-x86_64-setup.exe /VERYSILENT
+/SUPPRESSMSGBOXES /NORESTART`, with `/DIR="x:\folder"` for another folder, `/ALLUSERS` for all
+users and `/TASKS="desktopicon,slbassoc"` for the optional shortcut and file association.
+
+**macOS.** Unpack `kfx-editor-<tag>-macos-arm64.tar.gz` (Apple silicon) or `-macos-x86_64.tar.gz`
+(Intel) and move `KeeperFX Map Editor.app` into Applications (or another folder of yours: the
+editor can only update itself from a folder you can write, not from Downloads). The application
+is not signed, so the first time right-click (or Control-click) it and choose **Open**, then
+**Open** again.
+
+**Linux.** Unpack `kfx-editor-<tag>-linux-x86_64.tar.gz` anywhere you can write and run
+`kfx-editor`. The archive also holds a desktop entry, a MIME type file for map files and icons
+(`icons/hicolor`) to copy into `~/.local/share/applications`, `~/.local/share/mime/packages` and
+`~/.local/share/icons`. An Arch Linux package can be built from `packaging/PKGBUILD`.
+
 ## First run
 
 If no valid install is known, the **KeeperFX folder** dialog opens: type or browse to the folder.
@@ -16,6 +53,36 @@ install (for example from the command line), that install is found by walking up
 
 Settings, backups and crash-recovery autosaves are stored in the editor's config folder (shown at
 the bottom of Preferences > Files; `KFX_EDITOR_CONFIG_DIR` overrides it).
+
+Right after that, a notice asks whether the editor may look for new versions: once a day it would
+ask GitHub for the list of releases. Nothing is sent before you answer. **Check for updates once a
+day** turns the checks on, **Turn update checks off** turns them off; both can be changed later in
+Preferences > Updates. See [Updates](updates.md).
+
+## Where things are
+
+* The program: where you unpacked it, or the folder chosen in the installer (by default
+  `%LOCALAPPDATA%\Programs\KeeperFX Map Editor` on Windows).
+* Settings, backups, crash-recovery snapshots, the update state and crash logs: the configuration
+  folder, `~/.config/kfx-editor` on Linux, `%APPDATA%\KeeperFX\kfx-editor\config` on Windows,
+  `~/Library/Application Support/net.KeeperFX.kfx-editor` on macOS.
+* Maps: wherever you save them; in the KeeperFX folder the editor writes only what you save there,
+  play-test copies in `levels/personal` and Workshop items you install.
+
+## Updates
+
+New versions are announced in the window (if update checks are on) and installed with
+**Update now** in Help > Check for updates..., which keeps your open map. See [Updates](updates.md),
+also for turning the checks off.
+
+## Uninstalling
+
+* **Windows, installed with the setup program**: Settings > Apps > Installed apps (or Apps &
+  features), "KeeperFX Map Editor", Uninstall. Silently: `unins000.exe /VERYSILENT` in the
+  install folder.
+* **Zip, macOS, Linux archive**: delete the folder (or the `.app`).
+* The configuration folder above is not removed by either; delete it too to remove settings,
+  backups and logs. Maps you saved stay where they are.
 
 ## Opening a map
 
