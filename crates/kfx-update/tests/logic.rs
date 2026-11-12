@@ -492,6 +492,21 @@ fn blockers() {
         eligibility(&l, &build(), mac, &ro),
         Err(Blocker::NotWritable { .. })
     ));
+    // an installer-based Windows install in Program Files: the installer elevates itself
+    let win = Platform::from_names("windows", "x86_64");
+    let pf = "C:/Program Files/KeeperFX Map Editor";
+    let marked = FakeProbe::new(&["C:/Program Files/KeeperFX Map Editor/setup-install"]);
+    let l = detect(Path::new(&format!("{pf}/kfx-editor.exe")), win, &marked);
+    assert_eq!(l.kind, LayoutKind::WindowsSetup);
+    let mut ro = FakeProbe::new(&["C:/Program Files/KeeperFX Map Editor/setup-install"]);
+    ro.read_only.insert(pf.into());
+    assert_eq!(eligibility(&l, &build(), win, &ro), Ok(()));
+    // the same folder without the installer's marker cannot be updated
+    let l = detect(Path::new(&format!("{pf}/kfx-editor.exe")), win, &probe);
+    assert!(matches!(
+        eligibility(&l, &build(), win, &ro),
+        Err(Blocker::NotWritable { .. })
+    ));
     // every blocker explains itself
     assert!(Blocker::DevBuild.to_string().contains("development build"));
 }

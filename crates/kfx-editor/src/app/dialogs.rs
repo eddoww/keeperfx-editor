@@ -2205,6 +2205,7 @@ impl EditorApp {
                             });
                     });
             });
+        let mut open_updates = false;
         egui::Window::new(trd("kfx_editor.about", "About"))
             .open(&mut self.show_about)
             .collapsible(false)
@@ -2216,11 +2217,19 @@ impl EditorApp {
                         .strong()
                         .size(18.0),
                 );
-                ui.label(trf(
-                    "kfx_editor.version_env",
-                    "Version {env}",
-                    &[("env", &env!("CARGO_PKG_VERSION"))],
-                ));
+                ui.horizontal(|ui| {
+                    ui.label(trf(
+                        "kfx_editor.version_env",
+                        "Version {env}",
+                        &[("env", &env!("CARGO_PKG_VERSION"))],
+                    ));
+                    if ui
+                        .small_button(trd("kfx_editor.updates_d", "Updates…"))
+                        .clicked()
+                    {
+                        open_updates = true;
+                    }
+                });
                 ui.label(trd(
                     "kfx_editor.licence_gpl_2_0_or_later",
                     "Licence: GPL-2.0-or-later",
@@ -2244,6 +2253,13 @@ impl EditorApp {
                     trd("kfx_editor.keeperfx_project", "KeeperFX project"),
                     "https://github.com/dkfans/keeperfx",
                 );
+                ui.hyperlink_to(
+                    trd(
+                        "kfx_editor.report_a_problem_with_the_editor",
+                        "Report a problem with the editor",
+                    ),
+                    "https://github.com/eddoww/keeperfx-editor/issues",
+                );
                 ui.label(
                     RichText::new(trd(
                         "kfx_editor.dungeon_keeper_is_a_trademark_of_electronic_arts",
@@ -2254,6 +2270,9 @@ impl EditorApp {
                     .color(TEXT_DIM),
                 );
             });
+        if open_updates {
+            self.updates.dialog = true;
+        }
     }
 }
 

@@ -1238,7 +1238,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1284"]
 
 [strings."kfx_editor.a_map_and_level_script_editor_for_keeperfx"]
 text = "A map and level script editor for KeeperFX, the open-source engine for Dungeon Keeper 1."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2229"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2238"]
 
 [strings."kfx_editor.a_multiplayer_map_the_game_ignores_mods_in_multi"]
 text = "A multiplayer map: the game ignores mods in multiplayer games (only single-player tests use them)."
@@ -1274,7 +1274,7 @@ src = ["crates/kfx-editor/src/newmap.rs:189"]
 
 [strings."kfx_editor.about"]
 text = "About"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2208", "crates/kfx-editor/src/app/menu_bar.rs:1292"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2209", "crates/kfx-editor/src/app/menu_bar.rs:1292"]
 
 [strings."kfx_editor.about_w_x_h_pixels_rendered_in_tiles_when_larger"]
 text = "About {w} x {h} pixels; rendered in tiles when larger than the GPU allows."
@@ -2003,15 +2003,15 @@ src = ["crates/kfx-editor/src/app/extras.rs:282", "crates/kfx-editor/src/app/men
 
 [strings."kfx_editor.channel"]
 text = "Channel"
-src = ["crates/kfx-editor/src/app/update_ui.rs:838"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:839"]
 
 [strings."kfx_editor.channel_pre_release"]
 text = "pre-release"
-src = ["crates/kfx-editor/src/app/update_ui.rs:923"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:924"]
 
 [strings."kfx_editor.channel_stable"]
 text = "stable"
-src = ["crates/kfx-editor/src/app/update_ui.rs:924"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:925"]
 
 [strings."kfx_editor.cheats_alex"]
 text = "Cheats (-alex)"
@@ -2023,7 +2023,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:1286"]
 
 [strings."kfx_editor.check_for_updates_automatically"]
 text = "Check for updates automatically"
-src = ["crates/kfx-editor/src/app/update_ui.rs:828"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:829"]
 
 [strings."kfx_editor.check_for_updates_once_a_day"]
 text = "Check for updates once a day"
@@ -2031,7 +2031,7 @@ src = ["crates/kfx-editor/src/app/update_ui.rs:422"]
 
 [strings."kfx_editor.check_now"]
 text = "Check now"
-src = ["crates/kfx-editor/src/app/update_ui.rs:711", "crates/kfx-editor/src/app/update_ui.rs:883"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:711", "crates/kfx-editor/src/app/update_ui.rs:884"]
 
 [strings."kfx_editor.check_the_map_and_its_scripts"]
 text = "Check the map and its scripts"
@@ -2119,7 +2119,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:846", "crates/kfx-editor/src
 
 [strings."kfx_editor.close"]
 text = "Close"
-src = ["crates/kfx-editor/src/app/config.rs:417", "crates/kfx-editor/src/app/dialogs.rs:981", "crates/kfx-editor/src/app/dialogs.rs:1099", "crates/kfx-editor/src/app/extras.rs:705", "crates/kfx-editor/src/app/prefab.rs:332", "crates/kfx-editor/src/app/update_ui.rs:809", "crates/kfx-editor/src/console.rs:140"]
+src = ["crates/kfx-editor/src/app/config.rs:417", "crates/kfx-editor/src/app/dialogs.rs:981", "crates/kfx-editor/src/app/dialogs.rs:1099", "crates/kfx-editor/src/app/extras.rs:705", "crates/kfx-editor/src/app/prefab.rs:332", "crates/kfx-editor/src/app/update_ui.rs:810", "crates/kfx-editor/src/console.rs:140"]
 
 [strings."kfx_editor.close_pack"]
 text = "Close pack"
@@ -2683,7 +2683,7 @@ src = ["crates/kfx-editor/src/app/dialogs.rs:1771"]
 
 [strings."kfx_editor.download_and_install_automatically"]
 text = "Download and install automatically"
-src = ["crates/kfx-editor/src/app/update_ui.rs:857"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:858"]
 
 [strings."kfx_editor.download_cancelled"]
 text = "Download cancelled"
@@ -2719,7 +2719,7 @@ src = ["crates/kfx-editor/src/app/analysis_panel.rs:1002"]
 
 [strings."kfx_editor.dungeon_keeper_is_a_trademark_of_electronic_arts"]
 text = "Dungeon Keeper is a trademark of Electronic Arts. The editor ships no game data: it reads your KeeperFX install."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2248"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2264"]
 
 [strings."kfx_editor.duplicate"]
 text = "Duplicate"
@@ -2931,7 +2931,7 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:152"]
 
 [strings."kfx_editor.every_release_so_far_is_a_pre_release_on_the_stable"]
 text = "Every release so far is a pre-release: on the stable channel no update is offered until a release is marked stable."
-src = ["crates/kfx-editor/src/app/update_ui.rs:847"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:848"]
 
 [strings."kfx_editor.every_text_of_this_level_in_every_language_side"]
 text = "Every text of this level in every language side by side, with CSV and .po exchange"
@@ -3191,7 +3191,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:42"]
 
 [strings."kfx_editor.forget"]
 text = "Forget"
-src = ["crates/kfx-editor/src/app/update_ui.rs:875"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:876"]
 
 [strings."kfx_editor.format"]
 text = "Format"
@@ -3199,7 +3199,7 @@ src = ["crates/kfx-editor/src/browser.rs:614"]
 
 [strings."kfx_editor.formats_slab_generation_and_rules_follow_the_kee"]
 text = "Formats, slab generation and rules follow the KeeperFX source code. Thanks to the KeeperFX project and the authors of its wiki."
-src = ["crates/kfx-editor/src/app/dialogs.rs:2234"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2243"]
 
 [strings."kfx_editor.fortified_walls"]
 text = "Fortified walls"
@@ -3769,7 +3769,7 @@ src = ["crates/kfx-editor/src/app/prompts.rs:403"]
 
 [strings."kfx_editor.keeperfx_map_editor"]
 text = "KeeperFX Map Editor"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2214"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2215"]
 
 [strings."kfx_editor.keeperfx_map_editor_2ec4"]
 text = "KeeperFX Map Editor"
@@ -3781,7 +3781,7 @@ src = ["crates/kfx-editor/src/app/prompts.rs:8"]
 
 [strings."kfx_editor.keeperfx_project"]
 text = "KeeperFX project"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2244"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2253"]
 
 [strings."kfx_editor.keeperfx_tngfx_aptfx_lgtfx"]
 text = "KeeperFX (.tngfx / .aptfx / .lgtfx)"
@@ -3889,7 +3889,7 @@ src = ["crates/kfx-editor/src/app/generator.rs:279"]
 
 [strings."kfx_editor.last_check_n_minutes_ago"]
 text = "Last check: {n} minutes ago"
-src = ["crates/kfx-editor/src/app/update_ui.rs:905"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:906"]
 
 [strings."kfx_editor.last_time_the_editor_stopped_because_of_an_error"]
 text = "Last time, the editor stopped because of an error. Unsaved work may be in the crash recovery (it is offered when a map is opened). A crash log was written to:"
@@ -3993,7 +3993,7 @@ src = ["crates/kfx-editor/src/app/campaign.rs:1054"]
 
 [strings."kfx_editor.licence_gpl_2_0_or_later"]
 text = "Licence: GPL-2.0-or-later"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2224"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2233"]
 
 [strings."kfx_editor.light"]
 text = "Light"
@@ -4941,7 +4941,7 @@ src = ["crates/kfx-editor/src/app/panels.rs:443"]
 
 [strings."kfx_editor.off_you_are_asked_first_on_a_new_version_is_downloaded"]
 text = "Off: you are asked first. On: a new version is downloaded in the background and installed when you close the editor"
-src = ["crates/kfx-editor/src/app/update_ui.rs:862"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:863"]
 
 [strings."kfx_editor.offline_use_only_the_cache_never_the_network"]
 text = "Offline: use only the cache, never the network."
@@ -4961,7 +4961,7 @@ src = ["crates/kfx-editor/src/app/extras.rs:513"]
 
 [strings."kfx_editor.once_a_day_the_editor_asks_github_for_its_releases"]
 text = "Once a day the editor asks GitHub (api.github.com) for its list of releases"
-src = ["crates/kfx-editor/src/app/update_ui.rs:833"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:834"]
 
 [strings."kfx_editor.one_list_in_slab_id_order_instead_of_the_groups"]
 text = "One list in slab ID order instead of the groups"
@@ -5121,7 +5121,7 @@ src = ["crates/kfx-editor/src/app/update_ui.rs:635"]
 
 [strings."kfx_editor.open_the_folder"]
 text = "Open the folder"
-src = ["crates/kfx-editor/src/app/update_ui.rs:800"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:801"]
 
 [strings."kfx_editor.open_this_backup_without_restoring_it_save_as_on"]
 text = "Open this backup without restoring it (Save as only)"
@@ -5608,8 +5608,8 @@ src = ["crates/kfx-editor/src/app/audio.rs:543"]
 text = "Plays the file from the campaign's speech folder, like the land view does"
 src = ["crates/kfx-editor/src/app/map_dialogs.rs:315"]
 
-[strings."kfx_editor.please_attach_it_to_a_bug_report"]
-text = "Please attach it to a bug report (Help > About lists where to report)."
+[strings."kfx_editor.please_attach_it_to_a_bug_report_at_the_issues"]
+text = "Please attach it to a bug report at https://github.com/eddoww/keeperfx-editor/issues (Help > About)."
 src = ["crates/kfx-editor/src/app/update_ui.rs:794"]
 
 [strings."kfx_editor.png"]
@@ -5960,6 +5960,10 @@ src = ["crates/kfx-editor/src/app/clm_editor.rs:851"]
 [strings."kfx_editor.replay_the_last_recording_packet_load"]
 text = "Replay the last recording (packet load)"
 src = ["crates/kfx-editor/src/app/menu_bar.rs:721", "crates/kfx-editor/src/app/toolbar.rs:641"]
+
+[strings."kfx_editor.report_a_problem_with_the_editor"]
+text = "Report a problem with the editor"
+src = ["crates/kfx-editor/src/app/dialogs.rs:2257"]
 
 [strings."kfx_editor.report_problems_in_the_validate_panel"]
 text = "Report problems in the Validate panel"
@@ -6549,7 +6553,7 @@ src = ["crates/kfx-editor/src/app/update_ui.rs:494", "crates/kfx-editor/src/app/
 
 [strings."kfx_editor.skipped_versions_v"]
 text = "Skipped versions: {v}"
-src = ["crates/kfx-editor/src/app/update_ui.rs:869"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:870"]
 
 [strings."kfx_editor.slab"]
 text = " (slab)"
@@ -7266,7 +7270,7 @@ src = ["crates/kfx-editor/src/analysis_view.rs:899"]
 
 [strings."kfx_editor.this_copy_cannot_update_itself_b"]
 text = "This copy cannot update itself: {b}"
-src = ["crates/kfx-editor/src/app/update_ui.rs:627", "crates/kfx-editor/src/app/update_ui.rs:891"]
+src = ["crates/kfx-editor/src/app/update_ui.rs:627", "crates/kfx-editor/src/app/update_ui.rs:892"]
 
 [strings."kfx_editor.this_folder_is_read_only_save_maps_elsewhere_fil"]
 text = "this folder is read-only: save maps elsewhere (File > Save as)"
@@ -7578,11 +7582,15 @@ src = ["crates/kfx-editor/src/app/texts.rs:278"]
 
 [strings."kfx_editor.updates"]
 text = "Updates"
-src = ["crates/kfx-editor/src/app/dialogs.rs:68", "crates/kfx-editor/src/app/update_ui.rs:539", "crates/kfx-editor/src/app/update_ui.rs:824"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:68", "crates/kfx-editor/src/app/update_ui.rs:539", "crates/kfx-editor/src/app/update_ui.rs:825"]
 
 [strings."kfx_editor.updates_are_only_installed_when_you_say_so_this"]
 text = "Updates are only installed when you say so. This can be changed at any time in Preferences > Updates."
 src = ["crates/kfx-editor/src/app/update_ui.rs:412"]
+
+[strings."kfx_editor.updates_d"]
+text = "Updates…"
+src = ["crates/kfx-editor/src/app/dialogs.rs:2227"]
 
 [strings."kfx_editor.updating_after_the_edit"]
 text = ", updating after the edit"
@@ -7654,7 +7662,7 @@ src = ["crates/kfx-editor/src/app/audio.rs:299"]
 
 [strings."kfx_editor.version_env"]
 text = "Version {env}"
-src = ["crates/kfx-editor/src/app/dialogs.rs:2219"]
+src = ["crates/kfx-editor/src/app/dialogs.rs:2221"]
 
 [strings."kfx_editor.version_v_is_ready_it_is_installed_when_you_close"]
 text = "Version {v} is ready: it is installed when you close the editor"

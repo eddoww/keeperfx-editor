@@ -131,7 +131,9 @@ impl Probe for FsProbe {
         p.exists()
     }
     fn writable(&self, dir: &Path) -> std::result::Result<(), String> {
-        let t = dir.join(format!(".kfx-write-test-{}", std::process::id()));
+        static N: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+        let n = N.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+        let t = dir.join(format!(".kfx-write-test-{}-{n}", std::process::id()));
         match std::fs::OpenOptions::new()
             .write(true)
             .create_new(true)
@@ -239,9 +241,16 @@ pub fn eligibility(
     {
         return Err(Blocker::ReadOnlyImage(layout.exe.clone()));
     }
-    let mut must_write = vec![layout.root.clone()];
-    if let LayoutKind::MacBundle { app } = &layout.kind {
-        must_write.push(app.clone());
+    // the Windows installer replaces the files itself (asking for elevation for an all-users
+    // install), so only the other layouts need a writable folder
+    let mut must_write = vec![];
+    match &layout.kind {
+        LayoutKind::WindowsSetup => {}
+        LayoutKind::Portable => must_write.push(layout.root.clone()),
+        LayoutKind::MacBundle { app } => {
+            must_write.push(layout.root.clone());
+            must_write.push(app.clone());
+        }
     }
     for d in must_write {
         if let Err(reason) = probe.writable(&d) {

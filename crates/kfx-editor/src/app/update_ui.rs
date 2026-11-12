@@ -792,8 +792,9 @@ impl EditorApp {
                     .selectable(true),
             );
             ui.label(trd(
-                "kfx_editor.please_attach_it_to_a_bug_report",
-                "Please attach it to a bug report (Help > About lists where to report).",
+                "kfx_editor.please_attach_it_to_a_bug_report_at_the_issues",
+                "Please attach it to a bug report at \
+                https://github.com/eddoww/keeperfx-editor/issues (Help > About).",
             ));
             ui.horizontal(|ui| {
                 if ui

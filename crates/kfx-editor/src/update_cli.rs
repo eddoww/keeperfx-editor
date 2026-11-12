@@ -137,6 +137,9 @@ fn run_inner(args: &[String]) -> Result<i32, String> {
     {
         Installed::Swapped { exe } => {
             println!("installed {} in {}", up.version, layout.root.display());
+            // from kfx-editor-cli.exe, start the window program beside it
+            let gui = exe.with_file_name(kfx_update::platform::Platform::current().exe_name());
+            let exe = if gui.is_file() { gui } else { exe };
             if a.restart.is_some() {
                 let args: Vec<std::ffi::OsString> =
                     map.into_iter().map(|m| m.into_os_string()).collect();
