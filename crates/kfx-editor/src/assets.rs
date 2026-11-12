@@ -22,33 +22,33 @@ pub const STYLE_ALL: usize = 8;
 /// Player owner names and swatch colours, by player number (`src/player_instances.h:31-41`).
 pub const PLAYERS: [(Tx, [u8; 3]); 9] = [
     (
-        tx("kfx_editor.keeper_1_red", "Keeper 1 (Red)"),
+        tx("kfx_editor.keeper_0_red", "Keeper 0 (Red)"),
         [200, 40, 32],
     ),
     (
-        tx("kfx_editor.keeper_2_blue", "Keeper 2 (Blue)"),
+        tx("kfx_editor.keeper_1_blue", "Keeper 1 (Blue)"),
         [48, 88, 220],
     ),
     (
-        tx("kfx_editor.keeper_3_green", "Keeper 3 (Green)"),
+        tx("kfx_editor.keeper_2_green", "Keeper 2 (Green)"),
         [40, 170, 60],
     ),
     (
-        tx("kfx_editor.keeper_4_yellow", "Keeper 4 (Yellow)"),
+        tx("kfx_editor.keeper_3_yellow", "Keeper 3 (Yellow)"),
         [230, 200, 40],
     ),
     (tx("kfx_editor.good_white", "Good (White)"), [235, 235, 235]),
     (tx("kfx_editor.neutral", "Neutral"), [120, 110, 100]),
     (
-        tx("kfx_editor.keeper_5_purple", "Keeper 5 (Purple)"),
+        tx("kfx_editor.keeper_4_purple", "Keeper 4 (Purple)"),
         [150, 60, 190],
     ),
     (
-        tx("kfx_editor.keeper_6_black", "Keeper 6 (Black)"),
+        tx("kfx_editor.keeper_5_black", "Keeper 5 (Black)"),
         [40, 40, 44],
     ),
     (
-        tx("kfx_editor.keeper_7_orange", "Keeper 7 (Orange)"),
+        tx("kfx_editor.keeper_6_orange", "Keeper 6 (Orange)"),
         [235, 130, 30],
     ),
 ];

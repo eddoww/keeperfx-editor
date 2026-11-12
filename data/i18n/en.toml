@@ -3667,32 +3667,32 @@ src = ["crates/kfx-editor/src/app/menu_bar.rs:324"]
 text = "Keeper"
 src = ["crates/kfx-editor/src/app/analysis_panel.rs:736", "crates/kfx-editor/src/app/analysis_panel.rs:917", "crates/kfx-editor/src/app/analysis_panel.rs:1447"]
 
-[strings."kfx_editor.keeper_1_red"]
-text = "Keeper 1 (Red)"
+[strings."kfx_editor.keeper_0_red"]
+text = "Keeper 0 (Red)"
 src = ["crates/kfx-editor/src/assets.rs:25"]
 
-[strings."kfx_editor.keeper_2_blue"]
-text = "Keeper 2 (Blue)"
+[strings."kfx_editor.keeper_1_blue"]
+text = "Keeper 1 (Blue)"
 src = ["crates/kfx-editor/src/assets.rs:29"]
 
-[strings."kfx_editor.keeper_3_green"]
-text = "Keeper 3 (Green)"
+[strings."kfx_editor.keeper_2_green"]
+text = "Keeper 2 (Green)"
 src = ["crates/kfx-editor/src/assets.rs:33"]
 
-[strings."kfx_editor.keeper_4_yellow"]
-text = "Keeper 4 (Yellow)"
+[strings."kfx_editor.keeper_3_yellow"]
+text = "Keeper 3 (Yellow)"
 src = ["crates/kfx-editor/src/assets.rs:37"]
 
-[strings."kfx_editor.keeper_5_purple"]
-text = "Keeper 5 (Purple)"
+[strings."kfx_editor.keeper_4_purple"]
+text = "Keeper 4 (Purple)"
 src = ["crates/kfx-editor/src/assets.rs:43"]
 
-[strings."kfx_editor.keeper_6_black"]
-text = "Keeper 6 (Black)"
+[strings."kfx_editor.keeper_5_black"]
+text = "Keeper 5 (Black)"
 src = ["crates/kfx-editor/src/assets.rs:47"]
 
-[strings."kfx_editor.keeper_7_orange"]
-text = "Keeper 7 (Orange)"
+[strings."kfx_editor.keeper_6_orange"]
+text = "Keeper 6 (Orange)"
 src = ["crates/kfx-editor/src/assets.rs:51"]
 
 [strings."kfx_editor.keeperfx_folder"]
@@ -5477,7 +5477,7 @@ text = "{player} cannot reach any portal while other keepers can: no creatures w
 src = ["crates/kfx-editor/src/analysis_view.rs:777"]
 
 [strings."kfx_editor.player_p_p2_slabs_owned_click_to_make_it_the_act"]
-text = "Player {p}: {p2} slabs owned. Click to make it the active owner."
+text = "{p} in level scripts. {p2} slabs owned. Click to make it the active owner."
 src = ["crates/kfx-editor/src/app/toolbar.rs:778"]
 
 [strings."kfx_editor.player_reaches_a_portal_only_across_lava_a_bridg"]

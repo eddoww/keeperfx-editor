@@ -944,7 +944,7 @@ fn ui_no_click_through() {
     u.app().open_named_dialog("none").unwrap();
     u.steps(1);
     // drag from the left panel onto the map
-    let tree = u.rect_of("Keeper 1 (Red)");
+    let tree = u.rect_of("Keeper 0 (Red)");
     let target = u.slab_px(40, 40);
     u.drag(tree.center(), target, 8, Modifiers::NONE);
     assert_eq!(

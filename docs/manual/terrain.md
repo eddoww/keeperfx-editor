@@ -5,7 +5,7 @@
 The bottom palette's **Terrain** and **Rooms** tabs list slab kinds from the game's `terrain.cfg`
 (rock, earth, gold, fortified walls, floors, liquids, bridge, doors; the room tabs list the rooms).
 Click a tile to make it the active slab; the search box filters by name. Pick the **owner** in the
-left panel: Good (White), Neutral, and Keepers 1 to 7. Alt+click on the map picks the slab *and*
+left panel: Good (White), Neutral, and Keepers 0 to 6 (numbered as in level scripts: Keeper 0 is `PLAYER0`). Alt+click on the map picks the slab *and*
 owner under the cursor (the Pick tool does the same).
 
 ## Tools

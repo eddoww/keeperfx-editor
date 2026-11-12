@@ -44,6 +44,24 @@ pub const PLAYERS_COUNT: u8 = 9;
 /// The hero player (`game.hero_player_num`, white): no dungeon heart needed.
 pub const PLAYER_GOOD: u8 = 4;
 
+/// The name level scripts use for an owner number (`player_desc`,
+/// src/lvl_script_commands.c:77): owners 0-3 are `PLAYER0`-`PLAYER3`, 4 is `PLAYER_GOOD`,
+/// 5 is `PLAYER_NEUTRAL` and 6-8 are `PLAYER4`-`PLAYER6`.
+pub fn owner_script_name(owner: u8) -> &'static str {
+    match owner {
+        0 => "PLAYER0",
+        1 => "PLAYER1",
+        2 => "PLAYER2",
+        3 => "PLAYER3",
+        4 => "PLAYER_GOOD",
+        5 => "PLAYER_NEUTRAL",
+        6 => "PLAYER4",
+        7 => "PLAYER5",
+        8 => "PLAYER6",
+        _ => "an unknown player",
+    }
+}
+
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Severity {
     Info,
@@ -584,7 +602,10 @@ pub fn validate(doc: &MapDoc, gd: &GameData) -> Vec<Issue> {
                 Severity::Warning,
                 "keeper-without-heart",
                 Location::Map,
-                format!("player {o} owns {n} slabs but has no dungeon heart"),
+                format!(
+                    "{} owns {n} slabs but has no dungeon heart",
+                    owner_script_name(o)
+                ),
             ),
             1 => {}
             h => issue(
@@ -593,7 +614,10 @@ pub fn validate(doc: &MapDoc, gd: &GameData) -> Vec<Issue> {
                 "keeper-several-hearts",
                 Location::Map,
                 // src/room_data.c:3534
-                format!("player {o} has {h} dungeon hearts (the extra ones are backups)"),
+                format!(
+                    "{} has {h} dungeon hearts (the extra ones are backups)",
+                    owner_script_name(o)
+                ),
             ),
         }
     }

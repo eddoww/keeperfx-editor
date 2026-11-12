@@ -777,8 +777,11 @@ impl EditorApp {
                     });
                     let resp = resp.on_hover_text(trf(
                         "kfx_editor.player_p_p2_slabs_owned_click_to_make_it_the_act",
-                        "Player {p}: {p2} slabs owned. Click to make it the active owner.",
-                        &[("p", &p), ("p2", &counts[p as usize])],
+                        "{p} in level scripts. {p2} slabs owned. Click to make it the active owner.",
+                        &[
+                            ("p", &kfx_map::validate::owner_script_name(p)),
+                            ("p2", &counts[p as usize]),
+                        ],
                     ));
                     if resp.clicked() {
                         chosen = Some(p);

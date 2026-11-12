@@ -377,13 +377,13 @@ pub fn show(ui: &mut Ui, cx: &mut Cx, st: &mut SlabsetState) {
                                 }
                             }
                             egui::ComboBox::from_id_salt("owner")
-                                .selected_text(format!("owner {}", st.owner))
+                                .selected_text(kfx_map::validate::owner_script_name(st.owner))
                                 .show_ui(ui, |ui| {
                                     for o in 0..9u8 {
                                         ui.selectable_value(
                                             &mut st.owner,
                                             o,
-                                            format!("player {o}"),
+                                            kfx_map::validate::owner_script_name(o),
                                         );
                                     }
                                 });
