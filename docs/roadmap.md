@@ -7,12 +7,15 @@ and are marked as such. The [features](features.md) page lists what works.
 
 * The editor is developed and tested on Linux. The Windows and macOS builds are compiled and
   tested in CI only.
-* The Windows executable is a console program, so that the command line modes can print; starting
-  the window from Explorer also opens a console window.
-* The Windows and macOS builds are not signed, and there is no installer.
-* No application icon is shipped yet; the desktop entry falls back to a generic icon.
-* The optional check for a newer release only reports a version. It does nothing until a release
-  address is entered in the preferences, and it never downloads or installs anything (by design).
+* The Windows executables and installer and the macOS application are not code-signed, so
+  SmartScreen and Gatekeeper warn on first start. Signing needs a code-signing certificate and an
+  Apple Developer ID (see [CONTRIBUTING.md](../CONTRIBUTING.md#code-signing)).
+* Updates are checked against the SHA-256 sums published in the same GitHub release, not against
+  a signature made with an offline key; the trust anchor is the GitHub account
+  ([SECURITY.md](../SECURITY.md)). Signing the sums file (for example with minisign) is open work.
+* The Windows installer and the Windows self-update path are tested in CI only, as are the macOS
+  application bundle replacement and its roll back.
+* There is no Linux AppImage or Flatpak; the tarball and the Arch PKGBUILD are the Linux packages.
 * The game-harness tests start a native Linux build of the game and run on Unix only.
 
 ## Install and file formats

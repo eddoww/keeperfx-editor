@@ -18,11 +18,13 @@ window or rendering backend of their own: `kfx-editor` hosts them.
 | `kfx-campaign-ui` | Campaign and map pack model, file operations, text tables, validation with fixes, land view decoding and the egui editor. | `kfx-formats` |
 | `kfx-analysis` | Map analysis (movement and digging costs from the level's rules, distance fields, reachability, economy, fairness, symmetry, heroes) and the constrained map generator. | `kfx-formats`, `kfx-map` |
 | `kfx-prefab` | Prefab files, capture and placement as one undoable `Patch`, the starter set, the level text translation grid, and the editor's i18n runtime and string scanner. | `kfx-formats`, `kfx-map`, `kfx-script` |
-| `kfx-workshop` | Read-only, cached client of the KeeperFX Workshop, safe archive reading, install plans applied transactionally and undone on uninstall, packaging, egui browser. | `kfx-formats` |
+| `kfx-archive` | Safe reading and extraction of ZIP and tar.gz archives: entry name checks, no links or special files, size and ratio limits. | none |
+| `kfx-workshop` | Read-only, cached client of the KeeperFX Workshop, archive reading (7z and RAR on top of `kfx-archive`), install plans applied transactionally and undone on uninstall, packaging, egui browser. | `kfx-formats`, `kfx-archive` |
+| `kfx-update` | Self-update from the GitHub releases, without GUI: pinned HTTPS client with ETag, rate-limit and back-off handling, version and asset choice, resumable downloads, SHA-256 checks behind a `Verifier` trait, install layouts, the atomic swap with rollback and the health record. | `kfx-archive` |
 | `kfx-audio` | Sound banks, `sounds.cfg` layering and sound resolution as the game does it, decoding, preview playback (cpal) and the sound browser. | `kfx-formats` |
 | `kfx-live` | Client for the game's TCP JSON API on its own thread, play-test actions, reading Lua output from the game log, and the Live link panel. | none |
 | `kfx-fonts` | System fallback fonts for egui through the operating system's font fallback; no bundled fonts. | none |
-| `kfx-editor` | The application (eframe + wgpu): document handling with undo, 3D and 2D renderer, tools, panels, play-testing, settings, the command line and the headless mode. | all of the above |
+| `kfx-editor` | The application (eframe + wgpu), a library with two executables (`kfx-editor`, and `kfx-editor-cli` for the Windows command line): document handling with undo, 3D and 2D renderer, tools, panels, play-testing, settings, updates, crash logs, the command line and the headless mode. | all of the above |
 
 Rules that hold across crates (see also [CONTRIBUTING.md](../CONTRIBUTING.md#conventions)): no
 `unsafe`; integers little-endian; no panics on malformed input (return `Result`); every file loads

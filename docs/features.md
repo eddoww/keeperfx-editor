@@ -198,7 +198,7 @@ detail; known limitations are listed in the [roadmap](roadmap.md).
   download and install them into the KeeperFX folder with an install plan, uninstall them
   (restoring what they replaced), and check installed items for updates. See
   [The KeeperFX Workshop](manual/workshop.md).
-* ZIP and 7z archives are read directly, RAR through an external `7z` program; archive entries
+* ZIP, tar.gz and 7z archives are read directly, RAR through an external `7z` program; archive entries
   are checked for unsafe paths and sizes, and nothing from an archive is executed.
 * Packaging of a level or campaign as a zip laid out the way the game expects, with a pre-flight
   check; the upload itself happens in the browser.
@@ -241,3 +241,21 @@ detail; known limitations are listed in the [roadmap](roadmap.md).
   keys and typing) as PNG files or raw video for an encoder, with captions in a separate file, for
   tutorial videos and reproducible demonstrations. `--forbid-text` fails the run when a frame shows
   a given text, for example a private folder name.
+
+## Installation and updates
+
+* Windows installer (per user without administrator rights, or for all users): Start menu entry,
+  optional desktop shortcut and "Open with" entry for `.slb` maps, uninstaller, upgrade in place;
+  and a portable zip. The editor window opens no console window; `kfx-editor-cli.exe` is the
+  command-line program. See [Getting started](manual/getting-started.md#installing).
+* Application icon on every platform (window, Windows executables and installer, macOS bundle,
+  Linux desktop entry).
+* Self-update from the GitHub releases: a notice before the first request, a check at most once
+  a day (can be turned off), stable or pre-release channel, a banner and an Updates window with
+  the release notes, Update now / Later / Skip this version, resumable downloads checked against
+  the release's SHA-256 sums, an all-or-nothing swap that keeps the open map across the restart,
+  and a roll back to the previous version. Package-manager installs, read-only locations and
+  development builds are only told about new versions. `kfx-editor update --check` and
+  `kfx-editor update` on the command line. See [Updates](manual/updates.md).
+* Crash logs: an error that stops the editor is written to a log in the configuration folder,
+  and the next start says where it is.

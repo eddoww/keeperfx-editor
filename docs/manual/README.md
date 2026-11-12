@@ -32,6 +32,7 @@ For an overview, see [Features](../features.md); known limitations are listed in
 21. [Sounds](audio.md)
 22. [Live link](live.md)
 23. [Editor languages](languages.md)
+24. [Updates](updates.md)
 
 Developer documentation: [file formats](../formats.md), [architecture](../architecture.md),
 [contributing](../../CONTRIBUTING.md).

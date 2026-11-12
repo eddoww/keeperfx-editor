@@ -11,7 +11,15 @@ kfx-editor script-check MAP [--json]      DK script and Lua diagnostics; exit 1 
 kfx-editor export-image MAP OUT.png [--iso] [--scale N] [--no-things]
 kfx-editor regenerate MAP [--decorate]    regenerate columns, slab objects and liquids, then save
 kfx-editor convert MAP --to fx|legacy     rewrite in the KeeperFX format or the original DK format
+kfx-editor update --check [--channel stable|pre-release]
+                                          this version and the newest release; exit 0 when up to
+                                          date, 10 when an update is available, 1 on errors
+kfx-editor update [--channel ..] [--restart [MAP]]
+                                          download, verify and install the newest release
+kfx-editor --version                      print the version
 ```
+
+`update` is described in [Updates](updates.md).
 
 `regenerate` and `convert` copy the level to the backups folder first. Example:
 
@@ -85,9 +93,14 @@ the file and the error and exits with at least 1, and `convert` / `regenerate` w
 2). Before `convert` / `regenerate` overwrite a map its files are backed up, and the write is all
 or nothing (see [Saving](getting-started.md#saving)).
 
-On Windows the program keeps its console so that the commands can print; it is not built as a
-GUI-only (`windows_subsystem = "windows"`) program, because such a program cannot print to the
-console it was started from without platform-specific code.
+On Windows there are two programs: `kfx-editor.exe` is the editor window, built as a GUI program
+so that no console window opens next to it, and `kfx-editor-cli.exe` is the same program as a
+console program. Use `kfx-editor-cli.exe` in terminals and scripts: it prints, and the terminal
+waits for it and gets its exit code. A GUI program cannot print to the terminal it was started
+from (and the terminal does not wait for it), so when `kfx-editor.exe` is given a command it runs
+the command through `kfx-editor-cli.exe` in the background, writes the output to `cli-output.log`
+in the configuration folder, and shows the output and that path in a small window; its exit code
+is the command's. On Linux and macOS `kfx-editor` does both.
 
 ## Events editor actions
 

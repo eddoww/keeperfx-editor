@@ -3,6 +3,38 @@
 All notable changes to this project are listed in this file.
 The format follows Keep a Changelog (https://keepachangelog.com/en/1.1.0/) and the project uses Semantic Versioning (https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Self-update from the GitHub releases. After a one-time notice (nothing is sent before it is
+  answered) the editor checks once a day; Preferences > Updates turns this off, chooses the
+  stable or pre-release channel (pre-release by default, as every release so far is one) and can
+  install new versions automatically on exit. Help > Check for updates opens the Updates window
+  with the release notes and Update now / Later / Skip this version; the update is checked
+  against the release's `SHA256SUMS.txt`, installed all or nothing, and the editor starts again on
+  the open map. The previous version is kept until the new one has started, with a roll back.
+  Package-manager installs, read-only locations and development builds only get a notice. See
+  `docs/manual/updates.md`.
+- `kfx-editor update --check` (exit code 10 when an update exists), `kfx-editor update
+  [--restart [MAP]]` and `kfx-editor --version`.
+- A Windows installer, `kfx-editor-<tag>-windows-x86_64-setup.exe`: per-user install without
+  administrator rights (or all users), Start menu entry, optional desktop shortcut and "Open
+  with" entry for `.slb` maps, uninstaller, upgrade in place, silent switches. The zip stays.
+- An application icon (window, Windows executables, installer, macOS bundle, Linux desktop entry
+  and hicolor icons).
+- Crash logs: an error that stops the editor is logged in the `crashes` folder of the
+  configuration folder, and the next start shows where.
+
+### Changed
+
+- Windows: `kfx-editor.exe` no longer opens a console window. The command line is
+  `kfx-editor-cli.exe`, shipped beside it; `kfx-editor.exe` given a command runs it through
+  `kfx-editor-cli.exe` and shows the output in a window.
+- The old opt-in release check (a release URL in Preferences > Files, through `curl`) is replaced
+  by the update checks above.
+- Workshop: tar.gz archives are read too; the archive checks moved into a shared crate.
+
 ## [0.1.1] - 2026-11-12
 
 ### Changed
