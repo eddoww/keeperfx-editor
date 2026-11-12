@@ -1,0 +1,152 @@
+[
+  {
+    "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/442665601",
+    "html_url": "https://github.com/eddoww/keeperfx-editor/releases/tag/v0.1.1",
+    "id": 442665601,
+    "tag_name": "v0.1.1",
+    "target_commitish": "main",
+    "name": "KeeperFX Map Editor v0.1.1",
+    "draft": false,
+    "prerelease": true,
+    "created_at": "2026-11-12T08:18:15Z",
+    "published_at": "2026-11-12T08:25:11Z",
+    "assets": [
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738674765",
+        "id": 738674765,
+        "name": "kfx-editor-v0.1.1-linux-x86_64.tar.gz",
+        "content_type": "application/x-gtar",
+        "state": "uploaded",
+        "size": 23242279,
+        "digest": "sha256:22897db6edb1a3b49fc4c480452a1387d432edcc259858cec3471c565e6f4597",
+        "download_count": 0,
+        "created_at": "2026-11-12T08:25:08Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.1/kfx-editor-v0.1.1-linux-x86_64.tar.gz"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738674762",
+        "id": 738674762,
+        "name": "kfx-editor-v0.1.1-macos-arm64.tar.gz",
+        "content_type": "application/x-gtar",
+        "state": "uploaded",
+        "size": 35631605,
+        "digest": "sha256:62f2bacebdd8bcad6d32c2eb7b3acbfdb836ef58ab583218c11303323af2b903",
+        "download_count": 0,
+        "created_at": "2026-11-12T08:25:08Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.1/kfx-editor-v0.1.1-macos-arm64.tar.gz"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738674761",
+        "id": 738674761,
+        "name": "kfx-editor-v0.1.1-macos-x86_64.tar.gz",
+        "content_type": "application/x-gtar",
+        "state": "uploaded",
+        "size": 37377349,
+        "digest": "sha256:2b7a29d6d92ee9d8698a5a4e16ecbd292667e04e70c6cc279c6718e6072d66ab",
+        "download_count": 0,
+        "created_at": "2026-11-12T08:25:08Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.1/kfx-editor-v0.1.1-macos-x86_64.tar.gz"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738674767",
+        "id": 738674767,
+        "name": "kfx-editor-v0.1.1-windows-x86_64.zip",
+        "content_type": "application/zip",
+        "state": "uploaded",
+        "size": 20832262,
+        "digest": "sha256:a2d8462e4b803060adc8bc8ca508f2cc7c6498ef66d252812ee780d5fa0ce5fa",
+        "download_count": 0,
+        "created_at": "2026-11-12T08:25:08Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.1/kfx-editor-v0.1.1-windows-x86_64.zip"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738674766",
+        "id": 738674766,
+        "name": "SHA256SUMS.txt",
+        "content_type": "text/plain; charset=utf-8",
+        "state": "uploaded",
+        "size": 414,
+        "digest": "sha256:259688f3722e751c178a8e4fef3f15e2727aab5cffe399a455cba7e236de6049",
+        "download_count": 0,
+        "created_at": "2026-11-12T08:25:08Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.1/SHA256SUMS.txt"
+      }
+    ],
+    "body": "Pre-release build. Needs your own KeeperFX install; the editor ships no game assets. The Windows and macOS builds are unsigned and little tested: on macOS, right-click the app and choose Open the first time. The user manual is in docs/manual in each archive.\n\n**Full Changelog**: https://github.com/eddoww/keeperfx-editor/compare/v0.1.0...v0.1.1"
+  },
+  {
+    "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/442601629",
+    "html_url": "https://github.com/eddoww/keeperfx-editor/releases/tag/v0.1.0",
+    "id": 442601629,
+    "tag_name": "v0.1.0",
+    "target_commitish": "main",
+    "name": "KeeperFX Map Editor v0.1.0",
+    "draft": false,
+    "prerelease": true,
+    "created_at": "2026-11-12T07:02:26Z",
+    "published_at": "2026-11-12T07:11:47Z",
+    "assets": [
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738461870",
+        "id": 738461870,
+        "name": "kfx-editor-v0.1.0-linux-x86_64.tar.gz",
+        "content_type": "application/x-gtar",
+        "state": "uploaded",
+        "size": 23237496,
+        "digest": "sha256:431eb29340df96bd06dcfaf6db845b19bce3ce660c9bc4004f588fd13378452c",
+        "download_count": 1,
+        "created_at": "2026-11-12T07:11:45Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.0/kfx-editor-v0.1.0-linux-x86_64.tar.gz"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738461872",
+        "id": 738461872,
+        "name": "kfx-editor-v0.1.0-macos-arm64.tar.gz",
+        "content_type": "application/x-gtar",
+        "state": "uploaded",
+        "size": 35636492,
+        "digest": "sha256:7853d192ec96480380a6973cb02755dcc3d90894ade59190578a38fa17ed62ee",
+        "download_count": 1,
+        "created_at": "2026-11-12T07:11:45Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.0/kfx-editor-v0.1.0-macos-arm64.tar.gz"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738461868",
+        "id": 738461868,
+        "name": "kfx-editor-v0.1.0-macos-x86_64.tar.gz",
+        "content_type": "application/x-gtar",
+        "state": "uploaded",
+        "size": 37363676,
+        "digest": "sha256:06f863948e0b19a2eee23be64a9141d5e66bf8e43e4056a4dadf7ae3417cdb24",
+        "download_count": 1,
+        "created_at": "2026-11-12T07:11:45Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.0/kfx-editor-v0.1.0-macos-x86_64.tar.gz"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738461873",
+        "id": 738461873,
+        "name": "kfx-editor-v0.1.0-windows-x86_64.zip",
+        "content_type": "application/zip",
+        "state": "uploaded",
+        "size": 20832293,
+        "digest": "sha256:16b13c71778fceb773a957eaaf902a1fbd88ece4d3dc3d61cd3b18c57b0ed5c1",
+        "download_count": 3,
+        "created_at": "2026-11-12T07:11:45Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.0/kfx-editor-v0.1.0-windows-x86_64.zip"
+      },
+      {
+        "url": "https://api.github.com/repos/eddoww/keeperfx-editor/releases/assets/738461869",
+        "id": 738461869,
+        "name": "SHA256SUMS.txt",
+        "content_type": "text/plain; charset=utf-8",
+        "state": "uploaded",
+        "size": 414,
+        "digest": "sha256:cf844d2e60bcaba211ceafb95a3b416f1cfca5e11a8c0803d1f52710fcd9951a",
+        "download_count": 2,
+        "created_at": "2026-11-12T07:11:45Z",
+        "browser_download_url": "https://github.com/eddoww/keeperfx-editor/releases/download/v0.1.0/SHA256SUMS.txt"
+      }
+    ],
+    "body": "Pre-release build. Needs your own KeeperFX install; the editor ships no game assets. The Windows and macOS builds are unsigned and little tested: on macOS, right-click the app and choose Open the first time. The user manual is in docs/manual in each archive.\n\n**Full Changelog**: https://github.com/eddoww/keeperfx-editor/commits/v0.1.0"
+  }
+]
