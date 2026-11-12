@@ -1,6 +1,6 @@
 # KeeperFX Map Editor: user manual
 
-This manual describes version 0.1.1 of the editor, a pre-release; details of the
+This manual describes version 0.1.2 of the editor, a pre-release; details of the
 interface may still change. The pictures were made with the editor's own headless screenshot
 mode on a KeeperFX install and show Dungeon Keeper game art (see
 [THIRD_PARTY.md](../../THIRD_PARTY.md)).
