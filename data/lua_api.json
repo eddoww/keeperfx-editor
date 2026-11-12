@@ -3090,8 +3090,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 2634,
-        "end": 2647,
+        "start": 2666,
+        "end": 2679,
         "line": 85
       }
     },
@@ -3112,8 +3112,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 2012,
-        "end": 2021,
+        "start": 2044,
+        "end": 2053,
         "line": 61
       }
     },
@@ -3131,9 +3131,43 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 1075,
-        "end": 1090,
+        "start": 1107,
+        "end": 1122,
         "line": 27
+      }
+    },
+    "OnCreatureDrop": {
+      "name": "OnCreatureDrop",
+      "params": [
+        {
+          "name": "thing",
+          "ty": "Thing",
+          "annotated": true
+        },
+        {
+          "name": "player",
+          "ty": "Player",
+          "annotated": true
+        },
+        {
+          "name": "pos",
+          "ty": "Pos3d",
+          "annotated": true
+        }
+      ],
+      "returns": [
+        {
+          "ty": "boolean",
+          "doc": "deny"
+        }
+      ],
+      "doc": "Called when a thing is dropped from the hand. Set eventData.deny = true to keep it in the hand.\nForced drops (keeper defeated, Armageddon teleport, computer fallback to its heart) also call this,\nbut ignore deny: the thing lands anyway.",
+      "annotated": true,
+      "source": {
+        "file": "triggers/Builtins.lua",
+        "start": 3431,
+        "end": 3445,
+        "line": 108
       }
     },
     "OnCreatureFellIntoAbyss": {
@@ -3147,9 +3181,33 @@
       ],
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 3916,
-        "end": 3939,
-        "line": 129
+        "start": 5179,
+        "end": 5202,
+        "line": 161
+      }
+    },
+    "OnCreatureLanded": {
+      "name": "OnCreatureLanded",
+      "params": [
+        {
+          "name": "unit",
+          "ty": "Creature",
+          "annotated": true
+        },
+        {
+          "name": "player",
+          "ty": "Player",
+          "doc": "the player who dropped it",
+          "annotated": true
+        }
+      ],
+      "doc": "Called when a creature dropped from the hand touches the ground, after the engine has chosen its state and job.\nSetting unit.state here overrides that choice; a job assigned by dropping it into a room stays assigned.",
+      "annotated": true,
+      "source": {
+        "file": "triggers/Builtins.lua",
+        "start": 3982,
+        "end": 3998,
+        "line": 122
       }
     },
     "OnCreatureRebirth": {
@@ -3166,9 +3224,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 3789,
-        "end": 3806,
-        "line": 123
+        "start": 5052,
+        "end": 5069,
+        "line": 155
       }
     },
     "OnDungeonDestroyed": {
@@ -3184,8 +3242,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 2391,
-        "end": 2409,
+        "start": 2423,
+        "end": 2441,
         "line": 76
       }
     },
@@ -3195,8 +3253,8 @@
       "doc": "Called on each game tick to process timer events",
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 1479,
-        "end": 1489,
+        "start": 1511,
+        "end": 1521,
         "line": 42
       }
     },
@@ -3213,8 +3271,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 2929,
-        "end": 2938,
+        "start": 2961,
+        "end": 2970,
         "line": 95
       }
     },
@@ -3232,8 +3290,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 1291,
-        "end": 1308,
+        "start": 1323,
+        "end": 1340,
         "line": 35
       }
     },
@@ -3251,13 +3309,19 @@
           "annotated": true
         }
       ],
-      "doc": "Called when a thing is picked up. Can be Creatures, Chickens, Specials, Gold, etc.",
+      "returns": [
+        {
+          "ty": "boolean",
+          "doc": "deny"
+        }
+      ],
+      "doc": "Called when a thing is about to be picked up, before it is in the hand. Can be Creatures, Chickens, Specials, Gold, etc.\nSet eventData.deny = true to leave it where it is.",
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 3193,
-        "end": 3201,
-        "line": 104
+        "start": 4403,
+        "end": 4411,
+        "line": 134
       }
     },
     "OnPowerCast": {
@@ -3298,8 +3362,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 673,
-        "end": 684,
+        "start": 705,
+        "end": 716,
         "line": 14
       }
     },
@@ -3321,9 +3385,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 4690,
-        "end": 4707,
-        "line": 158
+        "start": 5953,
+        "end": 5970,
+        "line": 190
       }
     },
     "OnShotHit": {
@@ -3372,9 +3436,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 5439,
-        "end": 5448,
-        "line": 172
+        "start": 6702,
+        "end": 6711,
+        "line": 204
       }
     },
     "OnSlabKindChange": {
@@ -3395,9 +3459,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 4148,
-        "end": 4164,
-        "line": 138
+        "start": 5411,
+        "end": 5427,
+        "line": 170
       }
     },
     "OnSlabOwnerChange": {
@@ -3418,9 +3482,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 4424,
-        "end": 4441,
-        "line": 148
+        "start": 5687,
+        "end": 5704,
+        "line": 180
       }
     },
     "OnSlap": {
@@ -3441,9 +3505,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 3479,
-        "end": 3485,
-        "line": 114
+        "start": 4742,
+        "end": 4748,
+        "line": 146
       }
     },
     "OnSpecialActivated": {
@@ -3469,8 +3533,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 1713,
-        "end": 1731,
+        "start": 1745,
+        "end": 1763,
         "line": 51
       }
     },
@@ -3487,8 +3551,8 @@
       "annotated": true,
       "source": {
         "file": "triggers/Builtins.lua",
-        "start": 2221,
-        "end": 2233,
+        "start": 2253,
+        "end": 2265,
         "line": 69
       }
     },
@@ -4063,6 +4127,44 @@
         "line": 93
       }
     },
+    "RegisterCreatureDropEvent": {
+      "name": "RegisterCreatureDropEvent",
+      "params": [
+        {
+          "name": "action",
+          "ty": "function|string",
+          "doc": "the function to call when the event happens",
+          "annotated": true
+        },
+        {
+          "name": "thing",
+          "ty": "Thing",
+          "optional": true,
+          "doc": "the thing that is being dropped",
+          "annotated": true
+        },
+        {
+          "name": "player",
+          "ty": "Player",
+          "optional": true,
+          "doc": "the player dropping",
+          "annotated": true
+        }
+      ],
+      "returns": [
+        {
+          "ty": "Trigger"
+        }
+      ],
+      "doc": "Triggers when a thing is about to be dropped from the hand\neventData.pos contains the drop position; set eventData.deny = true to keep the thing in the hand\nforced drops (keeper defeated, Armageddon teleport, computer fallback to its heart) also trigger this, but ignore deny",
+      "annotated": true,
+      "source": {
+        "file": "triggers/Events.lua",
+        "start": 10280,
+        "end": 10305,
+        "line": 241
+      }
+    },
     "RegisterCreatureFellIntoAbyssEvent": {
       "name": "RegisterCreatureFellIntoAbyssEvent",
       "params": [
@@ -4082,6 +4184,44 @@
         "start": 4939,
         "end": 4973,
         "line": 117
+      }
+    },
+    "RegisterCreatureLandedEvent": {
+      "name": "RegisterCreatureLandedEvent",
+      "params": [
+        {
+          "name": "action",
+          "ty": "function|string",
+          "doc": "the function to call when the event happens",
+          "annotated": true
+        },
+        {
+          "name": "unit",
+          "ty": "Creature",
+          "optional": true,
+          "doc": "the creature that landed",
+          "annotated": true
+        },
+        {
+          "name": "player",
+          "ty": "Player",
+          "optional": true,
+          "doc": "the player who dropped it",
+          "annotated": true
+        }
+      ],
+      "returns": [
+        {
+          "ty": "Trigger"
+        }
+      ],
+      "doc": "Triggers when a creature dropped from the hand touches the ground, after the engine has chosen its state and job\nsetting eventData.unit.state overrides that choice",
+      "annotated": true,
+      "source": {
+        "file": "triggers/Events.lua",
+        "start": 11144,
+        "end": 11171,
+        "line": 260
       }
     },
     "RegisterCreatureRebirthEvent": {
@@ -4275,9 +4415,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Events.lua",
-        "start": 14668,
-        "end": 14690,
-        "line": 325
+        "start": 16611,
+        "end": 16633,
+        "line": 365
       }
     },
     "RegisterOnConditionEvent": {
@@ -4350,9 +4490,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Events.lua",
-        "start": 13455,
-        "end": 13477,
-        "line": 302
+        "start": 15398,
+        "end": 15420,
+        "line": 342
       }
     },
     "RegisterPickUpEvent": {
@@ -4368,7 +4508,7 @@
           "name": "thing",
           "ty": "Thing",
           "optional": true,
-          "doc": "the thing that got picked up",
+          "doc": "the thing that is being picked up",
           "annotated": true
         },
         {
@@ -4384,13 +4524,13 @@
           "ty": "Trigger"
         }
       ],
-      "doc": "Triggers when a thing is picked up",
+      "doc": "Triggers when a thing is about to be picked up, before it is in the hand\nset eventData.deny = true to leave the thing where it is",
       "annotated": true,
       "source": {
         "file": "triggers/Events.lua",
-        "start": 9207,
-        "end": 9226,
-        "line": 220
+        "start": 9310,
+        "end": 9329,
+        "line": 221
       }
     },
     "RegisterPowerCastEvent": {
@@ -4463,9 +4603,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Events.lua",
-        "start": 11880,
-        "end": 11908,
-        "line": 276
+        "start": 13823,
+        "end": 13851,
+        "line": 316
       }
     },
     "RegisterSlabKindChangeEvent": {
@@ -4501,9 +4641,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Events.lua",
-        "start": 10039,
-        "end": 10066,
-        "line": 239
+        "start": 11982,
+        "end": 12009,
+        "line": 279
       }
     },
     "RegisterSlabOwnerChangeEvent": {
@@ -4539,9 +4679,9 @@
       "annotated": true,
       "source": {
         "file": "triggers/Events.lua",
-        "start": 10934,
-        "end": 10962,
-        "line": 257
+        "start": 12877,
+        "end": 12905,
+        "line": 297
       }
     },
     "RegisterSlapEvent": {
@@ -13090,7 +13230,7 @@
     },
     "event_type": {
       "name": "event_type",
-      "ty": "\"PowerCast\"|\"Death\"|\"SpecialActivated\"|\"GameTick\"|\"ChatMsg\"|\"DungeonDestroyed\"|\"TrapPlaced\"|\"ApplyDamage\"|\"LevelUp\"|\"PickUp\"|\"Slap\"|\"Rebirth\"|\"CreatureFellIntoAbyss\"|\"SlabKindChange\"|\"SlabOwnerChange\"|\"RoomOwnerChange\"|\"ShotHitThing\"|\"Destroyed\"",
+      "ty": "\"PowerCast\"|\"Death\"|\"SpecialActivated\"|\"GameTick\"|\"ChatMsg\"|\"DungeonDestroyed\"|\"TrapPlaced\"|\"ApplyDamage\"|\"LevelUp\"|\"PickUp\"|\"CreatureDrop\"|\"CreatureLanded\"|\"Slap\"|\"Rebirth\"|\"CreatureFellIntoAbyss\"|\"SlabKindChange\"|\"SlabOwnerChange\"|\"RoomOwnerChange\"|\"ShotHitThing\"|\"Destroyed\"",
       "literals": [
         {
           "value": "PowerCast",
@@ -13133,6 +13273,14 @@
           "is_str": true
         },
         {
+          "value": "CreatureDrop",
+          "is_str": true
+        },
+        {
+          "value": "CreatureLanded",
+          "is_str": true
+        },
+        {
           "value": "Slap",
           "is_str": true
         },
@@ -13168,7 +13316,7 @@
       "source": {
         "file": "triggers/Builtins.lua",
         "start": 190,
-        "end": 456,
+        "end": 488,
         "line": 5
       }
     },

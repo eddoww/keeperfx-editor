@@ -4805,7 +4805,7 @@
     {
       "file": "rules.cfg",
       "format": "cfg",
-      "loader": "src/config_rules.c:708",
+      "loader": "src/config_rules.c:710",
       "sections": [
         {
           "name": "game",
@@ -6888,7 +6888,7 @@
         {
           "name": "research",
           "numbered": false,
-          "source": "src/config_rules.c:432",
+          "source": "src/config_rules.c:434",
           "doc": null,
           "list": "repeated_key; replace: if a layer contains a [research] block, clear_research_for_all_players() drops the whole list first, so the block must list every research item",
           "override": "replace",
@@ -6921,7 +6921,7 @@
               ],
               "parse": null,
               "assign": null,
-              "source": "src/config_rules.c:460",
+              "source": "src/config_rules.c:462",
               "doc": "Research order, type, kind and points needed for every research.\nPossible types are: MAGIC, ROOM, CREATURE.\nEach line appends one research item: type, item name, research points needed.",
               "doc_source": "fxdata",
               "confidence": "partial"
@@ -6931,7 +6931,7 @@
         {
           "name": "sacrifices",
           "numbered": false,
-          "source": "src/config_rules.c:527",
+          "source": "src/config_rules.c:529",
           "doc": null,
           "list": "repeated_key; replace: if a layer contains a [sacrifices] block, clear_sacrifice_recipes() drops every recipe first, so the block must list every recipe",
           "override": "replace",
@@ -6959,7 +6959,7 @@
               ],
               "parse": null,
               "assign": null,
-              "source": "src/config_rules.c:555",
+              "source": "src/config_rules.c:557",
               "doc": "Sacrifice recipes. First the result, then followed by up to six ingredients. To disable a sacrifice, put a \";\" before it - this will turn it into comment. Be careful to avoid conflicts.\nOriginal Dungeon Keeper sacrifices.\nEach line adds one recipe: result, then 1..MAX_SACRIFICE_VICTIMS creatures to sacrifice.",
               "doc_source": "fxdata",
               "confidence": "partial"
@@ -6987,7 +6987,7 @@
               ],
               "parse": null,
               "assign": null,
-              "source": "src/config_rules.c:555",
+              "source": "src/config_rules.c:557",
               "doc": "KeeperFX specific sacrifices.\nEach line adds one recipe: result, then 1..MAX_SACRIFICE_VICTIMS creatures to sacrifice.",
               "doc_source": "fxdata",
               "confidence": "partial"
@@ -7015,7 +7015,7 @@
               ],
               "parse": null,
               "assign": null,
-              "source": "src/config_rules.c:601",
+              "source": "src/config_rules.c:603",
               "doc": "Each line adds one recipe: result, then 1..MAX_SACRIFICE_VICTIMS creatures to sacrifice.",
               "doc_source": null,
               "confidence": "partial"
@@ -7043,7 +7043,7 @@
               ],
               "parse": null,
               "assign": null,
-              "source": "src/config_rules.c:601",
+              "source": "src/config_rules.c:603",
               "doc": "Each line adds one recipe: result, then 1..MAX_SACRIFICE_VICTIMS creatures to sacrifice.",
               "doc_source": null,
               "confidence": "partial"
@@ -7070,7 +7070,7 @@
               ],
               "parse": null,
               "assign": null,
-              "source": "src/config_rules.c:647",
+              "source": "src/config_rules.c:649",
               "doc": "Each line adds one recipe: result, then 1..MAX_SACRIFICE_VICTIMS creatures to sacrifice.",
               "doc_source": null,
               "confidence": "partial"
@@ -7097,7 +7097,7 @@
               ],
               "parse": null,
               "assign": null,
-              "source": "src/config_rules.c:647",
+              "source": "src/config_rules.c:649",
               "doc": "Each line adds one recipe: result, then 1..MAX_SACRIFICE_VICTIMS creatures to sacrifice.",
               "doc_source": null,
               "confidence": "partial"

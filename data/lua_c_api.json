@@ -2254,27 +2254,35 @@
    "name": "OnLevelUp"
   },
   {
-   "line": 297,
+   "line": 301,
    "name": "OnPickUp"
   },
   {
-   "line": 313,
+   "line": 328,
+   "name": "OnCreatureDrop"
+  },
+  {
+   "line": 350,
+   "name": "OnCreatureLanded"
+  },
+  {
+   "line": 366,
    "name": "OnSlap"
   },
   {
-   "line": 330,
+   "line": 383,
    "name": "OnSlabKindChange"
   },
   {
-   "line": 347,
+   "line": 400,
    "name": "OnSlabOwnerChange"
   },
   {
-   "line": 364,
+   "line": 417,
    "name": "OnRoomOwnerChange"
   },
   {
-   "line": 380,
+   "line": 433,
    "name": "OnShotHit"
   },
   {
