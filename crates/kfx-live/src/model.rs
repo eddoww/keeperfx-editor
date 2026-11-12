@@ -409,7 +409,11 @@ impl LivePanel {
                         var: v.name.clone(),
                     };
                     if let Some(val) = self.values.get_mut(&w) {
-                        val.previous = val.value;
+                        // The same value can arrive twice (a pushed update and a poll):
+                        // only a real change moves the old value to `previous`.
+                        if val.value != Some(v.value) {
+                            val.previous = val.value;
+                        }
                         val.value = Some(v.value);
                         val.updated = Some(Instant::now());
                         val.error = None;
@@ -489,8 +493,11 @@ impl LivePanel {
                 match pending {
                     Some(Pending::Watch(w)) => {
                         if let Some(v) = self.values.get_mut(&w) {
-                            v.previous = v.value;
-                            v.value = r.int();
+                            let new = r.int();
+                            if v.value != new {
+                                v.previous = v.value;
+                            }
+                            v.value = new;
                             v.updated = Some(Instant::now());
                             v.error = None;
                         }
