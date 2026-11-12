@@ -10,6 +10,7 @@ members = [
     "crates/kfx-fonts",
     "crates/kfx-live",
     "crates/kfx-prefab",
+    "crates/kfx-archive",
     "crates/kfx-workshop",
     "crates/kfx-script-ui",
     "crates/kfx-config-ui",
