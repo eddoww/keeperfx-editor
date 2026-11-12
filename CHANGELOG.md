@@ -3,13 +3,18 @@
 All notable changes to this project are listed in this file.
 The format follows Keep a Changelog (https://keepachangelog.com/en/1.1.0/) and the project uses Semantic Versioning (https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.1] - 2026-11-12
 
 ### Changed
 
 - Keepers in the owner list are numbered as in level scripts: Keeper 0 (Red) is `PLAYER0`,
   Keeper 6 (Orange) is `PLAYER6`. Validation messages, the owner tooltip and the slab set
   owner picker now use the script names (`PLAYER0`, `PLAYER_GOOD`, ...).
+
+### Fixed
+
+- Live link: a watched variable reported twice with the same value no longer loses its previous
+  value.
 
 ## [0.1.0] - 2026-11-12
 

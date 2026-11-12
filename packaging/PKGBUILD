@@ -6,7 +6,7 @@
 # The checkout is used as is (no download): the build copies nothing and writes its output
 # to $srcdir/target so the working tree stays clean.
 pkgname=kfx-editor
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='Map editor for KeeperFX (Dungeon Keeper 1): terrain, things, DK script, Lua, config overrides'
 arch=('x86_64')

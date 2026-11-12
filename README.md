@@ -30,8 +30,8 @@ and maps are saved in the format the game loads. It is written in Rust with egui
 ## Download
 
 Builds are published on the [releases page](https://github.com/eddoww/keeperfx-editor/releases)
-of this repository once a version is tagged (`<tag>` below is the release tag, for example
-`v0.1.0`):
+of this repository (`<tag>` below is the release tag, for example
+`v0.1.1`):
 
 | Platform | Archive |
 |---|---|
@@ -102,7 +102,7 @@ The full list is in [docs/features.md](docs/features.md), and the
 
 ## Status
 
-Version 0.1.0, not yet released. The editor is developed and tested on Linux, including tests
+Version 0.1.1, a pre-release. The editor is developed and tested on Linux, including tests
 that load its maps in the real game. The Windows (x86_64) and macOS (arm64 and x86_64) builds are
 compiled and tested in CI; reports from those platforms are welcome.
 

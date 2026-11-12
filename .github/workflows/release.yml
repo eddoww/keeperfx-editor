@@ -28,7 +28,7 @@ jobs:
       matrix:
         include:
           - name: linux-x86_64
-            os: ubuntu-latest
+            os: ubuntu-24.04
             target: x86_64-unknown-linux-gnu
           - name: windows-x86_64
             os: windows-latest
@@ -40,7 +40,7 @@ jobs:
             os: macos-latest
             target: x86_64-apple-darwin
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ env.TAG }}
       - name: System packages
@@ -54,7 +54,7 @@ jobs:
           rustup toolchain install stable --profile minimal
           rustup default stable
           rustup target add ${{ matrix.target }}
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: |
             ~/.cargo/registry/index
@@ -94,7 +94,7 @@ jobs:
               ;;
           esac
           ls -la out
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: release-${{ matrix.name }}
           path: out/*
@@ -103,11 +103,11 @@ jobs:
   publish:
     name: publish release
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: out
           merge-multiple: true
