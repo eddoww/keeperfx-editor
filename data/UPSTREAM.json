@@ -2,8 +2,8 @@
  "_note": "Written by tools/sync_keeperfx.py: the upstream revisions the generated data (data/*.json except the overlay, crates/kfx-gfx/src/gen_*.rs) was made from.",
  "keeperfx": {
   "repository": "https://github.com/dkfans/keeperfx",
-  "commit": "b6396bd62c85bba0cf17173e640d5f44dbdbb31a",
-  "date": "2026-11-12T02:31:30+01:00"
+  "commit": "6affecd678452722a6af44ff4e8e66b9e32ca5cd",
+  "date": "2026-11-18T16:01:24+01:00"
  },
  "wiki": {
   "repository": "https://github.com/dkfans/keeperfx.wiki",

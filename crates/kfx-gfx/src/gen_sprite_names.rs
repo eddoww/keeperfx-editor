@@ -760,7 +760,7 @@ pub const GPS_PANEL_SPRITES: [(&str, u16); 554] = [
     ("GUI_PANEL_SPRITES_NEW", 512),
 ];
 /// `GUIFrontendSprite` constants for sheet `frontend-64` (sprites.h), in source order.
-pub const GFS_FRONTEND_SPRITES: [(&str, u16); 105] = [
+pub const GFS_FRONTEND_SPRITES: [(&str, u16); 113] = [
     ("GFS_cursor_horny", 1),
     ("GFS_hugebutton_a01l", 2),
     ("GFS_hugebutton_a01c", 3),
@@ -856,6 +856,14 @@ pub const GFS_FRONTEND_SPRITES: [(&str, u16); 105] = [
     ("GFS_slider_horiz_c", 93),
     ("GFS_slider_horiz_r", 94),
     ("GFS_specicon_voice", 95),
+    ("GFS_bullfrog_purple_lrg", 96),
+    ("GFS_bullfrog_black_lrg", 97),
+    ("GFS_bullfrog_orange_lrg", 98),
+    ("GFS_bullfrog_white_lrg", 99),
+    ("GFS_bullfrog_purple_med", 100),
+    ("GFS_bullfrog_black_med", 101),
+    ("GFS_bullfrog_orange_med", 102),
+    ("GFS_bullfrog_white_med", 103),
     ("GFS_random_colour", 104),
     ("GFS_random_team", 105),
     ("GFS_team_1", 106),
