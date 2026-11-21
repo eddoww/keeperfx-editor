@@ -10210,9 +10210,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15105,
-            "end": 15129,
-            "line": 43
+            "start": 15337,
+            "end": 15361,
+            "line": 44
           }
         },
         "AVATAR": {
@@ -10220,9 +10220,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15203,
-            "end": 15227,
-            "line": 47
+            "start": 15435,
+            "end": 15459,
+            "line": 48
           }
         },
         "BARBARIAN": {
@@ -10230,9 +10230,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15077,
-            "end": 15104,
-            "line": 42
+            "start": 15309,
+            "end": 15336,
+            "line": 43
           }
         },
         "BILE_DEMON": {
@@ -10240,9 +10240,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15588,
-            "end": 15616,
-            "line": 62
+            "start": 15820,
+            "end": 15848,
+            "line": 63
           }
         },
         "BIRD": {
@@ -10250,9 +10250,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15900,
-            "end": 15922,
-            "line": 74
+            "start": 16132,
+            "end": 16154,
+            "line": 75
           }
         },
         "BUG": {
@@ -10260,9 +10260,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15639,
-            "end": 15660,
-            "line": 64
+            "start": 15871,
+            "end": 15892,
+            "line": 65
           }
         },
         "DARK_MISTRESS": {
@@ -10270,9 +10270,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15529,
-            "end": 15560,
-            "line": 60
+            "start": 15761,
+            "end": 15792,
+            "line": 61
           }
         },
         "DEMONSPAWN": {
@@ -10280,9 +10280,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15478,
-            "end": 15506,
-            "line": 58
+            "start": 15710,
+            "end": 15738,
+            "line": 59
           }
         },
         "DRAGON": {
@@ -10290,9 +10290,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15453,
-            "end": 15477,
-            "line": 57
+            "start": 15685,
+            "end": 15709,
+            "line": 58
           }
         },
         "DRUID": {
@@ -10300,9 +10300,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15876,
-            "end": 15899,
-            "line": 73
+            "start": 16108,
+            "end": 16131,
+            "line": 74
           }
         },
         "DWARFA": {
@@ -10310,9 +10310,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15153,
-            "end": 15177,
-            "line": 45
+            "start": 15385,
+            "end": 15409,
+            "line": 46
           }
         },
         "FAIRY": {
@@ -10320,9 +10320,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15304,
-            "end": 15327,
-            "line": 51
+            "start": 15536,
+            "end": 15559,
+            "line": 52
           }
         },
         "FLOATING_SPIRIT": {
@@ -10330,9 +10330,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15814,
-            "end": 15847,
-            "line": 71
+            "start": 16046,
+            "end": 16079,
+            "line": 72
           }
         },
         "FLY": {
@@ -10340,9 +10340,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15507,
-            "end": 15528,
-            "line": 59
+            "start": 15739,
+            "end": 15760,
+            "line": 60
           }
         },
         "GHOST": {
@@ -10350,9 +10350,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15741,
-            "end": 15764,
-            "line": 68
+            "start": 15973,
+            "end": 15996,
+            "line": 69
           }
         },
         "GIANT": {
@@ -10360,9 +10360,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15280,
-            "end": 15303,
-            "line": 50
+            "start": 15512,
+            "end": 15535,
+            "line": 51
           }
         },
         "HELL_HOUND": {
@@ -10370,9 +10370,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15712,
-            "end": 15740,
-            "line": 67
+            "start": 15944,
+            "end": 15972,
+            "line": 68
           }
         },
         "HORNY": {
@@ -10380,9 +10380,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15378,
-            "end": 15401,
-            "line": 54
+            "start": 15610,
+            "end": 15633,
+            "line": 55
           }
         },
         "IMP": {
@@ -10390,9 +10390,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15617,
-            "end": 15638,
-            "line": 63
+            "start": 15849,
+            "end": 15870,
+            "line": 64
           }
         },
         "KNIGHT": {
@@ -10400,9 +10400,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15178,
-            "end": 15202,
-            "line": 46
+            "start": 15410,
+            "end": 15434,
+            "line": 47
           }
         },
         "MAIDEN": {
@@ -10410,9 +10410,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15923,
-            "end": 15947,
-            "line": 75
+            "start": 16155,
+            "end": 16179,
+            "line": 76
           }
         },
         "MONK": {
@@ -10420,9 +10420,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15130,
-            "end": 15152,
-            "line": 44
+            "start": 15362,
+            "end": 15384,
+            "line": 45
           }
         },
         "ORC": {
@@ -10430,9 +10430,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15792,
-            "end": 15813,
-            "line": 70
+            "start": 16024,
+            "end": 16045,
+            "line": 71
           }
         },
         "SAMURAI": {
@@ -10440,9 +10440,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15352,
-            "end": 15377,
-            "line": 53
+            "start": 15584,
+            "end": 15609,
+            "line": 54
           }
         },
         "SKELETON": {
@@ -10450,9 +10450,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15402,
-            "end": 15428,
-            "line": 55
+            "start": 15634,
+            "end": 15660,
+            "line": 56
           }
         },
         "SORCEROR": {
@@ -10460,9 +10460,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15561,
-            "end": 15587,
-            "line": 61
+            "start": 15793,
+            "end": 15819,
+            "line": 62
           }
         },
         "SPIDER": {
@@ -10470,9 +10470,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15687,
-            "end": 15711,
-            "line": 66
+            "start": 15919,
+            "end": 15943,
+            "line": 67
           }
         },
         "SPIDERLING": {
@@ -10480,9 +10480,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15948,
-            "end": 15976,
-            "line": 76
+            "start": 16180,
+            "end": 16208,
+            "line": 77
           }
         },
         "TENTACLE": {
@@ -10490,9 +10490,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15765,
-            "end": 15791,
-            "line": 69
+            "start": 15997,
+            "end": 16023,
+            "line": 70
           }
         },
         "THIEF": {
@@ -10500,9 +10500,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15328,
-            "end": 15351,
-            "line": 52
+            "start": 15560,
+            "end": 15583,
+            "line": 53
           }
         },
         "TIME_MAGE": {
@@ -10510,9 +10510,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15848,
-            "end": 15875,
-            "line": 72
+            "start": 16080,
+            "end": 16107,
+            "line": 73
           }
         },
         "TROLL": {
@@ -10520,9 +10520,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15429,
-            "end": 15452,
-            "line": 56
+            "start": 15661,
+            "end": 15684,
+            "line": 57
           }
         },
         "TUNNELLER": {
@@ -10530,9 +10530,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15228,
-            "end": 15255,
-            "line": 48
+            "start": 15460,
+            "end": 15487,
+            "line": 49
           }
         },
         "VAMPIRE": {
@@ -10540,9 +10540,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15661,
-            "end": 15686,
-            "line": 65
+            "start": 15893,
+            "end": 15918,
+            "line": 66
           }
         },
         "WITCH": {
@@ -10550,9 +10550,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15256,
-            "end": 15279,
-            "line": 49
+            "start": 15488,
+            "end": 15511,
+            "line": 50
           }
         },
         "WIZARD": {
@@ -10560,17 +10560,17 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15052,
-            "end": 15076,
-            "line": 41
+            "start": 15284,
+            "end": 15308,
+            "line": 42
           }
         }
       },
       "source": {
         "file": "config-api/native_types.lua",
-        "start": 15027,
-        "end": 15051,
-        "line": 40
+        "start": 15259,
+        "end": 15283,
+        "line": 41
       }
     },
     "doorfields": {
@@ -10581,9 +10581,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16330,
-            "end": 16354,
-            "line": 93
+            "start": 16562,
+            "end": 16586,
+            "line": 94
           }
         },
         "MAGIC": {
@@ -10591,9 +10591,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16379,
-            "end": 16402,
-            "line": 95
+            "start": 16611,
+            "end": 16634,
+            "line": 96
           }
         },
         "MIDAS": {
@@ -10601,9 +10601,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16428,
-            "end": 16451,
-            "line": 97
+            "start": 16660,
+            "end": 16683,
+            "line": 98
           }
         },
         "NODOOR": {
@@ -10611,9 +10611,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16282,
-            "end": 16306,
-            "line": 91
+            "start": 16514,
+            "end": 16538,
+            "line": 92
           }
         },
         "SECRET": {
@@ -10621,9 +10621,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16403,
-            "end": 16427,
-            "line": 96
+            "start": 16635,
+            "end": 16659,
+            "line": 97
           }
         },
         "STEEL": {
@@ -10631,9 +10631,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16355,
-            "end": 16378,
-            "line": 94
+            "start": 16587,
+            "end": 16610,
+            "line": 95
           }
         },
         "WOOD": {
@@ -10641,17 +10641,17 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16307,
-            "end": 16329,
-            "line": 92
+            "start": 16539,
+            "end": 16561,
+            "line": 93
           }
         }
       },
       "source": {
         "file": "config-api/native_types.lua",
-        "start": 16261,
-        "end": 16281,
-        "line": 90
+        "start": 16493,
+        "end": 16513,
+        "line": 91
       }
     },
     "flagfields": {
@@ -10833,9 +10833,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14897,
-            "end": 14923,
-            "line": 34
+            "start": 15129,
+            "end": 15155,
+            "line": 35
           }
         },
         "BRIDGE": {
@@ -10843,9 +10843,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14972,
-            "end": 14996,
-            "line": 37
+            "start": 15204,
+            "end": 15228,
+            "line": 38
           }
         },
         "DUNGEON_HEART": {
@@ -10853,9 +10853,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14757,
-            "end": 14788,
-            "line": 29
+            "start": 14989,
+            "end": 15020,
+            "line": 30
           }
         },
         "ENTRANCE": {
@@ -10863,9 +10863,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14598,
-            "end": 14624,
-            "line": 23
+            "start": 14830,
+            "end": 14856,
+            "line": 24
           }
         },
         "GARDEN": {
@@ -10873,9 +10873,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14924,
-            "end": 14948,
-            "line": 35
+            "start": 15156,
+            "end": 15180,
+            "line": 36
           }
         },
         "GRAVEYARD": {
@@ -10883,9 +10883,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14869,
-            "end": 14896,
-            "line": 33
+            "start": 15101,
+            "end": 15128,
+            "line": 34
           }
         },
         "GUARD_POST": {
@@ -10893,9 +10893,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14997,
-            "end": 15025,
-            "line": 38
+            "start": 15229,
+            "end": 15257,
+            "line": 39
           }
         },
         "LAIR": {
@@ -10903,9 +10903,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14949,
-            "end": 14971,
-            "line": 36
+            "start": 15181,
+            "end": 15203,
+            "line": 37
           }
         },
         "NULL": {
@@ -10913,9 +10913,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14575,
-            "end": 14597,
-            "line": 22
+            "start": 14807,
+            "end": 14829,
+            "line": 23
           }
         },
         "PRISON": {
@@ -10923,9 +10923,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14679,
-            "end": 14703,
-            "line": 26
+            "start": 14911,
+            "end": 14935,
+            "line": 27
           }
         },
         "RESEARCH": {
@@ -10933,9 +10933,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14652,
-            "end": 14678,
-            "line": 25
+            "start": 14884,
+            "end": 14910,
+            "line": 26
           }
         },
         "SCAVENGER": {
@@ -10943,9 +10943,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14816,
-            "end": 14843,
-            "line": 31
+            "start": 15048,
+            "end": 15075,
+            "line": 32
           }
         },
         "TEMPLE": {
@@ -10953,9 +10953,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14844,
-            "end": 14868,
-            "line": 32
+            "start": 15076,
+            "end": 15100,
+            "line": 33
           }
         },
         "TORTURE": {
@@ -10963,9 +10963,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14704,
-            "end": 14729,
-            "line": 27
+            "start": 14936,
+            "end": 14961,
+            "line": 28
           }
         },
         "TRAINING": {
@@ -10973,9 +10973,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14730,
-            "end": 14756,
-            "line": 28
+            "start": 14962,
+            "end": 14988,
+            "line": 29
           }
         },
         "TREASURE": {
@@ -10983,9 +10983,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14625,
-            "end": 14651,
-            "line": 24
+            "start": 14857,
+            "end": 14883,
+            "line": 25
           }
         },
         "WORKSHOP": {
@@ -10993,17 +10993,17 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 14789,
-            "end": 14815,
-            "line": 30
+            "start": 15021,
+            "end": 15047,
+            "line": 31
           }
         }
       },
       "source": {
         "file": "config-api/native_types.lua",
-        "start": 14554,
-        "end": 14574,
-        "line": 21
+        "start": 14786,
+        "end": 14806,
+        "line": 22
       }
     },
     "trapfields": {
@@ -11014,9 +11014,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16050,
-            "end": 16073,
-            "line": 81
+            "start": 16282,
+            "end": 16305,
+            "line": 82
           }
         },
         "BALLISTA": {
@@ -11024,9 +11024,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16233,
-            "end": 16259,
-            "line": 88
+            "start": 16465,
+            "end": 16491,
+            "line": 89
           }
         },
         "BOULDER": {
@@ -11034,9 +11034,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16024,
-            "end": 16049,
-            "line": 80
+            "start": 16256,
+            "end": 16281,
+            "line": 81
           }
         },
         "LAVA": {
@@ -11044,9 +11044,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16163,
-            "end": 16185,
-            "line": 85
+            "start": 16395,
+            "end": 16417,
+            "line": 86
           }
         },
         "LIGHTNING": {
@@ -11054,9 +11054,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16103,
-            "end": 16130,
-            "line": 83
+            "start": 16335,
+            "end": 16362,
+            "line": 84
           }
         },
         "NOTRAP": {
@@ -11064,9 +11064,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 15999,
-            "end": 16023,
-            "line": 79
+            "start": 16231,
+            "end": 16255,
+            "line": 80
           }
         },
         "POISON_GAS": {
@@ -11074,9 +11074,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16074,
-            "end": 16102,
-            "line": 82
+            "start": 16306,
+            "end": 16334,
+            "line": 83
           }
         },
         "SENTRY": {
@@ -11084,9 +11084,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16208,
-            "end": 16232,
-            "line": 87
+            "start": 16440,
+            "end": 16464,
+            "line": 88
           }
         },
         "TNT": {
@@ -11094,9 +11094,9 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16186,
-            "end": 16207,
-            "line": 86
+            "start": 16418,
+            "end": 16439,
+            "line": 87
           }
         },
         "WORD_OF_POWER": {
@@ -11104,17 +11104,17 @@
           "ty": "integer",
           "source": {
             "file": "config-api/native_types.lua",
-            "start": 16131,
-            "end": 16162,
-            "line": 84
+            "start": 16363,
+            "end": 16394,
+            "line": 85
           }
         }
       },
       "source": {
         "file": "config-api/native_types.lua",
-        "start": 15978,
-        "end": 15998,
-        "line": 78
+        "start": 16210,
+        "end": 16230,
+        "line": 79
       }
     }
   },
@@ -11125,9 +11125,9 @@
       "literals": [],
       "source": {
         "file": "aliases.lua",
-        "start": 4236,
-        "end": 4265,
-        "line": 26
+        "start": 4000,
+        "end": 4029,
+        "line": 25
       }
     },
     "anger_reason": {
@@ -11153,9 +11153,9 @@
       ],
       "source": {
         "file": "aliases.lua",
-        "start": 4644,
-        "end": 4704,
-        "line": 30
+        "start": 4408,
+        "end": 4468,
+        "line": 29
       }
     },
     "controls_variable": {
@@ -11353,9 +11353,9 @@
       ],
       "source": {
         "file": "aliases.lua",
-        "start": 3641,
-        "end": 4235,
-        "line": 25
+        "start": 3405,
+        "end": 3999,
+        "line": 24
       }
     },
     "creature_select_criteria": {
@@ -12116,9 +12116,9 @@
       ],
       "source": {
         "file": "config-api/native_types.lua",
-        "start": 11506,
-        "end": 14552,
-        "line": 19
+        "start": 11738,
+        "end": 14784,
+        "line": 20
       }
     },
     "creature_type": {
@@ -12875,9 +12875,9 @@
       "literals": [],
       "source": {
         "file": "aliases.lua",
-        "start": 4472,
-        "end": 4643,
-        "line": 29
+        "start": 4236,
+        "end": 4407,
+        "line": 28
       }
     },
     "effect_type": {
@@ -13695,9 +13695,9 @@
       ],
       "source": {
         "file": "aliases.lua",
-        "start": 4705,
-        "end": 4941,
-        "line": 31
+        "start": 4469,
+        "end": 4705,
+        "line": 30
       }
     },
     "location": {
@@ -13715,9 +13715,9 @@
       ],
       "source": {
         "file": "aliases.lua",
-        "start": 4266,
-        "end": 4337,
-        "line": 27
+        "start": 4030,
+        "end": 4101,
+        "line": 26
       }
     },
     "msgtype": {
@@ -14911,9 +14911,9 @@
       ],
       "source": {
         "file": "aliases.lua",
-        "start": 4942,
-        "end": 5124,
-        "line": 32
+        "start": 4706,
+        "end": 4888,
+        "line": 31
       }
     },
     "script_operator": {
@@ -15346,7 +15346,7 @@
     },
     "texture_pack": {
       "name": "texture_pack",
-      "ty": "integer|\"NONE\"|\"STANDARD\"|\"ANCIENT\"|\"WINTER\"|\"SNAKE_KEY\"|\"STONE_FACE\"|\"VOLUPTUOUS\"|\"BIG_BREASTS\"|\"ROUGH_ANCIENT\"|\"SKULL_RELIEF\"|\"DESERT_TOMB\"|\"GYPSUM\"|\"LILAC_STONE\"|\"SWAMP_SERPENT\"|\"LAVA_CAVERN\"|\"LATERITE_CAVERN\"",
+      "ty": "integer|\"NONE\"|\"STANDARD\"|\"ANCIENT\"|\"WINTER\"|\"SNAKE_KEY\"|\"STONE_FACE\"|\"VOLUPTUOUS\"|\"ROUGH_ANCIENT\"|\"SKULL_RELIEF\"|\"DESERT_TOMB\"|\"GYPSUM\"|\"LILAC_STONE\"|\"SWAMP_SERPENT\"|\"LAVA_CAVERN\"|\"LATERITE_CAVERN\"|\"DEFAULT\"",
       "literals": [
         {
           "value": "NONE",
@@ -15374,10 +15374,6 @@
         },
         {
           "value": "VOLUPTUOUS",
-          "is_str": true
-        },
-        {
-          "value": "BIG_BREASTS",
           "is_str": true
         },
         {
@@ -15411,13 +15407,17 @@
         {
           "value": "LATERITE_CAVERN",
           "is_str": true
+        },
+        {
+          "value": "DEFAULT",
+          "is_str": true
         }
       ],
       "source": {
-        "file": "aliases.lua",
-        "start": 3405,
-        "end": 3640,
-        "line": 24
+        "file": "config-api/native_types.lua",
+        "start": 11506,
+        "end": 11737,
+        "line": 19
       }
     },
     "thing_class": {
@@ -15471,9 +15471,9 @@
       ],
       "source": {
         "file": "aliases.lua",
-        "start": 4338,
-        "end": 4471,
-        "line": 28
+        "start": 4102,
+        "end": 4235,
+        "line": 27
       }
     },
     "timer": {

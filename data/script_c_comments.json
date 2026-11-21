@@ -4,14 +4,14 @@
   "USE_SPECIAL_LOCATE_HIDDEN_WORLD": [
    {
     "text": "Legacy command",
-    "line": 7100,
+    "line": 7120,
     "where": "table row"
    }
   ],
   "USE_SPECIAL_MAKE_SAFE": [
    {
     "text": "Legacy command",
-    "line": 7098,
+    "line": 7118,
     "where": "table row"
    }
   ]
