@@ -426,8 +426,8 @@
    "name": "SET_CREATURE_PROPERTY",
    "args": "CAB     ",
    "cmd": "Cmd_SET_CREATURE_PROPERTY",
-   "check": null,
-   "process": null
+   "check": "set_creature_property_check",
+   "process": "set_creature_property_process"
   },
   {
    "name": "IF_AVAILABLE",
@@ -2037,6 +2037,10 @@
    {
     "name": "ANYWHERE",
     "value": "CSelCrit_Any"
+   },
+   {
+    "name": "POSSESSED",
+    "value": "CSelCrit_Possessed"
    }
   ],
   "on_experience_desc": [
@@ -2661,72 +2665,6 @@
    {
     "name": "NorthWest",
     "value": "ANGLE_NORTHWEST"
-   }
-  ],
-  "texture_pack_desc": [
-   {
-    "name": "NONE",
-    "value": "0"
-   },
-   {
-    "name": "STANDARD",
-    "value": "1"
-   },
-   {
-    "name": "ANCIENT",
-    "value": "2"
-   },
-   {
-    "name": "WINTER",
-    "value": "3"
-   },
-   {
-    "name": "SNAKE_KEY",
-    "value": "4"
-   },
-   {
-    "name": "STONE_FACE",
-    "value": "5"
-   },
-   {
-    "name": "VOLUPTUOUS",
-    "value": "6"
-   },
-   {
-    "name": "BIG_BREASTS",
-    "value": "6"
-   },
-   {
-    "name": "ROUGH_ANCIENT",
-    "value": "7"
-   },
-   {
-    "name": "SKULL_RELIEF",
-    "value": "8"
-   },
-   {
-    "name": "DESERT_TOMB",
-    "value": "9"
-   },
-   {
-    "name": "GYPSUM",
-    "value": "10"
-   },
-   {
-    "name": "LILAC_STONE",
-    "value": "11"
-   },
-   {
-    "name": "SWAMP_SERPENT",
-    "value": "12"
-   },
-   {
-    "name": "LAVA_CAVERN",
-    "value": "13"
-   },
-   {
-    "name": "LATERITE_CAVERN",
-    "value": "14"
    }
   ],
   "head_for_desc": [
