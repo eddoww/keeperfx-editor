@@ -81,45 +81,45 @@
    "dynamic_player_variables": true,
    "get": [
     {
-     "line": 214,
+     "line": 197,
      "name": "camera"
     },
     {
-     "line": 216,
+     "line": 199,
      "name": "heart"
     },
     {
-     "line": 218,
+     "line": 201,
      "name": "controls"
     },
     {
-     "line": 221,
+     "line": 204,
      "name": "available"
     },
     {
-     "line": 224,
+     "line": 207,
      "name": "type"
     },
     {
-     "line": 240,
+     "line": 223,
      "name": "max_creatures"
     },
     {
-     "line": 246,
+     "line": 229,
      "name": "player_name"
     },
     {
-     "line": 248,
+     "line": 231,
      "name": "colour"
     }
    ],
    "set": [
     {
-     "line": 166,
+     "line": 149,
      "name": "player_name"
     },
     {
-     "line": 172,
+     "line": 155,
      "name": "colour"
     }
    ]
@@ -203,45 +203,45 @@
    "dynamic_player_variables": false,
    "get": [
     {
-     "line": 125,
+     "line": 126,
      "name": "revealed"
     },
     {
-     "line": 128,
+     "line": 129,
      "name": "owner"
     },
     {
-     "line": 131,
+     "line": 132,
      "name": "kind"
     },
     {
-     "line": 134,
+     "line": 135,
      "name": "style"
     },
     {
-     "line": 137,
+     "line": 143,
      "name": "centerpos"
     },
     {
-     "line": 144,
+     "line": 150,
      "name": "room"
     }
    ],
    "set": [
     {
-     "line": 97,
+     "line": 98,
      "name": "revealed"
     },
     {
-     "line": 100,
+     "line": 101,
      "name": "owner"
     },
     {
-     "line": 102,
+     "line": 103,
      "name": "kind"
     },
     {
-     "line": 105,
+     "line": 106,
      "name": "style"
     }
    ]
@@ -251,584 +251,584 @@
    "get": [
     {
      "family": "shared",
-     "line": 582,
+     "line": 586,
      "name": "ThingIndex"
     },
     {
      "family": "shared",
-     "line": 584,
+     "line": 588,
      "name": "creation_turn"
     },
     {
      "family": "shared",
-     "line": 586,
+     "line": 590,
      "name": "model"
     },
     {
      "family": "shared",
-     "line": 588,
+     "line": 592,
      "name": "owner"
     },
     {
      "family": "shared",
-     "line": 590,
+     "line": 594,
      "name": "pos"
     },
     {
      "family": "shared",
-     "line": 592,
+     "line": 596,
      "name": "orientation"
     },
     {
      "family": "shared",
-     "line": 594,
+     "line": 598,
      "name": "pitch"
     },
     {
      "family": "shared",
-     "line": 596,
+     "line": 600,
      "name": "health"
     },
     {
      "family": "shared",
-     "line": 598,
+     "line": 602,
      "name": "anim_sprite"
     },
     {
      "family": "shared",
-     "line": 600,
+     "line": 604,
      "name": "anim_speed"
     },
     {
      "family": "shared",
-     "line": 602,
+     "line": 606,
      "name": "sprite_size"
     },
     {
      "family": "shared",
-     "line": 604,
+     "line": 608,
      "name": "sprite_size_min"
     },
     {
      "family": "shared",
-     "line": 606,
+     "line": 610,
      "name": "sprite_size_max"
     },
     {
      "family": "shared",
-     "line": 608,
+     "line": 612,
      "name": "transformation_speed"
     },
     {
      "family": "shared",
-     "line": 610,
+     "line": 614,
      "name": "clipbox_size_xy"
     },
     {
      "family": "shared",
-     "line": 612,
+     "line": 616,
      "name": "clipbox_size_z"
     },
     {
      "family": "shared",
-     "line": 614,
+     "line": 618,
      "name": "solid_size_xy"
     },
     {
      "family": "shared",
-     "line": 616,
+     "line": 620,
      "name": "solid_size_z"
     },
     {
      "family": "shared",
-     "line": 618,
+     "line": 622,
      "name": "max_health"
     },
     {
      "family": "shared",
-     "line": 620,
+     "line": 624,
      "name": "picked_up"
     },
     {
      "family": "picked_up",
-     "line": 622,
+     "line": 626,
      "name": "thing_class"
     },
     {
      "family": "picked_up",
-     "line": 624,
+     "line": 628,
      "name": "parent"
     },
     {
      "family": "creature",
-     "line": 637,
+     "line": 641,
      "name": "name"
     },
     {
      "family": "creature",
-     "line": 639,
+     "line": 643,
      "name": "gold_held"
     },
     {
      "family": "creature",
-     "line": 641,
+     "line": 645,
      "name": "party"
     },
     {
      "family": "creature",
-     "line": 643,
+     "line": 647,
      "name": "level"
     },
     {
      "family": "creature",
-     "line": 645,
+     "line": 649,
      "name": "max_speed"
     },
     {
      "family": "creature",
-     "line": 647,
+     "line": 651,
      "name": "exp_points"
     },
     {
      "family": "creature",
-     "line": 649,
+     "line": 653,
      "name": "creature_kills"
     },
     {
      "family": "creature",
-     "line": 651,
+     "line": 655,
      "name": "creature_kills_enemies"
     },
     {
      "family": "creature",
-     "line": 653,
+     "line": 657,
      "name": "creature_kills_allies"
     },
     {
      "family": "creature",
-     "line": 655,
+     "line": 659,
      "name": "hunger_amount"
     },
     {
      "family": "creature",
-     "line": 657,
+     "line": 661,
      "name": "hunger_level"
     },
     {
      "family": "creature",
-     "line": 659,
+     "line": 663,
      "name": "hunger_loss"
     },
     {
      "family": "creature",
-     "line": 661,
+     "line": 665,
      "name": "lair"
     },
     {
      "family": "creature",
-     "line": 663,
+     "line": 667,
      "name": "opponents_melee_count"
     },
     {
      "family": "creature",
-     "line": 665,
+     "line": 669,
      "name": "opponents_ranged_count"
     },
     {
      "family": "creature",
-     "line": 667,
+     "line": 671,
      "name": "opponents_count"
     },
     {
      "family": "creature",
-     "line": 669,
+     "line": 673,
      "name": "battle_enemy"
     },
     {
      "family": "creature",
-     "line": 680,
+     "line": 684,
      "name": "combat_type"
     },
     {
      "family": "creature",
-     "line": 694,
+     "line": 698,
      "name": "battle_id"
     },
     {
      "family": "creature",
-     "line": 696,
+     "line": 700,
      "name": "force_health_flower_displayed"
     },
     {
      "family": "creature",
-     "line": 698,
+     "line": 702,
      "name": "force_health_flower_hidden"
     },
     {
      "family": "creature",
-     "line": 700,
+     "line": 704,
      "name": "hand_blocked_turns"
     },
     {
      "family": "creature",
-     "line": 702,
+     "line": 706,
      "name": "countdown"
     },
     {
      "family": "creature",
-     "line": 704,
+     "line": 708,
      "name": "state"
     },
     {
      "family": "creature",
-     "line": 706,
+     "line": 710,
      "name": "state_besides_interruptions"
     },
     {
      "family": "creature",
-     "line": 708,
+     "line": 712,
      "name": "continue_state"
     },
     {
      "family": "creature",
-     "line": 710,
+     "line": 714,
      "name": "instance"
     },
     {
      "family": "creature",
-     "line": 712,
+     "line": 716,
      "name": "workroom"
     },
     {
      "family": "creature",
-     "line": 714,
+     "line": 718,
      "name": "moveto_pos"
     },
     {
      "family": "creature",
-     "line": 716,
+     "line": 720,
      "name": "flee_pos"
     },
     {
      "family": "creature",
-     "line": 718,
+     "line": 722,
      "name": "patrol_pos"
     },
     {
      "family": "creature",
-     "line": 720,
+     "line": 724,
      "name": "patrol_countdown"
     },
     {
      "family": "creature",
-     "line": 722,
+     "line": 726,
      "name": "party_objective"
     },
     {
      "family": "creature",
-     "line": 724,
+     "line": 728,
      "name": "party_original_objective"
     },
     {
      "family": "creature",
-     "line": 726,
+     "line": 730,
      "name": "party_target_player"
     },
     {
      "family": "creature",
-     "line": 728,
+     "line": 732,
      "name": "conscious_back_turns"
     },
     {
      "family": "creature",
-     "line": 730,
+     "line": 734,
      "name": "unsummon_duration"
     },
     {
      "family": "creature",
-     "line": 732,
+     "line": 736,
      "name": "familiars"
     },
     {
      "family": "trap",
-     "line": 739,
+     "line": 743,
      "name": "shots"
     },
     {
      "family": "trap",
-     "line": 741,
+     "line": 745,
      "name": "revealed"
     },
     {
      "family": "trap",
-     "line": 743,
+     "line": 747,
      "name": "rearm_turn"
     },
     {
      "family": "trap",
-     "line": 745,
+     "line": 749,
      "name": "shooting_finished_turn"
     },
     {
      "family": "special_box",
-     "line": 752,
+     "line": 756,
      "name": "box_kind"
     },
     {
      "family": "shot",
-     "line": 759,
+     "line": 763,
      "name": "target"
     },
     {
      "family": "shot",
-     "line": 765,
+     "line": 769,
      "name": "damage"
     },
     {
      "family": "shot",
-     "line": 767,
+     "line": 771,
      "name": "originpos"
     }
    ],
    "set": [
     {
      "family": "shared",
-     "line": 317,
+     "line": 321,
      "name": "orientation"
     },
     {
      "family": "shared",
-     "line": 328,
+     "line": 332,
      "name": "pitch"
     },
     {
      "family": "shared",
-     "line": 331,
+     "line": 335,
      "name": "owner"
     },
     {
      "family": "shared",
-     "line": 337,
+     "line": 341,
      "name": "health"
     },
     {
      "family": "creature",
-     "line": 355,
+     "line": 359,
      "name": "pos"
     },
     {
      "family": "creature",
-     "line": 361,
+     "line": 365,
      "name": "anim_sprite"
     },
     {
      "family": "creature",
-     "line": 364,
+     "line": 368,
      "name": "anim_speed"
     },
     {
      "family": "creature",
-     "line": 367,
+     "line": 371,
      "name": "sprite_size"
     },
     {
      "family": "creature",
-     "line": 370,
+     "line": 374,
      "name": "sprite_size_min"
     },
     {
      "family": "creature",
-     "line": 373,
+     "line": 377,
      "name": "sprite_size_max"
     },
     {
      "family": "creature",
-     "line": 376,
+     "line": 380,
      "name": "transformation_speed"
     },
     {
      "family": "creature",
-     "line": 379,
+     "line": 383,
      "name": "clipbox_size_xy"
     },
     {
      "family": "creature",
-     "line": 382,
+     "line": 386,
      "name": "clipbox_size_z"
     },
     {
      "family": "creature",
-     "line": 385,
+     "line": 389,
      "name": "solid_size_xy"
     },
     {
      "family": "creature",
-     "line": 388,
+     "line": 392,
      "name": "solid_size_z"
     },
     {
      "family": "creature",
-     "line": 400,
+     "line": 404,
      "name": "name"
     },
     {
      "family": "creature",
-     "line": 408,
+     "line": 412,
      "name": "gold_held"
     },
     {
      "family": "creature",
-     "line": 411,
+     "line": 415,
      "name": "exp_points"
     },
     {
      "family": "creature",
-     "line": 418,
+     "line": 422,
      "name": "moveto_pos"
     },
     {
      "family": "creature",
-     "line": 421,
+     "line": 425,
      "name": "flee_pos"
     },
     {
      "family": "creature",
-     "line": 425,
+     "line": 429,
      "name": "max_speed"
     },
     {
      "family": "creature",
-     "line": 428,
+     "line": 432,
      "name": "patrol_pos"
     },
     {
      "family": "creature",
-     "line": 431,
+     "line": 435,
      "name": "patrol_countdown"
     },
     {
      "family": "creature",
-     "line": 434,
+     "line": 438,
      "name": "party_objective"
     },
     {
      "family": "creature",
-     "line": 437,
+     "line": 441,
      "name": "party_original_objective"
     },
     {
      "family": "creature",
-     "line": 440,
+     "line": 444,
      "name": "party_target_player"
     },
     {
      "family": "creature",
-     "line": 443,
+     "line": 447,
      "name": "countdown"
     },
     {
      "family": "creature",
-     "line": 450,
+     "line": 454,
      "name": "state"
     },
     {
      "family": "creature",
-     "line": 453,
+     "line": 457,
      "name": "continue_state"
     },
     {
      "family": "creature",
-     "line": 456,
+     "line": 460,
      "name": "instance"
     },
     {
      "family": "creature",
-     "line": 482,
+     "line": 486,
      "name": "hunger_amount"
     },
     {
      "family": "creature",
-     "line": 485,
+     "line": 489,
      "name": "hunger_level"
     },
     {
      "family": "creature",
-     "line": 488,
+     "line": 492,
      "name": "creature_kills"
     },
     {
      "family": "creature",
-     "line": 491,
+     "line": 495,
      "name": "creature_kills_allies"
     },
     {
      "family": "creature",
-     "line": 494,
+     "line": 498,
      "name": "creature_kills_enemies"
     },
     {
      "family": "creature",
-     "line": 497,
+     "line": 501,
      "name": "hunger_loss"
     },
     {
      "family": "creature",
-     "line": 500,
+     "line": 504,
      "name": "hand_blocked_turns"
     },
     {
      "family": "creature",
-     "line": 503,
+     "line": 507,
      "name": "force_health_flower_displayed"
     },
     {
      "family": "creature",
-     "line": 506,
+     "line": 510,
      "name": "force_health_flower_hidden"
     },
     {
      "family": "creature",
-     "line": 509,
+     "line": 513,
      "name": "conscious_back_turns"
     },
     {
      "family": "creature",
-     "line": 512,
+     "line": 516,
      "name": "unsummon_duration"
     },
     {
      "family": "trap",
-     "line": 521,
+     "line": 525,
      "name": "shots"
     },
     {
      "family": "trap",
-     "line": 524,
+     "line": 528,
      "name": "revealed"
     },
     {
      "family": "trap",
-     "line": 528,
+     "line": 532,
      "name": "rearm_turn"
     },
     {
      "family": "trap",
-     "line": 532,
+     "line": 536,
      "name": "shooting_finished_turn"
     },
     {
      "family": "special_box",
-     "line": 541,
+     "line": 545,
      "name": "box_kind"
     },
     {
      "family": "shot",
-     "line": 549,
+     "line": 553,
      "name": "target"
     },
     {
      "family": "shot",
-     "line": 556,
+     "line": 560,
      "name": "damage"
     }
    ]
@@ -840,7 +840,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_generate_speed",
-   "line": 2671,
+   "line": 2721,
    "name": "SetGenerateSpeed"
   },
   {
@@ -848,7 +848,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Computer_player",
-   "line": 2672,
+   "line": 2722,
    "name": "ComputerPlayer"
   },
   {
@@ -856,7 +856,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Ally_players",
-   "line": 2673,
+   "line": 2723,
    "name": "AllyPlayers"
   },
   {
@@ -864,7 +864,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Start_money",
-   "line": 2674,
+   "line": 2724,
    "name": "StartMoney"
   },
   {
@@ -872,7 +872,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Max_creatures",
-   "line": 2675,
+   "line": 2725,
    "name": "MaxCreatures"
   },
   {
@@ -880,7 +880,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_creature_to_pool",
-   "line": 2676,
+   "line": 2726,
    "name": "AddCreatureToPool"
   },
   {
@@ -888,7 +888,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Creature_available",
-   "line": 2677,
+   "line": 2727,
    "name": "CreatureAvailable"
   },
   {
@@ -896,7 +896,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Dead_creatures_return_to_pool",
-   "line": 2678,
+   "line": 2728,
    "name": "DeadCreaturesReturnToPool"
   },
   {
@@ -904,7 +904,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Room_available",
-   "line": 2679,
+   "line": 2729,
    "name": "RoomAvailable"
   },
   {
@@ -912,7 +912,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Magic_available",
-   "line": 2680,
+   "line": 2730,
    "name": "MagicAvailable"
   },
   {
@@ -920,7 +920,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Door_available",
-   "line": 2681,
+   "line": 2731,
    "name": "DoorAvailable"
   },
   {
@@ -928,7 +928,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Trap_available",
-   "line": 2682,
+   "line": 2732,
    "name": "TrapAvailable"
   },
   {
@@ -936,7 +936,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Win_game",
-   "line": 2685,
+   "line": 2735,
    "name": "WinGame"
   },
   {
@@ -944,7 +944,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Lose_game",
-   "line": 2686,
+   "line": 2736,
    "name": "LoseGame"
   },
   {
@@ -952,7 +952,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Count_creatures_at_action_point",
-   "line": 2687,
+   "line": 2737,
    "name": "CountCreaturesAtActionPoint"
   },
   {
@@ -960,7 +960,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_timer",
-   "line": 2688,
+   "line": 2738,
    "name": "SetTimer"
   },
   {
@@ -968,7 +968,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_to_timer",
-   "line": 2689,
+   "line": 2739,
    "name": "AddToTimer"
   },
   {
@@ -976,7 +976,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_timer",
-   "line": 2690,
+   "line": 2740,
    "name": "DisplayTimer"
   },
   {
@@ -984,7 +984,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Hide_timer",
-   "line": 2691,
+   "line": 2741,
    "name": "HideTimer"
   },
   {
@@ -992,7 +992,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Bonus_level_time",
-   "line": 2692,
+   "line": 2742,
    "name": "BonusLevelTime"
   },
   {
@@ -1000,7 +1000,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_bonus_time",
-   "line": 2693,
+   "line": 2743,
    "name": "AddBonusTime"
   },
   {
@@ -1008,7 +1008,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Reset_action_point",
-   "line": 2694,
+   "line": 2744,
    "name": "ResetActionPoint"
   },
   {
@@ -1016,7 +1016,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_next_level",
-   "line": 2695,
+   "line": 2745,
    "name": "SetNextLevel"
   },
   {
@@ -1024,7 +1024,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Trigger_action_point",
-   "line": 2696,
+   "line": 2746,
    "name": "TriggerActionPoint"
   },
   {
@@ -1032,7 +1032,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_creature_to_level",
-   "line": 2699,
+   "line": 2749,
    "name": "AddCreatureToLevel"
   },
   {
@@ -1040,7 +1040,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_tunneller_to_level",
-   "line": 2700,
+   "line": 2750,
    "name": "AddTunnellerToLevel"
   },
   {
@@ -1048,7 +1048,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Create_party",
-   "line": 2701,
+   "line": 2751,
    "name": "CreateParty"
   },
   {
@@ -1056,7 +1056,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_to_party",
-   "line": 2702,
+   "line": 2752,
    "name": "AddToParty"
   },
   {
@@ -1064,7 +1064,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Delete_from_party",
-   "line": 2703,
+   "line": 2753,
    "name": "DeleteFromParty"
   },
   {
@@ -1072,7 +1072,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_tunneller_party_to_level",
-   "line": 2704,
+   "line": 2754,
    "name": "AddTunnellerPartyToLevel"
   },
   {
@@ -1080,7 +1080,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_party_to_level",
-   "line": 2705,
+   "line": 2755,
    "name": "AddPartyToLevel"
   },
   {
@@ -1088,7 +1088,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_objective",
-   "line": 2708,
+   "line": 2758,
    "name": "DisplayObjective"
   },
   {
@@ -1096,7 +1096,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_objective_with_pos",
-   "line": 2709,
+   "line": 2759,
    "name": "DisplayObjectiveWithPos"
   },
   {
@@ -1104,7 +1104,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_information",
-   "line": 2710,
+   "line": 2760,
    "name": "DisplayInformation"
   },
   {
@@ -1112,7 +1112,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_information_with_pos",
-   "line": 2711,
+   "line": 2761,
    "name": "DisplayInformationWithPos"
   },
   {
@@ -1120,7 +1120,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_objective",
-   "line": 2712,
+   "line": 2762,
    "name": "QuickObjective"
   },
   {
@@ -1128,7 +1128,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_objective_with_pos",
-   "line": 2713,
+   "line": 2763,
    "name": "QuickObjectiveWithPos"
   },
   {
@@ -1136,7 +1136,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_information",
-   "line": 2714,
+   "line": 2764,
    "name": "QuickInformation"
   },
   {
@@ -1144,7 +1144,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_information_with_pos",
-   "line": 2715,
+   "line": 2765,
    "name": "QuickInformationWithPos"
   },
   {
@@ -1152,7 +1152,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_player_objective",
-   "line": 2716,
+   "line": 2766,
    "name": "DisplayPlayerObjective"
   },
   {
@@ -1160,7 +1160,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_player_objective_with_pos",
-   "line": 2717,
+   "line": 2767,
    "name": "DisplayPlayerObjectiveWithPos"
   },
   {
@@ -1168,7 +1168,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_player_information",
-   "line": 2718,
+   "line": 2768,
    "name": "DisplayPlayerInformation"
   },
   {
@@ -1176,7 +1176,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_player_information_with_pos",
-   "line": 2719,
+   "line": 2769,
    "name": "DisplayPlayerInformationWithPos"
   },
   {
@@ -1184,7 +1184,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_player_objective",
-   "line": 2720,
+   "line": 2770,
    "name": "QuickPlayerObjective"
   },
   {
@@ -1192,7 +1192,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_player_objective_with_pos",
-   "line": 2721,
+   "line": 2771,
    "name": "QuickPlayerObjectiveWithPos"
   },
   {
@@ -1200,7 +1200,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_player_information",
-   "line": 2722,
+   "line": 2772,
    "name": "QuickPlayerInformation"
   },
   {
@@ -1208,7 +1208,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Quick_player_information_with_pos",
-   "line": 2723,
+   "line": 2773,
    "name": "QuickPlayerInformationWithPos"
   },
   {
@@ -1216,23 +1216,31 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_message",
-   "line": 2724,
+   "line": 2774,
    "name": "DisplayMessage"
   },
   {
    "array": "global_methods",
    "commented": false,
    "file": "lua_api.c",
+   "func": "lua_Set_custom_buff_icons",
+   "line": 2775,
+   "name": "SetCustomBuffIcons"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
    "func": "lua_Quick_message",
-   "line": 2725,
+   "line": 2776,
    "name": "QuickMessage"
   },
   {
    "array": "global_methods",
    "commented": false,
    "file": "lua_api.c",
-   "func": "lua_get_game_timestamp",
-   "line": 2726,
+   "func": "lua_Get_game_timestamp",
+   "line": 2777,
    "name": "GetGameTimestamp"
   },
   {
@@ -1240,7 +1248,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Clear_message",
-   "line": 2727,
+   "line": 2778,
    "name": "ClearMessage"
   },
   {
@@ -1248,7 +1256,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Heart_lost_objective",
-   "line": 2728,
+   "line": 2779,
    "name": "HeartLostObjective"
   },
   {
@@ -1256,7 +1264,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Heart_lost_quick_objective",
-   "line": 2729,
+   "line": 2780,
    "name": "HeartLostQuickObjective"
   },
   {
@@ -1264,7 +1272,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Play_message",
-   "line": 2730,
+   "line": 2781,
    "name": "PlayMessage"
   },
   {
@@ -1272,7 +1280,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Tutorial_flash_button",
-   "line": 2731,
+   "line": 2782,
    "name": "TutorialFlashButton"
   },
   {
@@ -1280,7 +1288,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_countdown",
-   "line": 2732,
+   "line": 2783,
    "name": "DisplayCountdown"
   },
   {
@@ -1288,15 +1296,15 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Display_variable",
-   "line": 2733,
+   "line": 2784,
    "name": "DisplayVariable"
   },
   {
    "array": "global_methods",
    "commented": false,
    "file": "lua_api.c",
-   "func": "lua_DISPLAY_VARIABLE_WITH_LABEL",
-   "line": 2734,
+   "func": "lua_Display_variable_with_label",
+   "line": 2785,
    "name": "DisplayVariableWithLabel"
   },
   {
@@ -1304,7 +1312,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Hide_variable",
-   "line": 2735,
+   "line": 2786,
    "name": "HideVariable"
   },
   {
@@ -1312,7 +1320,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Reveal_map_location",
-   "line": 2738,
+   "line": 2789,
    "name": "RevealMapLocation"
   },
   {
@@ -1320,7 +1328,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Reveal_map_rect",
-   "line": 2739,
+   "line": 2790,
    "name": "RevealMapRect"
   },
   {
@@ -1328,7 +1336,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Conceal_map_rect",
-   "line": 2740,
+   "line": 2791,
    "name": "ConcealMapRect"
   },
   {
@@ -1336,7 +1344,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_door",
-   "line": 2741,
+   "line": 2792,
    "name": "SetDoor"
   },
   {
@@ -1344,7 +1352,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_heart_health",
-   "line": 2742,
+   "line": 2793,
    "name": "AddHeartHealth"
   },
   {
@@ -1352,7 +1360,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_object_to_level",
-   "line": 2743,
+   "line": 2794,
    "name": "AddObjectToLevel"
   },
   {
@@ -1360,7 +1368,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_object_to_level_at_pos",
-   "line": 2744,
+   "line": 2795,
    "name": "AddObjectToLevelAtPos"
   },
   {
@@ -1368,7 +1376,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_shot_to_level",
-   "line": 2745,
+   "line": 2796,
    "name": "AddShotToLevel"
   },
   {
@@ -1376,7 +1384,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_effect_generator_to_level",
-   "line": 2746,
+   "line": 2797,
    "name": "AddEffectGeneratorToLevel"
   },
   {
@@ -1384,7 +1392,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Add_corpse_to_level",
-   "line": 2747,
+   "line": 2798,
    "name": "AddCorpseToLevel"
   },
   {
@@ -1392,7 +1400,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Place_door",
-   "line": 2748,
+   "line": 2799,
    "name": "PlaceDoor"
   },
   {
@@ -1400,7 +1408,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Place_trap",
-   "line": 2749,
+   "line": 2800,
    "name": "PlaceTrap"
   },
   {
@@ -1408,7 +1416,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Change_slab_owner",
-   "line": 2750,
+   "line": 2801,
    "name": "ChangeSlabOwner"
   },
   {
@@ -1416,7 +1424,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Change_slab_type",
-   "line": 2751,
+   "line": 2802,
    "name": "ChangeSlabType"
   },
   {
@@ -1424,7 +1432,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Change_slab_texture",
-   "line": 2752,
+   "line": 2803,
    "name": "ChangeSlabTexture"
   },
   {
@@ -1432,7 +1440,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Hide_hero_gate",
-   "line": 2753,
+   "line": 2804,
    "name": "HideHeroGate"
   },
   {
@@ -1440,7 +1448,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_New_creature_type",
-   "line": 2756,
+   "line": 2807,
    "name": "NewCreatureType"
   },
   {
@@ -1448,7 +1456,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Copy_creature_type",
-   "line": 2757,
+   "line": 2808,
    "name": "CopyCreatureType"
   },
   {
@@ -1456,7 +1464,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_New_object_type",
-   "line": 2758,
+   "line": 2809,
    "name": "NewObjectType"
   },
   {
@@ -1464,7 +1472,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_New_trap_type",
-   "line": 2759,
+   "line": 2810,
    "name": "NewTrapType"
   },
   {
@@ -1472,7 +1480,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_New_room_type",
-   "line": 2760,
+   "line": 2811,
    "name": "NewRoomType"
   },
   {
@@ -1480,7 +1488,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_door_configuration",
-   "line": 2761,
+   "line": 2812,
    "name": "SetDoorConfiguration"
   },
   {
@@ -1488,7 +1496,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_object_configuration",
-   "line": 2762,
+   "line": 2813,
    "name": "SetObjectConfiguration"
   },
   {
@@ -1496,7 +1504,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_trap_configuration",
-   "line": 2763,
+   "line": 2814,
    "name": "SetTrapConfiguration"
   },
   {
@@ -1504,15 +1512,23 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_Set_creature_configuration",
-   "line": 2764,
+   "line": 2815,
    "name": "SetCreatureConfiguration"
   },
   {
    "array": "global_methods",
    "commented": false,
    "file": "lua_api.c",
+   "func": "lua_Get_creature_configuration",
+   "line": 2816,
+   "name": "GetCreatureConfiguration"
+  },
+  {
+   "array": "global_methods",
+   "commented": false,
+   "file": "lua_api.c",
    "func": "lua_Set_effect_generator_configuration",
-   "line": 2765,
+   "line": 2817,
    "name": "SetEffectGeneratorConfiguration"
   },
   {
@@ -1520,7 +1536,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_Set_power_configuration",
-   "line": 2766,
+   "line": 2818,
    "name": "SetPowerConfiguration"
   },
   {
@@ -1528,7 +1544,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_room_configuration",
-   "line": 2767,
+   "line": 2819,
    "name": "SetRoomConfiguration"
   },
   {
@@ -1536,7 +1552,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_game_rule",
-   "line": 2768,
+   "line": 2820,
    "name": "SetGameRule"
   },
   {
@@ -1544,7 +1560,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_hand_rule",
-   "line": 2769,
+   "line": 2821,
    "name": "SetHandRule"
   },
   {
@@ -1552,7 +1568,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Swap_creature",
-   "line": 2770,
+   "line": 2822,
    "name": "SwapCreature"
   },
   {
@@ -1560,7 +1576,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_sacrifice_recipe",
-   "line": 2771,
+   "line": 2823,
    "name": "SetSacrificeRecipe"
   },
   {
@@ -1568,7 +1584,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Remove_sacrifice_recipe",
-   "line": 2772,
+   "line": 2824,
    "name": "RemoveSacrificeRecipe"
   },
   {
@@ -1576,7 +1592,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_creature_instance",
-   "line": 2775,
+   "line": 2827,
    "name": "SetCreatureInstance"
   },
   {
@@ -1584,7 +1600,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_creature_max_level",
-   "line": 2776,
+   "line": 2828,
    "name": "SetCreatureMaxLevel"
   },
   {
@@ -1592,7 +1608,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_Set_creature_property",
-   "line": 2777,
+   "line": 2829,
    "name": "SetCreatureProperty"
   },
   {
@@ -1600,7 +1616,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_creature_tendencies",
-   "line": 2778,
+   "line": 2830,
    "name": "SetCreatureTendencies"
   },
   {
@@ -1608,7 +1624,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Creature_entrance_level",
-   "line": 2779,
+   "line": 2831,
    "name": "CreatureEntranceLevel"
   },
   {
@@ -1616,7 +1632,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Change_creatures_annoyance",
-   "line": 2780,
+   "line": 2832,
    "name": "ChangeCreaturesAnnoyance"
   },
   {
@@ -1624,7 +1640,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Research",
-   "line": 2783,
+   "line": 2835,
    "name": "Research"
   },
   {
@@ -1632,7 +1648,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Research_order",
-   "line": 2784,
+   "line": 2836,
    "name": "Research_order"
   },
   {
@@ -1640,7 +1656,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Computer_dig_to_location",
-   "line": 2787,
+   "line": 2839,
    "name": "ComputerDigToLocation"
   },
   {
@@ -1648,7 +1664,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_computer_process",
-   "line": 2788,
+   "line": 2840,
    "name": "SetComputerProcess"
   },
   {
@@ -1656,7 +1672,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_computer_checks",
-   "line": 2789,
+   "line": 2841,
    "name": "SetComputerChecks"
   },
   {
@@ -1664,7 +1680,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_computer_globals",
-   "line": 2790,
+   "line": 2842,
    "name": "SetComputerGlobals"
   },
   {
@@ -1672,7 +1688,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_computer_event",
-   "line": 2791,
+   "line": 2843,
    "name": "SetComputerEvent"
   },
   {
@@ -1680,7 +1696,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_special_increase_level",
-   "line": 2794,
+   "line": 2846,
    "name": "UseSpecialIncreaseLevel"
   },
   {
@@ -1688,7 +1704,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_special_multiply_creatures",
-   "line": 2795,
+   "line": 2847,
    "name": "UseSpecialMultiplyCreatures"
   },
   {
@@ -1696,7 +1712,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_special_Transfer_creature",
-   "line": 2796,
+   "line": 2848,
    "name": "UseSpecialTransferCreature"
   },
   {
@@ -1704,7 +1720,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_special_Steal_hero",
-   "line": 2797,
+   "line": 2849,
    "name": "UseSpecialStealHero"
   },
   {
@@ -1712,7 +1728,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_box_tooltip",
-   "line": 2798,
+   "line": 2850,
    "name": "SetBoxTooltip"
   },
   {
@@ -1720,7 +1736,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_box_tooltip_id",
-   "line": 2799,
+   "line": 2851,
    "name": "SetBoxTooltipId"
   },
   {
@@ -1728,7 +1744,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Make_safe",
-   "line": 2800,
+   "line": 2852,
    "name": "MakeSafe"
   },
   {
@@ -1736,7 +1752,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Make_unsafe",
-   "line": 2801,
+   "line": 2853,
    "name": "MakeUnsafe"
   },
   {
@@ -1744,7 +1760,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Locate_hidden_world",
-   "line": 2802,
+   "line": 2854,
    "name": "LocateHiddenWorld"
   },
   {
@@ -1752,7 +1768,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Create_effect",
-   "line": 2805,
+   "line": 2857,
    "name": "CreateEffect"
   },
   {
@@ -1760,7 +1776,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Create_effect_at_pos",
-   "line": 2806,
+   "line": 2858,
    "name": "CreateEffectAtPos"
   },
   {
@@ -1768,7 +1784,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Create_effect_at_coords",
-   "line": 2807,
+   "line": 2859,
    "name": "CreateEffectAtCoords"
   },
   {
@@ -1776,7 +1792,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Create_effects_line",
-   "line": 2808,
+   "line": 2860,
    "name": "CreateEffectsLine"
   },
   {
@@ -1784,7 +1800,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_power",
-   "line": 2811,
+   "line": 2863,
    "name": "UsePower"
   },
   {
@@ -1792,7 +1808,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_power_at_location",
-   "line": 2812,
+   "line": 2864,
    "name": "UsePowerAtLocation"
   },
   {
@@ -1800,7 +1816,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_power_at_pos",
-   "line": 2813,
+   "line": 2865,
    "name": "UsePowerAtPos"
   },
   {
@@ -1808,7 +1824,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_power_on_creature",
-   "line": 2814,
+   "line": 2866,
    "name": "UsePowerOnCreature"
   },
   {
@@ -1816,7 +1832,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Use_spell_on_creature",
-   "line": 2815,
+   "line": 2867,
    "name": "UseSpellOnCreature"
   },
   {
@@ -1824,7 +1840,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_Use_spell_on_players_creatures",
-   "line": 2816,
+   "line": 2868,
    "name": "UseSpellOnPlayersCreatures"
   },
   {
@@ -1832,7 +1848,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_Use_power_on_players_creatures",
-   "line": 2817,
+   "line": 2869,
    "name": "UsePowerOnPlayersCreatures"
   },
   {
@@ -1840,7 +1856,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_hand_graphic",
-   "line": 2818,
+   "line": 2870,
    "name": "SetHandGraphic"
   },
   {
@@ -1848,7 +1864,7 @@
    "commented": true,
    "file": "lua_api.c",
    "func": "lua_Set_increase_on_experience",
-   "line": 2819,
+   "line": 2871,
    "name": "SetIncreaseOnExperience"
   },
   {
@@ -1856,7 +1872,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_music",
-   "line": 2820,
+   "line": 2872,
    "name": "SetMusic"
   },
   {
@@ -1864,7 +1880,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Zoom_to_location",
-   "line": 2821,
+   "line": 2873,
    "name": "ZoomToLocation"
   },
   {
@@ -1872,7 +1888,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Lock_possession",
-   "line": 2822,
+   "line": 2874,
    "name": "LockPossession"
   },
   {
@@ -1880,7 +1896,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_digger",
-   "line": 2823,
+   "line": 2875,
    "name": "SetDigger"
   },
   {
@@ -1888,7 +1904,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Set_texture",
-   "line": 2824,
+   "line": 2876,
    "name": "SetTexture"
   },
   {
@@ -1896,7 +1912,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_print",
-   "line": 2827,
+   "line": 2879,
    "name": "print"
   },
   {
@@ -1904,7 +1920,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_set_custom_intralevel_data",
-   "line": 2828,
+   "line": 2880,
    "name": "SetCustomCampaignData"
   },
   {
@@ -1912,7 +1928,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_custom_intralevel_data",
-   "line": 2829,
+   "line": 2881,
    "name": "GetCustomCampaignData"
   },
   {
@@ -1920,7 +1936,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_run_dkscript_command",
-   "line": 2830,
+   "line": 2882,
    "name": "RunDKScriptCommand"
   },
   {
@@ -1928,7 +1944,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_creature_near",
-   "line": 2833,
+   "line": 2885,
    "name": "GetCreatureNear"
   },
   {
@@ -1936,7 +1952,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_creature_by_criterion",
-   "line": 2834,
+   "line": 2886,
    "name": "GetCreatureByCriterion"
   },
   {
@@ -1944,7 +1960,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_thing_by_idx",
-   "line": 2835,
+   "line": 2887,
    "name": "GetThingByIdx"
   },
   {
@@ -1952,7 +1968,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_things_of_class",
-   "line": 2836,
+   "line": 2888,
    "name": "GetThingsOfClass"
   },
   {
@@ -1960,7 +1976,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_things_on_subtile",
-   "line": 2837,
+   "line": 2889,
    "name": "GetThingsOnSubtile"
   },
   {
@@ -1968,7 +1984,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_things_on_slab",
-   "line": 2838,
+   "line": 2890,
    "name": "GetThingsOnSlab"
   },
   {
@@ -1976,7 +1992,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_is_action_point_activated_by_player",
-   "line": 2839,
+   "line": 2891,
    "name": "IsActionpointActivatedByPlayer"
   },
   {
@@ -1984,7 +2000,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_slab",
-   "line": 2840,
+   "line": 2892,
    "name": "GetSlab"
   },
   {
@@ -1992,7 +2008,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_string",
-   "line": 2841,
+   "line": 2893,
    "name": "GetString"
   },
   {
@@ -2000,7 +2016,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_floor_height",
-   "line": 2842,
+   "line": 2894,
    "name": "GetFloorHeight"
   },
   {
@@ -2008,7 +2024,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_get_rooms_of_player_and_kind",
-   "line": 2843,
+   "line": 2895,
    "name": "GetRoomsOfPlayerAndType"
   },
   {
@@ -2016,7 +2032,7 @@
    "commented": false,
    "file": "lua_api.c",
    "func": "lua_Pay_for_power",
-   "line": 2846,
+   "line": 2898,
    "name": "PayForPower"
   },
   {
@@ -2198,95 +2214,95 @@
  ],
  "hooks": [
   {
-   "line": 29,
+   "line": 30,
    "name": "OnDungeonDestroyed"
   },
   {
-   "line": 45,
+   "line": 46,
    "name": "OnChatMsg"
   },
   {
-   "line": 100,
+   "line": 102,
    "name": "OnCampaignGameStart"
   },
   {
-   "line": 115,
+   "line": 117,
    "name": "OnGameStart"
   },
   {
-   "line": 134,
+   "line": 136,
    "name": "OnGameTick"
   },
   {
-   "line": 149,
+   "line": 151,
    "name": "OnPowerCast"
   },
   {
-   "line": 170,
+   "line": 172,
    "name": "OnSpecialActivated"
   },
   {
-   "line": 188,
+   "line": 190,
    "name": "OnTrapPlaced"
   },
   {
-   "line": 204,
+   "line": 206,
    "name": "OnCreatureDeath"
   },
   {
-   "line": 220,
+   "line": 222,
    "name": "OnObjectDestroyed"
   },
   {
-   "line": 236,
+   "line": 238,
    "name": "OnCreatureRebirth"
   },
   {
-   "line": 251,
+   "line": 253,
    "name": "OnCreatureFellIntoAbyss"
   },
   {
-   "line": 264,
+   "line": 266,
    "name": "OnApplyDamage"
   },
   {
-   "line": 282,
+   "line": 284,
    "name": "OnLevelUp"
   },
   {
-   "line": 301,
+   "line": 303,
    "name": "OnPickUp"
   },
   {
-   "line": 328,
+   "line": 330,
    "name": "OnCreatureDrop"
   },
   {
-   "line": 350,
+   "line": 352,
    "name": "OnCreatureLanded"
   },
   {
-   "line": 366,
+   "line": 368,
    "name": "OnSlap"
   },
   {
-   "line": 383,
+   "line": 385,
    "name": "OnSlabKindChange"
   },
   {
-   "line": 400,
+   "line": 402,
    "name": "OnSlabOwnerChange"
   },
   {
-   "line": 417,
+   "line": 419,
    "name": "OnRoomOwnerChange"
   },
   {
-   "line": 433,
+   "line": 435,
    "name": "OnShotHit"
   },
   {
-   "line": 64,
+   "line": 65,
    "name": "OnModGameStart_<modname>"
   }
  ],
@@ -2297,7 +2313,7 @@
     "commented": false,
     "file": "lua_api_player.c",
     "func": "lua_Set_texture",
-    "line": 72,
+    "line": 55,
     "name": "set_texture"
    },
    {
@@ -2305,7 +2321,7 @@
     "commented": false,
     "file": "lua_api_player.c",
     "func": "lua_Add_gold_to_player",
-    "line": 73,
+    "line": 56,
     "name": "add_gold"
    },
    {
@@ -2313,7 +2329,7 @@
     "commented": true,
     "file": "lua_api_player.c",
     "func": "lua_SET_PLAYER_COLOR",
-    "line": 74,
+    "line": 57,
     "name": "SET_PLAYER_COLOR"
    },
    {
@@ -2321,7 +2337,7 @@
     "commented": true,
     "file": "lua_api_player.c",
     "func": "lua_SET_PLAYER_MODIFIER",
-    "line": 75,
+    "line": 58,
     "name": "SET_PLAYER_MODIFIER"
    },
    {
@@ -2329,7 +2345,7 @@
     "commented": true,
     "file": "lua_api_player.c",
     "func": "lua_ADD_TO_PLAYER_MODIFIER",
-    "line": 76,
+    "line": 59,
     "name": "ADD_TO_PLAYER_MODIFIER"
    }
   ],
@@ -2339,7 +2355,7 @@
     "commented": false,
     "file": "lua_api_slabs.c",
     "func": "lua_GET_CREATURES",
-    "line": 75,
+    "line": 76,
     "name": "GET_CREATURES"
    }
   ],
@@ -2349,7 +2365,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "make_thing_zombie",
-    "line": 844,
+    "line": 848,
     "name": "make_thing_zombie"
    },
    {
@@ -2357,7 +2373,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_creature_walk_to",
-    "line": 845,
+    "line": 849,
     "name": "walk_to"
    },
    {
@@ -2365,7 +2381,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_creature_set_start_state",
-    "line": 846,
+    "line": 850,
     "name": "set_start_state"
    },
    {
@@ -2373,7 +2389,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_kill_creature",
-    "line": 847,
+    "line": 851,
     "name": "kill"
    },
    {
@@ -2381,7 +2397,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_stun_creature",
-    "line": 848,
+    "line": 852,
     "name": "stun"
    },
    {
@@ -2389,7 +2405,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_remove_creature_from_play",
-    "line": 849,
+    "line": 853,
     "name": "remove_from_play"
    },
    {
@@ -2397,7 +2413,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_destroy_object",
-    "line": 850,
+    "line": 854,
     "name": "destroy"
    },
    {
@@ -2405,7 +2421,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_delete_thing",
-    "line": 851,
+    "line": 855,
     "name": "delete"
    },
    {
@@ -2413,7 +2429,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_transform_creature",
-    "line": 852,
+    "line": 856,
     "name": "transform"
    },
    {
@@ -2421,7 +2437,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_is_valid",
-    "line": 853,
+    "line": 857,
     "name": "isValid"
    },
    {
@@ -2429,7 +2445,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_Transfer_creature",
-    "line": 854,
+    "line": 858,
     "name": "transfer"
    },
    {
@@ -2437,7 +2453,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_Level_up_creature",
-    "line": 855,
+    "line": 859,
     "name": "level_up"
    },
    {
@@ -2445,7 +2461,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_Teleport_creature",
-    "line": 856,
+    "line": 860,
     "name": "teleport"
    },
    {
@@ -2453,7 +2469,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_Change_creature_owner",
-    "line": 857,
+    "line": 861,
     "name": "change_owner"
    },
    {
@@ -2461,7 +2477,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_set_velocity",
-    "line": 858,
+    "line": 862,
     "name": "set_velocity"
    },
    {
@@ -2469,7 +2485,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_get_creature_annoyance",
-    "line": 859,
+    "line": 863,
     "name": "get_annoyance"
    },
    {
@@ -2477,7 +2493,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_set_creature_annoyance",
-    "line": 860,
+    "line": 864,
     "name": "set_annoyance"
    },
    {
@@ -2485,7 +2501,7 @@
     "commented": false,
     "file": "lua_api_things.c",
     "func": "lua_is_in_enemy_custody",
-    "line": 861,
+    "line": 865,
     "name": "in_enemy_custody"
    }
   ]
